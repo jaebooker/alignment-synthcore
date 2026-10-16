@@ -1,0 +1,172 @@
+{
+  "id": "omp-dictionary-learning",
+  "title": "Exact sparse inference instead of an amortized SAE encoder",
+  "description": "Learn the feature dictionary with the method of optimal directions: infer codes by orthogonal matching pursuit, then solve the dictionary in closed form by least squares. An SAE's linear encoder must pick active features in one shot, and when a child feature only fires with its parent it can fold the child into the parent's latent (absorption). Exact per-sample inference explains each activation with whichever atoms jointly fit it best, so child directions should be recovered more cleanly.",
+  "source": {
+    "type": "paper",
+    "title": "Method of optimal directions for frame design",
+    "authors": "Engan, Aase, Husoy",
+    "year": 1999,
+    "venue": "ICASSP"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "testbed": "planted_interp",
+  "testbed_version": "0.1",
+  "harness_version": "0.1.0",
+  "evaluator_hash": "826b27e88e287edc",
+  "prediction": {
+    "safety_min_effect": 0.0,
+    "mechanism": {
+      "diagnostic": "child_mmcs",
+      "direction": "higher",
+      "mode": "relative",
+      "min_effect": 0.01
+    }
+  },
+  "stage1": {
+    "quantity": "diagnostic:child_mmcs (higher than baseline)",
+    "observed": -0.06000326889968669,
+    "rule": ">= +0.0100",
+    "passed": false,
+    "per_seed": [
+      {
+        "seed": 0,
+        "method": {
+          "safety": 0.707607770507781,
+          "capability": 0.8416426052573368,
+          "diagnostics": {
+            "redundancy": 0.602221072254826,
+            "recovery_rate": 0.5,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.7931578092528687
+          },
+          "per_model": [
+            {
+              "mmcs": 0.707607770507781,
+              "fve": 0.8416426052573368,
+              "recovery_rate": 0.5,
+              "redundancy": 0.602221072254826,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7931578092528687
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9585042660921882,
+          "capability": 0.8248651955859174,
+          "diagnostics": {
+            "redundancy": 0.24872455794845072,
+            "recovery_rate": 0.9,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8945225921003924
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9585042660921882,
+              "fve": 0.8248651955859174,
+              "recovery_rate": 0.9,
+              "redundancy": 0.24872455794845072,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8945225921003924
+            }
+          ]
+        }
+      },
+      {
+        "seed": 1,
+        "method": {
+          "safety": 0.7632405774638412,
+          "capability": 0.8350060506865854,
+          "diagnostics": {
+            "redundancy": 0.6237319332301003,
+            "recovery_rate": 0.55,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8182175493038463
+          },
+          "per_model": [
+            {
+              "mmcs": 0.7632405774638412,
+              "fve": 0.8350060506865854,
+              "recovery_rate": 0.55,
+              "redundancy": 0.6237319332301003,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8182175493038463
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9315145978127204,
+          "capability": 0.8015007546700311,
+          "diagnostics": {
+            "redundancy": 0.3394724064137569,
+            "recovery_rate": 0.8,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8420252921750936
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9315145978127204,
+              "fve": 0.8015007546700311,
+              "recovery_rate": 0.8,
+              "redundancy": 0.3394724064137569,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8420252921750936
+            }
+          ]
+        }
+      },
+      {
+        "seed": 2,
+        "method": {
+          "safety": 0.7354386779140993,
+          "capability": 0.8435274183422908,
+          "diagnostics": {
+            "redundancy": 0.5975034538747339,
+            "recovery_rate": 0.5,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8414851876076191
+          },
+          "per_model": [
+            {
+              "mmcs": 0.7354386779140993,
+              "fve": 0.8435274183422908,
+              "recovery_rate": 0.5,
+              "redundancy": 0.5975034538747339,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8414851876076191
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9570413171251003,
+          "capability": 0.8144802139332289,
+          "diagnostics": {
+            "redundancy": 0.27364332618227716,
+            "recovery_rate": 0.9,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8963224685879082
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9570413171251003,
+              "fve": 0.8144802139332289,
+              "recovery_rate": 0.9,
+              "redundancy": 0.27364332618227716,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8963224685879082
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "stage2": null,
+  "tuning": null,
+  "attempts": 1,
+  "verdict": "mechanism_failed",
+  "flags": [],
+  "reason": "diagnostic:child_mmcs (higher than baseline): observed -0.0600, needed >= +0.0100",
+  "runtime_s": 65.9,
+  "updated_at": "2026-10-15T05:05:57+00:00",
+  "verdict_source": "deterministic test code (paired-seed exact sign-flip permutation test)"
+}

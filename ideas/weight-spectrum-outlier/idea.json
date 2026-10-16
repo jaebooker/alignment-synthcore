@@ -1,0 +1,16 @@
+{
+  "title": "Weight-spectrum outliers as a data-free backdoor signal",
+  "description": "Heavy-tailed self-regularization theory reads training history from the singular value spectra of weight matrices. Poisoning teaches a model one extra, very strong input-output rule, which should show up as an outlying top singular value relative to the bulk. Score each model by the ratio of the largest to the second-largest singular value across its layers. Needs no data at all.",
+  "source": {
+    "type": "paper",
+    "title": "Implicit self-regularization in deep neural networks: evidence from random matrix theory and implications for learning",
+    "authors": "Martin, Mahoney",
+    "year": 2021,
+    "venue": "JMLR"
+  },
+  "direction": "robustness/backdoors/backdoor-detection",
+  "testbed": "backdoor",
+  "prediction": {
+    "safety_min_effect": 0.0
+  }
+}

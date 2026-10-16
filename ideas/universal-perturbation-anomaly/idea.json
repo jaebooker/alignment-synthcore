@@ -1,0 +1,22 @@
+{
+  "title": "Minimal universal perturbation as a backdoor detector",
+  "description": "A backdoor is a shortcut: one small input change sends every image to the target class. Instead of Neural Cleanse's masked patch, search per class for the smallest single additive perturbation (L2 penalty, no mask) that flips most clean images to that class. A backdoored model should have one class reachable with an anomalously small universal perturbation, regardless of the trigger's shape, so the detector should transfer to trigger families it was not tuned on.",
+  "source": {
+    "type": "paper",
+    "title": "Universal adversarial perturbations",
+    "authors": "Moosavi-Dezfooli, Fawzi, Fawzi, Frossard",
+    "year": 2017,
+    "venue": "CVPR"
+  },
+  "direction": "robustness/backdoors/backdoor-detection",
+  "testbed": "backdoor",
+  "prediction": {
+    "safety_min_effect": 0.0,
+    "mechanism": {
+      "diagnostic": "target_recovery",
+      "direction": "higher",
+      "mode": "absolute",
+      "threshold": 0.75
+    }
+  }
+}

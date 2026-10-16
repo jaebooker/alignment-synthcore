@@ -1,0 +1,22 @@
+{
+  "title": "Exact sparse inference instead of an amortized SAE encoder",
+  "description": "Learn the feature dictionary with the method of optimal directions: infer codes by orthogonal matching pursuit, then solve the dictionary in closed form by least squares. An SAE's linear encoder must pick active features in one shot, and when a child feature only fires with its parent it can fold the child into the parent's latent (absorption). Exact per-sample inference explains each activation with whichever atoms jointly fit it best, so child directions should be recovered more cleanly.",
+  "source": {
+    "type": "paper",
+    "title": "Method of optimal directions for frame design",
+    "authors": "Engan, Aase, Husoy",
+    "year": 1999,
+    "venue": "ICASSP"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "testbed": "planted_interp",
+  "prediction": {
+    "safety_min_effect": 0.0,
+    "mechanism": {
+      "diagnostic": "child_mmcs",
+      "direction": "higher",
+      "mode": "relative",
+      "min_effect": 0.01
+    }
+  }
+}

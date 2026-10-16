@@ -1,0 +1,22 @@
+{
+  "title": "Spherical k-means as a feature dictionary",
+  "description": "When features are sparse, most activation vectors are dominated by one feature, so their directions cluster on the unit sphere around the true feature directions. Clustering normalized activations with cosine k-means should place one centroid per feature, with less redundancy between atoms than a TopK SAE, and needs no sparsity hyperparameter.",
+  "source": {
+    "type": "paper",
+    "title": "Concept decompositions for large sparse text data using clustering",
+    "authors": "Dhillon, Modha",
+    "year": 2001,
+    "venue": "Machine Learning"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "testbed": "planted_interp",
+  "prediction": {
+    "safety_min_effect": 0.0,
+    "mechanism": {
+      "diagnostic": "redundancy",
+      "direction": "lower",
+      "mode": "relative",
+      "min_effect": 0.0
+    }
+  }
+}
