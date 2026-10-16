@@ -33,6 +33,9 @@ def get_testbed(name: str):
     if name == "backdoor":
         from testbeds.backdoor.testbed import BackdoorDetection
         return BackdoorDetection()
+    if name == "reward_hacking":
+        from testbeds.reward_hacking.testbed import RewardHacking
+        return RewardHacking()
     raise KeyError(f"unknown testbed {name!r}")
 
 

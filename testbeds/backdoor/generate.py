@@ -28,7 +28,7 @@ CACHE = Path(__file__).resolve().parents[2] / "results" / "_cache" / "backdoor"
 POPULATIONS = {
     ("dev", "toy"): (32, {"clean": 8, "patch": 8}),
     ("dev", "full"): (64, {"clean": 16, "patch": 8, "blend": 8}),
-    ("test", "full"): (64, {"clean": 24, "patch": 8, "blend": 8, "pixel": 12}),
+    ("test", "full"): (64, {"clean": 48, "patch": 8, "blend": 8, "pixel": 48}),
 }
 HELDOUT_FAMILY = "pixel"
 DEV_FAMILIES = ["patch", "blend"]
@@ -99,8 +99,8 @@ def accuracy(model, X, y):
 def make_one(family, hidden, seed, D):
     Xtr, ytr = D["train"]
     Xte, yte = D["test"]
-    for attempt in range(6):
-        s = seed * 10 + attempt
+    for attempt in range(20):
+        s = seed * 100 + attempt if attempt >= 10 else seed * 10 + attempt
         rng = np.random.default_rng(s)
         if family == "clean":
             model = train(Xtr, ytr, hidden, s)
@@ -130,11 +130,12 @@ def make_one(family, hidden, seed, D):
 def population(split, config):
     """Fixed per (split, config). Cached to disk."""
     CACHE.mkdir(parents=True, exist_ok=True)
-    path = CACHE / f"pop_{split}_{config}_{POISON_RATE}_{BLEND_ALPHA}_{N_CLEAN_VAL}_{MIN_ASR}.pt"
+    hidden, counts = POPULATIONS[(split, config)]
+    key = "_".join(f"{f}{c}" for f, c in counts.items())
+    path = CACHE / f"pop_{split}_{config}_h{hidden}_{key}_{POISON_RATE}_{BLEND_ALPHA}_{N_CLEAN_VAL}_{MIN_ASR}.pt"
     if path.exists():
         return torch.load(path, weights_only=False)
     torch.set_num_threads(2)
-    hidden, counts = POPULATIONS[(split, config)]
     D = data()
     models, i = [], 0
     for family, count in counts.items():

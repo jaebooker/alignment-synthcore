@@ -18,6 +18,7 @@ from scipy.stats import beta
 ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / "results"
 NOT_TESTED = {"implementation_failed", "untestable"}
+MIN_IDEAS = 5  # below this a direction's reading is marked tentative
 
 
 def rate(k, n):
@@ -60,7 +61,9 @@ def main():
                            "untestable": sum(x["verdict"] == "untestable" for x in rs),
                            "implementation_failed": sum(x["verdict"] == "implementation_failed" for x in rs),
                            "capability_confounded_wins": sum("capability_confounded" in x["flags"] for x in rs),
-                           "mechanism_rate": mech, "win_rate": win, "reading": quadrant(mech, win)})
+                           "mechanism_rate": mech, "win_rate": win,
+                           "reading": quadrant(mech, win) + ("" if len(tested) >= MIN_IDEAS
+                                                             else f" (tentative: n<{MIN_IDEAS})")})
 
     (RESULTS / "summary.json").write_text(json.dumps({"ideas": rows, "directions": directions}, indent=2))
 

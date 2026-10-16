@@ -28,8 +28,8 @@ def _auroc(scores, labels):
 
 class BackdoorDetection(Testbed):
     name = "backdoor"
-    version = "0.1"
-    safety_metric = "auroc_heldout"  # test: clean vs blend. dev/toy: clean vs all backdoored
+    version = "0.2"  # 0.2: 48 clean + 48 held-out pixel models in test (was 24 + 12)
+    safety_metric = "auroc_heldout"  # test: clean vs held-out pixel family. dev/toy: clean vs all backdoored
     capability_metric = None  # detection does not modify the model
     diagnostics = {"auroc_in_dist": True, "target_recovery": True}
     evaluator_files = [str(HERE / "generate.py"), str(HERE / "testbed.py"), str(HERE / "public.py")]
