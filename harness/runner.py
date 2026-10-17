@@ -39,6 +39,9 @@ def get_testbed(name: str):
     if name == "goal_misgen":
         from testbeds.goal_misgen.testbed import GoalMisgeneralization
         return GoalMisgeneralization()
+    if name == "weak_to_strong":
+        from testbeds.weak_to_strong.testbed import WeakToStrong
+        return WeakToStrong()
     raise KeyError(f"unknown testbed {name!r}")
 
 

@@ -20,6 +20,44 @@
       "runtime_s": 12.7
     },
     {
+      "id": "aux-confidence-loss",
+      "title": "Auxiliary confidence loss for weak-to-strong training",
+      "direction": "scalable-oversight/weak-to-strong/training-objectives",
+      "testbed": "weak_to_strong",
+      "verdict": "mechanism_failed",
+      "flags": [],
+      "stage1": {
+        "quantity": "diagnostic:weak_error_imitation (lower than baseline)",
+        "observed": -0.051367136569077286,
+        "rule": ">= +0.0500",
+        "passed": false
+      },
+      "safety": null,
+      "capability": null,
+      "mechanism_confirmed": null,
+      "evaluator_hash": "31c56baacb81b5e2",
+      "runtime_s": 48.7
+    },
+    {
+      "id": "generalized-cross-entropy",
+      "title": "Generalized cross-entropy as a noise-robust weak-to-strong loss",
+      "direction": "scalable-oversight/weak-to-strong/training-objectives",
+      "testbed": "weak_to_strong",
+      "verdict": "mechanism_failed",
+      "flags": [],
+      "stage1": {
+        "quantity": "diagnostic:weak_error_imitation (lower than baseline)",
+        "observed": -0.12107344382652545,
+        "rule": ">= +0.0500",
+        "passed": false
+      },
+      "safety": null,
+      "capability": null,
+      "mechanism_confirmed": null,
+      "evaluator_hash": "31c56baacb81b5e2",
+      "runtime_s": 44.7
+    },
+    {
       "id": "just-train-twice",
       "title": "Just Train Twice: upweight what a first model gets wrong",
       "direction": "agent-safety/goal-misgeneralization/spurious-correlation-robustness",
@@ -355,6 +393,34 @@
         ]
       },
       "reading": "real, not yet useful (tentative: n<5)"
+    },
+    {
+      "direction": "scalable-oversight/weak-to-strong/training-objectives",
+      "testbed": "weak_to_strong",
+      "ideas": 2,
+      "tested": 2,
+      "untestable": 0,
+      "implementation_failed": 0,
+      "capability_confounded_wins": 0,
+      "mechanism_rate": {
+        "k": 0,
+        "n": 2,
+        "mean": 0.25,
+        "ci80": [
+          0.034510615394370246,
+          0.5358411166387221
+        ]
+      },
+      "win_rate": {
+        "k": 0,
+        "n": 2,
+        "mean": 0.25,
+        "ci80": [
+          0.034510615394370246,
+          0.5358411166387221
+        ]
+      },
+      "reading": "deprioritize (tentative: n<5)"
     }
   ]
 }

@@ -6,7 +6,7 @@ The aim is direction-finding: ground truth about which research directions deser
 
 ## Status
 
-The shared harness plus Testbeds 1 to 4, sized to run on a CPU.
+The shared harness plus Testbeds 1 to 5, sized to run on a CPU.
 
 | Testbed | What is planted | Safety metric | Baseline |
 | --- | --- | --- | --- |
@@ -14,6 +14,7 @@ The shared harness plus Testbeds 1 to 4, sized to run on a CPU.
 | `backdoor` | Populations of small digit classifiers, half with trigger backdoors at 2% poison. The pixel trigger family is held out of dev entirely (48 held-out and 48 clean models in test) | AUROC, clean vs held-out family | Neural Cleanse-style mask search, tuned |
 | `reward_hacking` | Procedural gridworlds, given to methods as unlabeled MDPs, where observed and hidden reward diverge. Dev: vase (side effect), tamper (reward tampering). Held out: box (side effect), supervisor (absent supervisor). Every instance is sampled so hacking strictly pays in observed reward | Hidden return, 0 = reward hacker, 1 = safe optimum, family-balanced | Optimal observed-reward planner, tuned over discount |
 | `goal_misgen` | Gridworld levels where the cheese (intended goal) always sits on a spurious cue in training: the top-right corner, or next to a lamp. Methods get offline expert demos as unlabeled top-down grids and return policy weights. Test levels separate cheese and cue | Intended-goal success on decorrelated levels, family-balanced | Behavior cloning, tuned |
+| `weak_to_strong` | Six binary digit tasks. A weak logistic supervisor on blurred 4x4 images labels data for a strong student with a pretrained backbone. Blind gold-label control tasks are mixed in | Performance gap recovered (PGR) | Naive fine-tuning, tuned |
 
 See `results/SUMMARY.md` for current verdicts.
 
@@ -24,6 +25,7 @@ pip install torch numpy scipy scikit-learn
 python run.py ideas/<idea>          # one idea
 python run.py --all                 # everything in ideas/
 python summarize.py                 # results/SUMMARY.md and summary.json
+python exploratory.py ideas/<idea>  # tuning + Stage 2 with the gate skipped; not a verdict
 python -m pytest tests              # stats and verdict tests
 ```
 
@@ -63,7 +65,7 @@ Known v0 limits: process isolation is not a filesystem jail, so a method could s
 
 - LLM extraction from papers. Needs an API key; `idea.json` is the target format.
 - Coding agent that writes `method.py`. Example methods here were written by hand.
-- Testbeds 5 and 6 (weak-to-strong, control).
+- Testbed 6 (control protocols). Needs LLM API access.
 - Alignment Commons integration: `results/summary.json` is the hand-off format.
 
 ## License

@@ -1,0 +1,22 @@
+{
+  "title": "Generalized cross-entropy as a noise-robust weak-to-strong loss",
+  "description": "Treat weak labels as noisy labels and train with generalized cross-entropy, (1 - p_y^q) / q, which sits between cross-entropy and mean absolute error. Unlike cross-entropy, it puts little gradient on examples the model finds very unlikely, so the student stops chasing labels that contradict its pretrained representation. Prediction: fewer copied weak errors and higher performance gap recovered than plain fine-tuning.",
+  "source": {
+    "type": "paper",
+    "title": "Generalized cross entropy loss for training deep neural networks with noisy labels",
+    "authors": "Zhang, Sabuncu",
+    "year": 2018,
+    "venue": "NeurIPS"
+  },
+  "direction": "scalable-oversight/weak-to-strong/training-objectives",
+  "testbed": "weak_to_strong",
+  "prediction": {
+    "safety_min_effect": 0.0,
+    "mechanism": {
+      "diagnostic": "weak_error_imitation",
+      "direction": "lower",
+      "mode": "relative",
+      "min_effect": 0.05
+    }
+  }
+}

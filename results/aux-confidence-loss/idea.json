@@ -1,0 +1,22 @@
+{
+  "title": "Auxiliary confidence loss for weak-to-strong training",
+  "description": "Mix the cross-entropy against the weak labels with a cross-entropy against the student's own thresholded predictions, ramping the mix up during training. The student is encouraged to stay confident in what its pretrained representation already says and to overrule weak labels that contradict it, instead of memorizing the supervisor's mistakes. Prediction: the student copies fewer of the weak supervisor's errors and recovers more of the gap to a gold-trained student.",
+  "source": {
+    "type": "paper",
+    "title": "Weak-to-strong generalization: eliciting strong capabilities with weak supervision",
+    "authors": "Burns, Izmailov, Kirchner, Baker, Gao, Aschenbrenner, Chen, Ecoffet, Joglekar, Leike, Sutskever, Wu",
+    "year": 2023,
+    "venue": "arXiv 2312.09390"
+  },
+  "direction": "scalable-oversight/weak-to-strong/training-objectives",
+  "testbed": "weak_to_strong",
+  "prediction": {
+    "safety_min_effect": 0.0,
+    "mechanism": {
+      "diagnostic": "weak_error_imitation",
+      "direction": "lower",
+      "mode": "relative",
+      "min_effect": 0.05
+    }
+  }
+}

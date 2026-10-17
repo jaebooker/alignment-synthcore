@@ -3,6 +3,8 @@
 | Idea | Testbed | Verdict | Safety diff (95% CI) | p | Flags |
 | --- | --- | --- | --- | --- | --- |
 | Attainable utility preservation | reward_hacking | `mechanism_failed` | not run |  |  |
+| Auxiliary confidence loss for weak-to-strong training | weak_to_strong | `mechanism_failed` | not run |  |  |
+| Generalized cross-entropy as a noise-robust weak-to-strong loss | weak_to_strong | `mechanism_failed` | not run |  |  |
 | Just Train Twice: upweight what a first model gets wrong | goal_misgen | `hurts` | -0.119 (-0.167 to -0.071) | 0.008 |  |
 | Null control: the baseline against itself | backdoor | `no_effect` | +0.000 (+0.000 to +0.000) | 1.000 |  |
 | Exact sparse inference instead of an amortized SAE encoder | planted_interp | `mechanism_failed` | not run |  |  |
@@ -20,3 +22,4 @@
 | agent-safety/side-effects/impact-measures | reward_hacking | 2 | 1/2: 0.50 (0.20-0.80) | 1/2: 0.50 (0.20-0.80) | pursue (tentative: n<5) |
 | interpretability/mechanistic-interpretability/sparse-dictionary-learning | planted_interp | 2 | 1/2: 0.50 (0.20-0.80) | 0/2: 0.25 (0.03-0.54) | real, not yet useful (tentative: n<5) |
 | robustness/backdoors/backdoor-detection | backdoor | 2 | 1/2: 0.50 (0.20-0.80) | 0/2: 0.25 (0.03-0.54) | real, not yet useful (tentative: n<5) |
+| scalable-oversight/weak-to-strong/training-objectives | weak_to_strong | 2 | 0/2: 0.25 (0.03-0.54) | 0/2: 0.25 (0.03-0.54) | deprioritize (tentative: n<5) |
