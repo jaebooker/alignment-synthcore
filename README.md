@@ -6,13 +6,14 @@ The aim is direction-finding: ground truth about which research directions deser
 
 ## Status
 
-The shared harness plus Testbeds 1 to 3, sized to run on a CPU.
+The shared harness plus Testbeds 1 to 4, sized to run on a CPU.
 
 | Testbed | What is planted | Safety metric | Baseline |
 | --- | --- | --- | --- |
 | `planted_interp` | Toy superposition models. Feature directions are known, a share of features only fire with a parent feature (the absorption setting), and activations carry noise | Mean max cosine similarity to the planted features | TopK SAE, tuned |
 | `backdoor` | Populations of small digit classifiers, half with trigger backdoors at 2% poison. The pixel trigger family is held out of dev entirely (48 held-out and 48 clean models in test) | AUROC, clean vs held-out family | Neural Cleanse-style mask search, tuned |
 | `reward_hacking` | Procedural gridworlds, given to methods as unlabeled MDPs, where observed and hidden reward diverge. Dev: vase (side effect), tamper (reward tampering). Held out: box (side effect), supervisor (absent supervisor). Every instance is sampled so hacking strictly pays in observed reward | Hidden return, 0 = reward hacker, 1 = safe optimum, family-balanced | Optimal observed-reward planner, tuned over discount |
+| `goal_misgen` | Gridworld levels where the cheese (intended goal) always sits on a spurious cue in training: the top-right corner, or next to a lamp. Methods get offline expert demos as unlabeled top-down grids and return policy weights. Test levels separate cheese and cue | Intended-goal success on decorrelated levels, family-balanced | Behavior cloning, tuned |
 
 See `results/SUMMARY.md` for current verdicts.
 
@@ -43,7 +44,7 @@ Make `ideas/<slug>/` with two files.
 
 `mode: relative` means the diagnostic must beat the baseline by `min_effect` on the toy config. `mode: absolute` means the method's own diagnostic must clear `threshold`. With no mechanism, the gate uses the safety metric against the baseline.
 
-`method.py` defines `HPARAMS` (a list; the first entry is the default, and the whole list is the tuning grid, capped at 8 like the baseline's) and `run(tasks, hparams, seed) -> list of outputs`. See each testbed's `testbed.py` docstring for its task and output format.
+`method.py` defines `HPARAMS` (a literal list of dicts, read without importing the file, so no names or expressions inside it; the first entry is the default, and the whole list is the tuning grid, capped at 8 like the baseline's) and `run(tasks, hparams, seed) -> list of outputs`. See each testbed's `testbed.py` docstring for its task and output format.
 
 ## Pipeline
 
@@ -62,7 +63,7 @@ Known v0 limits: process isolation is not a filesystem jail, so a method could s
 
 - LLM extraction from papers. Needs an API key; `idea.json` is the target format.
 - Coding agent that writes `method.py`. Example methods here were written by hand.
-- Testbeds 4 to 6 (goal misgeneralization, weak-to-strong, control).
+- Testbeds 5 and 6 (weak-to-strong, control).
 - Alignment Commons integration: `results/summary.json` is the hand-off format.
 
 ## License
