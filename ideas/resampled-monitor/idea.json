@@ -1,0 +1,22 @@
+{
+  "title": "Resampled trusted monitor",
+  "description": "Ask the trusted model for its suspicion score several times and average the draws. A single integer rating ties many submissions at the same value, so a fixed audit budget is spent partly at random among the tie. Averaging independent draws breaks those ties and reduces noise in the ranking, which should push more attacks above the audit threshold at the same false-positive budget. Costs k times more trusted-model calls.",
+  "source": {
+    "type": "paper",
+    "title": "AI control: improving safety despite intentional subversion",
+    "authors": "Greenblatt, Shlegeris, Sachan, Roger",
+    "year": 2023,
+    "venue": "arXiv 2312.06942"
+  },
+  "direction": "ai-control/monitoring/trusted-monitoring",
+  "testbed": "control",
+  "prediction": {
+    "safety_min_effect": 0.0,
+    "mechanism": {
+      "diagnostic": "auroc",
+      "direction": "higher",
+      "mode": "relative",
+      "min_effect": 0.02
+    }
+  }
+}

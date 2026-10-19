@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 results/*.log
 .pytest_cache/
+
+# secrets: never commit
+.env
+.env.*
+!.env.example

@@ -42,6 +42,9 @@ def get_testbed(name: str):
     if name == "weak_to_strong":
         from testbeds.weak_to_strong.testbed import WeakToStrong
         return WeakToStrong()
+    if name == "control":
+        from testbeds.control.testbed import TrustedMonitoring
+        return TrustedMonitoring()
     raise KeyError(f"unknown testbed {name!r}")
 
 
