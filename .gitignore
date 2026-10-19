@@ -8,3 +8,6 @@ results/*.log
 .env
 .env.*
 !.env.example
+
+# scratch transfers from the cloud workspace
+results/_transfer/

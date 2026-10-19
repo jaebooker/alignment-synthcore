@@ -14,6 +14,7 @@ from pathlib import Path
 import numpy as np
 
 from .stats import paired_test
+from .testbed import Instance
 from .verdict import compute_verdict
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -79,6 +80,8 @@ def run_method(tb, method_path: Path, inst, hparams: dict, seed: int, timeout=36
 def run_arm(tb, method_path, split, config, seed, hparams) -> dict:
     inst = tb.instance(split, config, seed)
     outputs = run_method(tb, method_path, inst, hparams, seed)
+    if inst.probe is not None:  # after the main run, so its outputs cannot depend on the probe
+        inst.private["probe_outputs"] = run_method(tb, method_path, Instance(public=inst.probe), hparams, seed)
     try:
         return tb.evaluate(outputs, inst, seed)
     except (ValueError, KeyError, TypeError) as e:

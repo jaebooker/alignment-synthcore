@@ -13,6 +13,7 @@
 from __future__ import annotations
 
 import hashlib
+import http.client
 import json
 import os
 import time
@@ -180,7 +181,7 @@ def ask(prompt: str, model: str, system: str = "", max_tokens: int = 1024, tempe
                 hint = (" (a network proxy rejected the request before it reached Anthropic; "
                         "run this from a normal terminal, not a sandboxed shell)")
             raise RuntimeError(f"API error {e.code}: {body!r}{hint}") from None
-        except (urllib.error.URLError, ConnectionError, TimeoutError) as e:
+        except (urllib.error.URLError, ConnectionError, TimeoutError, http.client.HTTPException) as e:  # incl. IncompleteRead
             if "CERTIFICATE_VERIFY_FAILED" in str(e):
                 raise RuntimeError("SSL certificates missing. On a python.org Mac install, run "
                                    "'Install Certificates.command' from the Python folder in Applications, "

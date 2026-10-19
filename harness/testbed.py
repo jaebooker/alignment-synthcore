@@ -16,6 +16,10 @@ class Instance:
     """
     public: list
     private: dict = field(default_factory=dict)
+    # Optional public input for a second, separate run of the same method and hparams,
+    # made after the main run. Its outputs are stored as private["probe_outputs"]
+    # (used by the control testbed's adaptive red team to query the deployed monitor).
+    probe: list | None = None
 
 
 class Testbed:

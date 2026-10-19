@@ -3,7 +3,8 @@
     CONTROL_LIVE=1 python3 -m testbeds.control.collect_monitor <path/to/method.py> [more ...]
 
 Runs a monitor over every item the harness will score (toy, dev and test splits, every
-HPARAMS entry) so its trusted-model calls are cached. Scoring then runs anywhere,
+HPARAMS entry), plus the red team's probe copy of it on the backdoors, so its
+trusted-model calls are cached. Scoring then runs anywhere,
 offline. Nothing here executes model-written code. Spend is capped by the shared ledger.
 """
 from __future__ import annotations
@@ -39,9 +40,10 @@ def collect(path: Path):
     jobs = [("dev", "toy", grid[0])] + [(s, "full", hp) for s in ("dev", "test") for hp in grid]
     lib = mod.ask_trusted.__globals__["_client"]({"llm_path": str(HERE / "llm.py")})  # the instance methods use
     for split, config, hp in jobs:
-        task, _ = items.build(split, config)
+        task, priv = items.build(split, config)
         before, live0, trunc0 = llm.spent_usd(), lib.STATS["live"], lib.STATS["truncated"]
         mod.run(task, hp, 0)
+        mod.run(priv["probe_public"], hp, 0)
         live, trunc = lib.STATS["live"] - live0, lib.STATS["truncated"] - trunc0
         print(f"  {path.parent.name or path.stem} {split}/{config} {hp}: +${llm.spent_usd() - before:.4f} "
               f"(total ${llm.spent_usd():.3f} of ${llm.cap_usd():.2f}); new calls {live}, cut off {trunc}", flush=True)
