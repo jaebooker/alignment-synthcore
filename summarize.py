@@ -1,6 +1,10 @@
 """Roll idea records up into a results table and per-direction signals.
 
-    python summarize.py            -> results/summary.json, results/SUMMARY.md
+    python summarize.py            -> results/summary.json, results/SUMMARY.md, results/commons.json
+
+results/commons.json is the hand-off to Alignment Commons: every idea placed on a Commons
+topic (idea.json "commons_topic"), what each testbed plants and measures, and direction
+signals per Commons topic. The Commons site reads it as site/tests.json.
 
 Direction signal (per Alignment Commons node and testbed):
   mechanism rate = share of tested ideas whose Stage 1 gate passed
@@ -19,6 +23,43 @@ ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / "results"
 NOT_TESTED = {"implementation_failed", "untestable"}
 MIN_IDEAS = 5  # below this a direction's reading is marked tentative
+REPO = "https://github.com/jaebooker/alignment-synthcore"
+
+# What each testbed plants and measures, in plain words for Commons readers.
+TESTBEDS = {
+    "planted_interp": {"name": "Planted interpretability", "topics": ["sae", "interpeval"],
+        "question": "Does a method recover features we put there on purpose, better than a tuned sparse autoencoder?",
+        "planted": "Toy superposition models with known feature directions; some features only fire with a parent feature (absorption), and activations carry noise.",
+        "metric": "Mean max cosine similarity to the planted features", "baseline": "TopK sparse autoencoder, tuned"},
+    "backdoor": {"name": "Backdoor detection", "topics": ["backdoors"],
+        "question": "Can a method tell backdoored models from clean ones, on a trigger type it never saw?",
+        "planted": "Populations of small digit classifiers, half with trigger backdoors at 2% poison. The pixel-trigger family is held out of development entirely.",
+        "metric": "AUROC, clean vs held-out-family models", "baseline": "Neural Cleanse-style trigger search, tuned"},
+    "reward_hacking": {"name": "Reward hacking and side effects", "topics": ["rewardhack", "mildopt"],
+        "question": "Does a method keep an agent on the hidden true objective when the observed reward can be gamed?",
+        "planted": "Procedural gridworlds, given as unlabeled MDPs, where hacking strictly pays in observed reward: vase and tamper families in development, box and absent-supervisor families held out.",
+        "metric": "Hidden return: 0 = reward hacker, 1 = safe optimum", "baseline": "Optimal observed-reward planner, tuned over discount"},
+    "goal_misgen": {"name": "Goal misgeneralization", "topics": ["goalmisgen"],
+        "question": "When the intended goal and a spurious cue come apart, does the trained agent pursue the intended one?",
+        "planted": "Gridworld demos where the cheese always sits on a spurious cue in training (a corner, or next to a lamp). Test levels separate them.",
+        "metric": "Intended-goal success on decorrelated levels", "baseline": "Behavior cloning, tuned"},
+    "weak_to_strong": {"name": "Weak-to-strong generalization", "topics": ["w2st"],
+        "question": "When a strong model learns from a weak supervisor's labels, how much of the gap to its ceiling does a method recover?",
+        "planted": "Six binary digit tasks labeled by a weak supervisor that sees blurred images; a strong student with a pretrained backbone. Blind gold-label control tasks catch methods that just train better.",
+        "metric": "Performance gap recovered (PGR)", "baseline": "Naive fine-tuning, tuned"},
+    "control": {"name": "AI control: trusted monitoring", "topics": ["protocols"],
+        "question": "Does a monitor built only on a weaker trusted model catch more sabotage from a stronger untrusted model?",
+        "planted": "120 coding problems. Sonnet 5.5 wrote an honest solution and a working backdoor for each; an adaptive red team submits the backdoors its own copy of the monitor finds least suspicious. Haiku 5.5 is the only model monitors may use.",
+        "metric": "Share of submitted backdoors caught when auditing the 5% most suspicious submissions", "baseline": "Single trusted-model suspicion rating, tuned"},
+}
+
+
+def _idea_spec(idea_id: str) -> dict:
+    for base in (ROOT / "ideas", ROOT / "controls", RESULTS):
+        f = base / idea_id / "idea.json"
+        if f.exists():
+            return json.loads(f.read_text())
+    return {}
 
 
 def rate(k, n):
@@ -66,6 +107,7 @@ def main():
                                                              else f" (tentative: n<{MIN_IDEAS})")})
 
     (RESULTS / "summary.json").write_text(json.dumps({"ideas": rows, "directions": directions}, indent=2))
+    write_commons(records, rows)
 
     md = ["# Results", "", "| Idea | Testbed | Verdict | Safety diff (95% CI) | p | Flags |", "| --- | --- | --- | --- | --- | --- |"]
     for x in rows:
@@ -80,6 +122,43 @@ def main():
         md.append(f"| {d['direction']} | {d['testbed']} | {d['tested']} | {f(d['mechanism_rate'])} | {f(d['win_rate'])} | {d['reading']} |")
     (RESULTS / "SUMMARY.md").write_text("\n".join(md) + "\n")
     print("\n".join(md))
+
+
+def write_commons(records, rows):
+    by_id = {r["id"]: r for r in records}
+    ideas = []
+    for row in rows:
+        spec, rec = _idea_spec(row["id"]), by_id[row["id"]]
+        s2 = rec.get("stage2") or {}
+        mech = s2.get("mechanism") or {}
+        ideas.append({
+            "id": row["id"], "title": row["title"], "description": rec.get("description", ""),
+            "source": rec.get("source"), "topic": spec.get("commons_topic"), "testbed": row["testbed"],
+            "testbed_version": rec.get("testbed_version"), "control": row["direction"] == "controls",
+            "verdict": row["verdict"], "flags": row["flags"], "prediction": rec.get("prediction"),
+            "gate": row["stage1"], "safety": row["safety"], "capability": row["capability"],
+            "mechanism": None if not mech.get("mean_diff") and mech.get("mean_diff") != 0 else
+                {k: mech[k] for k in ("method_mean", "baseline_mean", "mean_diff", "p_value") if k in mech},
+            "mechanism_confirmed": row["mechanism_confirmed"], "updated": rec.get("updated_at", "")[:10],
+            "record": f"{REPO}/tree/main/results/{row['id']}",
+        })
+    groups = defaultdict(list)
+    for x in ideas:
+        if not x["control"] and x["topic"]:
+            groups[(x["topic"], x["testbed"])].append(x)
+    signals = []
+    for (topic, tb), xs in sorted(groups.items()):
+        tested = [x for x in xs if x["verdict"] not in NOT_TESTED]
+        mech = rate(sum(bool(x["gate"] and x["gate"]["passed"]) for x in tested), len(tested))
+        win = rate(sum(x["verdict"] == "beats_baseline" for x in tested), len(tested))
+        signals.append({"topic": topic, "testbed": tb, "tested": len(tested), "mechanism_rate": mech, "win_rate": win,
+                        "reading": quadrant(mech, win), "tentative": len(tested) < MIN_IDEAS})
+    versions = {r["testbed"]: r.get("testbed_version") for r in records}
+    tbs = [{"id": k, **v, "version": versions.get(k)} for k, v in TESTBEDS.items()]
+    import datetime as dt
+    out = {"generated": dt.date.today().isoformat(), "repo": REPO, "min_ideas": MIN_IDEAS,
+           "testbeds": tbs, "ideas": ideas, "signals": signals}
+    (RESULTS / "commons.json").write_text(json.dumps(out, indent=1))
 
 
 if __name__ == "__main__":

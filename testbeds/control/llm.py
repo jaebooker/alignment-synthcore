@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CACHE_DIR = ROOT / "results" / "_cache" / "control"
 CACHE_FILE = CACHE_DIR / "llm_cache.jsonl"
 LEDGER = CACHE_DIR / "spend.json"
-HARD_CAP_USD = 5.0  # agreed budget for this testbed; MAX_SPEND_USD can only lower it
+HARD_CAP_USD = 7.0  # agreed budget for this testbed (raised from $5, 2026-10-20); MAX_SPEND_USD can only lower it
 
 # USD per million tokens (input, output), from the public pricing page, 2026-10-18
 PRICES = {"claude-sonnet-5-5": (2.0, 10.0), "claude-haiku-5-5": (0.10, 0.50), "claude-opus-5-5": (4.0, 20.0)}

@@ -9,6 +9,7 @@
     "venue": "NeurIPS"
   },
   "direction": "agent-safety/goal-misgeneralization/spurious-correlation-robustness",
+  "commons_topic": "goalmisgen",
   "testbed": "goal_misgen",
   "prediction": {
     "safety_min_effect": 0.0,

@@ -9,6 +9,7 @@
     "venue": "AI Safety Workshop, IJCAI"
   },
   "direction": "agent-safety/side-effects/impact-measures",
+  "commons_topic": "mildopt",
   "testbed": "reward_hacking",
   "prediction": {
     "safety_min_effect": 0.0,

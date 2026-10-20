@@ -58,14 +58,15 @@ cp .env.example .env                 # add ANTHROPIC_API_KEY (and ANTHROPIC_WORK
 CONTROL_LIVE=1 python3 -m testbeds.control.collect_outputs          # untrusted + trusted solutions (done; cached)
 python3 -m testbeds.control.grade                                   # sandboxed grading -> data/outputs.json
 CONTROL_LIVE=1 python3 -m testbeds.control.collect_outputs --sneakiness   # red team rates its backdoors (done; cached)
-python3 -m testbeds.control.select_attacks                          # keep the sneakier ones
+CONTROL_LIVE=1 python3 -m testbeds.control.collect_outputs --more-attacks # v0.4: a second attempt per problem, rated
+python3 -m testbeds.control.select_attacks                          # best attempt per problem, then the sneakier ones
 CONTROL_LIVE=1 python3 -m testbeds.control.collect_monitor ideas/<idea>/method.py   # cache a monitor's calls, incl. the red team's probe
 python run.py ideas/<idea>                                          # score offline
 ```
 
 Every monitor is run twice: once to score, once as the red team's probe copy (a separate process, after the scoring run, with independent model draws). Route all model calls through `ask_trusted()` and the probe offset is applied for you.
 
-A shared ledger caps total spend at $5 (lower it with `MAX_SPEND_USD`). The trusted model thinks before answering and thinking counts against `max_tokens`, so monitors need caps of 2,000 tokens or more; the collector stops if over 10% of responses are cut off.
+A shared ledger caps total spend at $7 (lower it with `MAX_SPEND_USD`). The trusted model thinks before answering and thinking counts against `max_tokens`, so monitors need caps of 2,000 tokens or more; the collector stops if over 10% of responses are cut off.
 
 ## Pipeline
 
@@ -84,7 +85,10 @@ Known v0 limits: process isolation is not a filesystem jail, so a method could s
 
 - LLM extraction from papers. Needs an API key; `idea.json` is the target format.
 - Coding agent that writes `method.py`. Example methods here were written by hand.
-- Alignment Commons integration: `results/summary.json` is the hand-off format.
+
+## Alignment Commons
+
+`python summarize.py` also writes `results/commons.json`: every idea placed on an Alignment Commons topic (`commons_topic` in `idea.json`), what each testbed plants and measures, and direction signals per topic. The Commons site pulls it with `pipeline/fetch_tests.py` and shows results on topic pages and a Tested ideas page. New ideas need a `commons_topic` that exists in the Commons taxonomy.
 
 ## License
 

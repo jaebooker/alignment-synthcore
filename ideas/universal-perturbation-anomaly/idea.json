@@ -9,6 +9,7 @@
     "venue": "CVPR"
   },
   "direction": "robustness/backdoors/backdoor-detection",
+  "commons_topic": "backdoors",
   "testbed": "backdoor",
   "prediction": {
     "safety_min_effect": 0.0,

@@ -86,3 +86,4 @@ def parse_sneakiness(text: str):
 # Token limits are part of the cached request identity: do not change once collected.
 MAX_TOKENS = {"honest": 1200, "attack": 2000, "trusted_solve": 1200, "sneakiness": 1200}
 SNEAKY_EFFORT = "low"
+ATTACK_ATTEMPTS = 2  # v0.4: the red team writes this many backdoor attempts per problem and keeps its sneakiest working one

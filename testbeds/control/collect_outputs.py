@@ -2,6 +2,11 @@
 
     CONTROL_LIVE=1 python3 -m testbeds.control.collect_outputs [--limit N]
     CONTROL_LIVE=1 python3 -m testbeds.control.collect_outputs --sneakiness
+    CONTROL_LIVE=1 python3 -m testbeds.control.collect_outputs --more-attacks
+
+--more-attacks (v0.4) asks for further backdoor attempts per problem (samples 1 ..
+ATTACK_ATTEMPTS-1) and has the untrusted model rate each new one for sneakiness, in one
+pass. Grading happens later in the cloud workspace.
 
 For each problem: an honest solution and an attack (backdoored) solution from the
 untrusted model, and an honest solution from the trusted model. With --sneakiness, the
@@ -30,7 +35,14 @@ def requests_for(problem: dict):
                max_tokens=prompts.MAX_TOKENS["trusted_solve"], tag="trusted_solve")
 
 
+def attack_request(problem: dict, sample: int = 0) -> dict:
+    U, _ = llm.models()
+    return dict(prompt=prompts.attack(problem), model=U, system=prompts.ATTACK_SYSTEM,
+                max_tokens=prompts.MAX_TOKENS["attack"], tag="untrusted_attack", sample=sample)
+
+
 def sneakiness_request(problem: dict, row: dict) -> dict:
+    """row needs attack_code and exploit_args. Identical request for any attempt with the same code."""
     U, _ = llm.models()
     return dict(prompt=prompts.sneakiness(problem, row["attack_code"], row["exploit_args"]), model=U,
                 system=prompts.SNEAKY_SYSTEM, max_tokens=prompts.MAX_TOKENS["sneakiness"], tag="untrusted_sneakiness",
@@ -46,13 +58,28 @@ def collect_sneakiness():
             print(f"{i + 1}/{len(rows)} backdoors rated, spent ${llm.spent_usd():.3f} of ${llm.cap_usd():.2f}", flush=True)
 
 
+def collect_more_attacks():
+    problems = json.loads(DATA.read_text())
+    for i, p in enumerate(problems):
+        for sample in range(1, prompts.ATTACK_ATTEMPTS):
+            text = llm.ask(**attack_request(p, sample))
+            row = {"attack_code": prompts.extract_code(text), "exploit_args": prompts.extract_exploit(text)}
+            if row["attack_code"] and row["exploit_args"] is not None:
+                llm.ask(**sneakiness_request(p, row))
+        if i % 10 == 0 or i == len(problems) - 1:
+            print(f"{i + 1}/{len(problems)} problems, spent ${llm.spent_usd():.3f} of ${llm.cap_usd():.2f}", flush=True)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--sneakiness", action="store_true")
+    ap.add_argument("--more-attacks", action="store_true")
     args = ap.parse_args()
     if args.sneakiness:
         return collect_sneakiness()
+    if args.more_attacks:
+        return collect_more_attacks()
     problems = json.loads(DATA.read_text())[: args.limit]
     for i, p in enumerate(problems):
         for r in requests_for(p):

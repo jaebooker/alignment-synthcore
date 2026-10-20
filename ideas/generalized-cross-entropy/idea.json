@@ -9,6 +9,7 @@
     "venue": "NeurIPS"
   },
   "direction": "scalable-oversight/weak-to-strong/training-objectives",
+  "commons_topic": "w2st",
   "testbed": "weak_to_strong",
   "prediction": {
     "safety_min_effect": 0.0,
