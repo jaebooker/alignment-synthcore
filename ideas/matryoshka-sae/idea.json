@@ -1,0 +1,24 @@
+{
+  "title": "Matryoshka sparse autoencoder",
+  "description": "Train a TopK SAE whose loss also asks each nested prefix of the dictionary (the first quarter, the first half, all of it) to reconstruct the input on its own. Early latents must carry general concepts, so a parent latent keeps firing when its child fires instead of handing that case to the child, and child latents only learn what the parent leaves unexplained. Prediction: less feature absorption, so child features are recovered more cleanly than by a plain TopK SAE.",
+  "source": {
+    "type": "paper",
+    "title": "Learning Multi-Level Features with Matryoshka Sparse Autoencoders",
+    "authors": "Bussmann, Nabeshima, Karvonen, Nanda",
+    "year": 2025,
+    "venue": "arXiv 2503.17547",
+    "url": "https://arxiv.org/abs/2503.17547"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "commons_topic": "sae",
+  "testbed": "planted_interp",
+  "prediction": {
+    "safety_min_effect": 0.0,
+    "mechanism": {
+      "diagnostic": "child_mmcs",
+      "direction": "higher",
+      "mode": "relative",
+      "min_effect": 0.01
+    }
+  }
+}

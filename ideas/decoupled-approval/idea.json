@@ -1,0 +1,18 @@
+{
+  "title": "Decoupled approval against tampering",
+  "description": "Query feedback about an action other than the one executed, so the agent cannot influence the feedback it is trained on.",
+  "source": {
+    "type": "paper",
+    "title": "Avoiding Tampering Incentives in Deep RL via Decoupled Approval",
+    "authors": "Uesato, Kumar, Krakovna, Everitt, Ngo, Legg",
+    "year": 2020,
+    "venue": "arXiv 2011.08827",
+    "url": "https://arxiv.org/abs/2011.08827"
+  },
+  "direction": "agent-safety/reward-hacking/tampering",
+  "commons_topic": "tampering",
+  "testbed": null,
+  "nearest_testbed": "reward_hacking",
+  "untestable_reason": "Needs an approval or feedback channel that can be queried about counterfactual actions. The reward-hacking testbed exposes a fixed reward table with no feedback mechanism to decouple.",
+  "prediction": null
+}

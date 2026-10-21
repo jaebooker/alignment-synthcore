@@ -1,0 +1,30 @@
+{
+  "id": "minimax-regret-levels",
+  "title": "Minimax-regret level design",
+  "description": "Train on levels chosen adversarially to maximize regret, so rare levels that separate the true goal from proxies get trained on.",
+  "source": {
+    "type": "paper",
+    "title": "Mitigating Goal Misgeneralization via Minimax Regret",
+    "authors": "Abdel Sadek, Farrugia-Roberts, Anwar, Erlebach, de Witt, Krueger, Dennis",
+    "year": 2025,
+    "venue": "arXiv 2507.03068",
+    "url": "https://arxiv.org/abs/2507.03068"
+  },
+  "direction": "agent-safety/goal-misgeneralization/unsupervised-environment-design",
+  "testbed": null,
+  "testbed_version": null,
+  "harness_version": "0.1.0",
+  "evaluator_hash": null,
+  "prediction": null,
+  "stage1": null,
+  "stage2": null,
+  "tuning": null,
+  "attempts": 0,
+  "nearest_testbed": "goal_misgen",
+  "verdict": "untestable",
+  "flags": [],
+  "reason": "Needs a level generator and online training. The goal-misgeneralization testbed gives a fixed offline dataset, so there are no levels to choose.",
+  "runtime_s": 0.0,
+  "updated_at": "2026-10-20T02:35:12+00:00",
+  "verdict_source": "idea declares no fitting testbed; reason recorded"
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Bootstrapping through an intermediate model",
+  "description": "Do not train the strong student on the weak labels directly. First train an intermediate model on them, here a linear probe on the student's frozen backbone, which has too little capacity to memorize label noise. Then relabel the training data with the intermediate model's predictions and fine-tune the full student on those. Prediction: the student copies fewer of the weak supervisor's errors and recovers more of the gap.",
+  "source": {
+    "type": "paper",
+    "title": "Weak-to-strong generalization: eliciting strong capabilities with weak supervision",
+    "authors": "Burns, Izmailov, Kirchner, Baker, Gao, Aschenbrenner, Chen, Ecoffet, Joglekar, Leike, Sutskever, Wu",
+    "year": 2023,
+    "venue": "arXiv 2312.09390",
+    "url": "https://arxiv.org/abs/2312.09390"
+  },
+  "direction": "scalable-oversight/weak-to-strong/training-objectives",
+  "commons_topic": "w2st",
+  "testbed": "weak_to_strong",
+  "prediction": {
+    "safety_min_effect": 0.0,
+    "mechanism": {
+      "diagnostic": "weak_error_imitation",
+      "direction": "lower",
+      "mode": "relative",
+      "min_effect": 0.05
+    }
+  }
+}

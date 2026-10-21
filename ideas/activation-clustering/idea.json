@@ -1,0 +1,18 @@
+{
+  "title": "Activation clustering for backdoor detection",
+  "description": "Cluster the last-layer activations of each class's training examples; poisoned examples form a small separate cluster.",
+  "source": {
+    "type": "paper",
+    "title": "Detecting Backdoor Attacks on Deep Neural Networks by Activation Clustering",
+    "authors": "Chen, Carvalho, Baracaldo, Ludwig, Edwards, Lee, Molloy, Srivastava",
+    "year": 2018,
+    "venue": "arXiv 1811.03728",
+    "url": "https://arxiv.org/abs/1811.03728"
+  },
+  "direction": "robustness/backdoors/backdoor-detection",
+  "commons_topic": "backdoors",
+  "testbed": null,
+  "nearest_testbed": "backdoor",
+  "untestable_reason": "Needs the model's poisoned training set. The backdoor testbed gives defenders only 100 clean images, so there is nothing poisoned to cluster. A data-poisoning variant of the testbed (defender sees the training set) would fit.",
+  "prediction": null
+}

@@ -43,6 +43,9 @@ def get_testbed(name: str):
     if name == "weak_to_strong":
         from testbeds.weak_to_strong.testbed import WeakToStrong
         return WeakToStrong()
+    if name == "planted_lm":
+        from testbeds.planted_lm.testbed import PlantedLM
+        return PlantedLM()
     if name == "control":
         from testbeds.control.testbed import TrustedMonitoring
         return TrustedMonitoring()
@@ -146,12 +149,33 @@ def _gate(tb, pred: dict, method_evals: list, base_evals: list) -> dict:
             "rule": f">= {me:+.4f}", "passed": bool(obs >= me and obs > 0)}
 
 
+def _record_untestable(idea_dir: Path, spec: dict, results_dir: Path, log=print) -> dict:
+    """No current testbed fits: record why, so the gap is visible next to the tested ideas."""
+    reason = spec.get("untestable_reason") or "no testbed"
+    record = {"id": idea_dir.name, "title": spec["title"], "description": spec["description"],
+              "source": spec.get("source"), "direction": spec.get("direction"), "testbed": None,
+              "testbed_version": None, "harness_version": HARNESS_VERSION, "evaluator_hash": None,
+              "prediction": spec.get("prediction"), "stage1": None, "stage2": None, "tuning": None,
+              "attempts": 0, "nearest_testbed": spec.get("nearest_testbed"),
+              "verdict": "untestable", "flags": [], "reason": reason, "runtime_s": 0.0,
+              "updated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+              "verdict_source": "idea declares no fitting testbed; reason recorded"}
+    out_dir = Path(results_dir) / idea_dir.name
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "record.json").write_text(json.dumps(record, indent=2))
+    shutil.copy(idea_dir / "idea.json", out_dir / "idea.json")
+    log(f"[{idea_dir.name}] VERDICT: untestable ({reason})")
+    return record
+
+
 def run_idea(idea_dir: Path, results_dir: Path = ROOT / "results", stage1_seeds=3, stage2_seeds=8,
              budget=8, log=print) -> dict:
     idea_dir = Path(idea_dir)
     spec = json.loads((idea_dir / "idea.json").read_text())
     method_path = idea_dir / "method.py"
     t0 = time.time()
+    if spec.get("testbed") is None:
+        return _record_untestable(idea_dir, spec, results_dir, log)
     tb = get_testbed(spec["testbed"])
     pred = spec["prediction"]
     mech = pred.get("mechanism")

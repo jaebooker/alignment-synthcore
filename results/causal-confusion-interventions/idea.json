@@ -1,0 +1,18 @@
+{
+  "title": "Targeted interventions against causal confusion",
+  "description": "Learn policies over many candidate causal graphs of the input, then pick the right graph through environment interaction or expert queries.",
+  "source": {
+    "type": "paper",
+    "title": "Causal Confusion in Imitation Learning",
+    "authors": "de Haan, Jayaraman, Levine",
+    "year": 2019,
+    "venue": "NeurIPS",
+    "url": "https://arxiv.org/abs/1905.11979"
+  },
+  "direction": "agent-safety/goal-misgeneralization/causal-confusion",
+  "commons_topic": "goalmisgen",
+  "testbed": null,
+  "nearest_testbed": "goal_misgen",
+  "untestable_reason": "The graph-selection step needs environment rollouts or expert queries. The goal-misgeneralization testbed is offline: methods get a fixed set of demonstrations and never act.",
+  "prediction": null
+}

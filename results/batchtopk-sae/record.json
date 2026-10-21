@@ -1,0 +1,167 @@
+{
+  "id": "batchtopk-sae",
+  "title": "BatchTopK sparse autoencoder",
+  "description": "Replace the per-sample TopK activation with a batch-level one: keep the batch size times k largest activations across the whole batch. Inputs that contain more features can use more latents and simple inputs fewer, with the same average sparsity. Prediction: in a setting where the number of active features varies a lot (children only fire with parents), the dictionary recovers the planted features at least as well as a per-sample TopK SAE.",
+  "source": {
+    "type": "paper",
+    "title": "BatchTopK Sparse Autoencoders",
+    "authors": "Bussmann, Leask, Nanda",
+    "year": 2024,
+    "venue": "arXiv 2412.06410",
+    "url": "https://arxiv.org/abs/2412.06410"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "testbed": "planted_interp",
+  "testbed_version": "0.1",
+  "harness_version": "0.1.0",
+  "evaluator_hash": "826b27e88e287edc",
+  "prediction": {
+    "safety_min_effect": 0.0
+  },
+  "stage1": {
+    "quantity": "safety:mmcs vs baseline",
+    "observed": -0.08545579349742856,
+    "rule": ">= +0.0000",
+    "passed": false,
+    "per_seed": [
+      {
+        "seed": 0,
+        "method": {
+          "safety": 0.8289529062282577,
+          "capability": 0.6180890073933787,
+          "diagnostics": {
+            "redundancy": 0.20802624452533142,
+            "recovery_rate": 0.35,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8849233241032161
+          },
+          "per_model": [
+            {
+              "mmcs": 0.8289529062282577,
+              "fve": 0.6180890073933787,
+              "recovery_rate": 0.35,
+              "redundancy": 0.20802624452533142,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8849233241032161
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9585042660921882,
+          "capability": 0.8248651955859174,
+          "diagnostics": {
+            "redundancy": 0.24872455794845072,
+            "recovery_rate": 0.9,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8945225921003924
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9585042660921882,
+              "fve": 0.8248651955859174,
+              "recovery_rate": 0.9,
+              "redundancy": 0.24872455794845072,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8945225921003924
+            }
+          ]
+        }
+      },
+      {
+        "seed": 1,
+        "method": {
+          "safety": 0.925909453327898,
+          "capability": 0.6812667660385696,
+          "diagnostics": {
+            "redundancy": 0.13521974913035475,
+            "recovery_rate": 0.75,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.9262156563429732
+          },
+          "per_model": [
+            {
+              "mmcs": 0.925909453327898,
+              "fve": 0.6812667660385696,
+              "recovery_rate": 0.75,
+              "redundancy": 0.13521974913035475,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.9262156563429732
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9315145978127204,
+          "capability": 0.8015007546700311,
+          "diagnostics": {
+            "redundancy": 0.3394724064137569,
+            "recovery_rate": 0.8,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8420252921750936
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9315145978127204,
+              "fve": 0.8015007546700311,
+              "recovery_rate": 0.8,
+              "redundancy": 0.3394724064137569,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8420252921750936
+            }
+          ]
+        }
+      },
+      {
+        "seed": 2,
+        "method": {
+          "safety": 0.8358304409815676,
+          "capability": 0.5856033570843526,
+          "diagnostics": {
+            "redundancy": 0.1521104405942647,
+            "recovery_rate": 0.3,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8075591080805751
+          },
+          "per_model": [
+            {
+              "mmcs": 0.8358304409815676,
+              "fve": 0.5856033570843526,
+              "recovery_rate": 0.3,
+              "redundancy": 0.1521104405942647,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8075591080805751
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9570413171251003,
+          "capability": 0.8144802139332289,
+          "diagnostics": {
+            "redundancy": 0.27364332618227716,
+            "recovery_rate": 0.9,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8963224685879082
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9570413171251003,
+              "fve": 0.8144802139332289,
+              "recovery_rate": 0.9,
+              "redundancy": 0.27364332618227716,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8963224685879082
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "stage2": null,
+  "tuning": null,
+  "attempts": 1,
+  "verdict": "mechanism_failed",
+  "flags": [],
+  "reason": "safety:mmcs vs baseline: observed -0.0855, needed >= +0.0000",
+  "runtime_s": 231.2,
+  "updated_at": "2026-10-20T02:43:39+00:00",
+  "verdict_source": "deterministic test code (paired-seed exact sign-flip permutation test)"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "mona",
+  "title": "Myopic optimization with non-myopic approval (MONA)",
+  "description": "Optimize only the immediate reward plus an overseer's approval of each step's long-term value, so the agent never learns multi-step plans that hack the reward.",
+  "source": {
+    "type": "paper",
+    "title": "MONA: Myopic Optimization with Non-myopic Approval Can Mitigate Multi-step Reward Hacking",
+    "authors": "Farquhar, Varma, Lindner, Elson, Biddulph, Goodfellow, Shah",
+    "year": 2025,
+    "venue": "arXiv 2501.13011",
+    "url": "https://arxiv.org/abs/2501.13011"
+  },
+  "direction": "agent-safety/reward-hacking/myopia",
+  "testbed": null,
+  "testbed_version": null,
+  "harness_version": "0.1.0",
+  "evaluator_hash": null,
+  "prediction": null,
+  "stage1": null,
+  "stage2": null,
+  "tuning": null,
+  "attempts": 0,
+  "nearest_testbed": "reward_hacking",
+  "verdict": "untestable",
+  "flags": [],
+  "reason": "Needs a non-myopic approval signal from an overseer. The reward-hacking testbed gives only the observed reward; adding an approval oracle would hand the method information the hidden reward contains. A version with a deliberately imperfect overseer would fit.",
+  "runtime_s": 0.0,
+  "updated_at": "2026-10-20T02:35:12+00:00",
+  "verdict_source": "idea declares no fitting testbed; reason recorded"
+}

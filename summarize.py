@@ -87,15 +87,18 @@ def main():
             "capability": None if not s2.get("capability") else {k: s2["capability"][k] for k in ("mean_diff", "ci95", "p_value")},
             "mechanism_confirmed": s2.get("mechanism_confirmed"),
             "evaluator_hash": r["evaluator_hash"], "runtime_s": r.get("runtime_s"),
+            "reason": r.get("reason") if r["verdict"] == "untestable" else None,
         })
 
     groups = defaultdict(list)
     for row in rows:
         if row["direction"] != "controls":
-            groups[(row["direction"], row["testbed"])].append(row)
+            groups[(row["direction"], row["testbed"] or "-")].append(row)
     directions = []
     for (d, tb), rs in sorted(groups.items()):
         tested = [x for x in rs if x["verdict"] not in NOT_TESTED]
+        if not tested:
+            continue  # nothing tested yet: no signal to report
         mech = rate(sum(x["stage1"]["passed"] for x in tested if x["stage1"]), len(tested))
         win = rate(sum(x["verdict"] == "beats_baseline" for x in tested), len(tested))
         directions.append({"direction": d, "testbed": tb, "ideas": len(rs), "tested": len(tested),
@@ -114,7 +117,7 @@ def main():
         s = x["safety"]
         diff = f"{s['mean_diff']:+.3f} ({s['ci95'][0]:+.3f} to {s['ci95'][1]:+.3f})" if s else "not run"
         p = f"{s['p_value']:.3f}" if s else ""
-        md.append(f"| {x['title']} | {x['testbed']} | `{x['verdict']}` | {diff} | {p} | {', '.join(x['flags'])} |")
+        md.append(f"| {x['title']} | {x['testbed'] or '-'} | `{x['verdict']}` | {diff} | {p} | {', '.join(x['flags'])} |")
     md += ["", "# Direction signals", "", "| Direction | Testbed | Tested | Mechanism rate (80% CI) | Win rate (80% CI) | Reading |",
            "| --- | --- | --- | --- | --- | --- |"]
     for d in directions:
@@ -140,11 +143,12 @@ def write_commons(records, rows):
             "mechanism": None if not mech.get("mean_diff") and mech.get("mean_diff") != 0 else
                 {k: mech[k] for k in ("method_mean", "baseline_mean", "mean_diff", "p_value") if k in mech},
             "mechanism_confirmed": row["mechanism_confirmed"], "updated": rec.get("updated_at", "")[:10],
+            "untestable_reason": row["reason"], "nearest_testbed": rec.get("nearest_testbed"),
             "record": f"{REPO}/tree/main/results/{row['id']}",
         })
     groups = defaultdict(list)
     for x in ideas:
-        if not x["control"] and x["topic"]:
+        if not x["control"] and x["topic"] and x["testbed"]:
             groups[(x["topic"], x["testbed"])].append(x)
     signals = []
     for (topic, tb), xs in sorted(groups.items()):

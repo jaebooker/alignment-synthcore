@@ -1,0 +1,18 @@
+{
+  "title": "Inference-time decomposition of activations (ITDA) (real LM activations)",
+  "description": "Build the dictionary from real activation examples with no gradient training: stream through activations, reconstruct each with matching pursuit over the current dictionary, and add the example as a new atom when the reconstruction is poor. The paper reports SAE-like quality at a small fraction of the cost. Prediction: recovers planted features at least as well as a tuned TopK SAE. Same idea and prediction as on the toy testbed, now on Pythia-70M activations with planted features, the scale these methods were designed for.",
+  "source": {
+    "type": "paper",
+    "title": "Inference-Time Decomposition of Activations (ITDA): A Scalable Approach to Interpreting Large Language Models",
+    "authors": "Leask, Nanda, Al Moubayed",
+    "year": 2025,
+    "venue": "arXiv 2505.17769",
+    "url": "https://arxiv.org/abs/2505.17769"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "commons_topic": "sae",
+  "testbed": "planted_lm",
+  "prediction": {
+    "safety_min_effect": 0.0
+  }
+}

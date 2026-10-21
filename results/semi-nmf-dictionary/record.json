@@ -1,0 +1,167 @@
+{
+  "id": "semi-nmf-dictionary",
+  "title": "Semi-NMF dictionary of activations",
+  "description": "Factor activations into nonnegative codes times an unconstrained dictionary with semi-nonnegative matrix factorization, solved by multiplicative updates instead of training an SAE. Features in these models fire with nonnegative magnitude, which matches the nonnegative-code assumption, and there is no amortized encoder to cause absorption. Prediction: recovers the planted feature directions at least as well as a tuned TopK SAE.",
+  "source": {
+    "type": "paper",
+    "title": "Decomposing MLP Activations into Interpretable Features via Semi-Nonnegative Matrix Factorization",
+    "authors": "Shafran, Geiger, Geva",
+    "year": 2025,
+    "venue": "arXiv 2506.10920",
+    "url": "https://arxiv.org/abs/2506.10920"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "testbed": "planted_interp",
+  "testbed_version": "0.1",
+  "harness_version": "0.1.0",
+  "evaluator_hash": "826b27e88e287edc",
+  "prediction": {
+    "safety_min_effect": 0.0
+  },
+  "stage1": {
+    "quantity": "safety:mmcs vs baseline",
+    "observed": -0.369683516577864,
+    "rule": ">= +0.0000",
+    "passed": false,
+    "per_seed": [
+      {
+        "seed": 0,
+        "method": {
+          "safety": 0.5816972825128572,
+          "capability": 0.42773043302529046,
+          "diagnostics": {
+            "redundancy": 0.48412698059647374,
+            "recovery_rate": 0.0,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.5519908758683129
+          },
+          "per_model": [
+            {
+              "mmcs": 0.5816972825128572,
+              "fve": 0.42773043302529046,
+              "recovery_rate": 0.0,
+              "redundancy": 0.48412698059647374,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.5519908758683129
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9585042660921882,
+          "capability": 0.8248651955859174,
+          "diagnostics": {
+            "redundancy": 0.24872455794845072,
+            "recovery_rate": 0.9,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8945225921003924
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9585042660921882,
+              "fve": 0.8248651955859174,
+              "recovery_rate": 0.9,
+              "redundancy": 0.24872455794845072,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8945225921003924
+            }
+          ]
+        }
+      },
+      {
+        "seed": 1,
+        "method": {
+          "safety": 0.5928120141387462,
+          "capability": 0.472606708529696,
+          "diagnostics": {
+            "redundancy": 0.4788158311910949,
+            "recovery_rate": 0.0,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.5070566374959864
+          },
+          "per_model": [
+            {
+              "mmcs": 0.5928120141387462,
+              "fve": 0.472606708529696,
+              "recovery_rate": 0.0,
+              "redundancy": 0.4788158311910949,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.5070566374959864
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9315145978127204,
+          "capability": 0.8015007546700311,
+          "diagnostics": {
+            "redundancy": 0.3394724064137569,
+            "recovery_rate": 0.8,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8420252921750936
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9315145978127204,
+              "fve": 0.8015007546700311,
+              "recovery_rate": 0.8,
+              "redundancy": 0.3394724064137569,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8420252921750936
+            }
+          ]
+        }
+      },
+      {
+        "seed": 2,
+        "method": {
+          "safety": 0.5635003346448134,
+          "capability": 0.4362505286474405,
+          "diagnostics": {
+            "redundancy": 0.4859429723464963,
+            "recovery_rate": 0.0,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.4895888270152397
+          },
+          "per_model": [
+            {
+              "mmcs": 0.5635003346448134,
+              "fve": 0.4362505286474405,
+              "recovery_rate": 0.0,
+              "redundancy": 0.4859429723464963,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.4895888270152397
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9570413171251003,
+          "capability": 0.8144802139332289,
+          "diagnostics": {
+            "redundancy": 0.27364332618227716,
+            "recovery_rate": 0.9,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8963224685879082
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9570413171251003,
+              "fve": 0.8144802139332289,
+              "recovery_rate": 0.9,
+              "redundancy": 0.27364332618227716,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8963224685879082
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "stage2": null,
+  "tuning": null,
+  "attempts": 1,
+  "verdict": "mechanism_failed",
+  "flags": [],
+  "reason": "safety:mmcs vs baseline: observed -0.3697, needed >= +0.0000",
+  "runtime_s": 155.9,
+  "updated_at": "2026-10-20T02:46:17+00:00",
+  "verdict_source": "deterministic test code (paired-seed exact sign-flip permutation test)"
+}

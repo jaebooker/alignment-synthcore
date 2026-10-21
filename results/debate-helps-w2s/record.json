@@ -1,0 +1,30 @@
+{
+  "id": "debate-helps-w2s",
+  "title": "Debate to improve weak supervision",
+  "description": "Let two strong-model instances debate, and train the weak supervisor on the debate transcripts so its labels improve.",
+  "source": {
+    "type": "paper",
+    "title": "Debate Helps Weak-to-Strong Generalization",
+    "authors": "Lang, Huang, Li",
+    "year": 2025,
+    "venue": "arXiv 2501.13124",
+    "url": "https://arxiv.org/abs/2501.13124"
+  },
+  "direction": "scalable-oversight/weak-to-strong/debate",
+  "testbed": null,
+  "testbed_version": null,
+  "harness_version": "0.1.0",
+  "evaluator_hash": null,
+  "prediction": null,
+  "stage1": null,
+  "stage2": null,
+  "tuning": null,
+  "attempts": 0,
+  "nearest_testbed": "weak_to_strong",
+  "verdict": "untestable",
+  "flags": [],
+  "reason": "Needs language models that can argue. The weak-to-strong testbed uses small image classifiers with no way to debate.",
+  "runtime_s": 0.0,
+  "updated_at": "2026-10-20T02:35:12+00:00",
+  "verdict_source": "idea declares no fitting testbed; reason recorded"
+}
