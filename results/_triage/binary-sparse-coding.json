@@ -1,0 +1,245 @@
+{
+  "id": "binary-sparse-coding",
+  "title": "Binary sparse coding",
+  "testbed": "planted_interp",
+  "verdict": "mechanism_failed",
+  "label": "weak_negative",
+  "next_step": "Verdict probably stands. Resolve the flagged caveat (widen the grid, more seeds) to make it conclusive.",
+  "flags": [
+    {
+      "flag": "grid_edge",
+      "detail": "best lr=0.001 is the lowest value tried (0.001 to 0.01); extend the grid before trusting the negative"
+    }
+  ],
+  "default_gate": {
+    "quantity": "safety:mmcs vs baseline",
+    "observed": -0.2151213930070006,
+    "rule": ">= +0.0000",
+    "passed": false
+  },
+  "tuned_gate": {
+    "quantity": "safety:mmcs vs baseline",
+    "observed": -0.20042280781420072,
+    "rule": ">= +0.0000",
+    "passed": false,
+    "method_hparams": {
+      "k": 2,
+      "lr": 0.001,
+      "steps": 3000
+    },
+    "method_default_hparams": {
+      "k": 2,
+      "lr": 0.003,
+      "steps": 3000
+    },
+    "picked_default": false,
+    "baseline_hparams": {
+      "k": 3,
+      "lr": 0.003,
+      "steps": 3000
+    },
+    "method_tuning": [
+      {
+        "hparams": {
+          "k": 2,
+          "lr": 0.003,
+          "steps": 3000
+        },
+        "dev_safety": 0.8069884579788201
+      },
+      {
+        "hparams": {
+          "k": 1,
+          "lr": 0.003,
+          "steps": 3000
+        },
+        "dev_safety": 0.818950356570397
+      },
+      {
+        "hparams": {
+          "k": 3,
+          "lr": 0.003,
+          "steps": 3000
+        },
+        "dev_safety": 0.7744691578597392
+      },
+      {
+        "hparams": {
+          "k": 4,
+          "lr": 0.003,
+          "steps": 3000
+        },
+        "dev_safety": 0.713891756669289
+      },
+      {
+        "hparams": {
+          "k": 2,
+          "lr": 0.001,
+          "steps": 3000
+        },
+        "dev_safety": 0.8209032397473526
+      },
+      {
+        "hparams": {
+          "k": 3,
+          "lr": 0.001,
+          "steps": 3000
+        },
+        "dev_safety": 0.7583236484454793
+      },
+      {
+        "hparams": {
+          "k": 2,
+          "lr": 0.01,
+          "steps": 3000
+        },
+        "dev_safety": 0.77884352043193
+      },
+      {
+        "hparams": {
+          "k": 3,
+          "lr": 0.01,
+          "steps": 3000
+        },
+        "dev_safety": 0.7477757741538995
+      }
+    ],
+    "per_seed": [
+      {
+        "seed": 0,
+        "method": {
+          "safety": 0.7470717297698951,
+          "capability": 0.7016644473757006,
+          "diagnostics": {
+            "redundancy": 0.4581348850624515,
+            "recovery_rate": 0.2,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.5120029447186146
+          },
+          "per_model": [
+            {
+              "mmcs": 0.7470717297698951,
+              "fve": 0.7016644473757006,
+              "recovery_rate": 0.2,
+              "redundancy": 0.4581348850624515,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.5120029447186146
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9651271300231962,
+          "capability": 0.8014914039041465,
+          "diagnostics": {
+            "redundancy": 0.20309025141861362,
+            "recovery_rate": 0.9,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.9406318279912614
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9651271300231962,
+              "fve": 0.8014914039041465,
+              "recovery_rate": 0.9,
+              "redundancy": 0.20309025141861362,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.9406318279912614
+            }
+          ]
+        }
+      },
+      {
+        "seed": 1,
+        "method": {
+          "safety": 0.7724261923331701,
+          "capability": 0.684101882536985,
+          "diagnostics": {
+            "redundancy": 0.42095198483941515,
+            "recovery_rate": 0.2,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.5991287623634771
+          },
+          "per_model": [
+            {
+              "mmcs": 0.7724261923331701,
+              "fve": 0.684101882536985,
+              "recovery_rate": 0.2,
+              "redundancy": 0.42095198483941515,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.5991287623634771
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9560534503978839,
+          "capability": 0.7835309230551419,
+          "diagnostics": {
+            "redundancy": 0.19718029366399045,
+            "recovery_rate": 0.95,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.9755362999389297
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9560534503978839,
+              "fve": 0.7835309230551419,
+              "recovery_rate": 0.95,
+              "redundancy": 0.19718029366399045,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.9755362999389297
+            }
+          ]
+        }
+      },
+      {
+        "seed": 2,
+        "method": {
+          "safety": 0.752012047953141,
+          "capability": 0.6991428878425145,
+          "diagnostics": {
+            "redundancy": 0.5224608106369069,
+            "recovery_rate": 0.25,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.5342146817816832
+          },
+          "per_model": [
+            {
+              "mmcs": 0.752012047953141,
+              "fve": 0.6991428878425145,
+              "recovery_rate": 0.25,
+              "redundancy": 0.5224608106369069,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.5342146817816832
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9515978130777283,
+          "capability": 0.790565053827241,
+          "diagnostics": {
+            "redundancy": 0.2449684243881054,
+            "recovery_rate": 0.95,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.9719779975596601
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9515978130777283,
+              "fve": 0.790565053827241,
+              "recovery_rate": 0.95,
+              "redundancy": 0.2449684243881054,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.9719779975596601
+            }
+          ]
+        }
+      }
+    ],
+    "evaluator_hash": "826b27e88e287edc"
+  },
+  "tuned_skip_reason": null,
+  "review": null,
+  "method_changed_since_verdict": false,
+  "advisory": "Triage never changes a verdict. Labels say how far to trust it.",
+  "updated_at": "2026-10-21T22:56:52+00:00"
+}

@@ -11,3 +11,6 @@ results/*.log
 
 # scratch transfers from the cloud workspace
 results/_transfer/
+
+# triage checkpoints (resumable re-runs)
+results/_triage/_work/

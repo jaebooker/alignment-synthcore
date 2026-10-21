@@ -27,6 +27,25 @@ class MethodError(RuntimeError):
     pass
 
 
+class OutOfTime(RuntimeError):
+    """Raised when a resumable run passes its deadline. Finished arms are kept on disk."""
+
+
+# Resumable runs (run.py --resume). When RESUME is set, every finished arm is saved under
+# results/_cache/runs/, keyed on testbed, evaluator hash, method code hash, split, config,
+# seed and hparams, and reused on the next call. Off by default: plain runs are unchanged.
+RESUME = {"on": False, "deadline": None}
+RUNS = CACHE / "runs"
+
+
+def _arm_key(tb, method_path, split, config, seed, hparams) -> str:
+    import hashlib
+    method_hash = hashlib.sha256(Path(method_path).read_bytes()).hexdigest()
+    blob = json.dumps([tb.name, tb.version, tb.evaluator_hash(), method_hash, split, config, seed, hparams],
+                      sort_keys=True, default=str)
+    return hashlib.sha256(blob.encode()).hexdigest()[:32]
+
+
 def get_testbed(name: str):
     if name == "planted_interp":
         from testbeds.planted_interp.testbed import PlantedInterp
@@ -81,6 +100,24 @@ def run_method(tb, method_path: Path, inst, hparams: dict, seed: int, timeout=36
 
 
 def run_arm(tb, method_path, split, config, seed, hparams) -> dict:
+    if not RESUME["on"]:
+        return _run_arm(tb, method_path, split, config, seed, hparams)
+    path = RUNS / f"{_arm_key(tb, method_path, split, config, seed, hparams)}.pkl"
+    if path.exists():
+        with open(path, "rb") as f:
+            return pickle.load(f)
+    if RESUME["deadline"] is not None and time.time() > RESUME["deadline"]:
+        raise OutOfTime(f"budget reached before {Path(method_path).name} {split}/{config}/seed {seed}")
+    out = _run_arm(tb, method_path, split, config, seed, hparams)
+    RUNS.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".tmp")
+    with open(tmp, "wb") as f:
+        pickle.dump(out, f)
+    tmp.replace(path)
+    return out
+
+
+def _run_arm(tb, method_path, split, config, seed, hparams) -> dict:
     inst = tb.instance(split, config, seed)
     outputs = run_method(tb, method_path, inst, hparams, seed)
     if inst.probe is not None:  # after the main run, so its outputs cannot depend on the probe

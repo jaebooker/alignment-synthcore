@@ -1,0 +1,294 @@
+{
+  "id": "matryoshka-sae",
+  "title": "Matryoshka sparse autoencoder",
+  "testbed": "planted_interp",
+  "verdict": "mechanism_failed",
+  "label": "weak_negative",
+  "next_step": "Verdict probably stands. Resolve the flagged caveat (widen the grid, more seeds) to make it conclusive.",
+  "flags": [
+    {
+      "flag": "grid_edge",
+      "detail": "best k=2 is the lowest value tried (2 to 4); extend the grid before trusting the negative"
+    }
+  ],
+  "default_gate": {
+    "quantity": "diagnostic:child_mmcs (higher than baseline)",
+    "observed": -0.14148383078170645,
+    "rule": ">= +0.0100",
+    "passed": false
+  },
+  "tuned_gate": {
+    "quantity": "diagnostic:child_mmcs (higher than baseline)",
+    "observed": -0.2490827843092087,
+    "rule": ">= +0.0100",
+    "passed": false,
+    "method_hparams": {
+      "k": 2,
+      "lr": 0.003,
+      "steps": 3000,
+      "prefixes": [
+        0.5,
+        1.0
+      ]
+    },
+    "method_default_hparams": {
+      "k": 2,
+      "lr": 0.003,
+      "steps": 3000,
+      "prefixes": [
+        0.25,
+        0.5,
+        1.0
+      ]
+    },
+    "picked_default": false,
+    "baseline_hparams": {
+      "k": 3,
+      "lr": 0.003,
+      "steps": 3000
+    },
+    "method_tuning": [
+      {
+        "hparams": {
+          "k": 2,
+          "lr": 0.003,
+          "steps": 3000,
+          "prefixes": [
+            0.25,
+            0.5,
+            1.0
+          ]
+        },
+        "dev_safety": 0.8773081476031509
+      },
+      {
+        "hparams": {
+          "k": 3,
+          "lr": 0.003,
+          "steps": 3000,
+          "prefixes": [
+            0.25,
+            0.5,
+            1.0
+          ]
+        },
+        "dev_safety": 0.841580776807071
+      },
+      {
+        "hparams": {
+          "k": 2,
+          "lr": 0.003,
+          "steps": 3000,
+          "prefixes": [
+            0.5,
+            1.0
+          ]
+        },
+        "dev_safety": 0.8802006840351413
+      },
+      {
+        "hparams": {
+          "k": 3,
+          "lr": 0.003,
+          "steps": 3000,
+          "prefixes": [
+            0.5,
+            1.0
+          ]
+        },
+        "dev_safety": 0.8546914239793642
+      },
+      {
+        "hparams": {
+          "k": 2,
+          "lr": 0.001,
+          "steps": 3000,
+          "prefixes": [
+            0.25,
+            0.5,
+            1.0
+          ]
+        },
+        "dev_safety": 0.8674465566370969
+      },
+      {
+        "hparams": {
+          "k": 4,
+          "lr": 0.003,
+          "steps": 3000,
+          "prefixes": [
+            0.25,
+            0.5,
+            1.0
+          ]
+        },
+        "dev_safety": 0.7924714174330473
+      },
+      {
+        "hparams": {
+          "k": 2,
+          "lr": 0.01,
+          "steps": 3000,
+          "prefixes": [
+            0.125,
+            0.25,
+            0.5,
+            1.0
+          ]
+        },
+        "dev_safety": 0.875738335247836
+      },
+      {
+        "hparams": {
+          "k": 3,
+          "lr": 0.003,
+          "steps": 3000,
+          "prefixes": [
+            0.125,
+            0.25,
+            0.5,
+            1.0
+          ]
+        },
+        "dev_safety": 0.8379895605541683
+      }
+    ],
+    "per_seed": [
+      {
+        "seed": 0,
+        "method": {
+          "safety": 0.8567250119513004,
+          "capability": 0.8007906461463603,
+          "diagnostics": {
+            "redundancy": 0.4226261322711375,
+            "recovery_rate": 0.6,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.6568078392083714
+          },
+          "per_model": [
+            {
+              "mmcs": 0.8567250119513004,
+              "fve": 0.8007906461463603,
+              "recovery_rate": 0.6,
+              "redundancy": 0.4226261322711375,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.6568078392083714
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9651271300231962,
+          "capability": 0.8014914039041465,
+          "diagnostics": {
+            "redundancy": 0.20309025141861362,
+            "recovery_rate": 0.9,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.9406318279912614
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9651271300231962,
+              "fve": 0.8014914039041465,
+              "recovery_rate": 0.9,
+              "redundancy": 0.20309025141861362,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.9406318279912614
+            }
+          ]
+        }
+      },
+      {
+        "seed": 1,
+        "method": {
+          "safety": 0.8856496031913995,
+          "capability": 0.7974782540202039,
+          "diagnostics": {
+            "redundancy": 0.4213680630914586,
+            "recovery_rate": 0.65,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.7557199972627716
+          },
+          "per_model": [
+            {
+              "mmcs": 0.8856496031913995,
+              "fve": 0.7974782540202039,
+              "recovery_rate": 0.65,
+              "redundancy": 0.4213680630914586,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7557199972627716
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9560534503978839,
+          "capability": 0.7835309230551419,
+          "diagnostics": {
+            "redundancy": 0.19718029366399045,
+            "recovery_rate": 0.95,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.9755362999389297
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9560534503978839,
+              "fve": 0.7835309230551419,
+              "recovery_rate": 0.95,
+              "redundancy": 0.19718029366399045,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.9755362999389297
+            }
+          ]
+        }
+      },
+      {
+        "seed": 2,
+        "method": {
+          "safety": 0.8715432280455419,
+          "capability": 0.8094142038962332,
+          "diagnostics": {
+            "redundancy": 0.3466197765863782,
+            "recovery_rate": 0.55,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.7283699360910821
+          },
+          "per_model": [
+            {
+              "mmcs": 0.8715432280455419,
+              "fve": 0.8094142038962332,
+              "recovery_rate": 0.55,
+              "redundancy": 0.3466197765863782,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7283699360910821
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9515978130777283,
+          "capability": 0.790565053827241,
+          "diagnostics": {
+            "redundancy": 0.2449684243881054,
+            "recovery_rate": 0.95,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.9719779975596601
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9515978130777283,
+              "fve": 0.790565053827241,
+              "recovery_rate": 0.95,
+              "redundancy": 0.2449684243881054,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.9719779975596601
+            }
+          ]
+        }
+      }
+    ],
+    "evaluator_hash": "826b27e88e287edc"
+  },
+  "tuned_skip_reason": null,
+  "review": null,
+  "method_changed_since_verdict": false,
+  "advisory": "Triage never changes a verdict. Labels say how far to trust it.",
+  "updated_at": "2026-10-21T22:56:52+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "batchtopk-sae-lm",
+  "title": "BatchTopK sparse autoencoder (real LM activations)",
+  "testbed": "planted_lm",
+  "verdict": "mechanism_failed",
+  "label": "untriaged",
+  "next_step": "Run `python triage.py ideas/<idea> --run`.",
+  "flags": [],
+  "default_gate": {
+    "quantity": "safety:mmcs vs baseline",
+    "observed": -0.00977549950281779,
+    "rule": ">= +0.0000",
+    "passed": false
+  },
+  "tuned_gate": null,
+  "tuned_skip_reason": null,
+  "review": null,
+  "method_changed_since_verdict": false,
+  "advisory": "Triage never changes a verdict. Labels say how far to trust it.",
+  "updated_at": "2026-10-21T22:56:52+00:00"
+}

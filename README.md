@@ -27,11 +27,14 @@ pip install torch numpy scipy scikit-learn
 python run.py ideas/<idea>          # one idea
 python run.py --all                 # everything in ideas/
 python summarize.py                 # results/SUMMARY.md and summary.json
+python run.py ideas/<idea> --resume  # cache finished arms; rerun to continue after an interruption
 python exploratory.py ideas/<idea>  # tuning + Stage 2 with the gate skipped; not a verdict
 python -m pytest tests              # stats and verdict tests
 ```
 
 First runs generate and cache models under `results/_cache/`.
+
+`--resume` saves every finished arm under `results/_cache/runs/`, keyed on the testbed, evaluator hash, method code, split, config, seed and hyperparameters, and reuses it. A run cut off by a crash or a sleeping laptop picks up where it stopped; `--budget SECONDS` stops it on purpose (exit code 3 means unfinished). Editing `method.py` changes the key, so stale runs are never reused. Verdicts are computed exactly as without it.
 
 ## Adding an idea
 
@@ -75,6 +78,18 @@ A shared ledger caps total spend at $7 (lower it with `MAX_SPEND_USD`). The trus
 2. **Tuning.** Method and baseline each get up to 8 configs, scored on the dev split. Test data is never used for tuning.
 3. **Stage 2.** Test split, full config, 8 paired seeds. Exact sign-flip permutation test on per-seed differences, alpha 0.05, with 95% CI and minimum detectable effect.
 4. **Verdict.** `beats_baseline`, `mech_ok_no_win`, `no_effect`, `hurts`, `mechanism_failed`, `implementation_failed`, `untestable`. Flags: `capability_confounded` (capability also rose significantly), `cause_unresolved` (won without the predicted mechanism).
+
+## Triage of failed gates
+
+A failed Stage 1 gate can mean the idea is wrong, the defaults were bad, or the method is broken. `triage.py` sorts them out. It never changes a verdict.
+
+```
+python triage.py                     # static checks on every mechanism_failed record
+python triage.py --run --budget 150  # plus a tuned re-run of the gate; resumable, rerun to continue
+python triage.py ideas/<idea> --run  # one idea
+```
+
+Static checks read the existing record: method identical to the baseline, collapsed output (recovers nothing), inverted AUROC, suspiciously fast, noisy 3-seed gate. The tuned re-run tunes both arms on dev and reruns the gate on the dev toy config, so the test split stays untouched. Labels: `suspected_bug`, `gate_artifact` (passes once tuned: run Stage 2), `weak_negative` (near miss, or best setting at the grid edge), `genuine_negative`. Report: `results/TRIAGE.md`; per-idea detail in `results/_triage/`.
 
 ## Integrity
 

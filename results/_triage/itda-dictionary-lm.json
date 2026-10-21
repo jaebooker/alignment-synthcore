@@ -1,0 +1,30 @@
+{
+  "id": "itda-dictionary-lm",
+  "title": "Inference-time decomposition of activations (ITDA) (real LM activations)",
+  "testbed": "planted_lm",
+  "verdict": "mechanism_failed",
+  "label": "fixed_pending_rerun",
+  "next_step": "method.py changed since this verdict. Rerun the idea (run.py, or the GPU job for planted_lm).",
+  "flags": [
+    {
+      "flag": "suspiciously_fast",
+      "detail": "method ran in 0.10s vs baseline 11.10s (0.9%)"
+    },
+    {
+      "flag": "collapsed_output",
+      "detail": "recovery_rate = 0 on every seed (baseline mean 0.440)"
+    }
+  ],
+  "default_gate": {
+    "quantity": "safety:mmcs vs baseline",
+    "observed": -0.5727453082799911,
+    "rule": ">= +0.0000",
+    "passed": false
+  },
+  "tuned_gate": null,
+  "tuned_skip_reason": null,
+  "review": null,
+  "method_changed_since_verdict": true,
+  "advisory": "Triage never changes a verdict. Labels say how far to trust it.",
+  "updated_at": "2026-10-21T22:56:52+00:00"
+}

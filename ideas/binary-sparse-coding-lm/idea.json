@@ -14,5 +14,10 @@
   "testbed": "planted_lm",
   "prediction": {
     "safety_min_effect": 0.0
+  },
+  "triage_review": {
+    "label": "genuine_negative",
+    "reviewed_at": "2026-10-21",
+    "note": "Not a bug. On a CPU stand-in that reproduces the failure, the paper's exact architecture (unnormalized W_dec, positive-only binarization, sigmoid STE at temperature 2) with Adam or Signum reconstructs the activations well but recovers no planted features. Binary codes spend capacity quantizing the dense background, consistent with the paper's ultra-high-frequency latents."
   }
 }

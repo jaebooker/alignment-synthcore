@@ -20,49 +20,49 @@
   },
   "stage1": {
     "quantity": "safety:mmcs vs baseline",
-    "observed": -0.369683516577864,
+    "observed": 0.033397385474107644,
     "rule": ">= +0.0000",
-    "passed": false,
+    "passed": true,
     "per_seed": [
       {
         "seed": 0,
         "method": {
-          "safety": 0.5816972825128572,
-          "capability": 0.42773043302529046,
+          "safety": 0.9924962964461133,
+          "capability": 0.8089611971274694,
           "diagnostics": {
-            "redundancy": 0.48412698059647374,
-            "recovery_rate": 0.0,
+            "redundancy": 0.13448157041052305,
+            "recovery_rate": 1.0,
             "dead_fraction": 0.0,
-            "child_mmcs": 0.5519908758683129
+            "child_mmcs": 0.9751051073320873
           },
           "per_model": [
             {
-              "mmcs": 0.5816972825128572,
-              "fve": 0.42773043302529046,
-              "recovery_rate": 0.0,
-              "redundancy": 0.48412698059647374,
+              "mmcs": 0.9924962964461133,
+              "fve": 0.8089611971274694,
+              "recovery_rate": 1.0,
+              "redundancy": 0.13448157041052305,
               "dead_fraction": 0.0,
-              "child_mmcs": 0.5519908758683129
+              "child_mmcs": 0.9751051073320873
             }
           ]
         },
         "baseline": {
-          "safety": 0.9585042660921882,
-          "capability": 0.8248651955859174,
+          "safety": 0.9585042715550568,
+          "capability": 0.8248651996935715,
           "diagnostics": {
-            "redundancy": 0.24872455794845072,
+            "redundancy": 0.24872455669940768,
             "recovery_rate": 0.9,
             "dead_fraction": 0.0,
-            "child_mmcs": 0.8945225921003924
+            "child_mmcs": 0.8945226315825109
           },
           "per_model": [
             {
-              "mmcs": 0.9585042660921882,
-              "fve": 0.8248651955859174,
+              "mmcs": 0.9585042715550568,
+              "fve": 0.8248651996935715,
               "recovery_rate": 0.9,
-              "redundancy": 0.24872455794845072,
+              "redundancy": 0.24872455669940768,
               "dead_fraction": 0.0,
-              "child_mmcs": 0.8945225921003924
+              "child_mmcs": 0.8945226315825109
             }
           ]
         }
@@ -70,42 +70,42 @@
       {
         "seed": 1,
         "method": {
-          "safety": 0.5928120141387462,
-          "capability": 0.472606708529696,
+          "safety": 0.9598738050979222,
+          "capability": 0.8092773079107171,
           "diagnostics": {
-            "redundancy": 0.4788158311910949,
-            "recovery_rate": 0.0,
+            "redundancy": 0.21961780499168584,
+            "recovery_rate": 0.9,
             "dead_fraction": 0.0,
-            "child_mmcs": 0.5070566374959864
+            "child_mmcs": 0.8976956580737382
           },
           "per_model": [
             {
-              "mmcs": 0.5928120141387462,
-              "fve": 0.472606708529696,
-              "recovery_rate": 0.0,
-              "redundancy": 0.4788158311910949,
+              "mmcs": 0.9598738050979222,
+              "fve": 0.8092773079107171,
+              "recovery_rate": 0.9,
+              "redundancy": 0.21961780499168584,
               "dead_fraction": 0.0,
-              "child_mmcs": 0.5070566374959864
+              "child_mmcs": 0.8976956580737382
             }
           ]
         },
         "baseline": {
-          "safety": 0.9315145978127204,
-          "capability": 0.8015007546700311,
+          "safety": 0.9314958317657764,
+          "capability": 0.8015148864352142,
           "diagnostics": {
-            "redundancy": 0.3394724064137569,
+            "redundancy": 0.33953248574840655,
             "recovery_rate": 0.8,
             "dead_fraction": 0.0,
-            "child_mmcs": 0.8420252921750936
+            "child_mmcs": 0.8419628936160541
           },
           "per_model": [
             {
-              "mmcs": 0.9315145978127204,
-              "fve": 0.8015007546700311,
+              "mmcs": 0.9314958317657764,
+              "fve": 0.8015148864352142,
               "recovery_rate": 0.8,
-              "redundancy": 0.3394724064137569,
+              "redundancy": 0.33953248574840655,
               "dead_fraction": 0.0,
-              "child_mmcs": 0.8420252921750936
+              "child_mmcs": 0.8419628936160541
             }
           ]
         }
@@ -113,55 +113,982 @@
       {
         "seed": 2,
         "method": {
-          "safety": 0.5635003346448134,
-          "capability": 0.4362505286474405,
+          "safety": 0.9948654597346952,
+          "capability": 0.7928712865719848,
           "diagnostics": {
-            "redundancy": 0.4859429723464963,
-            "recovery_rate": 0.0,
+            "redundancy": 0.10434244631312031,
+            "recovery_rate": 1.0,
             "dead_fraction": 0.0,
-            "child_mmcs": 0.4895888270152397
+            "child_mmcs": 0.9830875571396853
           },
           "per_model": [
             {
-              "mmcs": 0.5635003346448134,
-              "fve": 0.4362505286474405,
-              "recovery_rate": 0.0,
-              "redundancy": 0.4859429723464963,
+              "mmcs": 0.9948654597346952,
+              "fve": 0.7928712865719848,
+              "recovery_rate": 1.0,
+              "redundancy": 0.10434244631312031,
               "dead_fraction": 0.0,
-              "child_mmcs": 0.4895888270152397
+              "child_mmcs": 0.9830875571396853
             }
           ]
         },
         "baseline": {
-          "safety": 0.9570413171251003,
-          "capability": 0.8144802139332289,
+          "safety": 0.9570433015355745,
+          "capability": 0.8144815299517031,
           "diagnostics": {
-            "redundancy": 0.27364332618227716,
+            "redundancy": 0.2736329718130589,
             "recovery_rate": 0.9,
             "dead_fraction": 0.0,
-            "child_mmcs": 0.8963224685879082
+            "child_mmcs": 0.8963284150566739
           },
           "per_model": [
             {
-              "mmcs": 0.9570413171251003,
-              "fve": 0.8144802139332289,
+              "mmcs": 0.9570433015355745,
+              "fve": 0.8144815299517031,
               "recovery_rate": 0.9,
-              "redundancy": 0.27364332618227716,
+              "redundancy": 0.2736329718130589,
               "dead_fraction": 0.0,
-              "child_mmcs": 0.8963224685879082
+              "child_mmcs": 0.8963284150566739
             }
           ]
         }
       }
     ]
   },
-  "stage2": null,
-  "tuning": null,
+  "stage2": {
+    "safety": {
+      "n": 8,
+      "method_mean": 0.9273467916414306,
+      "baseline_mean": 0.9183836258186948,
+      "mean_diff": 0.008963165822735694,
+      "ci95": [
+        -0.00011759074969367421,
+        0.018043922395165064
+      ],
+      "p_value": 0.0625,
+      "mde": 0.012521737555438183,
+      "significant": false,
+      "per_seed_diff": [
+        0.0031040276719107585,
+        0.0138095319622904,
+        0.020978206808842104,
+        0.0018608897969850657,
+        0.02440659485541663,
+        -0.008198390994958116,
+        0.012222148853256565,
+        0.0035223176281421464
+      ],
+      "min_attainable_p": 0.0078125
+    },
+    "capability": {
+      "n": 8,
+      "method_mean": 0.9271010554554251,
+      "baseline_mean": 0.9232185578992029,
+      "mean_diff": 0.0038824975562221087,
+      "ci95": [
+        0.001891212931469741,
+        0.005873782180974476
+      ],
+      "p_value": 0.0078125,
+      "mde": 0.002745844277450737,
+      "significant": true,
+      "per_seed_diff": [
+        0.00223939379916005,
+        0.0043800357538313905,
+        0.006503578160220624,
+        0.0029740148861190363,
+        0.0072819459603989944,
+        0.002348127664484445,
+        0.005136455485328262,
+        0.00019642874023406698
+      ],
+      "min_attainable_p": 0.0078125
+    },
+    "per_seed": [
+      {
+        "seed": 0,
+        "method": {
+          "safety": 0.9265556362787948,
+          "capability": 0.9263213746850361,
+          "diagnostics": {
+            "redundancy": 0.5544032250900355,
+            "recovery_rate": 0.7578125,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8318756845646498
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9461804172401045,
+              "fve": 0.9331986443128604,
+              "recovery_rate": 0.825,
+              "redundancy": 0.5342392663460922,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8482997860545045
+            },
+            {
+              "mmcs": 0.9219119232414935,
+              "fve": 0.8828736338870298,
+              "recovery_rate": 0.75,
+              "redundancy": 0.5531446967407693,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8303614991746309
+            },
+            {
+              "mmcs": 0.9313412804214103,
+              "fve": 0.9584688986027595,
+              "recovery_rate": 0.71875,
+              "redundancy": 0.55879011880254,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8160554484163702
+            },
+            {
+              "mmcs": 0.9067889242121712,
+              "fve": 0.9307443219374947,
+              "recovery_rate": 0.7375,
+              "redundancy": 0.5714388184707409,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8327860046130935
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.923451608606884,
+          "capability": 0.924081980885876,
+          "diagnostics": {
+            "redundancy": 0.4508443680451688,
+            "recovery_rate": 0.6854166666666667,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8489043842516468
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9480484091347904,
+              "fve": 0.9319443292613757,
+              "recovery_rate": 0.725,
+              "redundancy": 0.42869403828034197,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8834877344593443
+            },
+            {
+              "mmcs": 0.9297040431597732,
+              "fve": 0.8781152763987207,
+              "recovery_rate": 0.7666666666666667,
+              "redundancy": 0.44695719149058816,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.862898463764199
+            },
+            {
+              "mmcs": 0.9274744952697394,
+              "fve": 0.9556544257513265,
+              "recovery_rate": 0.6875,
+              "redundancy": 0.42624836592654847,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.822487986082252
+            },
+            {
+              "mmcs": 0.8885794868632335,
+              "fve": 0.930613892132081,
+              "recovery_rate": 0.5625,
+              "redundancy": 0.5014778764831966,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8267433527007924
+            }
+          ]
+        }
+      },
+      {
+        "seed": 1,
+        "method": {
+          "safety": 0.9353969492792472,
+          "capability": 0.9295558026894655,
+          "diagnostics": {
+            "redundancy": 0.5239509220750375,
+            "recovery_rate": 0.7765625,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8557585435268874
+          },
+          "per_model": [
+            {
+              "mmcs": 0.926981935648724,
+              "fve": 0.9380653083686973,
+              "recovery_rate": 0.7,
+              "redundancy": 0.5813402468044121,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.802630756756336
+            },
+            {
+              "mmcs": 0.9686741120802317,
+              "fve": 0.8965883079294799,
+              "recovery_rate": 0.95,
+              "redundancy": 0.45287609243365284,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.9253233870719996
+            },
+            {
+              "mmcs": 0.9108847967460731,
+              "fve": 0.9461968184463863,
+              "recovery_rate": 0.65625,
+              "redundancy": 0.5459602445554681,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.813592375498805
+            },
+            {
+              "mmcs": 0.9350469526419604,
+              "fve": 0.9373727760132982,
+              "recovery_rate": 0.8,
+              "redundancy": 0.5156271045066168,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8814876547804088
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9215874173169568,
+          "capability": 0.9251757669356341,
+          "diagnostics": {
+            "redundancy": 0.4627762597107896,
+            "recovery_rate": 0.7041666666666666,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8370838853466144
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9200120817203764,
+              "fve": 0.9332240251618169,
+              "recovery_rate": 0.7,
+              "redundancy": 0.4820820521780445,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.796776196323114
+            },
+            {
+              "mmcs": 0.9244244746575762,
+              "fve": 0.879741566085286,
+              "recovery_rate": 0.6666666666666666,
+              "redundancy": 0.4528006161978364,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8602901029893201
+            },
+            {
+              "mmcs": 0.9292427314140561,
+              "fve": 0.9558889050490667,
+              "recovery_rate": 0.75,
+              "redundancy": 0.43909184684922076,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8255308502684239
+            },
+            {
+              "mmcs": 0.9126703814758187,
+              "fve": 0.9318485714463667,
+              "recovery_rate": 0.7,
+              "redundancy": 0.47713052361805686,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8657383918055993
+            }
+          ]
+        }
+      },
+      {
+        "seed": 2,
+        "method": {
+          "safety": 0.9372478146128262,
+          "capability": 0.9303477136757236,
+          "diagnostics": {
+            "redundancy": 0.5282450360200209,
+            "recovery_rate": 0.8078125,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.852434157438168
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9461454545367692,
+              "fve": 0.9365446049814665,
+              "recovery_rate": 0.8,
+              "redundancy": 0.5012139955225845,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8525173290777386
+            },
+            {
+              "mmcs": 0.9384265599453108,
+              "fve": 0.889948229940399,
+              "recovery_rate": 0.8,
+              "redundancy": 0.5254760723074038,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8824640076119213
+            },
+            {
+              "mmcs": 0.930930521560857,
+              "fve": 0.958631504458539,
+              "recovery_rate": 0.78125,
+              "redundancy": 0.5423304172500465,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7997393666891918
+            },
+            {
+              "mmcs": 0.9334887224083683,
+              "fve": 0.93626651532249,
+              "recovery_rate": 0.85,
+              "redundancy": 0.5439596590000491,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.87501592637382
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9162696078039841,
+          "capability": 0.9238441355155029,
+          "diagnostics": {
+            "redundancy": 0.4677269590307157,
+            "recovery_rate": 0.6875,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8268931759505788
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9229769612511889,
+              "fve": 0.931416535791971,
+              "recovery_rate": 0.675,
+              "redundancy": 0.44966513792049073,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8251358269895904
+            },
+            {
+              "mmcs": 0.9050465060141296,
+              "fve": 0.8766642122532943,
+              "recovery_rate": 0.65,
+              "redundancy": 0.4793488771850757,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8121015899874902
+            },
+            {
+              "mmcs": 0.9268999816438961,
+              "fve": 0.954432759090657,
+              "recovery_rate": 0.75,
+              "redundancy": 0.4566984316697171,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8049937978984633
+            },
+            {
+              "mmcs": 0.910154982306722,
+              "fve": 0.9328630349260899,
+              "recovery_rate": 0.675,
+              "redundancy": 0.4851953893475794,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.865341488926771
+            }
+          ]
+        }
+      },
+      {
+        "seed": 3,
+        "method": {
+          "safety": 0.9284184415599414,
+          "capability": 0.9261111653151615,
+          "diagnostics": {
+            "redundancy": 0.5441340984334186,
+            "recovery_rate": 0.7807291666666667,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8424938748902032
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9754443628143911,
+              "fve": 0.9449468601245148,
+              "recovery_rate": 0.9,
+              "redundancy": 0.4628932674642329,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.9321891458179982
+            },
+            {
+              "mmcs": 0.921126236101143,
+              "fve": 0.8816133031257067,
+              "recovery_rate": 0.7666666666666667,
+              "redundancy": 0.5428114379601977,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8280334636265407
+            },
+            {
+              "mmcs": 0.9311591555023483,
+              "fve": 0.957105009374491,
+              "recovery_rate": 0.78125,
+              "redundancy": 0.545375422360104,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8141837763477594
+            },
+            {
+              "mmcs": 0.885944011821883,
+              "fve": 0.9207794886359336,
+              "recovery_rate": 0.675,
+              "redundancy": 0.6254562659491398,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7955691137685147
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9265575517629563,
+          "capability": 0.9231371504290424,
+          "diagnostics": {
+            "redundancy": 0.4440282613534901,
+            "recovery_rate": 0.7239583333333333,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8625087729691029
+          },
+          "per_model": [
+            {
+              "mmcs": 0.951047654496508,
+              "fve": 0.9297816255768554,
+              "recovery_rate": 0.8,
+              "redundancy": 0.41172357578036334,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.9064033993428193
+            },
+            {
+              "mmcs": 0.9285606627050496,
+              "fve": 0.8798611791021499,
+              "recovery_rate": 0.7333333333333333,
+              "redundancy": 0.46227556228862543,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8685210103305422
+            },
+            {
+              "mmcs": 0.9405267235466785,
+              "fve": 0.9557079260668282,
+              "recovery_rate": 0.8125,
+              "redundancy": 0.43082697732180875,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8478235709878799
+            },
+            {
+              "mmcs": 0.886095166303589,
+              "fve": 0.9271978709703362,
+              "recovery_rate": 0.55,
+              "redundancy": 0.47128693002316274,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8272871112151702
+            }
+          ]
+        }
+      },
+      {
+        "seed": 4,
+        "method": {
+          "safety": 0.940431438859878,
+          "capability": 0.9312455604152701,
+          "diagnostics": {
+            "redundancy": 0.5276114703187829,
+            "recovery_rate": 0.8130208333333333,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8727410605163608
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9676567346346095,
+              "fve": 0.9446988081694179,
+              "recovery_rate": 0.925,
+              "redundancy": 0.4728006530741856,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.9074106075247773
+            },
+            {
+              "mmcs": 0.9328931219808427,
+              "fve": 0.8853702442025507,
+              "recovery_rate": 0.7833333333333333,
+              "redundancy": 0.5458763524508126,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8813811915608425
+            },
+            {
+              "mmcs": 0.9455466317194695,
+              "fve": 0.9587024718151725,
+              "recovery_rate": 0.78125,
+              "redundancy": 0.5372464534480961,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8487723849218143
+            },
+            {
+              "mmcs": 0.9156292671045904,
+              "fve": 0.9362107174739396,
+              "recovery_rate": 0.7625,
+              "redundancy": 0.5545224223020373,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8534000580580094
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9160248440044614,
+          "capability": 0.9239636144548711,
+          "diagnostics": {
+            "redundancy": 0.4652234151278144,
+            "recovery_rate": 0.6984375,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8184947234133645
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9150606160431914,
+              "fve": 0.9310864233725381,
+              "recovery_rate": 0.65,
+              "redundancy": 0.4898905690853721,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7847117045668917
+            },
+            {
+              "mmcs": 0.9208816771273717,
+              "fve": 0.8792113683081232,
+              "recovery_rate": 0.75,
+              "redundancy": 0.46677899414804164,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8429707040718132
+            },
+            {
+              "mmcs": 0.9120858220792756,
+              "fve": 0.9537353738626637,
+              "recovery_rate": 0.65625,
+              "redundancy": 0.446567851423875,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7819169844149951
+            },
+            {
+              "mmcs": 0.9160712607680066,
+              "fve": 0.9318212922761588,
+              "recovery_rate": 0.7375,
+              "redundancy": 0.4576562458539687,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8643795005997582
+            }
+          ]
+        }
+      },
+      {
+        "seed": 5,
+        "method": {
+          "safety": 0.91389017811219,
+          "capability": 0.9255230231271255,
+          "diagnostics": {
+            "redundancy": 0.5458826503284999,
+            "recovery_rate": 0.7184895833333332,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8138609465156613
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9476015180388094,
+              "fve": 0.9385704395037032,
+              "recovery_rate": 0.825,
+              "redundancy": 0.5155023034344692,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8449102990823132
+            },
+            {
+              "mmcs": 0.898159047321635,
+              "fve": 0.8826061753291777,
+              "recovery_rate": 0.6333333333333333,
+              "redundancy": 0.550420914834863,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7995257983769631
+            },
+            {
+              "mmcs": 0.9414491510084376,
+              "fve": 0.9614100014138847,
+              "recovery_rate": 0.828125,
+              "redundancy": 0.5341371024118579,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8386293251547705
+            },
+            {
+              "mmcs": 0.8683509960798774,
+              "fve": 0.9195054762617362,
+              "recovery_rate": 0.5875,
+              "redundancy": 0.5834702806328096,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7723783634485987
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9220885691071481,
+          "capability": 0.9231748954626411,
+          "diagnostics": {
+            "redundancy": 0.4704566739932976,
+            "recovery_rate": 0.7328125000000001,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8462855847595686
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9399862446580161,
+              "fve": 0.9332897462636082,
+              "recovery_rate": 0.775,
+              "redundancy": 0.4560564126531954,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8627764889114554
+            },
+            {
+              "mmcs": 0.9129994142813262,
+              "fve": 0.8765892254826211,
+              "recovery_rate": 0.7,
+              "redundancy": 0.505238708503038,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8417966665505464
+            },
+            {
+              "mmcs": 0.9352302127873481,
+              "fve": 0.9564560765257785,
+              "recovery_rate": 0.78125,
+              "redundancy": 0.43425851234670654,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8381038384246763
+            },
+            {
+              "mmcs": 0.9001384047019021,
+              "fve": 0.9263645335785569,
+              "recovery_rate": 0.675,
+              "redundancy": 0.4862730624702504,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8424653451515965
+            }
+          ]
+        }
+      },
+      {
+        "seed": 6,
+        "method": {
+          "safety": 0.9247844102635773,
+          "capability": 0.9280598347686078,
+          "diagnostics": {
+            "redundancy": 0.5450863772406007,
+            "recovery_rate": 0.7604166666666666,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8311834375771697
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9557515924846918,
+              "fve": 0.9397443220552939,
+              "recovery_rate": 0.875,
+              "redundancy": 0.5297797644376185,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8756796888497215
+            },
+            {
+              "mmcs": 0.9356480955298827,
+              "fve": 0.889169413928113,
+              "recovery_rate": 0.8166666666666667,
+              "redundancy": 0.5270167643494953,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8619494165348964
+            },
+            {
+              "mmcs": 0.9155665325171687,
+              "fve": 0.9552060075564707,
+              "recovery_rate": 0.6875,
+              "redundancy": 0.5539390164733938,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7703124033407498
+            },
+            {
+              "mmcs": 0.8921714205225658,
+              "fve": 0.9281195955345536,
+              "recovery_rate": 0.6625,
+              "redundancy": 0.5696099637018952,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8167922415833111
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9125622614103207,
+          "capability": 0.9229233792832795,
+          "diagnostics": {
+            "redundancy": 0.48184322314089834,
+            "recovery_rate": 0.6575520833333334,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8144775752957112
+          },
+          "per_model": [
+            {
+              "mmcs": 0.9190939613534717,
+              "fve": 0.9277398265538189,
+              "recovery_rate": 0.675,
+              "redundancy": 0.5051010588605325,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7909951528824201
+            },
+            {
+              "mmcs": 0.9158486259847535,
+              "fve": 0.8792772032333944,
+              "recovery_rate": 0.6833333333333333,
+              "redundancy": 0.4569913109736883,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8424401872130466
+            },
+            {
+              "mmcs": 0.9153409940208872,
+              "fve": 0.9558304584828266,
+              "recovery_rate": 0.671875,
+              "redundancy": 0.4784953214845051,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7833953342688624
+            },
+            {
+              "mmcs": 0.8999654642821703,
+              "fve": 0.9288460288630783,
+              "recovery_rate": 0.6,
+              "redundancy": 0.48678520124486735,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8410796268185159
+            }
+          ]
+        }
+      },
+      {
+        "seed": 7,
+        "method": {
+          "safety": 0.9120494641649899,
+          "capability": 0.9196439689670107,
+          "diagnostics": {
+            "redundancy": 0.5550001526415613,
+            "recovery_rate": 0.71796875,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8138554831764857
+          },
+          "per_model": [
+            {
+              "mmcs": 0.946811814193089,
+              "fve": 0.933529839334016,
+              "recovery_rate": 0.825,
+              "redundancy": 0.5135418264047171,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8450396681082126
+            },
+            {
+              "mmcs": 0.9192152657863892,
+              "fve": 0.8874882116626359,
+              "recovery_rate": 0.7,
+              "redundancy": 0.5383895550014753,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8343736067634726
+            },
+            {
+              "mmcs": 0.9356907371581231,
+              "fve": 0.9575919456706203,
+              "recovery_rate": 0.796875,
+              "redundancy": 0.5417447061252061,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8134417357334053
+            },
+            {
+              "mmcs": 0.8464800395223586,
+              "fve": 0.8999658792007706,
+              "recovery_rate": 0.55,
+              "redundancy": 0.6263245230348464,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7625669221008524
+            }
+          ]
+        },
+        "baseline": {
+          "safety": 0.9085271465368477,
+          "capability": 0.9194475402267767,
+          "diagnostics": {
+            "redundancy": 0.4665325734386915,
+            "recovery_rate": 0.6421875,
+            "dead_fraction": 0.0,
+            "child_mmcs": 0.8231483724257264
+          },
+          "per_model": [
+            {
+              "mmcs": 0.915493128520237,
+              "fve": 0.924270452866526,
+              "recovery_rate": 0.6,
+              "redundancy": 0.4521666086465886,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8345322363642517
+            },
+            {
+              "mmcs": 0.9207330245375924,
+              "fve": 0.878755787403194,
+              "recovery_rate": 0.75,
+              "redundancy": 0.45607597772610614,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8521249584287017
+            },
+            {
+              "mmcs": 0.9159512598036097,
+              "fve": 0.9534244330086841,
+              "recovery_rate": 0.65625,
+              "redundancy": 0.45305922231450657,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.7874753462013482
+            },
+            {
+              "mmcs": 0.8819311732859522,
+              "fve": 0.9213394876287023,
+              "recovery_rate": 0.5625,
+              "redundancy": 0.5048284850675645,
+              "dead_fraction": 0.0,
+              "child_mmcs": 0.8184609487086038
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "tuning": {
+    "method": {
+      "hparams": {
+        "l1": 0.7,
+        "outer": 100,
+        "inner": 10
+      },
+      "table": [
+        {
+          "hparams": {
+            "l1": 0.5,
+            "outer": 100,
+            "inner": 10
+          },
+          "dev_safety": 0.9289854751085465
+        },
+        {
+          "hparams": {
+            "l1": 0.2,
+            "outer": 100,
+            "inner": 10
+          },
+          "dev_safety": 0.8712662438850871
+        },
+        {
+          "hparams": {
+            "l1": 0.3,
+            "outer": 100,
+            "inner": 10
+          },
+          "dev_safety": 0.9075516011026481
+        },
+        {
+          "hparams": {
+            "l1": 0.7,
+            "outer": 100,
+            "inner": 10
+          },
+          "dev_safety": 0.9379784420677845
+        },
+        {
+          "hparams": {
+            "l1": 1.0,
+            "outer": 100,
+            "inner": 10
+          },
+          "dev_safety": 0.8866131647475002
+        },
+        {
+          "hparams": {
+            "l1": 1.5,
+            "outer": 100,
+            "inner": 10
+          },
+          "dev_safety": 0.8851812166866174
+        },
+        {
+          "hparams": {
+            "l1": 0.5,
+            "outer": 50,
+            "inner": 10
+          },
+          "dev_safety": 0.9293924730745284
+        },
+        {
+          "hparams": {
+            "l1": 0.5,
+            "outer": 200,
+            "inner": 10
+          },
+          "dev_safety": 0.8122996935453375
+        }
+      ]
+    },
+    "baseline": {
+      "hparams": {
+        "k": 3,
+        "lr": 0.003,
+        "steps": 3000
+      },
+      "table": [
+        {
+          "hparams": {
+            "k": 2,
+            "lr": 0.003,
+            "steps": 3000
+          },
+          "dev_safety": 0.907540491314559
+        },
+        {
+          "hparams": {
+            "k": 1,
+            "lr": 0.003,
+            "steps": 3000
+          },
+          "dev_safety": 0.9057691296466412
+        },
+        {
+          "hparams": {
+            "k": 3,
+            "lr": 0.003,
+            "steps": 3000
+          },
+          "dev_safety": 0.9234810472281441
+        },
+        {
+          "hparams": {
+            "k": 4,
+            "lr": 0.003,
+            "steps": 3000
+          },
+          "dev_safety": 0.9213009069194036
+        },
+        {
+          "hparams": {
+            "k": 2,
+            "lr": 0.001,
+            "steps": 3000
+          },
+          "dev_safety": 0.8942229824245638
+        },
+        {
+          "hparams": {
+            "k": 3,
+            "lr": 0.001,
+            "steps": 3000
+          },
+          "dev_safety": 0.9079302461049559
+        },
+        {
+          "hparams": {
+            "k": 2,
+            "lr": 0.01,
+            "steps": 3000
+          },
+          "dev_safety": 0.9064869359205814
+        },
+        {
+          "hparams": {
+            "k": 3,
+            "lr": 0.01,
+            "steps": 3000
+          },
+          "dev_safety": 0.9205058133300985
+        }
+      ]
+    }
+  },
   "attempts": 1,
-  "verdict": "mechanism_failed",
+  "verdict": "no_effect",
   "flags": [],
-  "reason": "safety:mmcs vs baseline: observed -0.3697, needed >= +0.0000",
-  "runtime_s": 155.9,
-  "updated_at": "2026-10-20T02:46:17+00:00",
+  "benchmark_mechanism_confirmed": null,
+  "reason": "safety diff +0.0090 (95% CI -0.0001 to +0.0180), p=0.0625",
+  "runtime_s": 26.3,
+  "updated_at": "2026-10-21T21:04:45+00:00",
   "verdict_source": "deterministic test code (paired-seed exact sign-flip permutation test)"
 }
