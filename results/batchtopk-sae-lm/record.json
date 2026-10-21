@@ -1,0 +1,219 @@
+{
+  "id": "batchtopk-sae-lm",
+  "title": "BatchTopK sparse autoencoder (real LM activations)",
+  "description": "Replace the per-sample TopK activation with a batch-level one: keep the batch size times k largest activations across the whole batch. Inputs that contain more features can use more latents and simple inputs fewer, with the same average sparsity. Prediction: in a setting where the number of active features varies a lot (children only fire with parents), the dictionary recovers the planted features at least as well as a per-sample TopK SAE. Same idea and prediction as on the toy testbed, now on Pythia-70M activations with planted features, the scale these methods were designed for.",
+  "source": {
+    "type": "paper",
+    "title": "BatchTopK Sparse Autoencoders",
+    "authors": "Bussmann, Leask, Nanda",
+    "year": 2024,
+    "venue": "arXiv 2412.06410",
+    "url": "https://arxiv.org/abs/2412.06410"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "testbed": "planted_lm",
+  "testbed_version": "0.1",
+  "harness_version": "0.1.0",
+  "evaluator_hash": "fd529b5a14f0780c",
+  "prediction": {
+    "safety_min_effect": 0.0
+  },
+  "stage1": {
+    "quantity": "safety:mmcs vs baseline",
+    "observed": -0.00977549950281779,
+    "rule": ">= +0.0000",
+    "passed": false,
+    "per_seed": [
+      {
+        "seed": 0,
+        "method": {
+          "safety": 0.7810467481613159,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.48970213532447815,
+            "recovery_rate": 0.421875
+          },
+          "seconds": 11.7
+        },
+        "baseline": {
+          "safety": 0.7919159531593323,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.4922650158405304,
+            "recovery_rate": 0.4453125
+          },
+          "seconds": 10.9
+        }
+      },
+      {
+        "seed": 1,
+        "method": {
+          "safety": 0.7723483443260193,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.4680074453353882,
+            "recovery_rate": 0.4140625
+          },
+          "seconds": 11.5
+        },
+        "baseline": {
+          "safety": 0.7838505506515503,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.4692356288433075,
+            "recovery_rate": 0.4453125
+          },
+          "seconds": 10.8
+        }
+      },
+      {
+        "seed": 2,
+        "method": {
+          "safety": 0.7769636511802673,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.4804506301879883,
+            "recovery_rate": 0.40625
+          },
+          "seconds": 10.9
+        },
+        "baseline": {
+          "safety": 0.7839187383651733,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.48237064480781555,
+            "recovery_rate": 0.4296875
+          },
+          "seconds": 11.6
+        }
+      }
+    ]
+  },
+  "stage2": null,
+  "tuning": {
+    "method": {
+      "hparams": {
+        "k": 64,
+        "lr": 0.001
+      },
+      "table": [
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.001
+          },
+          "dev_safety": 0.7086618840694427
+        },
+        {
+          "hparams": {
+            "k": 16,
+            "lr": 0.001
+          },
+          "dev_safety": 0.5264924764633179
+        },
+        {
+          "hparams": {
+            "k": 64,
+            "lr": 0.001
+          },
+          "dev_safety": 0.7103186249732971
+        },
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.0003
+          },
+          "dev_safety": 0.6158713400363922
+        }
+      ]
+    },
+    "baseline": {
+      "kind": "baseline",
+      "hparams": {
+        "k": 64,
+        "lr": 0.001
+      },
+      "table": [
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.001
+          },
+          "dev_safety": 0.743169754743576
+        },
+        {
+          "hparams": {
+            "k": 16,
+            "lr": 0.001
+          },
+          "dev_safety": 0.6138730645179749
+        },
+        {
+          "hparams": {
+            "k": 64,
+            "lr": 0.001
+          },
+          "dev_safety": 0.7447378933429718
+        },
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.0003
+          },
+          "dev_safety": 0.7354878783226013
+        }
+      ]
+    }
+  },
+  "attempts": 1,
+  "calibration": {
+    "kind": "calibration",
+    "scale": 1.0,
+    "tried": [
+      [
+        1.0,
+        0.792
+      ]
+    ],
+    "band": [
+      0.7,
+      0.92
+    ],
+    "note": "reconstructed from the logged line; the job stopped at the first in-band scale"
+  },
+  "run": {
+    "where": "Runpod GPU pod",
+    "log": "results/_planted_lm/job.log"
+  },
+  "exploratory_stage2": {
+    "safety": {
+      "n": 8,
+      "method_mean": 0.7129124253988266,
+      "baseline_mean": 0.7451441511511803,
+      "mean_diff": -0.03223172575235367,
+      "ci95": [
+        -0.03683908674046215,
+        -0.027624364764245183
+      ],
+      "p_value": 0.0078125,
+      "mde": 0.006353233307830811,
+      "significant": true,
+      "per_seed_diff": [
+        -0.03372383117675781,
+        -0.02855837345123291,
+        -0.04094940423965454,
+        -0.031562983989715576,
+        -0.03570711612701416,
+        -0.03638637065887451,
+        -0.025439858436584473,
+        -0.02552586793899536
+      ],
+      "min_attainable_p": 0.0078125
+    }
+  },
+  "verdict": "mechanism_failed",
+  "flags": [],
+  "reason": "safety:mmcs vs baseline: observed -0.0098, needed >= +0.0000",
+  "updated_at": "2026-10-21T02:32:42+00:00",
+  "verdict_source": "deterministic test code (paired-seed exact sign-flip permutation test)"
+}

@@ -1,0 +1,18 @@
+{
+  "title": "BatchTopK sparse autoencoder (real LM activations)",
+  "description": "Replace the per-sample TopK activation with a batch-level one: keep the batch size times k largest activations across the whole batch. Inputs that contain more features can use more latents and simple inputs fewer, with the same average sparsity. Prediction: in a setting where the number of active features varies a lot (children only fire with parents), the dictionary recovers the planted features at least as well as a per-sample TopK SAE. Same idea and prediction as on the toy testbed, now on Pythia-70M activations with planted features, the scale these methods were designed for.",
+  "source": {
+    "type": "paper",
+    "title": "BatchTopK Sparse Autoencoders",
+    "authors": "Bussmann, Leask, Nanda",
+    "year": 2024,
+    "venue": "arXiv 2412.06410",
+    "url": "https://arxiv.org/abs/2412.06410"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "commons_topic": "sae",
+  "testbed": "planted_lm",
+  "prediction": {
+    "safety_min_effect": 0.0
+  }
+}

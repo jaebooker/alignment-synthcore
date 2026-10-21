@@ -1,0 +1,18 @@
+{
+  "title": "Binary sparse coding (real LM activations)",
+  "description": "Make SAE latents binary: an active latent always decodes to the same vector (its direction times a learned scale), trained with a straight-through estimator. Binary latents cannot represent a feature at many magnitudes, which the paper argues removes uninterpretable high-frequency latents. Prediction: planted directions are recovered at least as well as with a TopK SAE, even though reconstruction gets worse because real feature magnitudes vary. Same idea and prediction as on the toy testbed, now on Pythia-70M activations with planted features, the scale these methods were designed for.",
+  "source": {
+    "type": "paper",
+    "title": "Binary Sparse Coding for Interpretability",
+    "authors": "Quirke, Shabalin, Belrose",
+    "year": 2025,
+    "venue": "arXiv 2509.25596",
+    "url": "https://arxiv.org/abs/2509.25596"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "commons_topic": "sae",
+  "testbed": "planted_lm",
+  "prediction": {
+    "safety_min_effect": 0.0
+  }
+}

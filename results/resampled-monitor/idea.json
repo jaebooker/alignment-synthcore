@@ -9,6 +9,7 @@
     "venue": "arXiv 2312.06942"
   },
   "direction": "ai-control/monitoring/trusted-monitoring",
+  "commons_topic": "protocols",
   "testbed": "control",
   "prediction": {
     "safety_min_effect": 0.0,

@@ -1,0 +1,219 @@
+{
+  "id": "binary-sparse-coding-lm",
+  "title": "Binary sparse coding (real LM activations)",
+  "description": "Make SAE latents binary: an active latent always decodes to the same vector (its direction times a learned scale), trained with a straight-through estimator. Binary latents cannot represent a feature at many magnitudes, which the paper argues removes uninterpretable high-frequency latents. Prediction: planted directions are recovered at least as well as with a TopK SAE, even though reconstruction gets worse because real feature magnitudes vary. Same idea and prediction as on the toy testbed, now on Pythia-70M activations with planted features, the scale these methods were designed for.",
+  "source": {
+    "type": "paper",
+    "title": "Binary Sparse Coding for Interpretability",
+    "authors": "Quirke, Shabalin, Belrose",
+    "year": 2025,
+    "venue": "arXiv 2509.25596",
+    "url": "https://arxiv.org/abs/2509.25596"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "testbed": "planted_lm",
+  "testbed_version": "0.1",
+  "harness_version": "0.1.0",
+  "evaluator_hash": "fd529b5a14f0780c",
+  "prediction": {
+    "safety_min_effect": 0.0
+  },
+  "stage1": {
+    "quantity": "safety:mmcs vs baseline",
+    "observed": -0.6500911265611649,
+    "rule": ">= +0.0000",
+    "passed": false,
+    "per_seed": [
+      {
+        "seed": 0,
+        "method": {
+          "safety": 0.1390916258096695,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.13378286361694336,
+            "recovery_rate": 0.0
+          },
+          "seconds": 11.1
+        },
+        "baseline": {
+          "safety": 0.7919159531593323,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.4922650158405304,
+            "recovery_rate": 0.4453125
+          },
+          "seconds": 10.9
+        }
+      },
+      {
+        "seed": 1,
+        "method": {
+          "safety": 0.1316426396369934,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.12384826689958572,
+            "recovery_rate": 0.0
+          },
+          "seconds": 11.3
+        },
+        "baseline": {
+          "safety": 0.7838505506515503,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.4692356288433075,
+            "recovery_rate": 0.4453125
+          },
+          "seconds": 10.8
+        }
+      },
+      {
+        "seed": 2,
+        "method": {
+          "safety": 0.13867759704589844,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.1352950930595398,
+            "recovery_rate": 0.0
+          },
+          "seconds": 11.0
+        },
+        "baseline": {
+          "safety": 0.7839187383651733,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.48237064480781555,
+            "recovery_rate": 0.4296875
+          },
+          "seconds": 11.6
+        }
+      }
+    ]
+  },
+  "stage2": null,
+  "tuning": {
+    "method": {
+      "hparams": {
+        "k": 16,
+        "lr": 0.001
+      },
+      "table": [
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.001
+          },
+          "dev_safety": 0.15397848933935165
+        },
+        {
+          "hparams": {
+            "k": 16,
+            "lr": 0.001
+          },
+          "dev_safety": 0.16375602781772614
+        },
+        {
+          "hparams": {
+            "k": 64,
+            "lr": 0.001
+          },
+          "dev_safety": 0.1605081483721733
+        },
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.0003
+          },
+          "dev_safety": 0.1590099036693573
+        }
+      ]
+    },
+    "baseline": {
+      "kind": "baseline",
+      "hparams": {
+        "k": 64,
+        "lr": 0.001
+      },
+      "table": [
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.001
+          },
+          "dev_safety": 0.743169754743576
+        },
+        {
+          "hparams": {
+            "k": 16,
+            "lr": 0.001
+          },
+          "dev_safety": 0.6138730645179749
+        },
+        {
+          "hparams": {
+            "k": 64,
+            "lr": 0.001
+          },
+          "dev_safety": 0.7447378933429718
+        },
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.0003
+          },
+          "dev_safety": 0.7354878783226013
+        }
+      ]
+    }
+  },
+  "attempts": 1,
+  "calibration": {
+    "kind": "calibration",
+    "scale": 1.0,
+    "tried": [
+      [
+        1.0,
+        0.792
+      ]
+    ],
+    "band": [
+      0.7,
+      0.92
+    ],
+    "note": "reconstructed from the logged line; the job stopped at the first in-band scale"
+  },
+  "run": {
+    "where": "Runpod GPU pod",
+    "log": "results/_planted_lm/job.log"
+  },
+  "exploratory_stage2": {
+    "safety": {
+      "n": 8,
+      "method_mean": 0.16790790669620037,
+      "baseline_mean": 0.7451441511511803,
+      "mean_diff": -0.5772362444549799,
+      "ci95": [
+        -0.5866339299436426,
+        -0.5678385589663172
+      ],
+      "p_value": 0.0078125,
+      "mde": 0.012958760691248038,
+      "significant": true,
+      "per_seed_diff": [
+        -0.5751532465219498,
+        -0.5597021281719208,
+        -0.5969386398792267,
+        -0.5750841200351715,
+        -0.5722279697656631,
+        -0.5887323021888733,
+        -0.5775655657052994,
+        -0.5724859833717346
+      ],
+      "min_attainable_p": 0.0078125
+    }
+  },
+  "verdict": "mechanism_failed",
+  "flags": [],
+  "reason": "safety:mmcs vs baseline: observed -0.6501, needed >= +0.0000",
+  "updated_at": "2026-10-21T02:32:42+00:00",
+  "verdict_source": "deterministic test code (paired-seed exact sign-flip permutation test)"
+}

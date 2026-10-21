@@ -1,0 +1,278 @@
+{
+  "id": "matryoshka-sae-lm",
+  "title": "Matryoshka sparse autoencoder (real LM activations)",
+  "description": "Train a TopK SAE whose loss also asks each nested prefix of the dictionary (the first quarter, the first half, all of it) to reconstruct the input on its own. Early latents must carry general concepts, so a parent latent keeps firing when its child fires instead of handing that case to the child, and child latents only learn what the parent leaves unexplained. Prediction: less feature absorption, so child features are recovered more cleanly than by a plain TopK SAE. Same idea and prediction as on the toy testbed, now on Pythia-70M activations with planted features, the scale these methods were designed for.",
+  "source": {
+    "type": "paper",
+    "title": "Learning Multi-Level Features with Matryoshka Sparse Autoencoders",
+    "authors": "Bussmann, Nabeshima, Karvonen, Nanda",
+    "year": 2025,
+    "venue": "arXiv 2503.17547",
+    "url": "https://arxiv.org/abs/2503.17547"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "testbed": "planted_lm",
+  "testbed_version": "0.1",
+  "harness_version": "0.1.0",
+  "evaluator_hash": "fd529b5a14f0780c",
+  "prediction": {
+    "safety_min_effect": 0.0,
+    "mechanism": {
+      "diagnostic": "child_mmcs",
+      "direction": "higher",
+      "mode": "relative",
+      "min_effect": 0.01
+    }
+  },
+  "stage1": {
+    "quantity": "diagnostic:child_mmcs (higher than baseline)",
+    "observed": -0.006731430689493815,
+    "rule": ">= +0.0100",
+    "passed": false,
+    "per_seed": [
+      {
+        "seed": 0,
+        "method": {
+          "safety": 0.7711546421051025,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.48778223991394043,
+            "recovery_rate": 0.4296875
+          },
+          "seconds": 12.9
+        },
+        "baseline": {
+          "safety": 0.7919159531593323,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.4922650158405304,
+            "recovery_rate": 0.4453125
+          },
+          "seconds": 10.9
+        }
+      },
+      {
+        "seed": 1,
+        "method": {
+          "safety": 0.7670444250106812,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.46045348048210144,
+            "recovery_rate": 0.453125
+          },
+          "seconds": 12.7
+        },
+        "baseline": {
+          "safety": 0.7838505506515503,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.4692356288433075,
+            "recovery_rate": 0.4453125
+          },
+          "seconds": 10.8
+        }
+      },
+      {
+        "seed": 2,
+        "method": {
+          "safety": 0.7635392546653748,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.4754412770271301,
+            "recovery_rate": 0.421875
+          },
+          "seconds": 12.1
+        },
+        "baseline": {
+          "safety": 0.7839187383651733,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.48237064480781555,
+            "recovery_rate": 0.4296875
+          },
+          "seconds": 11.6
+        }
+      }
+    ]
+  },
+  "stage2": null,
+  "tuning": {
+    "method": {
+      "hparams": {
+        "k": 32,
+        "lr": 0.001,
+        "prefixes": [
+          0.25,
+          0.5,
+          1.0
+        ]
+      },
+      "table": [
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.001,
+            "prefixes": [
+              0.125,
+              0.25,
+              0.5,
+              1.0
+            ]
+          },
+          "dev_safety": 0.7434247136116028
+        },
+        {
+          "hparams": {
+            "k": 64,
+            "lr": 0.001,
+            "prefixes": [
+              0.125,
+              0.25,
+              0.5,
+              1.0
+            ]
+          },
+          "dev_safety": 0.7159119844436646
+        },
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.001,
+            "prefixes": [
+              0.25,
+              0.5,
+              1.0
+            ]
+          },
+          "dev_safety": 0.750065952539444
+        },
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.0003,
+            "prefixes": [
+              0.125,
+              0.25,
+              0.5,
+              1.0
+            ]
+          },
+          "dev_safety": 0.7367067337036133
+        }
+      ]
+    },
+    "baseline": {
+      "kind": "baseline",
+      "hparams": {
+        "k": 64,
+        "lr": 0.001
+      },
+      "table": [
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.001
+          },
+          "dev_safety": 0.743169754743576
+        },
+        {
+          "hparams": {
+            "k": 16,
+            "lr": 0.001
+          },
+          "dev_safety": 0.6138730645179749
+        },
+        {
+          "hparams": {
+            "k": 64,
+            "lr": 0.001
+          },
+          "dev_safety": 0.7447378933429718
+        },
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.0003
+          },
+          "dev_safety": 0.7354878783226013
+        }
+      ]
+    }
+  },
+  "attempts": 1,
+  "calibration": {
+    "kind": "calibration",
+    "scale": 1.0,
+    "tried": [
+      [
+        1.0,
+        0.792
+      ]
+    ],
+    "band": [
+      0.7,
+      0.92
+    ],
+    "note": "reconstructed from the logged line; the job stopped at the first in-band scale"
+  },
+  "run": {
+    "where": "Runpod GPU pod",
+    "log": "results/_planted_lm/job.log"
+  },
+  "exploratory_stage2": {
+    "safety": {
+      "n": 8,
+      "method_mean": 0.7504359856247902,
+      "baseline_mean": 0.7451441511511803,
+      "mean_diff": 0.005291834473609924,
+      "ci95": [
+        -0.0009921629513528069,
+        0.011575831898572655
+      ],
+      "p_value": 0.078125,
+      "mde": 0.008665199416680964,
+      "significant": false,
+      "per_seed_diff": [
+        0.0054582953453063965,
+        0.009104251861572266,
+        -0.007775485515594482,
+        0.008959591388702393,
+        0.0053372979164123535,
+        -0.0009294748306274414,
+        0.0043531060218811035,
+        0.017827093601226807
+      ],
+      "min_attainable_p": 0.0078125
+    },
+    "mechanism": {
+      "n": 8,
+      "method_mean": 0.5324328169226646,
+      "baseline_mean": 0.5285843759775162,
+      "mean_diff": 0.003848440945148468,
+      "ci95": [
+        -0.010469586830094819,
+        0.018166468720391755
+      ],
+      "p_value": 0.53125,
+      "mde": 0.01974357364202704,
+      "significant": false,
+      "per_seed_diff": [
+        0.001151442527770996,
+        0.008843719959259033,
+        -0.024473607540130615,
+        0.013173222541809082,
+        0.0035161375999450684,
+        -0.00827115774154663,
+        0.0016907453536987305,
+        0.03515702486038208
+      ],
+      "min_attainable_p": 0.0078125
+    },
+    "mechanism_confirmed": false
+  },
+  "verdict": "mechanism_failed",
+  "flags": [],
+  "reason": "diagnostic:child_mmcs (higher than baseline): observed -0.0067, needed >= +0.0100",
+  "updated_at": "2026-10-21T02:32:42+00:00",
+  "verdict_source": "deterministic test code (paired-seed exact sign-flip permutation test)"
+}

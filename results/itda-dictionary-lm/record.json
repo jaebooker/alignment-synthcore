@@ -1,0 +1,219 @@
+{
+  "id": "itda-dictionary-lm",
+  "title": "Inference-time decomposition of activations (ITDA) (real LM activations)",
+  "description": "Build the dictionary from real activation examples with no gradient training: stream through activations, reconstruct each with matching pursuit over the current dictionary, and add the example as a new atom when the reconstruction is poor. The paper reports SAE-like quality at a small fraction of the cost. Prediction: recovers planted features at least as well as a tuned TopK SAE. Same idea and prediction as on the toy testbed, now on Pythia-70M activations with planted features, the scale these methods were designed for.",
+  "source": {
+    "type": "paper",
+    "title": "Inference-Time Decomposition of Activations (ITDA): A Scalable Approach to Interpreting Large Language Models",
+    "authors": "Leask, Nanda, Al Moubayed",
+    "year": 2025,
+    "venue": "arXiv 2505.17769",
+    "url": "https://arxiv.org/abs/2505.17769"
+  },
+  "direction": "interpretability/mechanistic-interpretability/sparse-dictionary-learning",
+  "testbed": "planted_lm",
+  "testbed_version": "0.1",
+  "harness_version": "0.1.0",
+  "evaluator_hash": "fd529b5a14f0780c",
+  "prediction": {
+    "safety_min_effect": 0.0
+  },
+  "stage1": {
+    "quantity": "safety:mmcs vs baseline",
+    "observed": -0.5727453082799911,
+    "rule": ">= +0.0000",
+    "passed": false,
+    "per_seed": [
+      {
+        "seed": 0,
+        "method": {
+          "safety": 0.21231336891651154,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.17161498963832855,
+            "recovery_rate": 0.0
+          },
+          "seconds": 0.1
+        },
+        "baseline": {
+          "safety": 0.7919159531593323,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.4922650158405304,
+            "recovery_rate": 0.4453125
+          },
+          "seconds": 10.9
+        }
+      },
+      {
+        "seed": 1,
+        "method": {
+          "safety": 0.20910301804542542,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.19024387001991272,
+            "recovery_rate": 0.0
+          },
+          "seconds": 0.1
+        },
+        "baseline": {
+          "safety": 0.7838505506515503,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.4692356288433075,
+            "recovery_rate": 0.4453125
+          },
+          "seconds": 10.8
+        }
+      },
+      {
+        "seed": 2,
+        "method": {
+          "safety": 0.2200329303741455,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.20842266082763672,
+            "recovery_rate": 0.0
+          },
+          "seconds": 0.1
+        },
+        "baseline": {
+          "safety": 0.7839187383651733,
+          "capability": null,
+          "diagnostics": {
+            "child_mmcs": 0.48237064480781555,
+            "recovery_rate": 0.4296875
+          },
+          "seconds": 11.6
+        }
+      }
+    ]
+  },
+  "stage2": null,
+  "tuning": {
+    "method": {
+      "hparams": {
+        "k": 64,
+        "tau": 0.5
+      },
+      "table": [
+        {
+          "hparams": {
+            "k": 32,
+            "tau": 0.5
+          },
+          "dev_safety": 0.24136269092559814
+        },
+        {
+          "hparams": {
+            "k": 16,
+            "tau": 0.5
+          },
+          "dev_safety": 0.2339850664138794
+        },
+        {
+          "hparams": {
+            "k": 32,
+            "tau": 0.3
+          },
+          "dev_safety": 0.2285984307527542
+        },
+        {
+          "hparams": {
+            "k": 64,
+            "tau": 0.5
+          },
+          "dev_safety": 0.2581823170185089
+        }
+      ]
+    },
+    "baseline": {
+      "kind": "baseline",
+      "hparams": {
+        "k": 64,
+        "lr": 0.001
+      },
+      "table": [
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.001
+          },
+          "dev_safety": 0.743169754743576
+        },
+        {
+          "hparams": {
+            "k": 16,
+            "lr": 0.001
+          },
+          "dev_safety": 0.6138730645179749
+        },
+        {
+          "hparams": {
+            "k": 64,
+            "lr": 0.001
+          },
+          "dev_safety": 0.7447378933429718
+        },
+        {
+          "hparams": {
+            "k": 32,
+            "lr": 0.0003
+          },
+          "dev_safety": 0.7354878783226013
+        }
+      ]
+    }
+  },
+  "attempts": 1,
+  "calibration": {
+    "kind": "calibration",
+    "scale": 1.0,
+    "tried": [
+      [
+        1.0,
+        0.792
+      ]
+    ],
+    "band": [
+      0.7,
+      0.92
+    ],
+    "note": "reconstructed from the logged line; the job stopped at the first in-band scale"
+  },
+  "run": {
+    "where": "Runpod GPU pod",
+    "log": "results/_planted_lm/job.log"
+  },
+  "exploratory_stage2": {
+    "safety": {
+      "n": 8,
+      "method_mean": 0.2594653442502022,
+      "baseline_mean": 0.7451441511511803,
+      "mean_diff": -0.4856788069009781,
+      "ci95": [
+        -0.4901304691203401,
+        -0.4812271446816161
+      ],
+      "p_value": 0.0078125,
+      "mde": 0.006138535434983118,
+      "significant": true,
+      "per_seed_diff": [
+        -0.48683109879493713,
+        -0.47943729162216187,
+        -0.4948880076408386,
+        -0.4848870038986206,
+        -0.48538023233413696,
+        -0.4914761781692505,
+        -0.481042742729187,
+        -0.481487900018692
+      ],
+      "min_attainable_p": 0.0078125
+    }
+  },
+  "verdict": "mechanism_failed",
+  "flags": [],
+  "reason": "safety:mmcs vs baseline: observed -0.5727, needed >= +0.0000",
+  "updated_at": "2026-10-21T02:32:42+00:00",
+  "verdict_source": "deterministic test code (paired-seed exact sign-flip permutation test)"
+}
