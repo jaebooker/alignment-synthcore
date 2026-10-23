@@ -1,0 +1,13 @@
+{
+  "title": "Control: ACCEL's edits without regret",
+  "description": "ACCEL with regret switched off: the same random edits, replays and learner, but levels are replayed at random and evicted oldest-first. Separates what regret-based selection adds from what random editing does on its own.",
+  "source": {
+    "type": "control"
+  },
+  "direction": "controls",
+  "commons_topic": "goalmisgen",
+  "testbed": "ued_gridworld",
+  "prediction": {
+    "safety_min_effect": 0.0
+  }
+}

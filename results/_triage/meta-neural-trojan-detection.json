@@ -189,5 +189,5 @@
   "review": null,
   "method_changed_since_verdict": false,
   "advisory": "Triage never changes a verdict. Labels say how far to trust it.",
-  "updated_at": "2026-10-21T22:56:52+00:00"
+  "updated_at": "2026-10-23T04:00:14+00:00"
 }

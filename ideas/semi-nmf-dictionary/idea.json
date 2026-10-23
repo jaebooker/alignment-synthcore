@@ -1,6 +1,6 @@
 {
   "title": "Semi-NMF dictionary of activations",
-  "description": "Factor activations into nonnegative codes times an unconstrained dictionary with semi-nonnegative matrix factorization, solved by multiplicative updates instead of training an SAE. Features in these models fire with nonnegative magnitude, which matches the nonnegative-code assumption, and there is no amortized encoder to cause absorption. Prediction: recovers the planted feature directions at least as well as a tuned TopK SAE.",
+  "description": "Factor activations into nonnegative codes times an unconstrained dictionary with semi-nonnegative matrix factorization, solved by alternating nonnegative proximal-gradient and least-squares updates with unit-norm atoms, instead of training an SAE. Features in these models fire with nonnegative magnitude, which matches the nonnegative-code assumption, and there is no amortized encoder to cause absorption. Prediction: recovers the planted feature directions at least as well as a tuned TopK SAE.",
   "source": {
     "type": "paper",
     "title": "Decomposing MLP Activations into Interpretable Features via Semi-Nonnegative Matrix Factorization",

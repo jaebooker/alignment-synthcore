@@ -1,0 +1,25 @@
+{
+  "title": "ACCEL: regret-guided level editing",
+  "description": "Replay the levels where the agent falls furthest short of its best return, and keep small random edits of them that are also hard. The edits walk the training distribution toward the rare levels that separate the intended goal from a proxy.",
+  "source": {
+    "type": "paper",
+    "title": "Evolving Curricula with Regret-Based Environment Design",
+    "authors": "Parker-Holder, Jiang, Dennis, Samvelyan, Foerster, Grefenstette, Rockt\u00e4schel",
+    "year": 2022,
+    "venue": "ICML 2022 (arXiv 2203.01302)",
+    "url": "https://arxiv.org/abs/2203.01302"
+  },
+  "direction": "agent-safety/goal-misgeneralization/unsupervised-environment-design",
+  "commons_topic": "goalmisgen",
+  "testbed": "ued_gridworld",
+  "prediction": {
+    "safety_min_effect": 0.0,
+    "mechanism": {
+      "diagnostic": "spurious_rate",
+      "direction": "lower",
+      "mode": "relative",
+      "min_effect": 0.1
+    },
+    "rationale": "The minimax-regret paper's strongest result: ACCEL stays robust to goal misgeneralization where domain randomization fails. Its mechanism is a curriculum that drifts toward levels where the proxy and the goal come apart, so the policy stops going to the cue."
+  }
+}

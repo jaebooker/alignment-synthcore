@@ -11,8 +11,16 @@
   },
   "direction": "agent-safety/goal-misgeneralization/unsupervised-environment-design",
   "commons_topic": "goalmisgen",
-  "testbed": null,
+  "testbed": "ued_gridworld",
   "nearest_testbed": "goal_misgen",
-  "untestable_reason": "Needs a level generator and online training. The goal-misgeneralization testbed gives a fixed offline dataset, so there are no levels to choose.",
-  "prediction": null
+  "prediction": {
+    "safety_min_effect": 0.0,
+    "mechanism": {
+      "diagnostic": "spurious_rate",
+      "direction": "lower",
+      "mode": "relative",
+      "min_effect": 0.1
+    },
+    "rationale": "Minimax regret's claim: training on levels where the current policy falls short of the best return it has achieved upweights the rare levels where the intended goal and the proxy come apart, so the policy stops pursuing the proxy."
+  }
 }
