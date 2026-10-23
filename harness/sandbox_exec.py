@@ -1,6 +1,9 @@
 """Runs one method in a separate process.
 
-Invoked as: python -I sandbox_exec.py <method.py> <sandbox_dir> <hparams.json> <seed>
+Invoked as: python -I sandbox_exec.py <method.py> <sandbox_dir> <hparams.json> <seed> [rpc:<rfd>,<wfd>]
+
+With rpc, the testbed is interactive: public.py talks to the harness over the two pipe
+file descriptors, and the environment runs in the harness process.
 
 The sandbox dir holds only public inputs (inputs.pkl) and the testbed's
 public helper module (public.py). Ground truth never leaves the parent
@@ -27,6 +30,11 @@ def main():
         torch.set_num_threads(2)
     except ImportError:
         pass
+
+    if len(sys.argv) > 5 and sys.argv[5].startswith("rpc:"):
+        rfd, wfd = (int(x) for x in sys.argv[5][4:].split(","))
+        import public
+        public._connect(rfd, wfd)
 
     with open(f"{sandbox}/inputs.pkl", "rb") as f:
         tasks = pickle.load(f)

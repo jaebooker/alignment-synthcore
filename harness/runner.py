@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import os
 import pickle
 import shutil
 import subprocess
@@ -68,6 +69,15 @@ def get_testbed(name: str):
     if name == "control":
         from testbeds.control.testbed import TrustedMonitoring
         return TrustedMonitoring()
+    if name == "confounded_imitation":
+        from testbeds.confounded_imitation.testbed import ConfoundedImitation
+        return ConfoundedImitation()
+    if name == "ued_gridworld":
+        from testbeds.ued_gridworld.testbed import UEDGridworld
+        return UEDGridworld()
+    if name == "interactive_gridworld":
+        from testbeds.interactive_gridworld.testbed import InteractiveGridworld
+        return InteractiveGridworld()
     raise KeyError(f"unknown testbed {name!r}")
 
 
@@ -81,7 +91,38 @@ def load_hparams(method_path: Path) -> list:
     return [{}]
 
 
+def _serve(proc, session, req_r, resp_w, timeout):
+    """Answer an interactive method's requests until it exits. Requests and responses are
+    line-delimited JSON: nothing the method sends is ever unpickled in the harness."""
+    import select
+    deadline = time.time() + timeout
+    buf = b""
+    while True:
+        left = deadline - time.time()
+        if left <= 0:
+            proc.kill()
+            raise MethodError(f"timed out after {timeout}s")
+        ready, _, _ = select.select([req_r], [], [], min(left, 1.0))
+        if not ready:
+            if proc.poll() is not None:
+                return
+            continue
+        chunk = os.read(req_r, 1 << 16)
+        if not chunk:
+            return  # method closed its end: it finished or died
+        buf += chunk
+        while b"\n" in buf:
+            line, buf = buf.split(b"\n", 1)
+            try:
+                resp = session.handle(json.loads(line))
+            except Exception as e:  # noqa: BLE001  every error goes back to the method as data
+                resp = {"error": type(e).__name__, "message": str(e)[:300]}
+            os.write(resp_w, (json.dumps(resp) + "\n").encode())
+
+
 def run_method(tb, method_path: Path, inst, hparams: dict, seed: int, timeout=3600) -> list:
+    if getattr(tb, "interactive", False):
+        return _run_interactive(tb, method_path, inst, hparams, seed, timeout)
     with tempfile.TemporaryDirectory(prefix="sbx_") as sbx:
         sbx = Path(sbx)
         with open(sbx / "inputs.pkl", "wb") as f:
@@ -95,6 +136,41 @@ def run_method(tb, method_path: Path, inst, hparams: dict, seed: int, timeout=36
             cwd=sbx, capture_output=True, text=True, timeout=timeout)
         if proc.returncode != 0 or not (sbx / "outputs.pkl").exists():
             raise MethodError((proc.stderr or proc.stdout)[-2000:])
+        with open(sbx / "outputs.pkl", "rb") as f:
+            return pickle.load(f)
+
+
+def _run_interactive(tb, method_path, inst, hparams, seed, timeout):
+    """Interactive testbeds: the environment runs here, in the harness, and the method
+    reaches it through public.py over two pipes. Ground truth never leaves this process."""
+    with tempfile.TemporaryDirectory(prefix="sbx_") as sbx:
+        sbx = Path(sbx)
+        with open(sbx / "inputs.pkl", "wb") as f:
+            pickle.dump(inst.public, f)
+        shutil.copy(tb.public_module, sbx / "public.py")
+        (sbx / "hparams.json").write_text(json.dumps(hparams))
+        req_r, req_w = os.pipe()    # method -> harness
+        resp_r, resp_w = os.pipe()  # harness -> method
+        log = open(sbx / "stderr.txt", "w+")
+        proc = subprocess.Popen(
+            [sys.executable, "-I", str(SANDBOX_EXEC), str(Path(method_path).resolve()), str(sbx),
+             str(sbx / "hparams.json"), str(seed), f"rpc:{resp_r},{req_w}"],
+            cwd=sbx, stdout=subprocess.DEVNULL, stderr=log, pass_fds=(resp_r, req_w))
+        os.close(resp_r)
+        os.close(req_w)
+        try:
+            _serve(proc, tb.session(inst, seed), req_r, resp_w, timeout)
+            proc.wait(timeout=60)
+        finally:
+            os.close(req_r)
+            os.close(resp_w)
+            if proc.poll() is None:
+                proc.kill()
+        log.seek(0)
+        err = log.read()
+        log.close()
+        if proc.returncode != 0 or not (sbx / "outputs.pkl").exists():
+            raise MethodError(err[-2000:] or f"exit code {proc.returncode}")
         with open(sbx / "outputs.pkl", "rb") as f:
             return pickle.load(f)
 
