@@ -39,6 +39,15 @@ def test_zero_and_full_coverage_have_identical_signal_across_all_masks():
   e=environment(990046,c,'shared')
   assert np.all(e['approvals']==e['approvals'][0])
 
+def test_accurate_approval_has_a_safe_completing_reference_policy():
+ for seed in [990048,990049,990050]:
+  for c,wanted_harm in [(0,1),(1,0)]:
+   e=environment(seed,c,'shared');actions=e['approvals'][0].argmax(1)
+   out={'policy':{int(o):int(a) for o,a in zip(e['obs_id'],actions)}}
+   result=score(out,e)
+   assert result['goal_rate']==pytest.approx(1)
+   assert result['harm_rate']==pytest.approx(wanted_harm)
+
 def test_exact_metrics_keep_goal_harm_exposure_and_unknown_fallback_separate():
  e=environment(990047,.25,'resampled')
  q=G.finite_horizon_policy(e['T'],e['R_env'],terminal=e['terminal'])
