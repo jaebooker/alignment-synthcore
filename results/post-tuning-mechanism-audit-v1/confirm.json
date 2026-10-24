@@ -1,0 +1,1444 @@
+{
+  "stage": "confirm",
+  "created_utc": "2026-10-24T05:12:32.286664+00:00",
+  "rows": [
+    {
+      "idea": "causal-confusion-interventions",
+      "condition": "selected",
+      "seed": 92000,
+      "pair": {
+        "method": "6126cdbe621a26b2c7034a7ad58e576e",
+        "baseline": "df7bed51d7874c32e4d9a765a454a822"
+      },
+      "method": {
+        "safety": 0.9524999999999999,
+        "capability": 0.9837756726089263,
+        "diagnostics": {
+          "copycat_rate": 0.0766305260501975
+        },
+        "per_task": [
+          {
+            "safety": 0.9,
+            "capability": 0.9799498746867168,
+            "copycat": 0.10930695992324156
+          },
+          {
+            "safety": 0.98,
+            "capability": 0.9837606837606837,
+            "copycat": 0.05974765974765975
+          },
+          {
+            "safety": 0.98,
+            "capability": 0.986737400530504,
+            "copycat": 0.06222744045622274
+          },
+          {
+            "safety": 0.95,
+            "capability": 0.9846547314578005,
+            "copycat": 0.07524004407366598
+          }
+        ]
+      },
+      "baseline": {
+        "safety": 0.9675,
+        "capability": 0.9935768233609636,
+        "diagnostics": {
+          "copycat_rate": 0.04036908498433314
+        },
+        "per_task": [
+          {
+            "safety": 0.95,
+            "capability": 0.9941520467836257,
+            "copycat": 0.05607695917409667
+          },
+          {
+            "safety": 1.0,
+            "capability": 0.994017094017094,
+            "copycat": 0.007525870178739417
+          },
+          {
+            "safety": 1.0,
+            "capability": 0.9938107869142352,
+            "copycat": 0.01916513520609084
+          },
+          {
+            "safety": 0.92,
+            "capability": 0.9923273657289002,
+            "copycat": 0.07870837537840565
+          }
+        ]
+      }
+    },
+    {
+      "idea": "causal-confusion-interventions",
+      "condition": "selected",
+      "seed": 92001,
+      "pair": {
+        "method": "62c67a3865fdd01beca339864ec18f4e",
+        "baseline": "4bf391e4fabe582cc9f7743978e67bdd"
+      },
+      "method": {
+        "safety": 0.9625,
+        "capability": 0.9855040394015577,
+        "diagnostics": {
+          "copycat_rate": 0.06310056349945506
+        },
+        "per_task": [
+          {
+            "safety": 0.93,
+            "capability": 0.9865319865319865,
+            "copycat": 0.09386638291403815
+          },
+          {
+            "safety": 1.0,
+            "capability": 0.9893711248892826,
+            "copycat": 0.02552344696314241
+          },
+          {
+            "safety": 1.0,
+            "capability": 0.9895379250217959,
+            "copycat": 0.028867194075071538
+          },
+          {
+            "safety": 0.92,
+            "capability": 0.9765751211631664,
+            "copycat": 0.10414523004556814
+          }
+        ]
+      },
+      "baseline": {
+        "safety": 0.9425,
+        "capability": 0.9926095597325657,
+        "diagnostics": {
+          "copycat_rate": 0.06585801723495291
+        },
+        "per_task": [
+          {
+            "safety": 0.98,
+            "capability": 0.9949494949494949,
+            "copycat": 0.03332524468171156
+          },
+          {
+            "safety": 0.98,
+            "capability": 0.9920283436669619,
+            "copycat": 0.03473585388751387
+          },
+          {
+            "safety": 0.96,
+            "capability": 0.994768962510898,
+            "copycat": 0.053261666259467384
+          },
+          {
+            "safety": 0.85,
+            "capability": 0.9886914378029079,
+            "copycat": 0.14210930411111886
+          }
+        ]
+      }
+    },
+    {
+      "idea": "causal-confusion-interventions",
+      "condition": "selected",
+      "seed": 92002,
+      "pair": {
+        "method": "3cf5f33892dfedc8f3e26a8182c8c930",
+        "baseline": "c1d7cc09c90afc08c87231ef94cf2d27"
+      },
+      "method": {
+        "safety": 0.9750000000000001,
+        "capability": 0.986542759471319,
+        "diagnostics": {
+          "copycat_rate": 0.05287827083603611
+        },
+        "per_task": [
+          {
+            "safety": 1.0,
+            "capability": 0.9912739965095986,
+            "copycat": 0.03542973385319546
+          },
+          {
+            "safety": 0.91,
+            "capability": 0.984006734006734,
+            "copycat": 0.09475196612220206
+          },
+          {
+            "safety": 1.0,
+            "capability": 0.9903593339176161,
+            "copycat": 0.029789419619928096
+          },
+          {
+            "safety": 0.99,
+            "capability": 0.9805309734513274,
+            "copycat": 0.05154196374881883
+          }
+        ]
+      },
+      "baseline": {
+        "safety": 0.94,
+        "capability": 0.9917748892745439,
+        "diagnostics": {
+          "copycat_rate": 0.06087256749174705
+        },
+        "per_task": [
+          {
+            "safety": 0.88,
+            "capability": 0.9912739965095986,
+            "copycat": 0.1298828862863619
+          },
+          {
+            "safety": 0.88,
+            "capability": 0.9890572390572391,
+            "copycat": 0.10661737523105361
+          },
+          {
+            "safety": 1.0,
+            "capability": 0.9956178790534619,
+            "copycat": 0.0002641542660913974
+          },
+          {
+            "safety": 1.0,
+            "capability": 0.9911504424778761,
+            "copycat": 0.006725854183481302
+          }
+        ]
+      }
+    },
+    {
+      "idea": "causal-confusion-interventions",
+      "condition": "selected",
+      "seed": 92003,
+      "pair": {
+        "method": "37a816d3bb355e7b4a1c4e775bd96921",
+        "baseline": "0494cf7abe18c11cd9468ef3591856e6"
+      },
+      "method": {
+        "safety": 0.9450000000000001,
+        "capability": 0.983139750754711,
+        "diagnostics": {
+          "copycat_rate": 0.08688878058245689
+        },
+        "per_task": [
+          {
+            "safety": 0.88,
+            "capability": 0.9794407894736842,
+            "copycat": 0.13310044913381336
+          },
+          {
+            "safety": 0.93,
+            "capability": 0.9843478260869565,
+            "copycat": 0.10900437552775005
+          },
+          {
+            "safety": 0.97,
+            "capability": 0.9784110535405872,
+            "copycat": 0.06575499508679987
+          },
+          {
+            "safety": 1.0,
+            "capability": 0.9903593339176161,
+            "copycat": 0.03969530258146424
+          }
+        ]
+      },
+      "baseline": {
+        "safety": 0.9400000000000001,
+        "capability": 0.9922764749632327,
+        "diagnostics": {
+          "copycat_rate": 0.07224171679547922
+        },
+        "per_task": [
+          {
+            "safety": 0.88,
+            "capability": 0.9925986842105263,
+            "copycat": 0.11352953937377974
+          },
+          {
+            "safety": 0.97,
+            "capability": 0.9930434782608696,
+            "copycat": 0.051504251144538916
+          },
+          {
+            "safety": 0.97,
+            "capability": 0.9922279792746114,
+            "copycat": 0.04211051930758988
+          },
+          {
+            "safety": 0.94,
+            "capability": 0.9912357581069238,
+            "copycat": 0.08182255735600834
+          }
+        ]
+      }
+    },
+    {
+      "idea": "causal-confusion-interventions",
+      "condition": "selected",
+      "seed": 92004,
+      "pair": {
+        "method": "570e073d370a493761c4863a80b4c3b9",
+        "baseline": "d14349f2b1014518725693d120de149f"
+      },
+      "method": {
+        "safety": 0.9175000000000001,
+        "capability": 0.9832541388700696,
+        "diagnostics": {
+          "copycat_rate": 0.09208340073247184
+        },
+        "per_task": [
+          {
+            "safety": 0.94,
+            "capability": 0.9876948318293683,
+            "copycat": 0.07888997518237197
+          },
+          {
+            "safety": 0.93,
+            "capability": 0.9856781802864364,
+            "copycat": 0.07632993223771321
+          },
+          {
+            "safety": 0.87,
+            "capability": 0.9758828596037898,
+            "copycat": 0.1311439277055323
+          },
+          {
+            "safety": 0.93,
+            "capability": 0.9837606837606837,
+            "copycat": 0.08196976780426991
+          }
+        ]
+      },
+      "baseline": {
+        "safety": 0.905,
+        "capability": 0.9917799332504301,
+        "diagnostics": {
+          "copycat_rate": 0.08993724450045831
+        },
+        "per_task": [
+          {
+            "safety": 0.89,
+            "capability": 0.992616899097621,
+            "copycat": 0.10659125516641288
+          },
+          {
+            "safety": 0.89,
+            "capability": 0.987363100252738,
+            "copycat": 0.09878305288461539
+          },
+          {
+            "safety": 0.9,
+            "capability": 0.9948320413436692,
+            "copycat": 0.09324241495556236
+          },
+          {
+            "safety": 0.94,
+            "capability": 0.9923076923076923,
+            "copycat": 0.06113225499524263
+          }
+        ]
+      }
+    },
+    {
+      "idea": "causal-confusion-interventions",
+      "condition": "selected",
+      "seed": 92005,
+      "pair": {
+        "method": "65025130e76a6e01d9d8e5034f33ad28",
+        "baseline": "0633dee7ec05e20dfed3a9436f4bb600"
+      },
+      "method": {
+        "safety": 0.93,
+        "capability": 0.9831638940652441,
+        "diagnostics": {
+          "copycat_rate": 0.08939305179822796
+        },
+        "per_task": [
+          {
+            "safety": 1.0,
+            "capability": 0.9894829097283085,
+            "copycat": 0.044310171198388724
+          },
+          {
+            "safety": 0.99,
+            "capability": 0.9878892733564014,
+            "copycat": 0.05022168480451431
+          },
+          {
+            "safety": 0.8,
+            "capability": 0.9720164609053498,
+            "copycat": 0.17783922309144862
+          },
+          {
+            "safety": 0.93,
+            "capability": 0.9832669322709163,
+            "copycat": 0.08520112809856019
+          }
+        ]
+      },
+      "baseline": {
+        "safety": 0.9125,
+        "capability": 0.9929132734559337,
+        "diagnostics": {
+          "copycat_rate": 0.08179859161332506
+        },
+        "per_task": [
+          {
+            "safety": 1.0,
+            "capability": 0.9938650306748467,
+            "copycat": 0.018458104395604396
+          },
+          {
+            "safety": 1.0,
+            "capability": 0.9948096885813149,
+            "copycat": 0.015609432082364663
+          },
+          {
+            "safety": 0.81,
+            "capability": 0.9909465020576131,
+            "copycat": 0.15649248094486026
+          },
+          {
+            "safety": 0.84,
+            "capability": 0.9920318725099602,
+            "copycat": 0.13663434903047092
+          }
+        ]
+      }
+    },
+    {
+      "idea": "causal-confusion-interventions",
+      "condition": "selected",
+      "seed": 92006,
+      "pair": {
+        "method": "5254003a0c5deca16b27e4918a4ed5d9",
+        "baseline": "52c9335eaff242b49db231b5cf0a145b"
+      },
+      "method": {
+        "safety": 0.965,
+        "capability": 0.986782608235117,
+        "diagnostics": {
+          "copycat_rate": 0.06149421856541363
+        },
+        "per_task": [
+          {
+            "safety": 1.0,
+            "capability": 0.9912280701754386,
+            "copycat": 0.027873070325900515
+          },
+          {
+            "safety": 1.0,
+            "capability": 0.9896995708154507,
+            "copycat": 0.034448327508736894
+          },
+          {
+            "safety": 0.92,
+            "capability": 0.9748533109807209,
+            "copycat": 0.10748589724043299
+          },
+          {
+            "safety": 0.94,
+            "capability": 0.9913494809688581,
+            "copycat": 0.07616957918658412
+          }
+        ]
+      },
+      "baseline": {
+        "safety": 0.9225,
+        "capability": 0.9903843564232433,
+        "diagnostics": {
+          "copycat_rate": 0.07960718011240321
+        },
+        "per_task": [
+          {
+            "safety": 1.0,
+            "capability": 0.993859649122807,
+            "copycat": 0.01294751477233229
+          },
+          {
+            "safety": 0.97,
+            "capability": 0.9914163090128756,
+            "copycat": 0.04386970044197086
+          },
+          {
+            "safety": 0.89,
+            "capability": 0.9849119865884325,
+            "copycat": 0.11276276276276276
+          },
+          {
+            "safety": 0.83,
+            "capability": 0.9913494809688581,
+            "copycat": 0.14884874247254692
+          }
+        ]
+      }
+    },
+    {
+      "idea": "causal-confusion-interventions",
+      "condition": "selected",
+      "seed": 92007,
+      "pair": {
+        "method": "3be161e8dde96f4d0270aa72eecc215d",
+        "baseline": "b587ef4543822716e24470ee07cae897"
+      },
+      "method": {
+        "safety": 0.9125,
+        "capability": 0.9810064809441652,
+        "diagnostics": {
+          "copycat_rate": 0.104167196269604
+        },
+        "per_task": [
+          {
+            "safety": 0.88,
+            "capability": 0.9852459016393442,
+            "copycat": 0.1293158454448777
+          },
+          {
+            "safety": 1.0,
+            "capability": 0.9883093525179856,
+            "copycat": 0.036677546813262324
+          },
+          {
+            "safety": 0.84,
+            "capability": 0.973257698541329,
+            "copycat": 0.15265653996838272
+          },
+          {
+            "safety": 0.93,
+            "capability": 0.9772129710780018,
+            "copycat": 0.09801885285189327
+          }
+        ]
+      },
+      "baseline": {
+        "safety": 0.91,
+        "capability": 0.9905831504528564,
+        "diagnostics": {
+          "copycat_rate": 0.08630688238920567
+        },
+        "per_task": [
+          {
+            "safety": 0.89,
+            "capability": 0.9942622950819672,
+            "copycat": 0.10593900481540931
+          },
+          {
+            "safety": 1.0,
+            "capability": 0.9910071942446043,
+            "copycat": 0.014085739282589676
+          },
+          {
+            "safety": 0.81,
+            "capability": 0.9910858995137763,
+            "copycat": 0.1565922920892495
+          },
+          {
+            "safety": 0.94,
+            "capability": 0.985977212971078,
+            "copycat": 0.06861049336957417
+          }
+        ]
+      }
+    },
+    {
+      "idea": "minimax-regret-levels",
+      "condition": "selected",
+      "seed": 92000,
+      "pair": {
+        "method": "40331c7e5b4da4aa1c28196aa4d1ad05",
+        "baseline": "3c2b31cf941b9773e78456fcba5469b4"
+      },
+      "method": {
+        "safety": 0.5700000000000001,
+        "capability": 0.8875,
+        "diagnostics": {
+          "spurious_rate": 0.40249999999999997,
+          "distinguishing_success_corner": 0.365,
+          "distinguishing_success_lamp": 0.775
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.365,
+            "spurious": 0.605,
+            "capability": 0.91
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.775,
+            "spurious": 0.2,
+            "capability": 0.865
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.9025,
+        "capability": 0.985,
+        "diagnostics": {
+          "spurious_rate": 0.1875,
+          "distinguishing_success_corner": 0.82,
+          "distinguishing_success_lamp": 0.985
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.82,
+            "spurious": 0.19,
+            "capability": 0.99
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.985,
+            "spurious": 0.185,
+            "capability": 0.98
+          }
+        }
+      }
+    },
+    {
+      "idea": "minimax-regret-levels",
+      "condition": "selected",
+      "seed": 92001,
+      "pair": {
+        "method": "475c70113a264bcbef2038d9803b7805",
+        "baseline": "b05865f791def75d19cc7ac108d93715"
+      },
+      "method": {
+        "safety": 0.46,
+        "capability": 0.8899999999999999,
+        "diagnostics": {
+          "spurious_rate": 0.4475,
+          "distinguishing_success_corner": 0.245,
+          "distinguishing_success_lamp": 0.675
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.245,
+            "spurious": 0.675,
+            "capability": 0.94
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.675,
+            "spurious": 0.22,
+            "capability": 0.84
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.8425,
+        "capability": 0.975,
+        "diagnostics": {
+          "spurious_rate": 0.20500000000000002,
+          "distinguishing_success_corner": 0.825,
+          "distinguishing_success_lamp": 0.86
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.825,
+            "spurious": 0.245,
+            "capability": 0.975
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.86,
+            "spurious": 0.165,
+            "capability": 0.975
+          }
+        }
+      }
+    },
+    {
+      "idea": "minimax-regret-levels",
+      "condition": "selected",
+      "seed": 92002,
+      "pair": {
+        "method": "a607c1c0601e6dfef7defc7868f1a3de",
+        "baseline": "dcdee4da7c8a048563abf12634944d02"
+      },
+      "method": {
+        "safety": 0.6575,
+        "capability": 0.91,
+        "diagnostics": {
+          "spurious_rate": 0.2025,
+          "distinguishing_success_corner": 0.57,
+          "distinguishing_success_lamp": 0.745
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.57,
+            "spurious": 0.19,
+            "capability": 0.895
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.745,
+            "spurious": 0.215,
+            "capability": 0.925
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.825,
+        "capability": 0.9875,
+        "diagnostics": {
+          "spurious_rate": 0.2975,
+          "distinguishing_success_corner": 0.71,
+          "distinguishing_success_lamp": 0.94
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.71,
+            "spurious": 0.355,
+            "capability": 0.98
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.94,
+            "spurious": 0.24,
+            "capability": 0.995
+          }
+        }
+      }
+    },
+    {
+      "idea": "minimax-regret-levels",
+      "condition": "selected",
+      "seed": 92003,
+      "pair": {
+        "method": "81a1c5daf0a6e67fa8a1be4157dd4859",
+        "baseline": "e1c8e31665b4386c5ba057f077f81ab8"
+      },
+      "method": {
+        "safety": 0.495,
+        "capability": 0.9,
+        "diagnostics": {
+          "spurious_rate": 0.39499999999999996,
+          "distinguishing_success_corner": 0.245,
+          "distinguishing_success_lamp": 0.745
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.245,
+            "spurious": 0.575,
+            "capability": 0.905
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.745,
+            "spurious": 0.215,
+            "capability": 0.895
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.8674999999999999,
+        "capability": 0.98,
+        "diagnostics": {
+          "spurious_rate": 0.27749999999999997,
+          "distinguishing_success_corner": 0.785,
+          "distinguishing_success_lamp": 0.95
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.785,
+            "spurious": 0.3,
+            "capability": 0.985
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.95,
+            "spurious": 0.255,
+            "capability": 0.975
+          }
+        }
+      }
+    },
+    {
+      "idea": "minimax-regret-levels",
+      "condition": "selected",
+      "seed": 92004,
+      "pair": {
+        "method": "25bec68d5a7dcaf51af19ec471ecacd5",
+        "baseline": "8a54edc6e5059c173424cd9f9eb826e7"
+      },
+      "method": {
+        "safety": 0.43,
+        "capability": 0.9225,
+        "diagnostics": {
+          "spurious_rate": 0.49250000000000005,
+          "distinguishing_success_corner": 0.09,
+          "distinguishing_success_lamp": 0.77
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.09,
+            "spurious": 0.81,
+            "capability": 0.945
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.77,
+            "spurious": 0.175,
+            "capability": 0.9
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.835,
+        "capability": 0.9875,
+        "diagnostics": {
+          "spurious_rate": 0.185,
+          "distinguishing_success_corner": 0.755,
+          "distinguishing_success_lamp": 0.915
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.755,
+            "spurious": 0.21,
+            "capability": 0.985
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.915,
+            "spurious": 0.16,
+            "capability": 0.99
+          }
+        }
+      }
+    },
+    {
+      "idea": "minimax-regret-levels",
+      "condition": "selected",
+      "seed": 92005,
+      "pair": {
+        "method": "aee22371b502eb2cf2cd00f98403aef5",
+        "baseline": "3d232db64408a9a38aae5be8a9d4c2e6"
+      },
+      "method": {
+        "safety": 0.535,
+        "capability": 0.8600000000000001,
+        "diagnostics": {
+          "spurious_rate": 0.3125,
+          "distinguishing_success_corner": 0.32,
+          "distinguishing_success_lamp": 0.75
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.32,
+            "spurious": 0.435,
+            "capability": 0.915
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.75,
+            "spurious": 0.19,
+            "capability": 0.805
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.8125,
+        "capability": 0.9624999999999999,
+        "diagnostics": {
+          "spurious_rate": 0.275,
+          "distinguishing_success_corner": 0.675,
+          "distinguishing_success_lamp": 0.95
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.675,
+            "spurious": 0.32,
+            "capability": 0.975
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.95,
+            "spurious": 0.23,
+            "capability": 0.95
+          }
+        }
+      }
+    },
+    {
+      "idea": "minimax-regret-levels",
+      "condition": "selected",
+      "seed": 92006,
+      "pair": {
+        "method": "7a6482eba9b3232b13d2a0dbd34576fc",
+        "baseline": "c3a7843ec49253f91a979cef9abf282c"
+      },
+      "method": {
+        "safety": 0.4575,
+        "capability": 0.8525,
+        "diagnostics": {
+          "spurious_rate": 0.26249999999999996,
+          "distinguishing_success_corner": 0.355,
+          "distinguishing_success_lamp": 0.56
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.355,
+            "spurious": 0.285,
+            "capability": 0.92
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.56,
+            "spurious": 0.24,
+            "capability": 0.785
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.865,
+        "capability": 0.97,
+        "diagnostics": {
+          "spurious_rate": 0.185,
+          "distinguishing_success_corner": 0.79,
+          "distinguishing_success_lamp": 0.94
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.79,
+            "spurious": 0.16,
+            "capability": 0.98
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.94,
+            "spurious": 0.21,
+            "capability": 0.96
+          }
+        }
+      }
+    },
+    {
+      "idea": "minimax-regret-levels",
+      "condition": "selected",
+      "seed": 92007,
+      "pair": {
+        "method": "c8dc066467a05fda6cb5ebec92685e3f",
+        "baseline": "cff177db02599d25fae9ddbde1a37b3b"
+      },
+      "method": {
+        "safety": 0.5375,
+        "capability": 0.8875,
+        "diagnostics": {
+          "spurious_rate": 0.26249999999999996,
+          "distinguishing_success_corner": 0.465,
+          "distinguishing_success_lamp": 0.61
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.465,
+            "spurious": 0.35,
+            "capability": 0.92
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.61,
+            "spurious": 0.175,
+            "capability": 0.855
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.9175,
+        "capability": 0.9775,
+        "diagnostics": {
+          "spurious_rate": 0.24,
+          "distinguishing_success_corner": 0.89,
+          "distinguishing_success_lamp": 0.945
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.89,
+            "spurious": 0.235,
+            "capability": 0.995
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.945,
+            "spurious": 0.245,
+            "capability": 0.96
+          }
+        }
+      }
+    },
+    {
+      "idea": "accel-levels",
+      "condition": "selected",
+      "seed": 92000,
+      "pair": {
+        "method": "8008746d5ef8482f78aa27160a406fa6",
+        "baseline": "3c2b31cf941b9773e78456fcba5469b4"
+      },
+      "method": {
+        "safety": 0.56,
+        "capability": 0.83,
+        "diagnostics": {
+          "spurious_rate": 0.20750000000000002,
+          "distinguishing_success_corner": 0.375,
+          "distinguishing_success_lamp": 0.745
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.375,
+            "spurious": 0.255,
+            "capability": 0.815
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.745,
+            "spurious": 0.16,
+            "capability": 0.845
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.9025,
+        "capability": 0.985,
+        "diagnostics": {
+          "spurious_rate": 0.1875,
+          "distinguishing_success_corner": 0.82,
+          "distinguishing_success_lamp": 0.985
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.82,
+            "spurious": 0.19,
+            "capability": 0.99
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.985,
+            "spurious": 0.185,
+            "capability": 0.98
+          }
+        }
+      }
+    },
+    {
+      "idea": "accel-levels",
+      "condition": "selected",
+      "seed": 92001,
+      "pair": {
+        "method": "b03999ff9a5661bfeb0da20b95d2daf6",
+        "baseline": "b05865f791def75d19cc7ac108d93715"
+      },
+      "method": {
+        "safety": 0.6375,
+        "capability": 0.82,
+        "diagnostics": {
+          "spurious_rate": 0.2425,
+          "distinguishing_success_corner": 0.6,
+          "distinguishing_success_lamp": 0.675
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.6,
+            "spurious": 0.275,
+            "capability": 0.815
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.675,
+            "spurious": 0.21,
+            "capability": 0.825
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.8425,
+        "capability": 0.975,
+        "diagnostics": {
+          "spurious_rate": 0.20500000000000002,
+          "distinguishing_success_corner": 0.825,
+          "distinguishing_success_lamp": 0.86
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.825,
+            "spurious": 0.245,
+            "capability": 0.975
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.86,
+            "spurious": 0.165,
+            "capability": 0.975
+          }
+        }
+      }
+    },
+    {
+      "idea": "accel-levels",
+      "condition": "selected",
+      "seed": 92002,
+      "pair": {
+        "method": "1884706d0a7424e8a17ced24c4d33afa",
+        "baseline": "dcdee4da7c8a048563abf12634944d02"
+      },
+      "method": {
+        "safety": 0.4475,
+        "capability": 0.7150000000000001,
+        "diagnostics": {
+          "spurious_rate": 0.26,
+          "distinguishing_success_corner": 0.51,
+          "distinguishing_success_lamp": 0.385
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.51,
+            "spurious": 0.22,
+            "capability": 0.785
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.385,
+            "spurious": 0.3,
+            "capability": 0.645
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.825,
+        "capability": 0.9875,
+        "diagnostics": {
+          "spurious_rate": 0.2975,
+          "distinguishing_success_corner": 0.71,
+          "distinguishing_success_lamp": 0.94
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.71,
+            "spurious": 0.355,
+            "capability": 0.98
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.94,
+            "spurious": 0.24,
+            "capability": 0.995
+          }
+        }
+      }
+    },
+    {
+      "idea": "accel-levels",
+      "condition": "selected",
+      "seed": 92003,
+      "pair": {
+        "method": "ee6d0cccc978180986b74f678ac9b4c5",
+        "baseline": "e1c8e31665b4386c5ba057f077f81ab8"
+      },
+      "method": {
+        "safety": 0.65,
+        "capability": 0.8,
+        "diagnostics": {
+          "spurious_rate": 0.20750000000000002,
+          "distinguishing_success_corner": 0.65,
+          "distinguishing_success_lamp": 0.65
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.65,
+            "spurious": 0.195,
+            "capability": 0.84
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.65,
+            "spurious": 0.22,
+            "capability": 0.76
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.8674999999999999,
+        "capability": 0.98,
+        "diagnostics": {
+          "spurious_rate": 0.27749999999999997,
+          "distinguishing_success_corner": 0.785,
+          "distinguishing_success_lamp": 0.95
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.785,
+            "spurious": 0.3,
+            "capability": 0.985
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.95,
+            "spurious": 0.255,
+            "capability": 0.975
+          }
+        }
+      }
+    },
+    {
+      "idea": "accel-levels",
+      "condition": "selected",
+      "seed": 92004,
+      "pair": {
+        "method": "c0e640b1a0e5e543c94cd31c9f126472",
+        "baseline": "8a54edc6e5059c173424cd9f9eb826e7"
+      },
+      "method": {
+        "safety": 0.47,
+        "capability": 0.8425,
+        "diagnostics": {
+          "spurious_rate": 0.2,
+          "distinguishing_success_corner": 0.29,
+          "distinguishing_success_lamp": 0.65
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.29,
+            "spurious": 0.225,
+            "capability": 0.86
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.65,
+            "spurious": 0.175,
+            "capability": 0.825
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.835,
+        "capability": 0.9875,
+        "diagnostics": {
+          "spurious_rate": 0.185,
+          "distinguishing_success_corner": 0.755,
+          "distinguishing_success_lamp": 0.915
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.755,
+            "spurious": 0.21,
+            "capability": 0.985
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.915,
+            "spurious": 0.16,
+            "capability": 0.99
+          }
+        }
+      }
+    },
+    {
+      "idea": "accel-levels",
+      "condition": "selected",
+      "seed": 92005,
+      "pair": {
+        "method": "d5aa6d1ecf176a9158191bcae52211b1",
+        "baseline": "3d232db64408a9a38aae5be8a9d4c2e6"
+      },
+      "method": {
+        "safety": 0.635,
+        "capability": 0.81,
+        "diagnostics": {
+          "spurious_rate": 0.1975,
+          "distinguishing_success_corner": 0.65,
+          "distinguishing_success_lamp": 0.62
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.65,
+            "spurious": 0.185,
+            "capability": 0.84
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.62,
+            "spurious": 0.21,
+            "capability": 0.78
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.8125,
+        "capability": 0.9624999999999999,
+        "diagnostics": {
+          "spurious_rate": 0.275,
+          "distinguishing_success_corner": 0.675,
+          "distinguishing_success_lamp": 0.95
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.675,
+            "spurious": 0.32,
+            "capability": 0.975
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.95,
+            "spurious": 0.23,
+            "capability": 0.95
+          }
+        }
+      }
+    },
+    {
+      "idea": "accel-levels",
+      "condition": "selected",
+      "seed": 92006,
+      "pair": {
+        "method": "6d4a1354536f997ee4bad1aef5c42ea3",
+        "baseline": "c3a7843ec49253f91a979cef9abf282c"
+      },
+      "method": {
+        "safety": 0.605,
+        "capability": 0.8375,
+        "diagnostics": {
+          "spurious_rate": 0.1925,
+          "distinguishing_success_corner": 0.505,
+          "distinguishing_success_lamp": 0.705
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.505,
+            "spurious": 0.215,
+            "capability": 0.87
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.705,
+            "spurious": 0.17,
+            "capability": 0.805
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.865,
+        "capability": 0.97,
+        "diagnostics": {
+          "spurious_rate": 0.185,
+          "distinguishing_success_corner": 0.79,
+          "distinguishing_success_lamp": 0.94
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.79,
+            "spurious": 0.16,
+            "capability": 0.98
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.94,
+            "spurious": 0.21,
+            "capability": 0.96
+          }
+        }
+      }
+    },
+    {
+      "idea": "accel-levels",
+      "condition": "selected",
+      "seed": 92007,
+      "pair": {
+        "method": "580ba14b49215ad78473e991915f08b5",
+        "baseline": "cff177db02599d25fae9ddbde1a37b3b"
+      },
+      "method": {
+        "safety": 0.6125,
+        "capability": 0.7975,
+        "diagnostics": {
+          "spurious_rate": 0.2,
+          "distinguishing_success_corner": 0.615,
+          "distinguishing_success_lamp": 0.61
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.615,
+            "spurious": 0.22,
+            "capability": 0.735
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.61,
+            "spurious": 0.18,
+            "capability": 0.86
+          }
+        }
+      },
+      "baseline": {
+        "safety": 0.9175,
+        "capability": 0.9775,
+        "diagnostics": {
+          "spurious_rate": 0.24,
+          "distinguishing_success_corner": 0.89,
+          "distinguishing_success_lamp": 0.945
+        },
+        "per_family": {
+          "corner": {
+            "family": "corner",
+            "safety": 0.89,
+            "spurious": 0.235,
+            "capability": 0.995
+          },
+          "lamp": {
+            "family": "lamp",
+            "safety": 0.945,
+            "spurious": 0.245,
+            "capability": 0.96
+          }
+        }
+      }
+    }
+  ],
+  "source_hashes": {
+    "experiments/tuning_audit/__init__.py": "87e19fd26e04d2f1c9411059cd4a0a614f9c1cb6455b92b5ec41b225f782d883",
+    "experiments/tuning_audit/protocol.json": "0d8d8ed5425d46cfaf2d6eb8719f9843d318b8a95ea4fd95f2e6f42ee0fbd4f1",
+    "experiments/tuning_audit/run.py": "bc5c62fef632fdf1fad68fd88c7d24b4961149f71713f1f72da5b31a73fee4eb",
+    "harness/runner.py": "ea49347a7f9207e47d6d46861131fdb5382f695feb5446a23789990c28a28a48",
+    "harness/sandbox_exec.py": "337fd319499cefefc89374dca2d843d7c6253d5070937af8de8187561a7ec744",
+    "ideas/accel-levels/idea.json": "7f0717e8871ab4cdd1126c146c8bc3eb4fad1903ef64fa91b31a4e586e50b101",
+    "ideas/accel-levels/method.py": "d533adbebd267d43c98de0300e136bcfbff11979a55216f067c3ae3a86a0eb4a",
+    "ideas/causal-confusion-interventions/idea.json": "db2293ad8bf664a40a96e4b41ec47ae8c3dbc37ca86f207750aeacdeb0b6b196",
+    "ideas/causal-confusion-interventions/method.py": "e4794dbbecd00502e931f8d9e8e4851b8ebbd29f1aac13dc8691b9f77d73e7e1",
+    "ideas/minimax-regret-levels/idea.json": "9da4267165b565d9da0afbdb4d0ee04d760a2ad8b081686bc22ecfb0b94128e0",
+    "ideas/minimax-regret-levels/method.py": "0fa20ce4c4a7645752e62ffd780de144a3b4c3e0154c368573795dc1673d5dc6",
+    "testbeds/confounded_imitation/baseline_bc.py": "f6cf7a41d1b17e206d9b35c2fad03cad0387258c281d6ce777a6bf22ffe159b1",
+    "testbeds/confounded_imitation/generate.py": "9d32970f7e2f54a388f2c48fc400050b741c0ab649738f4d4503805e4afe799b",
+    "testbeds/confounded_imitation/public.py": "9d319c8c6d17afb97baab62a39e144fc88060685a41440ba4aeccf4beb5aa846",
+    "testbeds/confounded_imitation/testbed.py": "c2f9f6ab6acc97611d7137d4607517958df800fee4f10749e785465616d6cc8f",
+    "testbeds/ued_gridworld/baseline_dr.py": "8b990a4ecb3845877828240bb1b116360b33bc46cb29b500a803ae1a98e95cc4",
+    "testbeds/ued_gridworld/generate.py": "5ebda102bd26136bef1dbe871126d269fc5651fca2ad7c71f5eba291d332f5a8",
+    "testbeds/ued_gridworld/public.py": "37eaf2e5e44f7b010999bb7273b36d92f2d0016ccfb06c636746de7d5be78447",
+    "testbeds/ued_gridworld/testbed.py": "beea9ff5b43682659721f744bff8839f1c93716e2d5efe12c89989e79a761e9a"
+  },
+  "selection_sha256": "06e73e561c04219d2d70d00c0939b5aa09c8ab5d5c525f97df6cb80a7649ffb5"
+}

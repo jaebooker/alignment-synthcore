@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "verified_model_archives": 120,
+  "fresh_tuning_candidates_per_arm": 4,
+  "selection_seeds_per_candidate": 2,
+  "gate_audit_seeds": 4,
+  "confirmation_seeds_per_idea": 8,
+  "source_and_selection_hashes_match": true,
+  "all_audit_and_confirmation_fits_after_selection_freeze": true,
+  "paired_intervals_independently_recalculated": true,
+  "selected_saved_models_rescored": [
+    {
+      "id": "6126cdbe621a26b2c7034a7ad58e576e",
+      "testbed": "confounded_imitation",
+      "method": "ideas/causal-confusion-interventions/method.py",
+      "rescored": true
+    },
+    {
+      "id": "df7bed51d7874c32e4d9a765a454a822",
+      "testbed": "confounded_imitation",
+      "method": "testbeds/confounded_imitation/baseline_bc.py",
+      "rescored": true
+    },
+    {
+      "id": "8008746d5ef8482f78aa27160a406fa6",
+      "testbed": "ued_gridworld",
+      "method": "ideas/accel-levels/method.py",
+      "rescored": true
+    },
+    {
+      "id": "40331c7e5b4da4aa1c28196aa4d1ad05",
+      "testbed": "ued_gridworld",
+      "method": "ideas/minimax-regret-levels/method.py",
+      "rescored": true
+    },
+    {
+      "id": "3c2b31cf941b9773e78456fcba5469b4",
+      "testbed": "ued_gridworld",
+      "method": "testbeds/ued_gridworld/baseline_dr.py",
+      "rescored": true
+    }
+  ],
+  "supporting_source_matches_initial_git_commit": {
+    "harness/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "harness/runner.py": "ea49347a7f9207e47d6d46861131fdb5382f695feb5446a23789990c28a28a48",
+    "harness/sandbox_exec.py": "337fd319499cefefc89374dca2d843d7c6253d5070937af8de8187561a7ec744",
+    "harness/stats.py": "7ccce97f5f4f72b380b646a084a05d261c527ef7267ff3c97311ef9c8642e05f",
+    "harness/testbed.py": "7528967c4cb969c425c379f5a0f99b1297a7ecc4a4671a1b8d90f128d2a88b39",
+    "harness/verdict.py": "28ac78667119842625bddfbd8bb33f26cdb87d8dbff5f16e953fcd476e992486",
+    "testbeds/confounded_imitation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "testbeds/confounded_imitation/baseline_bc.py": "f6cf7a41d1b17e206d9b35c2fad03cad0387258c281d6ce777a6bf22ffe159b1",
+    "testbeds/confounded_imitation/generate.py": "9d32970f7e2f54a388f2c48fc400050b741c0ab649738f4d4503805e4afe799b",
+    "testbeds/confounded_imitation/public.py": "9d319c8c6d17afb97baab62a39e144fc88060685a41440ba4aeccf4beb5aa846",
+    "testbeds/confounded_imitation/testbed.py": "c2f9f6ab6acc97611d7137d4607517958df800fee4f10749e785465616d6cc8f",
+    "testbeds/ued_gridworld/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "testbeds/ued_gridworld/baseline_dr.py": "8b990a4ecb3845877828240bb1b116360b33bc46cb29b500a803ae1a98e95cc4",
+    "testbeds/ued_gridworld/generate.py": "5ebda102bd26136bef1dbe871126d269fc5651fca2ad7c71f5eba291d332f5a8",
+    "testbeds/ued_gridworld/public.py": "37eaf2e5e44f7b010999bb7273b36d92f2d0016ccfb06c636746de7d5be78447",
+    "testbeds/ued_gridworld/testbed.py": "beea9ff5b43682659721f744bff8839f1c93716e2d5efe12c89989e79a761e9a"
+  },
+  "scope": "Engineering integrity check; same evaluator re-scoring is not independent scientific reproduction."
+}
