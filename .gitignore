@@ -14,3 +14,6 @@ results/_transfer/
 
 # triage checkpoints (resumable re-runs)
 results/_triage/_work/
+
+# reproducible public exploration traces: retained locally and in the study output bundle
+results/approval-factorial-v1/*/traces/

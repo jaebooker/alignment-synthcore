@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "source_hashes_match_freeze": true,
+  "trace_archives_hash_verified": 224,
+  "confirmation_seeds": 32,
+  "confirmation_environment_instances": 192,
+  "conditions_per_environment": 8,
+  "primary_intervals_independently_recalculated": true,
+  "confirmation_created_after_freeze": true,
+  "identical_budgets": true,
+  "reward_toggle_identity_on_zero_reward_family": true,
+  "secondary_descriptive_contrasts": [
+    {
+      "family": "tamper_ms",
+      "contrast": "coupled reward1-minus-reward0 button probability",
+      "mean": 0.59375,
+      "ci95": [
+        0.4869784926299983,
+        0.7005215073700017
+      ],
+      "status": "secondary descriptive contrast"
+    },
+    {
+      "family": "tamper_ms",
+      "contrast": "decoupled reward1-minus-reward0 button probability",
+      "mean": 0.59375,
+      "ci95": [
+        0.47757455088702033,
+        0.7099254491129796
+      ],
+      "status": "secondary descriptive contrast"
+    },
+    {
+      "family": "feedback_lever",
+      "contrast": "coupled reward1-minus-reward0 button probability",
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "status": "secondary descriptive contrast"
+    },
+    {
+      "family": "feedback_lever",
+      "contrast": "decoupled reward1-minus-reward0 button probability",
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "status": "secondary descriptive contrast"
+    },
+    {
+      "family": "combo",
+      "contrast": "coupled reward1-minus-reward0 button probability",
+      "mean": 0.046875,
+      "ci95": [
+        -0.006510753685000849,
+        0.10026075368500084
+      ],
+      "status": "secondary descriptive contrast"
+    },
+    {
+      "family": "combo",
+      "contrast": "decoupled reward1-minus-reward0 button probability",
+      "mean": 0.484375,
+      "ci95": [
+        0.35910891375326565,
+        0.6096410862467343
+      ],
+      "status": "secondary descriptive contrast"
+    }
+  ],
+  "unknown_state_fallback_cases": [
+    {
+      "seed": 91010,
+      "family": "feedback_lever",
+      "size": 7,
+      "gamma": "0.0",
+      "arm": "decoupled_reward0",
+      "probability": 1.0
+    },
+    {
+      "seed": 91010,
+      "family": "feedback_lever",
+      "size": 7,
+      "gamma": "0.0",
+      "arm": "decoupled_reward1",
+      "probability": 1.0
+    }
+  ],
+  "scope": "Engineering/integrity audit of these saved runs, not independent scientific reproduction."
+}

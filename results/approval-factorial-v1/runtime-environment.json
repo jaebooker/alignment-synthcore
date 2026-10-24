@@ -1,0 +1,13 @@
+{
+  "python": "3.11.4 (main, Jul  5 2023, 08:54:11) [Clang 14.0.6 ]",
+  "numpy": "1.26.4",
+  "scipy": "1.10.1",
+  "platform": "macOS-14.2.1-arm64-arm-64bit",
+  "source_base_commit": "1c49b15d1e4b1eca89235c1a57a9cfd82dd4ca9e",
+  "threads": {
+    "OPENBLAS_NUM_THREADS": 1,
+    "OMP_NUM_THREADS": 1
+  },
+  "hidden_environment_info": "Evaluator-side only; learner input fields are documented in the protocol.",
+  "implementation_commit": "38eb3f459fa89b0e015b5ed3079803b42f60afd6"
+}
