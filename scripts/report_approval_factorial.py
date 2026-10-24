@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import hashlib
+from decimal import Decimal, ROUND_HALF_UP
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -11,7 +12,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'results/approval-factorial-v1'
 x=json.loads((OUT/'confirmation-summary.json').read_text());p=json.loads((ROOT/'experiments/approval_factorial/protocol.json').read_text());audit=json.loads((OUT/'audit.json').read_text())
 rows={(r['family'],r['gamma'],r['arm']):r for r in x['table']}
-def pct(v):return f'{100*v:.1f}%'
+def pct(v):return str(Decimal(str(100*v)).quantize(Decimal('0.1'),rounding=ROUND_HALF_UP))+'%'
 def value(f,g,a,k):return rows[(f,g,a)]['metrics'][k]['mean']
 md=['# Test 1: matched approval feedback × environment reward','',
 '24 October 2026. Locally frozen 32-seed confirmation, preceded by eight development seeds. This is a fixed-exploration tabular ablation, not a replication of the original online decoupled-approval algorithm. No independent scientific reproduction or peer review is claimed.','',
@@ -73,7 +74,7 @@ for ax,metric,title in zip(axes,['lever_use','goal_completion'],['Lever activati
    stat=rows[('feedback_lever',g,arm)]['metrics'][metric];m=stat['mean'];means.append(100*m)
    lo.append(100*(m-max(0,stat['ci95'][0])));hi.append(100*(min(1,stat['ci95'][1])-m))
   ax.bar(np.arange(2)+offset,means,.32,label=label,color=color,yerr=[lo,hi],capsize=3)
-  for i,m in enumerate(means):ax.text(i+offset,m+3,f'{m:.1f}%',ha='center',fontsize=9)
+  for i,m in enumerate(means):ax.text(i+offset,m+3,str(Decimal(str(m)).quantize(Decimal('0.1'),rounding=ROUND_HALF_UP))+'%',ha='center',fontsize=9)
  ax.set_xticks([0,1],['Full horizon\n(primary)','Myopic\n(descriptive sensitivity)']);ax.set_ylim(0,118);ax.set_yticks([0,25,50,75,100]);ax.set_ylabel('Percent');ax.set_title(title,fontsize=11);ax.spines[['top','right']].set_visible(False)
 axes[0].legend(loc='upper right',fontsize=8)
 fig.suptitle('Independent feedback reduced lever use; primary task-completion gate failed',fontsize=12)

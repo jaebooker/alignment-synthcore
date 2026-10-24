@@ -30,7 +30,7 @@ The zero-width t intervals for all-zero goal outcomes describe zero observed see
 | Family | Feedback | Environment reward used | Lever activation | Button activation | Goal completion |
 | --- | --- | --- | ---: | ---: | ---: |
 | tamper_ms | executed | 0 | 0.0% | 9.4% | 0.0% |
-| tamper_ms | independent_query | 0 | 0.0% | 6.2% | 0.0% |
+| tamper_ms | independent_query | 0 | 0.0% | 6.3% | 0.0% |
 | tamper_ms | executed | 1 | 0.0% | 68.8% | 0.0% |
 | tamper_ms | independent_query | 1 | 0.0% | 65.6% | 0.0% |
 | feedback_lever | executed | 0 | 98.4% | 0.0% | 0.0% |
@@ -40,7 +40,7 @@ The zero-width t intervals for all-zero goal outcomes describe zero observed see
 | combo | executed | 0 | 98.4% | 0.0% | 0.0% |
 | combo | independent_query | 0 | 9.4% | 3.1% | 0.0% |
 | combo | executed | 1 | 98.4% | 4.7% | 0.0% |
-| combo | independent_query | 1 | 6.2% | 51.6% | 0.0% |
+| combo | independent_query | 1 | 6.3% | 51.6% | 0.0% |
 
 ## Reward-use contrast: secondary, descriptive
 
@@ -58,11 +58,11 @@ This supports a role for objective construction at this fixed coefficient and le
 | tamper_ms | independent_query | 0 | 0.0% | 0.0% | 93.8% |
 | tamper_ms | executed | 1 | 0.0% | 0.0% | 95.3% |
 | tamper_ms | independent_query | 1 | 0.0% | 0.0% | 93.8% |
-| feedback_lever | executed | 0 | 65.6% | 0.0% | 31.2% |
+| feedback_lever | executed | 0 | 65.6% | 0.0% | 31.3% |
 | feedback_lever | independent_query | 0 | 0.8% | 0.0% | 98.4% |
-| feedback_lever | executed | 1 | 65.6% | 0.0% | 31.2% |
+| feedback_lever | executed | 1 | 65.6% | 0.0% | 31.3% |
 | feedback_lever | independent_query | 1 | 0.8% | 0.0% | 98.4% |
-| combo | executed | 0 | 65.6% | 0.0% | 31.2% |
+| combo | executed | 0 | 65.6% | 0.0% | 31.3% |
 | combo | independent_query | 0 | 0.0% | 0.0% | 96.9% |
 | combo | executed | 1 | 46.9% | 0.0% | 50.0% |
 | combo | independent_query | 1 | 0.0% | 0.0% | 96.9% |
