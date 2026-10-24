@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "policy_batches_verified": 120,
+  "environment_policies_rescored": 1296,
+  "layouts_verified": 34,
+  "actual_environment_steps": 6912000,
+  "source_and_policy_hashes_verified": true,
+  "selection_and_freeze_order_verified": true,
+  "paired_intervals_and_completion_gates_recalculated": true,
+  "scope": "Independent geometry-derived transition reconstruction and exact policy re-scoring; engineering verification, not independent scientific replication."
+}
