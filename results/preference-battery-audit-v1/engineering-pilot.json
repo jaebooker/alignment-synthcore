@@ -1,0 +1,7 @@
+{
+  "seed": 999003,
+  "updates": 10,
+  "environment_steps": 20480,
+  "runtime_seconds": 1.712811707984656,
+  "scope": "Excluded timing/compatibility probe; no choice-battery data."
+}

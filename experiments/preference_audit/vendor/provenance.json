@@ -1,0 +1,11 @@
+{
+  "source": "User-supplied bounded_agency.zip",
+  "archive_sha256": "e96cf9fec6b7a25a09079c8a635714eee895fbe489f38c6f0912b75aee3f2e1e",
+  "files": {
+    "revpref.py": "e730052422c2bf2d66b4686e2c09d9bcd6e9a6686990475759290e0f1a76f20c",
+    "README.md": "829ee30c93f4e34ceb87a5f5213f67d389769e2b61a6fd3be7ca307d2007724b",
+    "gw.py": "f5fbcafd8b29098d22904f154e1202c22c94e55fa2ac8274225e7fe3c62216e6",
+    "ppo.py": "cc09579c9a0c7326b95728d22d5efc13346ba0a6b36af5f4fea518a5cdd38d4c"
+  },
+  "scope": "Unmodified archived training/environment/estimator source; fresh Test 3 audit is a separate implementation."
+}
