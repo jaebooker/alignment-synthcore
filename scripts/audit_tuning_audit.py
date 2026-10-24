@@ -12,6 +12,18 @@ ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/post-tuning-mechanism
 load=lambda f:json.loads(f.read_text())
 sha=lambda f:hashlib.sha256(f.read_bytes()).hexdigest()
 
+def compare_scores(a,b):
+ if isinstance(a,dict):
+  assert isinstance(b,dict) and set(a)==set(b)
+  for k in a:compare_scores(a[k],b[k])
+ elif isinstance(a,(list,tuple)):
+  assert isinstance(b,(list,tuple)) and len(a)==len(b)
+  for x,y in zip(a,b):compare_scores(x,y)
+ elif a is None or isinstance(a,(str,bool)):
+  assert a==b,(a,b)
+ else:
+  assert math.isclose(a,b,rel_tol=1e-10,abs_tol=1e-10),(a,b)
+
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--rescore',action='store_true');args=ap.parse_args();torch.set_num_threads(1)
  initial=load(OUT/'initial-freeze.json');freeze=load(OUT/'selection-freeze.json');p=load(ROOT/'experiments/tuning_audit/protocol.json');chosen=load(OUT/'selection.json')
@@ -70,11 +82,7 @@ def main():
     for meta in row['model_metadata']:
      out={k:v for k,v in meta.items() if k!='state_keys'};out['state_dict']={name:model[label] for name,label in meta['state_keys']};outputs.append(out)
    score=tb.evaluate(outputs,inst,job['seed'])
-   def compare(a,b):
-    if isinstance(a,dict):assert set(a)==set(b);[compare(a[k],b[k]) for k in a]
-    elif a is None:assert b is None
-    else:assert math.isclose(a,b,rel_tol=1e-10,abs_tol=1e-10),(a,b)
-   compare(score,row['score']);checks.append({'id':row['id'],'testbed':tb.name,'method':job['method'],'rescored':True})
+   compare_scores(score,row['score']);checks.append({'id':row['id'],'testbed':tb.name,'method':job['method'],'rescored':True})
  result={'status':'passed','verified_model_archives':len(arms),'fresh_tuning_candidates_per_arm':4,'selection_seeds_per_candidate':2,'gate_audit_seeds':4,'confirmation_seeds_per_idea':8,'source_and_selection_hashes_match':True,'all_audit_and_confirmation_fits_after_selection_freeze':True,'paired_intervals_independently_recalculated':True,'selected_saved_models_rescored':checks,'supporting_source_matches_initial_git_commit':supporting,'scope':'Engineering integrity check; same evaluator re-scoring is not independent scientific reproduction.'}
  (OUT/'integrity-audit.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
 

@@ -17,3 +17,9 @@ results/_triage/_work/
 
 # reproducible public exploration traces: retained locally and in the study output bundle
 results/approval-factorial-v1/*/traces/
+
+# Test 2 fitted weights are retained in the complete local evidence bundle.
+results/post-tuning-mechanism-audit-v1/models/
+results/post-tuning-mechanism-audit-v1/progress.log
+# Excluded engineering timing probe; not a study observation.
+results/tuning-audit-v1/

@@ -9,12 +9,14 @@ import matplotlib.pyplot as plt
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/post-tuning-mechanism-audit-v1'
 load=lambda p:json.loads(p.read_text())
 def pct(v):return str(Decimal(str(100*v)).quantize(Decimal('.1'),rounding=ROUND_HALF_UP))+'%'
-def points(v):return str(Decimal(str(100*v)).quantize(Decimal('.1'),rounding=ROUND_HALF_UP))
+def points(v):return str(Decimal(str(100*v)).quantize(Decimal('.01' if 0<abs(100*v)<.1 else '.1'),rounding=ROUND_HALF_UP))
 def main():
  p=load(ROOT/'experiments/tuning_audit/protocol.json');s=load(OUT/'summary.json');selection=load(OUT/'selection.json');hist=load(OUT/'historical-context.json');audit=load(OUT/'integrity-audit.json')
  rows={(r['idea'],r['stage'],r['condition']):r for r in s['results']};names={'causal-confusion-interventions':'Causal confusion','minimax-regret-levels':'Minimax regret','accel-levels':'ACCEL'}
  md=['# Test 2 — does the predicted mechanism survive baseline tuning?','',
  '24 October 2026. Fresh equal-budget selection on current evaluators, followed by disjoint development gate checks and a locally frozen eight-seed paired confirmation per idea. This is an audit of the local implementations/testbeds, not an independent reproduction of the papers. Original result records and verdicts remain unchanged.','',
+ '## Finding','',
+ 'All three fresh toy point gates passed at defaults and failed after safety-based tuning of both arms. In reserved full confirmation, all three simultaneous intervals had upper bounds below the declared 10-percentage-point mechanism advantage. This rules out that minimum in this bounded setup under the stated interval assumptions; it does not establish zero effect or refute the papers. Minimax-regret and ACCEL also had worse safety and capability than the tuned domain-randomization baseline.','',
  '## Design','',
  '- Ideas: causal-confusion interventions, minimax-regret levels and ACCEL.',
  '- Fresh tuning: the existing four-candidate grid per method and per baseline, each evaluated on two fresh development/full seeds (12000–12001). Select highest mean safety; resolve exact ties by original candidate order. No selection on mechanism diagnostics.',
@@ -37,7 +39,8 @@ def main():
  '| --- | ---: | ---: | ---: | --- | --- |']
  for idea in p['ideas']:
   r=rows[(idea,'confirm','selected')];ci=r['simultaneous_oriented_effect']['ci']
-  md.append(f"| {names[idea]} | {pct(r['baseline_diagnostic_mean'])} | {pct(r['method_diagnostic_mean'])} | {points(r['oriented_effect']['mean_diff'])} pp | [{points(ci[0])}, {points(ci[1])}] pp | {r['practical_status']} |")
+  decision={'declared_minimum_supported':'Minimum supported here','declared_minimum_ruled_out_in_this_setup':'10-point minimum ruled out here','inconclusive_at_declared_minimum':'Inconclusive at 10 points'}[r['practical_status']]
+  md.append(f"| {names[idea]} | {pct(r['baseline_diagnostic_mean'])} | {pct(r['method_diagnostic_mean'])} | {points(r['oriented_effect']['mean_diff'])} pp | [{points(ci[0])}, {points(ci[1])}] pp | {decision} |")
  md+=['','## Secondary safety and capability','',
  '| Idea | Method safety | Baseline safety | Safety difference (95% interval) | Capability difference (95% interval) |',
  '| --- | ---: | ---: | --- | --- |']
@@ -53,7 +56,8 @@ def main():
  '- '+str(audit['verified_model_archives'])+' unique fitted-model archives passed SHA-256 checks.',
  '- Candidate budgets, safety-based selection, disjoint stage seeds, selection-freeze ordering, source hashes and paired intervals were independently recalculated by the integrity script.',
  '- '+str(len(audit['selected_saved_models_rescored']))+' saved fitted models were re-scored against regenerated evaluation instances using the same evaluator. This tests reproducibility of saved evidence, not independent scientific replication.',
- '- Fourteen new-audit plus existing interactive engineering tests passed before fitting.','',
+ '- The public records ZIP contains scores, metadata and hashes; the complete local evidence bundle also includes fitted NPZ weights for re-scoring.',
+ '- Fourteen new-audit plus existing interactive engineering tests passed before fitting. Fifteen passed after the saved-score checker received a regression test for nested metrics and metadata.','',
  'Run `python -m experiments.tuning_audit.run initialize`, then `select`, `freeze`, `audit`, `confirm`, and `report` in a clean output directory. Keep the exact source/protocol hashes and runtime metadata. Model archives use pickle-free NPZ; no old baseline cache was used for fitting.','',
  '## Interpretation limits','',
  'This audit uses three selected ideas and small toy testbeds, a limited four-setting search, two selection seeds and eight confirmation seeds. It cannot estimate how common baseline sensitivity is across alignment research, prove the methods never work, or identify a unique causal explanation for a performance difference. Causal-confusion interventions have extra interaction/query access by design; the baseline remains the declared behavior-cloning comparator. Practical-regret curricula here do not implement an oracle-regret variant or the papers’ larger training budgets.','',

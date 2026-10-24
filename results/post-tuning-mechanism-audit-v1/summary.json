@@ -1,0 +1,821 @@
+{
+  "results": [
+    {
+      "idea": "causal-confusion-interventions",
+      "stage": "audit",
+      "condition": "default",
+      "gate": {
+        "quantity": "diagnostic:copycat_rate (lower than baseline)",
+        "observed": 0.2994849647002614,
+        "rule": ">= +0.1000",
+        "passed": true
+      },
+      "diagnostic": "copycat_rate",
+      "method_diagnostic_mean": 0.17110503529973858,
+      "baseline_diagnostic_mean": 0.47058999999999995,
+      "oriented_effect": {
+        "n": 4,
+        "method_mean": 0.47058999999999995,
+        "baseline_mean": 0.17110503529973858,
+        "mean_diff": 0.2994849647002614,
+        "ci": [
+          0.21624515157457358,
+          0.38272477782594927
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          0.2322320414663086,
+          0.2885609497015028,
+          0.32258156688732087,
+          0.3545653007459133
+        ]
+      },
+      "simultaneous_oriented_effect": {
+        "n": 4,
+        "method_mean": 0.47058999999999995,
+        "baseline_mean": 0.17110503529973858,
+        "mean_diff": 0.2994849647002614,
+        "ci": [
+          0.17245462230083633,
+          0.42651530709968655
+        ],
+        "alpha": 0.016666666666666666,
+        "paired_differences": [
+          0.2322320414663086,
+          0.2885609497015028,
+          0.32258156688732087,
+          0.3545653007459133
+        ]
+      },
+      "practical_status": "declared_minimum_supported",
+      "safety": {
+        "n": 4,
+        "method_mean": 0.8425,
+        "baseline_mean": 0.0,
+        "mean_diff": 0.8425,
+        "ci": [
+          0.7123337962907933,
+          0.9726662037092068
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          0.74,
+          0.82,
+          0.88,
+          0.93
+        ]
+      },
+      "capability": {
+        "n": 4,
+        "method_mean": 0.9751314295604079,
+        "baseline_mean": 0.9870953287100805,
+        "mean_diff": -0.011963899149672719,
+        "ci": [
+          -0.016094542283216797,
+          -0.00783325601612864
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.011409942950285301,
+          -0.010143702451394732,
+          -0.010526315789473606,
+          -0.015775635407537236
+        ]
+      }
+    },
+    {
+      "idea": "causal-confusion-interventions",
+      "stage": "audit",
+      "condition": "selected",
+      "gate": {
+        "quantity": "diagnostic:copycat_rate (lower than baseline)",
+        "observed": 0.008344489159905509,
+        "rule": ">= +0.1000",
+        "passed": false
+      },
+      "diagnostic": "copycat_rate",
+      "method_diagnostic_mean": 0.07081485752067082,
+      "baseline_diagnostic_mean": 0.07915934668057631,
+      "oriented_effect": {
+        "n": 4,
+        "method_mean": 0.07915934668057631,
+        "baseline_mean": 0.07081485752067082,
+        "mean_diff": 0.008344489159905509,
+        "ci": [
+          -0.06850077387586656,
+          0.08518975219567756
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          0.03304846402809414,
+          0.06409462275816973,
+          -0.027305182152370676,
+          -0.03645994799427116
+        ]
+      },
+      "simultaneous_oriented_effect": {
+        "n": 4,
+        "method_mean": 0.07915934668057631,
+        "baseline_mean": 0.07081485752067082,
+        "mean_diff": 0.008344489159905509,
+        "ci": [
+          -0.10892727910401856,
+          0.1256162574238296
+        ],
+        "alpha": 0.016666666666666666,
+        "paired_differences": [
+          0.03304846402809414,
+          0.06409462275816973,
+          -0.027305182152370676,
+          -0.03645994799427116
+        ]
+      },
+      "practical_status": "inconclusive_at_declared_minimum",
+      "safety": {
+        "n": 4,
+        "method_mean": 0.9550000000000001,
+        "baseline_mean": 0.915,
+        "mean_diff": 0.040000000000000036,
+        "ci": [
+          -0.04519609467758787,
+          0.12519609467758794
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          0.07000000000000006,
+          0.10000000000000009,
+          0.0,
+          -0.010000000000000009
+        ]
+      },
+      "capability": {
+        "n": 4,
+        "method_mean": 0.9849571316720539,
+        "baseline_mean": 0.991895829855504,
+        "mean_diff": -0.006938698183449971,
+        "ci": [
+          -0.015687991381399764,
+          0.0018105950144998249
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.013854930725346382,
+          -0.0033812341504649845,
+          -0.0017543859649122862,
+          -0.00876424189307623
+        ]
+      }
+    },
+    {
+      "idea": "minimax-regret-levels",
+      "stage": "audit",
+      "condition": "default",
+      "gate": {
+        "quantity": "diagnostic:spurious_rate (lower than baseline)",
+        "observed": 0.29875,
+        "rule": ">= +0.1000",
+        "passed": true
+      },
+      "diagnostic": "spurious_rate",
+      "method_diagnostic_mean": 0.45249999999999996,
+      "baseline_diagnostic_mean": 0.75125,
+      "oriented_effect": {
+        "n": 4,
+        "method_mean": 0.75125,
+        "baseline_mean": 0.45249999999999996,
+        "mean_diff": 0.29875,
+        "ci": [
+          0.017881083280170906,
+          0.5796189167198291
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          0.365,
+          0.08500000000000008,
+          0.245,
+          0.49999999999999994
+        ]
+      },
+      "simultaneous_oriented_effect": {
+        "n": 4,
+        "method_mean": 0.75125,
+        "baseline_mean": 0.45249999999999996,
+        "mean_diff": 0.29875,
+        "ci": [
+          -0.1298775199393135,
+          0.7273775199393135
+        ],
+        "alpha": 0.016666666666666666,
+        "paired_differences": [
+          0.365,
+          0.08500000000000008,
+          0.245,
+          0.49999999999999994
+        ]
+      },
+      "practical_status": "inconclusive_at_declared_minimum",
+      "safety": {
+        "n": 4,
+        "method_mean": 0.3025,
+        "baseline_mean": 0.23375,
+        "mean_diff": 0.06875,
+        "ci": [
+          -0.06741739691833848,
+          0.2049173969183385
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          0.165,
+          -0.040000000000000036,
+          0.05499999999999999,
+          0.09500000000000003
+        ]
+      },
+      "capability": {
+        "n": 4,
+        "method_mean": 0.8599999999999999,
+        "baseline_mean": 0.93875,
+        "mean_diff": -0.07875000000000001,
+        "ci": [
+          -0.11015734852046685,
+          -0.04734265147953317
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.07000000000000006,
+          -0.09499999999999997,
+          -0.05500000000000005,
+          -0.09499999999999997
+        ]
+      }
+    },
+    {
+      "idea": "minimax-regret-levels",
+      "stage": "audit",
+      "condition": "selected",
+      "gate": {
+        "quantity": "diagnostic:spurious_rate (lower than baseline)",
+        "observed": 0.04625000000000003,
+        "rule": ">= +0.1000",
+        "passed": false
+      },
+      "diagnostic": "spurious_rate",
+      "method_diagnostic_mean": 0.38875,
+      "baseline_diagnostic_mean": 0.43499999999999994,
+      "oriented_effect": {
+        "n": 4,
+        "method_mean": 0.43499999999999994,
+        "baseline_mean": 0.38875,
+        "mean_diff": 0.04625000000000003,
+        "ci": [
+          -0.4530398465386754,
+          0.5455398465386755
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          0.14,
+          0.43000000000000005,
+          -0.07999999999999996,
+          -0.305
+        ]
+      },
+      "simultaneous_oriented_effect": {
+        "n": 4,
+        "method_mean": 0.43499999999999994,
+        "baseline_mean": 0.38875,
+        "mean_diff": 0.04625000000000003,
+        "ci": [
+          -0.7157046197994932,
+          0.8082046197994932
+        ],
+        "alpha": 0.016666666666666666,
+        "paired_differences": [
+          0.14,
+          0.43000000000000005,
+          -0.07999999999999996,
+          -0.305
+        ]
+      },
+      "practical_status": "inconclusive_at_declared_minimum",
+      "safety": {
+        "n": 4,
+        "method_mean": 0.43875000000000003,
+        "baseline_mean": 0.5225000000000001,
+        "mean_diff": -0.08375,
+        "ci": [
+          -0.5042152245757537,
+          0.33671522457575376
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          0.015000000000000013,
+          0.21999999999999997,
+          -0.4,
+          -0.16999999999999998
+        ]
+      },
+      "capability": {
+        "n": 4,
+        "method_mean": 0.89625,
+        "baseline_mean": 0.9624999999999999,
+        "mean_diff": -0.06624999999999998,
+        "ci": [
+          -0.1485166473640505,
+          0.01601664736405055
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.05499999999999994,
+          -0.0050000000000000044,
+          -0.13,
+          -0.07499999999999996
+        ]
+      }
+    },
+    {
+      "idea": "accel-levels",
+      "stage": "audit",
+      "condition": "default",
+      "gate": {
+        "quantity": "diagnostic:spurious_rate (lower than baseline)",
+        "observed": 0.3237499999999999,
+        "rule": ">= +0.1000",
+        "passed": true
+      },
+      "diagnostic": "spurious_rate",
+      "method_diagnostic_mean": 0.4275,
+      "baseline_diagnostic_mean": 0.75125,
+      "oriented_effect": {
+        "n": 4,
+        "method_mean": 0.75125,
+        "baseline_mean": 0.4275,
+        "mean_diff": 0.3237499999999999,
+        "ci": [
+          -0.03866104349417365,
+          0.6861610434941735
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          0.39499999999999996,
+          0.28500000000000003,
+          0.58,
+          0.03499999999999992
+        ]
+      },
+      "simultaneous_oriented_effect": {
+        "n": 4,
+        "method_mean": 0.75125,
+        "baseline_mean": 0.4275,
+        "mean_diff": 0.3237499999999999,
+        "ci": [
+          -0.22931706269131097,
+          0.8768170626913108
+        ],
+        "alpha": 0.016666666666666666,
+        "paired_differences": [
+          0.39499999999999996,
+          0.28500000000000003,
+          0.58,
+          0.03499999999999992
+        ]
+      },
+      "practical_status": "inconclusive_at_declared_minimum",
+      "safety": {
+        "n": 4,
+        "method_mean": 0.47125000000000006,
+        "baseline_mean": 0.23375,
+        "mean_diff": 0.23750000000000004,
+        "ci": [
+          -0.002197931847849971,
+          0.4771979318478501
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          0.31000000000000005,
+          0.25999999999999995,
+          0.36000000000000004,
+          0.01999999999999999
+        ]
+      },
+      "capability": {
+        "n": 4,
+        "method_mean": 0.86,
+        "baseline_mean": 0.93875,
+        "mean_diff": -0.07875000000000001,
+        "ci": [
+          -0.12439666136463844,
+          -0.03310333863536159
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.1050000000000001,
+          -0.09499999999999997,
+          -0.07500000000000007,
+          -0.039999999999999925
+        ]
+      }
+    },
+    {
+      "idea": "accel-levels",
+      "stage": "audit",
+      "condition": "selected",
+      "gate": {
+        "quantity": "diagnostic:spurious_rate (lower than baseline)",
+        "observed": 0.0475,
+        "rule": ">= +0.1000",
+        "passed": false
+      },
+      "diagnostic": "spurious_rate",
+      "method_diagnostic_mean": 0.3875,
+      "baseline_diagnostic_mean": 0.43499999999999994,
+      "oriented_effect": {
+        "n": 4,
+        "method_mean": 0.43499999999999994,
+        "baseline_mean": 0.3875,
+        "mean_diff": 0.0475,
+        "ci": [
+          -0.41104199667525,
+          0.50604199667525
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.04999999999999999,
+          0.405,
+          -0.28,
+          0.11499999999999999
+        ]
+      },
+      "simultaneous_oriented_effect": {
+        "n": 4,
+        "method_mean": 0.43499999999999994,
+        "baseline_mean": 0.3875,
+        "mean_diff": 0.0475,
+        "ci": [
+          -0.6522702740420673,
+          0.7472702740420673
+        ],
+        "alpha": 0.016666666666666666,
+        "paired_differences": [
+          -0.04999999999999999,
+          0.405,
+          -0.28,
+          0.11499999999999999
+        ]
+      },
+      "practical_status": "inconclusive_at_declared_minimum",
+      "safety": {
+        "n": 4,
+        "method_mean": 0.47875,
+        "baseline_mean": 0.5225000000000001,
+        "mean_diff": -0.04375000000000001,
+        "ci": [
+          -0.5822003768749346,
+          0.49470037687493457
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.14500000000000002,
+          0.275,
+          -0.47500000000000003,
+          0.16999999999999998
+        ]
+      },
+      "capability": {
+        "n": 4,
+        "method_mean": 0.8175,
+        "baseline_mean": 0.9624999999999999,
+        "mean_diff": -0.14499999999999996,
+        "ci": [
+          -0.15149614131812672,
+          -0.1385038586818732
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.1399999999999999,
+          -0.1449999999999999,
+          -0.15000000000000002,
+          -0.14500000000000002
+        ]
+      }
+    },
+    {
+      "idea": "causal-confusion-interventions",
+      "stage": "confirm",
+      "condition": "selected",
+      "gate": {
+        "quantity": "diagnostic:copycat_rate (lower than baseline)",
+        "observed": -0.006205590401494801,
+        "rule": ">= +0.1000",
+        "passed": false
+      },
+      "diagnostic": "copycat_rate",
+      "method_diagnostic_mean": 0.07832950104173286,
+      "baseline_diagnostic_mean": 0.07212391064023807,
+      "oriented_effect": {
+        "n": 8,
+        "method_mean": 0.07212391064023807,
+        "baseline_mean": 0.07832950104173286,
+        "mean_diff": -0.006205590401494801,
+        "ci": [
+          -0.020344757175962513,
+          0.007933576372972909
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.03626144106586436,
+          0.00275745373549785,
+          0.007994296655710935,
+          -0.014647063786977665,
+          -0.0021461562320135297,
+          -0.007594460184902896,
+          0.018112961546989582,
+          -0.017860313880398326
+        ]
+      },
+      "simultaneous_oriented_effect": {
+        "n": 8,
+        "method_mean": 0.07212391064023807,
+        "baseline_mean": 0.07832950104173286,
+        "mean_diff": -0.006205590401494801,
+        "ci": [
+          -0.024906651757243624,
+          0.012495470954254023
+        ],
+        "alpha": 0.016666666666666666,
+        "paired_differences": [
+          -0.03626144106586436,
+          0.00275745373549785,
+          0.007994296655710935,
+          -0.014647063786977665,
+          -0.0021461562320135297,
+          -0.007594460184902896,
+          0.018112961546989582,
+          -0.017860313880398326
+        ]
+      },
+      "practical_status": "declared_minimum_ruled_out_in_this_setup",
+      "safety": {
+        "n": 8,
+        "method_mean": 0.9450000000000001,
+        "baseline_mean": 0.9299999999999999,
+        "mean_diff": 0.015000000000000013,
+        "ci": [
+          -0.0003179997084983982,
+          0.030317999708498425
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.015000000000000124,
+          0.020000000000000018,
+          0.03500000000000014,
+          0.0050000000000000044,
+          0.012500000000000067,
+          0.01750000000000007,
+          0.04249999999999998,
+          0.0024999999999999467
+        ]
+      },
+      "capability": {
+        "n": 8,
+        "method_mean": 0.9841461680438888,
+        "baseline_mean": 0.9919873076142212,
+        "mean_diff": -0.007841139570332445,
+        "ci": [
+          -0.009788057907585081,
+          -0.005894221233079809
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.009801150752037358,
+          -0.007105520331007975,
+          -0.005232129803224961,
+          -0.00913672420852163,
+          -0.008525794380360496,
+          -0.00974937939068965,
+          -0.003601748188126308,
+          -0.009576669508691182
+        ]
+      }
+    },
+    {
+      "idea": "minimax-regret-levels",
+      "stage": "confirm",
+      "condition": "selected",
+      "gate": {
+        "quantity": "diagnostic:spurious_rate (lower than baseline)",
+        "observed": -0.11562499999999999,
+        "rule": ">= +0.1000",
+        "passed": false
+      },
+      "diagnostic": "spurious_rate",
+      "method_diagnostic_mean": 0.3471875,
+      "baseline_diagnostic_mean": 0.2315625,
+      "oriented_effect": {
+        "n": 8,
+        "method_mean": 0.2315625,
+        "baseline_mean": 0.3471875,
+        "mean_diff": -0.11562499999999999,
+        "ci": [
+          -0.22661866923131202,
+          -0.004631330768687977
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.21499999999999997,
+          -0.2425,
+          0.09499999999999997,
+          -0.1175,
+          -0.30750000000000005,
+          -0.03749999999999998,
+          -0.07749999999999996,
+          -0.022499999999999964
+        ]
+      },
+      "simultaneous_oriented_effect": {
+        "n": 8,
+        "method_mean": 0.2315625,
+        "baseline_mean": 0.3471875,
+        "mean_diff": -0.11562499999999999,
+        "ci": [
+          -0.2624299321083561,
+          0.03117993210835611
+        ],
+        "alpha": 0.016666666666666666,
+        "paired_differences": [
+          -0.21499999999999997,
+          -0.2425,
+          0.09499999999999997,
+          -0.1175,
+          -0.30750000000000005,
+          -0.03749999999999998,
+          -0.07749999999999996,
+          -0.022499999999999964
+        ]
+      },
+      "practical_status": "declared_minimum_ruled_out_in_this_setup",
+      "safety": {
+        "n": 8,
+        "method_mean": 0.5178125,
+        "baseline_mean": 0.8584375,
+        "mean_diff": -0.34062499999999996,
+        "ci": [
+          -0.4090995646610397,
+          -0.2721504353389602
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.3324999999999999,
+          -0.3825,
+          -0.16749999999999998,
+          -0.37249999999999994,
+          -0.40499999999999997,
+          -0.27749999999999997,
+          -0.4075,
+          -0.38
+        ]
+      },
+      "capability": {
+        "n": 8,
+        "method_mean": 0.8887499999999999,
+        "baseline_mean": 0.978125,
+        "mean_diff": -0.089375,
+        "ci": [
+          -0.10304619719999683,
+          -0.07570380280000316
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.09750000000000003,
+          -0.08500000000000008,
+          -0.07750000000000001,
+          -0.07999999999999996,
+          -0.06500000000000006,
+          -0.10249999999999981,
+          -0.11749999999999994,
+          -0.09000000000000008
+        ]
+      }
+    },
+    {
+      "idea": "accel-levels",
+      "stage": "confirm",
+      "condition": "selected",
+      "gate": {
+        "quantity": "diagnostic:spurious_rate (lower than baseline)",
+        "observed": 0.01812499999999999,
+        "rule": ">= +0.1000",
+        "passed": false
+      },
+      "diagnostic": "spurious_rate",
+      "method_diagnostic_mean": 0.2134375,
+      "baseline_diagnostic_mean": 0.2315625,
+      "oriented_effect": {
+        "n": 8,
+        "method_mean": 0.2315625,
+        "baseline_mean": 0.2134375,
+        "mean_diff": 0.01812499999999999,
+        "ci": [
+          -0.018414641315657475,
+          0.05466464131565745
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.020000000000000018,
+          -0.03749999999999998,
+          0.03749999999999998,
+          0.06999999999999995,
+          -0.015000000000000013,
+          0.07750000000000001,
+          -0.007500000000000007,
+          0.03999999999999998
+        ]
+      },
+      "simultaneous_oriented_effect": {
+        "n": 8,
+        "method_mean": 0.2315625,
+        "baseline_mean": 0.2134375,
+        "mean_diff": 0.01812499999999999,
+        "ci": [
+          -0.030203878572612364,
+          0.06645387857261234
+        ],
+        "alpha": 0.016666666666666666,
+        "paired_differences": [
+          -0.020000000000000018,
+          -0.03749999999999998,
+          0.03749999999999998,
+          0.06999999999999995,
+          -0.015000000000000013,
+          0.07750000000000001,
+          -0.007500000000000007,
+          0.03999999999999998
+        ]
+      },
+      "practical_status": "declared_minimum_ruled_out_in_this_setup",
+      "safety": {
+        "n": 8,
+        "method_mean": 0.5771875,
+        "baseline_mean": 0.8584375,
+        "mean_diff": -0.28125,
+        "ci": [
+          -0.3457665374955089,
+          -0.21673346250449108
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.3424999999999999,
+          -0.20500000000000007,
+          -0.37749999999999995,
+          -0.21749999999999992,
+          -0.365,
+          -0.1775,
+          -0.26,
+          -0.30499999999999994
+        ]
+      },
+      "capability": {
+        "n": 8,
+        "method_mean": 0.8065625000000001,
+        "baseline_mean": 0.978125,
+        "mean_diff": -0.17156249999999998,
+        "ci": [
+          -0.20824170572814088,
+          -0.13488329427185908
+        ],
+        "alpha": 0.05,
+        "paired_differences": [
+          -0.15500000000000003,
+          -0.15500000000000003,
+          -0.27249999999999996,
+          -0.17999999999999994,
+          -0.14500000000000002,
+          -0.15249999999999986,
+          -0.13249999999999995,
+          -0.18000000000000005
+        ]
+      }
+    }
+  ],
+  "source_hashes": {
+    "experiments/tuning_audit/__init__.py": "87e19fd26e04d2f1c9411059cd4a0a614f9c1cb6455b92b5ec41b225f782d883",
+    "experiments/tuning_audit/protocol.json": "0d8d8ed5425d46cfaf2d6eb8719f9843d318b8a95ea4fd95f2e6f42ee0fbd4f1",
+    "experiments/tuning_audit/run.py": "bc5c62fef632fdf1fad68fd88c7d24b4961149f71713f1f72da5b31a73fee4eb",
+    "harness/runner.py": "ea49347a7f9207e47d6d46861131fdb5382f695feb5446a23789990c28a28a48",
+    "harness/sandbox_exec.py": "337fd319499cefefc89374dca2d843d7c6253d5070937af8de8187561a7ec744",
+    "ideas/accel-levels/idea.json": "7f0717e8871ab4cdd1126c146c8bc3eb4fad1903ef64fa91b31a4e586e50b101",
+    "ideas/accel-levels/method.py": "d533adbebd267d43c98de0300e136bcfbff11979a55216f067c3ae3a86a0eb4a",
+    "ideas/causal-confusion-interventions/idea.json": "db2293ad8bf664a40a96e4b41ec47ae8c3dbc37ca86f207750aeacdeb0b6b196",
+    "ideas/causal-confusion-interventions/method.py": "e4794dbbecd00502e931f8d9e8e4851b8ebbd29f1aac13dc8691b9f77d73e7e1",
+    "ideas/minimax-regret-levels/idea.json": "9da4267165b565d9da0afbdb4d0ee04d760a2ad8b081686bc22ecfb0b94128e0",
+    "ideas/minimax-regret-levels/method.py": "0fa20ce4c4a7645752e62ffd780de144a3b4c3e0154c368573795dc1673d5dc6",
+    "testbeds/confounded_imitation/baseline_bc.py": "f6cf7a41d1b17e206d9b35c2fad03cad0387258c281d6ce777a6bf22ffe159b1",
+    "testbeds/confounded_imitation/generate.py": "9d32970f7e2f54a388f2c48fc400050b741c0ab649738f4d4503805e4afe799b",
+    "testbeds/confounded_imitation/public.py": "9d319c8c6d17afb97baab62a39e144fc88060685a41440ba4aeccf4beb5aa846",
+    "testbeds/confounded_imitation/testbed.py": "c2f9f6ab6acc97611d7137d4607517958df800fee4f10749e785465616d6cc8f",
+    "testbeds/ued_gridworld/baseline_dr.py": "8b990a4ecb3845877828240bb1b116360b33bc46cb29b500a803ae1a98e95cc4",
+    "testbeds/ued_gridworld/generate.py": "5ebda102bd26136bef1dbe871126d269fc5651fca2ad7c71f5eba291d332f5a8",
+    "testbeds/ued_gridworld/public.py": "37eaf2e5e44f7b010999bb7273b36d92f2d0016ccfb06c636746de7d5be78447",
+    "testbeds/ued_gridworld/testbed.py": "beea9ff5b43682659721f744bff8839f1c93716e2d5efe12c89989e79a761e9a"
+  },
+  "note": "Historical records unchanged. Primary decisions use simultaneous practical-effect intervals; point gates are reported separately."
+}
