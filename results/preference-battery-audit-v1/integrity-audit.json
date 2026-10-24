@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "policies_verified": 16,
+  "numpy_forward_and_rollout_checks": 80,
+  "policy_archive_hashes_verified": 2,
+  "seed_and_checkpoint_budgets_verified": true,
+  "source_and_freeze_hashes_verified": true,
+  "paired_intervals_independently_recalculated": true,
+  "checks": [
+    {
+      "cohort": "entropy_0.01",
+      "seed": 43000,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.01",
+      "seed": 43001,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.01",
+      "seed": 43002,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.01",
+      "seed": 43003,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.01",
+      "seed": 43004,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.01",
+      "seed": 43005,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.01",
+      "seed": 43006,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.01",
+      "seed": 43007,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.05",
+      "seed": 43000,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.05",
+      "seed": 43001,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.05",
+      "seed": 43002,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.05",
+      "seed": 43003,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.05",
+      "seed": 43004,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.05",
+      "seed": 43005,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.05",
+      "seed": 43006,
+      "batteries_verified": 5
+    },
+    {
+      "cohort": "entropy_0.05",
+      "seed": 43007,
+      "batteries_verified": 5
+    }
+  ],
+  "scope": "NumPy reimplementation verifies saved neural inference and endpoint outcomes; this is engineering reproduction, not independent scientific replication."
+}

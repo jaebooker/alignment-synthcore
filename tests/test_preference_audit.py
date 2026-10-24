@@ -1,6 +1,8 @@
 from copy import deepcopy
 import numpy as np
 import pytest
+pytest.importorskip('jax',reason='Test 3 uses its isolated optional JAX runtime')
+pytest.importorskip('optax',reason='Test 3 uses its isolated optional JAX runtime')
 from experiments.preference_audit import batteries as B
 from experiments.preference_audit.run import contrast,equivalence,load,PFILE
 
