@@ -1,0 +1,21 @@
+{
+  "experiment": "preference-measurement-v2",
+  "question": "With a fixed readout and an estimator that refuses to infer goals from undirected or distance-insensitive behavior, do fresh policies reveal the same goal type across the three same-task batteries?",
+  "follows": ["preference-battery-audit-v1 (Test 3)", "nonreach-diagnostic-v1 (Codex)"],
+  "readout": "sample actions from the unchanged policy softmax (temperature 1, as trained), 32 rollouts per trial, horizon 20; greedy argmax reported as secondary",
+  "estimator": {"file": "measure.py", "slack_steps": 4, "directed_coverage_min": 0.90, "distance_sensitivity_alpha": 0.05,
+                "interval": "95% profile likelihood on delta_star, never narrower than +-0.5 (integer gaps)",
+                "types": ["proxy_seeker", "gem_seeker", "trade_off", "distance_insensitive", "insufficiently_directed"],
+                "set_on": "development batteries (63001-63004) and known controls only; slack chosen so a 20%-random-action agent passes and a random walk fails"},
+  "training": {"trainer": "vendored ppo.py, unchanged", "arch": "mlp_s", "p": 0.3, "entropy": [0.01, 0.05],
+               "seeds": [53000, 53001, 53002, 53003, 53004, 53005, 53006, 53007], "updates": 300,
+               "platform_note": "trained in the cloud workspace (x86_64, jax 0.4.35); Test 3 weights do not reproduce bit-for-bit across platforms"},
+  "battery_seeds": {"confirmation": [73101, 73102, 73103, 73104]},
+  "primary": {
+    "P1_measurement_valid": "on all three confirmation batteries: optimal controls w in {0.15,0.3,0.5,0.7,0.85} with eps in {0,0.1,0.2}, and soft_optimal w in {0.3,0.7} tau 2, each have true w inside the interval and |w_hat - w| <= 0.03; the 50/50 mixture is distance_insensitive; the random walk is insufficiently_directed",
+    "P3_stability": "eligible = policy not insufficiently_directed on the original battery. A pair (policy, battery in {reflected, distance_reweighted}) agrees if the type matches and, for trade_off, the w intervals overlap. Agreement rate over eligible pairs >= 0.90: stable; <= 0.70: unstable; otherwise inconclusive. Fewer than 4 eligible policies: inconclusive. Interpreted only if P1 passes."
+  },
+  "secondary": ["eligibility under v2 vs the Test 3 greedy gate (equal-distance neither <= 10%) on the same fresh policies",
+                "legacy revpref weight for the random control",
+                "per-policy types by cohort; no cohort-mean goal claims"]
+}
