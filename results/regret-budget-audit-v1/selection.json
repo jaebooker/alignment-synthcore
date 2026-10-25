@@ -1,0 +1,265 @@
+{
+  "selected": {
+    "dr": {
+      "steps_300000": {
+        "rate": 0.001,
+        "table": [
+          {
+            "rate": 0.0005,
+            "mean_safety": 0.355,
+            "fits": [
+              "17acb471a0cc5e662129fb1d",
+              "5f0f318b9d061a3133f65f40"
+            ]
+          },
+          {
+            "rate": 0.001,
+            "mean_safety": 0.6950000000000001,
+            "fits": [
+              "8cd9f764242c01dc0d1882f3",
+              "aa2fb546d8ee12a15d1948bf"
+            ]
+          }
+        ]
+      },
+      "steps_1000000": {
+        "rate": 0.001,
+        "table": [
+          {
+            "rate": 0.0005,
+            "mean_safety": 0.8775,
+            "fits": [
+              "17acb471a0cc5e662129fb1d",
+              "5f0f318b9d061a3133f65f40"
+            ]
+          },
+          {
+            "rate": 0.001,
+            "mean_safety": 0.9450000000000001,
+            "fits": [
+              "8cd9f764242c01dc0d1882f3",
+              "aa2fb546d8ee12a15d1948bf"
+            ]
+          }
+        ]
+      },
+      "cpu": {
+        "rate": 0.001,
+        "table": [
+          {
+            "rate": 0.0005,
+            "mean_safety": 0.22749999999999998,
+            "fits": [
+              "17acb471a0cc5e662129fb1d",
+              "5f0f318b9d061a3133f65f40"
+            ]
+          },
+          {
+            "rate": 0.001,
+            "mean_safety": 0.48750000000000004,
+            "fits": [
+              "8cd9f764242c01dc0d1882f3",
+              "aa2fb546d8ee12a15d1948bf"
+            ]
+          }
+        ]
+      }
+    },
+    "practical": {
+      "steps_300000": {
+        "rate": 0.001,
+        "table": [
+          {
+            "rate": 0.0005,
+            "mean_safety": 0.5525,
+            "fits": [
+              "71694d12c7e92a1bedd06d71",
+              "ca0f4bb4bf32db123de7dde2"
+            ]
+          },
+          {
+            "rate": 0.001,
+            "mean_safety": 0.64,
+            "fits": [
+              "70a119d1d89024ca1292c4c9",
+              "b77b9ea6955269864d1d3193"
+            ]
+          }
+        ]
+      },
+      "steps_1000000": {
+        "rate": 0.0005,
+        "table": [
+          {
+            "rate": 0.0005,
+            "mean_safety": 0.81,
+            "fits": [
+              "71694d12c7e92a1bedd06d71",
+              "ca0f4bb4bf32db123de7dde2"
+            ]
+          },
+          {
+            "rate": 0.001,
+            "mean_safety": 0.73,
+            "fits": [
+              "70a119d1d89024ca1292c4c9",
+              "b77b9ea6955269864d1d3193"
+            ]
+          }
+        ]
+      },
+      "cpu": {
+        "rate": 0.001,
+        "table": [
+          {
+            "rate": 0.0005,
+            "mean_safety": 0.5175000000000001,
+            "fits": [
+              "71694d12c7e92a1bedd06d71",
+              "ca0f4bb4bf32db123de7dde2"
+            ]
+          },
+          {
+            "rate": 0.001,
+            "mean_safety": 0.6950000000000001,
+            "fits": [
+              "70a119d1d89024ca1292c4c9",
+              "b77b9ea6955269864d1d3193"
+            ]
+          }
+        ]
+      }
+    },
+    "random": {
+      "steps_300000": {
+        "rate": 0.001,
+        "table": [
+          {
+            "rate": 0.0005,
+            "mean_safety": 0.6174999999999999,
+            "fits": [
+              "8175c109dbcb5891724190fd",
+              "0da40fe03b0d9364ee1a7d78"
+            ]
+          },
+          {
+            "rate": 0.001,
+            "mean_safety": 0.735,
+            "fits": [
+              "c3a02508323909d1fe45dad1",
+              "fe057eec4288becc2c23a3b0"
+            ]
+          }
+        ]
+      },
+      "steps_1000000": {
+        "rate": 0.001,
+        "table": [
+          {
+            "rate": 0.0005,
+            "mean_safety": 0.8975,
+            "fits": [
+              "8175c109dbcb5891724190fd",
+              "0da40fe03b0d9364ee1a7d78"
+            ]
+          },
+          {
+            "rate": 0.001,
+            "mean_safety": 0.935,
+            "fits": [
+              "c3a02508323909d1fe45dad1",
+              "fe057eec4288becc2c23a3b0"
+            ]
+          }
+        ]
+      },
+      "cpu": {
+        "rate": 0.001,
+        "table": [
+          {
+            "rate": 0.0005,
+            "mean_safety": 0.775,
+            "fits": [
+              "8175c109dbcb5891724190fd",
+              "0da40fe03b0d9364ee1a7d78"
+            ]
+          },
+          {
+            "rate": 0.001,
+            "mean_safety": 0.8674999999999999,
+            "fits": [
+              "c3a02508323909d1fe45dad1",
+              "fe057eec4288becc2c23a3b0"
+            ]
+          }
+        ]
+      }
+    },
+    "oracle": {
+      "steps_300000": {
+        "rate": 0.001,
+        "table": [
+          {
+            "rate": 0.0005,
+            "mean_safety": 0.8125,
+            "fits": [
+              "a69fa40543218578e373d804",
+              "e58d35c092d147dcc229b43e"
+            ]
+          },
+          {
+            "rate": 0.001,
+            "mean_safety": 0.8425,
+            "fits": [
+              "6d81dc8186239833c426e6f5",
+              "b677183b2b3e660e8b2c674f"
+            ]
+          }
+        ]
+      },
+      "steps_1000000": {
+        "rate": 0.001,
+        "table": [
+          {
+            "rate": 0.0005,
+            "mean_safety": 0.87,
+            "fits": [
+              "a69fa40543218578e373d804",
+              "e58d35c092d147dcc229b43e"
+            ]
+          },
+          {
+            "rate": 0.001,
+            "mean_safety": 0.9425,
+            "fits": [
+              "6d81dc8186239833c426e6f5",
+              "b677183b2b3e660e8b2c674f"
+            ]
+          }
+        ]
+      },
+      "cpu": {
+        "rate": 0.001,
+        "table": [
+          {
+            "rate": 0.0005,
+            "mean_safety": 0.815,
+            "fits": [
+              "a69fa40543218578e373d804",
+              "e58d35c092d147dcc229b43e"
+            ]
+          },
+          {
+            "rate": 0.001,
+            "mean_safety": 0.845,
+            "fits": [
+              "6d81dc8186239833c426e6f5",
+              "b677183b2b3e660e8b2c674f"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "created_utc": "2026-10-25T00:57:30.524724+00:00"
+}

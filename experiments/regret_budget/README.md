@@ -23,4 +23,4 @@ Do not overwrite an existing freeze. Copy the existing results aside before a ne
 independent run. A completed fit can be reused only when its full job identity,
 source hashes and checkpoint requests match. An interrupted partial fit is retrained.
 All source, complete ledgers, certificate digests and policy hashes are retained;
-large fitted weights are excluded from Git and included in the complete local bundle.
+large fitted weights and per-level certificate tables are excluded from Git and public records, and included in the complete local bundle. Public fit records retain per-file hashes and aggregate certification counts. Re-scoring requires that complete bundle.
