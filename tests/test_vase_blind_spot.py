@@ -273,3 +273,63 @@ def test_precomputed_penalty_matches_fresh_and_is_validated():
         fit_penalized(*_args(t), 1, 0.0, penalty="rr", lam=1, P=np.zeros((2, 5)))
     with pytest.raises(ValueError, match="unknown penalty"):
         fit_penalized(*_args(t), 1, 0.0, penalty="bogus")
+
+
+# --- Codex review 3: report binds frozen public digests and compares by cell -------------------------
+
+@pytest.fixture
+def two_cell(tiny):
+    tiny.update(sizes=[6, 7])
+    return tiny
+
+
+def _confirm_all(p):
+    R.select(p); R.freeze(p)
+    for s in p["confirmation_seeds"]:
+        R.run_seed("confirmation", s, p)
+
+
+def test_b3_committed_cell_disagreement_is_rejected(two_cell):
+    _dev_done(two_cell)
+    pub = R.OUT / "dev" / "seed-1.json"
+
+    def swap_labels(d):  # keep metric positions, swap the cell identities
+        a, b = d["rows"][0], d["rows"][1]
+        for k in ("size", "environment_seed"):
+            a[k], b[k] = b[k], a[k]
+    _edit(pub, swap_labels)
+    _confirm_all(two_cell)
+    with pytest.raises(SystemExit, match="disagree"):
+        R.report(two_cell)
+
+
+def test_b3_post_freeze_public_replacement_and_row_order(two_cell):
+    _dev_done(two_cell)
+    _confirm_all(two_cell)
+    R.report(two_cell)
+    pub = R.OUT / "dev" / "seed-1.json"
+    original = pub.read_text()
+    _edit(pub, lambda d: d["rows"].reverse())  # same cells, different order
+    with pytest.raises(SystemExit, match="public dev seed 1 changed after freeze"):
+        R.report(two_cell)
+    pub.write_text(original)
+    pub.unlink()
+    with pytest.raises(SystemExit, match="missing"):
+        R.report(two_cell)
+
+
+def test_row_order_alone_is_not_a_false_mismatch(two_cell):
+    _dev_done(two_cell)
+    sealed = R.OUT / "dev-sealed" / "seed-2.json"
+    pub = R.OUT / "dev" / "seed-2.json"
+    _edit(sealed, lambda d: d["rows"].reverse())
+    _edit(pub, lambda d: d.update(sealed_sha256=R.digest(sealed)))
+    _confirm_all(two_cell)
+    R.report(two_cell)  # cell-keyed comparison: reversed sealed order still agrees
+
+
+def test_missing_commitment_is_schema_error(tiny):
+    _dev_done(tiny)
+    _edit(R.OUT / "dev" / "seed-1.json", lambda d: d.pop("sealed_sha256"))
+    with pytest.raises(R.SchemaError, match="sealed commitment"):
+        R.select(tiny)

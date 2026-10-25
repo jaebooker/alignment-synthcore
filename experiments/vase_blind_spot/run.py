@@ -293,6 +293,8 @@ def compute_selection(p):
     for s in p["dev_seeds"]:
         pub = json.loads((OUT / "dev" / f"seed-{s}.json").read_text())
         sp = OUT / "dev-sealed" / f"seed-{s}.json"
+        if "sealed_sha256" not in pub:
+            raise SchemaError(f"seed {s}: public dev record lacks its sealed commitment")
         if not sp.exists() or digest(sp) != pub["sealed_sha256"]:  # digest only; contents stay unread
             raise SchemaError(f"seed {s}: sealed sidecar missing or not matching its commitment")
     base = float(means(recs, "base", "goal_completion").mean())
@@ -342,16 +344,28 @@ def report(p):
     recs = load_stage("confirmation", p["confirmation_seeds"], p, arms, fdig)
     # unseal dev outcomes only now (post-freeze, post-confirmation), verifying commitments first
     for s in p["dev_seeds"]:
-        if digest(OUT / "dev-sealed" / f"seed-{s}.json") != fr["sealed_dev_sha256"][f"seed-{s}"]:
-            raise SystemExit(f"sealed dev seed {s} changed after freeze")
+        for kind, d, frozen_digest in (("public", "dev", fr["selection"]["dev_record_sha256"]),
+                                       ("sealed", "dev-sealed", fr["sealed_dev_sha256"])):
+            f = OUT / d / f"seed-{s}.json"
+            if not f.exists():
+                raise SchemaError(f"{kind} dev record for seed {s} is missing")
+            if digest(f) != frozen_digest[f"seed-{s}"]:
+                raise SystemExit(f"{kind} dev seed {s} changed after freeze")
     sealed = load_stage("dev", p["dev_seeds"], p, dev_arms(p), None, sealed=True)
     public = load_stage("dev", p["dev_seeds"], p, dev_arms(p), None)
-    for sr, pr in zip(sealed, public):
-        for sx, px in zip(sr["rows"], pr["rows"]):
+    for sr, pr in zip(sealed, public):  # both lists follow the registered seed order
+        cells = {(x["family"], x["size"], x["environment_seed"]): x for x in sr["rows"]}
+        for px in pr["rows"]:
+            key = (px["family"], px["size"], px["environment_seed"])
+            sx = cells.get(key)
+            if sx is None:
+                raise SystemExit(f"dev seed {pr['seed']}: public cell {key} has no sealed counterpart")
             for a in px["arms"]:
+                if sx["arms"][a]["config"] != px["arms"][a]["config"]:
+                    raise SystemExit(f"dev seed {pr['seed']} {key}: sealed and public configs disagree for {a}")
                 for k in PUBLIC_DEV_KEYS:
                     if sx["arms"][a]["metrics"][k] != px["arms"][a]["metrics"][k]:
-                        raise SystemExit(f"dev seed {sr['seed']}: sealed and public {k} disagree for {a}")
+                        raise SystemExit(f"dev seed {pr['seed']} {key}: sealed and public {k} disagree for {a}")
     ids = ["base", *PENS]
     M = {a: {k: means(recs, a, k) for k in METRICS} for a in ids}
     rule = p["primary_support_rule"]
