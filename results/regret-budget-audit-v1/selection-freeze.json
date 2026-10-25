@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-10-25T00:57:34.998005+00:00",
+  "selection_sha256": "6b3dbb07b07cff928719c636ce992de025afa36464683e2e15927e53ddef9b19",
+  "source_hashes": {
+    "experiments/regret_budget/__init__.py": "30c10e8fb7a19d68dd85770618fbd40b73e54c5f9259cecbe3409b5182a6741e",
+    "experiments/regret_budget/core.py": "bc831d399bc9b000e3977f51d56f9ae1d726ffecc4737933b276f58eb404e4f9",
+    "experiments/regret_budget/protocol.json": "0b19da48c24bd7c7d03454dcf504d436c9b852bd113cd44e6fb0801bc744ffc4",
+    "experiments/regret_budget/run.py": "cc734f0864dfabafd485bcf1f2c1f165af34c233223a63ecb956ad9811218d54",
+    "ideas/accel-levels/method.py": "d533adbebd267d43c98de0300e136bcfbff11979a55216f067c3ae3a86a0eb4a",
+    "testbeds/ued_gridworld/generate.py": "5ebda102bd26136bef1dbe871126d269fc5651fca2ad7c71f5eba291d332f5a8",
+    "testbeds/ued_gridworld/public.py": "37eaf2e5e44f7b010999bb7273b36d92f2d0016ccfb06c636746de7d5be78447",
+    "testbeds/ued_gridworld/testbed.py": "beea9ff5b43682659721f744bff8839f1c93716e2d5efe12c89989e79a761e9a",
+    "tests/test_regret_budget.py": "74f67d2625a5e7488f44510bad7662fa10ab0a421ab917aef4af2d0c8f1441bf"
+  }
+}

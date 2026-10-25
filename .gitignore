@@ -23,3 +23,9 @@ results/post-tuning-mechanism-audit-v1/models/
 results/post-tuning-mechanism-audit-v1/progress.log
 # Excluded engineering timing probe; not a study observation.
 results/tuning-audit-v1/
+
+# Test 5 local fitted checkpoints; complete evidence bundle retains all weights.
+results/regret-budget-audit-v1/models/
+results/regret-budget-audit-v1/progress.log
+# Large per-level certificate tables are retained in the complete local evidence.
+results/regret-budget-audit-v1/certificates/
