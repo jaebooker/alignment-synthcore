@@ -47,6 +47,11 @@ def make_job(arm, rate, seed, split, keys):
     return dict(arm=arm, hp=hp(rate), seed=seed, split=split, keys=sorted(keys),
                 step_budgets=p['step_budgets'], cpu_budget_s=p['cpu_budget_s'], source_hashes=signature())
 
+def read_snapshot(path, info):
+    """Read immutable on-disk checkpoint, never retain live network-backed arrays."""
+    with np.load(path, allow_pickle=False) as arrays:
+        return dict(arch=info['arch'], state_dict={n: arrays[f'p{i}'].copy() for i,n in enumerate(info['state_names'])})
+
 def execute(job):
     verify()
     torch.set_num_threads(2)
@@ -59,7 +64,6 @@ def execute(job):
     print('START',key,job['split'],job['seed'],job['arm'],job['hp']['lr'],job['keys'],flush=True)
     perm=np.random.default_rng(G.SPLIT_OFFSET[job['split']]+1000*job['seed']).permutation(4)
     checkpoints=[n for n in job['step_budgets'] if f'steps_{n}' in job['keys']]
-    models={}
     def save(name, policy, ledger, certs):
         path=OUT/'models'/f'{key}-{name}.npz';path.parent.mkdir(parents=True,exist_ok=True)
         names=list(policy['state_dict'])
@@ -69,7 +73,6 @@ def execute(job):
         certpath=OUT/'certificates'/f'{key}-{name}.json'
         dump(certpath,certs)
         info['certificates']=str(certpath.relative_to(OUT));info['certificates_sha256']=sha(certpath)
-        models[name]=policy
         return info
     saved,curve=train(job['arm'],job['hp'],job['seed'],'corner',perm,checkpoints,
                       job['cpu_budget_s'] if 'cpu' in job['keys'] else None,save)
@@ -77,7 +80,8 @@ def execute(job):
     task=UEDGridworld().instance(job['split'],'full',job['seed']).private['tasks'][0]
     assert np.array_equal(perm,task['perm']) and task['family']=='corner'
     for name,info in saved.items():
-        info['score']=UEDGridworld().score_one(models[name],task)
+        policy=read_snapshot(OUT/info['model'],info)
+        info['score']=UEDGridworld().score_one(policy,task)
     result=dict(id=key,job=job,checkpoints=saved,curve=curve,completed_utc=now())
     dump(dest,result)
     print('DONE',key,[(n,round(i['ledger']['training_cpu_s'],1)) for n,i in saved.items()],flush=True)

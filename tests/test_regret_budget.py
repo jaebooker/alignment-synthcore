@@ -44,3 +44,19 @@ def test_teacher_requires_completed_episode_and_no_oracle_for_other_arms():
     assert v.count['oracle_queries'] == 1
     assert len(v.session.tasks[0]) == 2  # family, perm; no held-out episode tables
     assert v.count['certified_starts'] > 0
+
+
+def test_checkpoint_evaluation_uses_saved_weights(tmp_path):
+    # CPU .numpy() exports share storage with live parameters. Snapshot scoring
+    # must read disk after training, not retain those mutable exports in memory.
+    import torch
+    from experiments.regret_budget.run import read_snapshot
+    model=torch.nn.Linear(2,1)
+    original={n:p.detach().numpy() for n,p in model.named_parameters()}
+    names=list(original);path=tmp_path/'checkpoint.npz'
+    np.savez_compressed(path,**{f'p{i}':original[n] for i,n in enumerate(names)})
+    with torch.no_grad():
+        for parameter in model.parameters():parameter.add_(100)
+    saved=read_snapshot(path,dict(arch={'test':True},state_names=names))
+    for name in names:
+        assert np.max(np.abs(saved['state_dict'][name]-original[name]))>90

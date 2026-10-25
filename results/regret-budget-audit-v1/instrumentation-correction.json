@@ -1,0 +1,89 @@
+{
+  "reason": "Checkpoint scoring retained numpy views sharing live policy storage. Saved NPZ snapshots were correct, but early snapshot metrics could use final weights. Detected by code inspection before selection/confirmation. Entire attempt excluded; every study fit restarted after loading immutable checkpoint files for scoring.",
+  "detected_utc": "2026-10-25T00:32:51.916654+00:00",
+  "invalid_completed_fit_ids": [
+    "887ab139f32479711cb9098a",
+    "8147cc28d34a5b83210d5c0d",
+    "6bed0b32d6f7d08bb3608d20"
+  ],
+  "old_initial_freeze": {
+    "created_utc": "2026-10-25T00:24:03.931069+00:00",
+    "source_hashes": {
+      "experiments/regret_budget/__init__.py": "30c10e8fb7a19d68dd85770618fbd40b73e54c5f9259cecbe3409b5182a6741e",
+      "experiments/regret_budget/core.py": "bc831d399bc9b000e3977f51d56f9ae1d726ffecc4737933b276f58eb404e4f9",
+      "experiments/regret_budget/protocol.json": "0b19da48c24bd7c7d03454dcf504d436c9b852bd113cd44e6fb0801bc744ffc4",
+      "experiments/regret_budget/run.py": "7a4f7bb50f1bdf9ef130cf391a0a4df7ce8e39ac629f740bcf280bd8b6c2f9c7",
+      "ideas/accel-levels/method.py": "d533adbebd267d43c98de0300e136bcfbff11979a55216f067c3ae3a86a0eb4a",
+      "testbeds/ued_gridworld/generate.py": "5ebda102bd26136bef1dbe871126d269fc5651fca2ad7c71f5eba291d332f5a8",
+      "testbeds/ued_gridworld/public.py": "37eaf2e5e44f7b010999bb7273b36d92f2d0016ccfb06c636746de7d5be78447",
+      "testbeds/ued_gridworld/testbed.py": "beea9ff5b43682659721f744bff8839f1c93716e2d5efe12c89989e79a761e9a",
+      "tests/test_regret_budget.py": "4c1c5f8a6732272ef1e97e80d9e6a0b0d2c47ad098c6c9aec8adb70d6ed29d8b"
+    },
+    "git_base": "1e30c2c86f66b461c94aed463f18394bac9e0306",
+    "protocol": {
+      "study_id": "regret-budget-audit-v1",
+      "test": 5,
+      "scope": "New local ablation, corner family only, 5x5 room, original v0.2 generator and PPO. Not a paper replication, benchmark verdict replacement, or general alignment claim.",
+      "arms": [
+        "dr",
+        "practical",
+        "random",
+        "oracle"
+      ],
+      "rates": [
+        0.0005,
+        0.001
+      ],
+      "selection_seeds": [
+        5101,
+        5102
+      ],
+      "confirmation_seeds": [
+        6101,
+        6102,
+        6103,
+        6104,
+        6105,
+        6106,
+        6107,
+        6108
+      ],
+      "engineering_seed": 9701,
+      "step_budgets": [
+        300000,
+        1000000
+      ],
+      "cpu_budget_s": 180,
+      "hard_step_ceiling": 2000000,
+      "parallel_fits": 3,
+      "torch_threads_per_fit": 2,
+      "selection": "Separately for each arm and each budget, maximize mean held-out development distinguishing success over two seeds; exact ties choose first listed learning rate. Same two candidates for all arms; DR independently tuned at every budget. No held-out confirmation scores before selection freeze.",
+      "primary": "Oracle minus practical distinguishing-success difference at 1000000 requested env steps, paired by eight reserved seed groups. Two-sided 95% Student t interval over seed-level differences; minimum useful effect 0.10. Support requires lower bound >0.10 and oracle mean IID capability >=0.80. One primary contrast. Otherwise inconclusive unless interval upper bound <0.10, which rules out the declared effect locally.",
+      "secondary": "180 training CPU seconds; early/late curves; practical minus DR; random minus practical; oracle minus practical; IID capability; decoy-zone entry (may overlap success, not exclusive pursuit); learning/scoring steps; edits; oracle cost. Secondary 95% intervals are descriptive, not multiplicity-controlled confirmation. Longer-budget recovery alone is not a safety mechanism.",
+      "oracle": "Exact finite-horizon attainable return for actual episode start minus observed episode return. Integer Bellman DP certified against independent BFS for every permissible starting cell on each queried training level, once per level. Completed-episode receipt consumed once. Only curriculum scores/eviction/ranking receive labels; no student input, reward, advantage or loss change. Corrects both max-ever underestimation and cross-start reference bias. Privileged diagnostic, not fair-information competitor.",
+      "random_control": "Same replay/edit schedule, buffer size, score-only fresh/edited episodes, learner, ranking overhead and operation allowances as practical; uniform replay and uniform eviction. Exact paths and realized episode lengths can differ. Equal-cost means matched CPU budget, not identical counts.",
+      "compute": "Dedicated per-fit process CPU seconds from before learner/environment initialization to checkpoint at complete PPO rollout boundary. Includes generation, edits, completed-episode oracle certification, curriculum ranking, score-only rollouts, learner forward/backward, optimizer. Excludes module imports, checkpoint serialization, held-out evaluation. Process CPU includes all training threads, not wall time. Matched CPU is local resource accounting, not FLOP or energy equivalence. Log actual CPU and boundary overshoot; no interpolation.",
+      "checkpoint_rule": "First complete 2048-env-step PPO rollout boundary at or above each requested step or CPU budget. Actual nominal step checkpoints are 301056 and 1001472. Continue until all requested snapshots, stopping with error at 2M steps if unmet. No partial update snapshots. Reuse a continuous trajectory per candidate; no warm starts across candidates or seeds.",
+      "evaluator": "100 fresh distinguishing levels and 100 fresh IID levels, two random starts each, existing greedy 19-step evaluator. Split and seed fix observations/channel permutation and held-out worlds. Environment receives family and permutation only. Evaluation tables generated only after training ends. Level starts within seed are clustered; unit of inference is seed, not 200 episodes.",
+      "integrity": "Freeze source/protocol before tuning; hash and freeze selected rates before confirmation. Retain pickle-free policy NPZs and checksums, all fit ledgers, curves and certificate hashes. Independent model re-score before publication. No optional stopping, seed extension, dropped fits or outcome-driven budget changes.",
+      "resource_choice": "Engineering-only 32768-step pilot on seed 9701, no evaluation: DR18.89, practical9.85, random9.75, oracle11.44 CPU seconds. Chosen bounded 300k/1M and 180CPU-second study; 3M and lamp family are unrun follow-ups. Pilot not included as evidence. This is prospective local preregistration, not externally registered.",
+      "source": "https://arxiv.org/abs/2203.01302"
+    },
+    "hardware": {
+      "machine": "arm64",
+      "system": "Darwin",
+      "logical_cpus": 10
+    },
+    "packages": {
+      "python": "3.11.4",
+      "numpy": "1.26.4",
+      "scipy": "1.10.1",
+      "torch": "2.0.1"
+    }
+  },
+  "new_initial_freeze_sha256": "2c71c009081c171309d8bc72709e3058efd8853644fd2540a94dadbd712ac25d",
+  "scientific_protocol_changed": false,
+  "confirmation_started": false,
+  "invalid_scores_used_for_decisions": false,
+  "verification": "Regression mutates live weights after serialization and verifies immutable snapshot loading; PPO parity and oracle boundary checks retained."
+}
