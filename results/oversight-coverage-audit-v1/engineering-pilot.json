@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-10-24T23:13:43.459151+00:00",
+  "timings_seconds": {
+    "baseline": 1.4879152920329943,
+    "mona": 0.919450250105001,
+    "decoupled": 1.0168720830697566
+  },
+  "steps_per_method": 2000,
+  "excluded": true
+}

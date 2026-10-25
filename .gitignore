@@ -14,3 +14,24 @@ results/_transfer/
 
 # triage checkpoints (resumable re-runs)
 results/_triage/_work/
+
+# reproducible public exploration traces: retained locally and in the study output bundle
+results/approval-factorial-v1/*/traces/
+
+# Test 2 fitted weights are retained in the complete local evidence bundle.
+results/post-tuning-mechanism-audit-v1/models/
+results/post-tuning-mechanism-audit-v1/progress.log
+# Excluded engineering timing probe; not a study observation.
+results/tuning-audit-v1/
+
+# Test 5 local fitted checkpoints; complete evidence bundle retains all weights.
+results/regret-budget-audit-v1/models/
+results/regret-budget-audit-v1/progress.log
+# Large per-level certificate tables are retained in the complete local evidence.
+results/regret-budget-audit-v1/certificates/
+
+# Test 6 raw native logs remain in the complete local evidence bundle.
+results/go-continuation-audit-v1/logs/
+results/go-continuation-audit-v1/progress/
+results/go-continuation-audit-v1/progress.log
+results/go-continuation-audit-v1/analysis.log

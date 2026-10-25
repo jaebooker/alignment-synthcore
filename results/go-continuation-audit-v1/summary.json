@@ -1,0 +1,1181 @@
+{
+  "study_id": "go-continuation-audit-v1",
+  "scope": "Four archived outcome-selected development case/engine pairs from two source games, three Leela Zero#57 and one KataGo b6c96 s175M. Two cases overlap the same original chain at different times, and the game6 case overlaps across engines. No population failure-rate or independent confirmation claim.",
+  "case_engine_pairs": 4,
+  "source_games": 2,
+  "paired_seeds_per_case": 8,
+  "branches": 64,
+  "primary_horizon": 64,
+  "secondary_horizon": 128,
+  "primary_positive_case_comparisons": 1,
+  "primary_unresolved_case_comparisons": 0,
+  "cases": [
+    {
+      "case": "leela-humanatk-LZ-4096visits-1-m249",
+      "engine": "leela",
+      "source_game": "humanatk-LZ-4096visits-1.sgf",
+      "move": 249,
+      "original_stones": 49,
+      "recorded_move": "N12",
+      "defensive_move": "R9",
+      "horizons": {
+        "64": {
+          "arms": {
+            "recorded": {
+              "retained": 4,
+              "lost": 4,
+              "unresolved": 0,
+              "fraction_lower": 0.5,
+              "fraction_upper": 0.5,
+              "first_loss_plies": [
+                null,
+                null,
+                null,
+                2,
+                2,
+                2,
+                2,
+                null
+              ]
+            },
+            "defense": {
+              "retained": 8,
+              "lost": 0,
+              "unresolved": 0,
+              "fraction_lower": 1.0,
+              "fraction_upper": 1.0,
+              "first_loss_plies": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            }
+          },
+          "paired_effect_lower": 0.5,
+          "paired_effect_upper": 0.5,
+          "verdict": "positive preservation advantage within selected cohort",
+          "paired": [
+            {
+              "seed": 101,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 102,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 103,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 104,
+              "recorded": 0,
+              "defense": 1,
+              "lower": 1,
+              "upper": 1
+            },
+            {
+              "seed": 105,
+              "recorded": 0,
+              "defense": 1,
+              "lower": 1,
+              "upper": 1
+            },
+            {
+              "seed": 106,
+              "recorded": 0,
+              "defense": 1,
+              "lower": 1,
+              "upper": 1
+            },
+            {
+              "seed": 107,
+              "recorded": 0,
+              "defense": 1,
+              "lower": 1,
+              "upper": 1
+            },
+            {
+              "seed": 108,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            }
+          ]
+        },
+        "128": {
+          "arms": {
+            "recorded": {
+              "retained": 4,
+              "lost": 4,
+              "unresolved": 0,
+              "fraction_lower": 0.5,
+              "fraction_upper": 0.5,
+              "first_loss_plies": [
+                null,
+                null,
+                null,
+                2,
+                2,
+                2,
+                2,
+                null
+              ]
+            },
+            "defense": {
+              "retained": 8,
+              "lost": 0,
+              "unresolved": 0,
+              "fraction_lower": 1.0,
+              "fraction_upper": 1.0,
+              "first_loss_plies": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            }
+          },
+          "paired_effect_lower": 0.5,
+          "paired_effect_upper": 0.5,
+          "verdict": "positive preservation advantage within selected cohort",
+          "paired": [
+            {
+              "seed": 101,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 102,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 103,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 104,
+              "recorded": 0,
+              "defense": 1,
+              "lower": 1,
+              "upper": 1
+            },
+            {
+              "seed": 105,
+              "recorded": 0,
+              "defense": 1,
+              "lower": 1,
+              "upper": 1
+            },
+            {
+              "seed": 106,
+              "recorded": 0,
+              "defense": 1,
+              "lower": 1,
+              "upper": 1
+            },
+            {
+              "seed": 107,
+              "recorded": 0,
+              "defense": 1,
+              "lower": 1,
+              "upper": 1
+            },
+            {
+              "seed": 108,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            }
+          ]
+        }
+      },
+      "terminal_pairs": [
+        {
+          "seed": 101,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 102,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 103,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 104,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 105,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 106,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 107,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 108,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        }
+      ],
+      "unique_trajectories_per_arm": {
+        "recorded": 8,
+        "defense": 8
+      }
+    },
+    {
+      "case": "leela-humanatk-LZ-4096visits-1-m251",
+      "engine": "leela",
+      "source_game": "humanatk-LZ-4096visits-1.sgf",
+      "move": 251,
+      "original_stones": 49,
+      "recorded_move": "N13",
+      "defensive_move": "Q12",
+      "horizons": {
+        "64": {
+          "arms": {
+            "recorded": {
+              "retained": 8,
+              "lost": 0,
+              "unresolved": 0,
+              "fraction_lower": 1.0,
+              "fraction_upper": 1.0,
+              "first_loss_plies": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "defense": {
+              "retained": 8,
+              "lost": 0,
+              "unresolved": 0,
+              "fraction_lower": 1.0,
+              "fraction_upper": 1.0,
+              "first_loss_plies": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            }
+          },
+          "paired_effect_lower": 0.0,
+          "paired_effect_upper": 0.0,
+          "verdict": "no positive advantage in selected cohort",
+          "paired": [
+            {
+              "seed": 101,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 102,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 103,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 104,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 105,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 106,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 107,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 108,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            }
+          ]
+        },
+        "128": {
+          "arms": {
+            "recorded": {
+              "retained": 8,
+              "lost": 0,
+              "unresolved": 0,
+              "fraction_lower": 1.0,
+              "fraction_upper": 1.0,
+              "first_loss_plies": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "defense": {
+              "retained": 8,
+              "lost": 0,
+              "unresolved": 0,
+              "fraction_lower": 1.0,
+              "fraction_upper": 1.0,
+              "first_loss_plies": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            }
+          },
+          "paired_effect_lower": 0.0,
+          "paired_effect_upper": 0.0,
+          "verdict": "no positive advantage in selected cohort",
+          "paired": [
+            {
+              "seed": 101,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 102,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 103,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 104,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 105,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 106,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 107,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 108,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            }
+          ]
+        }
+      },
+      "terminal_pairs": [
+        {
+          "seed": 101,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 102,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 103,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 104,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 105,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 106,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 107,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 108,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        }
+      ],
+      "unique_trajectories_per_arm": {
+        "recorded": 8,
+        "defense": 8
+      }
+    },
+    {
+      "case": "leela-humanatk-LZ-4096visits-6-m221",
+      "engine": "leela",
+      "source_game": "humanatk-LZ-4096visits-6.sgf",
+      "move": 221,
+      "original_stones": 34,
+      "recorded_move": "K1",
+      "defensive_move": "A8",
+      "horizons": {
+        "64": {
+          "arms": {
+            "recorded": {
+              "retained": 7,
+              "lost": 1,
+              "unresolved": 0,
+              "fraction_lower": 0.875,
+              "fraction_upper": 0.875,
+              "first_loss_plies": [
+                null,
+                null,
+                null,
+                null,
+                16,
+                null,
+                null,
+                null
+              ]
+            },
+            "defense": {
+              "retained": 6,
+              "lost": 2,
+              "unresolved": 0,
+              "fraction_lower": 0.75,
+              "fraction_upper": 0.75,
+              "first_loss_plies": [
+                10,
+                null,
+                10,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            }
+          },
+          "paired_effect_lower": -0.125,
+          "paired_effect_upper": -0.125,
+          "verdict": "no positive advantage in selected cohort",
+          "paired": [
+            {
+              "seed": 101,
+              "recorded": 1,
+              "defense": 0,
+              "lower": -1,
+              "upper": -1
+            },
+            {
+              "seed": 102,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 103,
+              "recorded": 1,
+              "defense": 0,
+              "lower": -1,
+              "upper": -1
+            },
+            {
+              "seed": 104,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 105,
+              "recorded": 0,
+              "defense": 1,
+              "lower": 1,
+              "upper": 1
+            },
+            {
+              "seed": 106,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 107,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 108,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            }
+          ]
+        },
+        "128": {
+          "arms": {
+            "recorded": {
+              "retained": 7,
+              "lost": 1,
+              "unresolved": 0,
+              "fraction_lower": 0.875,
+              "fraction_upper": 0.875,
+              "first_loss_plies": [
+                null,
+                null,
+                null,
+                null,
+                16,
+                null,
+                null,
+                null
+              ]
+            },
+            "defense": {
+              "retained": 6,
+              "lost": 2,
+              "unresolved": 0,
+              "fraction_lower": 0.75,
+              "fraction_upper": 0.75,
+              "first_loss_plies": [
+                10,
+                null,
+                10,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            }
+          },
+          "paired_effect_lower": -0.125,
+          "paired_effect_upper": -0.125,
+          "verdict": "no positive advantage in selected cohort",
+          "paired": [
+            {
+              "seed": 101,
+              "recorded": 1,
+              "defense": 0,
+              "lower": -1,
+              "upper": -1
+            },
+            {
+              "seed": 102,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 103,
+              "recorded": 1,
+              "defense": 0,
+              "lower": -1,
+              "upper": -1
+            },
+            {
+              "seed": 104,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 105,
+              "recorded": 0,
+              "defense": 1,
+              "lower": 1,
+              "upper": 1
+            },
+            {
+              "seed": 106,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 107,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 108,
+              "recorded": 1,
+              "defense": 1,
+              "lower": 0,
+              "upper": 0
+            }
+          ]
+        }
+      },
+      "terminal_pairs": [
+        {
+          "seed": 101,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 102,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 103,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 104,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 105,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 106,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 107,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 108,
+          "both_verified_terminal": false,
+          "target_relative_area_margins": {
+            "recorded": null,
+            "defense": null
+          },
+          "defense_worsens_terminal_result": false
+        }
+      ],
+      "unique_trajectories_per_arm": {
+        "recorded": 8,
+        "defense": 8
+      }
+    },
+    {
+      "case": "katago-humanatk-LZ-4096visits-6-m221",
+      "engine": "katago",
+      "source_game": "humanatk-LZ-4096visits-6.sgf",
+      "move": 221,
+      "original_stones": 34,
+      "recorded_move": "J11",
+      "defensive_move": "A8",
+      "horizons": {
+        "64": {
+          "arms": {
+            "recorded": {
+              "retained": 0,
+              "lost": 8,
+              "unresolved": 0,
+              "fraction_lower": 0.0,
+              "fraction_upper": 0.0,
+              "first_loss_plies": [
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ]
+            },
+            "defense": {
+              "retained": 0,
+              "lost": 8,
+              "unresolved": 0,
+              "fraction_lower": 0.0,
+              "fraction_upper": 0.0,
+              "first_loss_plies": [
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ]
+            }
+          },
+          "paired_effect_lower": 0.0,
+          "paired_effect_upper": 0.0,
+          "verdict": "no positive advantage in selected cohort",
+          "paired": [
+            {
+              "seed": 101,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 102,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 103,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 104,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 105,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 106,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 107,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 108,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            }
+          ]
+        },
+        "128": {
+          "arms": {
+            "recorded": {
+              "retained": 0,
+              "lost": 8,
+              "unresolved": 0,
+              "fraction_lower": 0.0,
+              "fraction_upper": 0.0,
+              "first_loss_plies": [
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ]
+            },
+            "defense": {
+              "retained": 0,
+              "lost": 8,
+              "unresolved": 0,
+              "fraction_lower": 0.0,
+              "fraction_upper": 0.0,
+              "first_loss_plies": [
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ]
+            }
+          },
+          "paired_effect_lower": 0.0,
+          "paired_effect_upper": 0.0,
+          "verdict": "no positive advantage in selected cohort",
+          "paired": [
+            {
+              "seed": 101,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 102,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 103,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 104,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 105,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 106,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 107,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            {
+              "seed": 108,
+              "recorded": 0,
+              "defense": 0,
+              "lower": 0,
+              "upper": 0
+            }
+          ]
+        }
+      },
+      "terminal_pairs": [
+        {
+          "seed": 101,
+          "both_verified_terminal": true,
+          "target_relative_area_margins": {
+            "recorded": -41.5,
+            "defense": -41.5
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 102,
+          "both_verified_terminal": true,
+          "target_relative_area_margins": {
+            "recorded": -41.5,
+            "defense": -41.5
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 103,
+          "both_verified_terminal": true,
+          "target_relative_area_margins": {
+            "recorded": -41.5,
+            "defense": -41.5
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 104,
+          "both_verified_terminal": true,
+          "target_relative_area_margins": {
+            "recorded": -41.5,
+            "defense": -41.5
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 105,
+          "both_verified_terminal": true,
+          "target_relative_area_margins": {
+            "recorded": -41.5,
+            "defense": -41.5
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 106,
+          "both_verified_terminal": true,
+          "target_relative_area_margins": {
+            "recorded": -41.5,
+            "defense": -41.5
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 107,
+          "both_verified_terminal": true,
+          "target_relative_area_margins": {
+            "recorded": -41.5,
+            "defense": -41.5
+          },
+          "defense_worsens_terminal_result": false
+        },
+        {
+          "seed": 108,
+          "both_verified_terminal": true,
+          "target_relative_area_margins": {
+            "recorded": -41.5,
+            "defense": -41.5
+          },
+          "defense_worsens_terminal_result": false
+        }
+      ],
+      "unique_trajectories_per_arm": {
+        "recorded": 1,
+        "defense": 1
+      }
+    }
+  ],
+  "branch_errors": [],
+  "verified_continuation_plies": 6912,
+  "generated_searches": 6848,
+  "two_pass_terminations": 16,
+  "terminal_native_area_score_agreements": 16,
+  "verified_terminal_pairs": 8,
+  "worsening_terminal_pairs": 0,
+  "limitations": [
+    "Four outcome-selected case/engine strata overlap within only two source games; not four independent positions or a failure-rate sample.",
+    "Eight search seeds measure sensitivity within a fixed case and policy, not an independent position population. Distinct seeds may produce identical trajectories; unique counts are reported.",
+    "Both colors use the same associated historical engine; no optimal-adversary, forced-life or forced-win certificate. Absence of capture in self-play does not establish robustness against an opponent choosing a known legal capture witness.",
+    "Only the first archived immediate defensive alternative is tested per case; other legal defenses may produce different later outcomes.",
+    "Strict horizon retention is unresolved after early termination with all original stones still present. Captured identities never return when a point is reoccupied.",
+    "Terminal-board occupancy/area is not independently adjudicated life and death. Only exact native/physical-area agreement receives a scored terminal record.",
+    "Leela positional superko and native symmetries differ from Kata Chinese simple ko and forced identity; do not pool engines.",
+    "Historical engineering checkpoints match archived hashes; the original published victim identities remain unresolved.",
+    "No source-game result is reused as a continuation outcome. Truncated branches receive no invented winner.",
+    "Reserved attack cohort and matched ordinary controls are later stages, not run here. The manuscript study remains separate."
+  ]
+}

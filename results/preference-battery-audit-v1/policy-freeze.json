@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-10-24T21:20:05.694312+00:00",
+  "source_hashes": {
+    "experiments/preference_audit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/preference_audit/batteries.py": "a76c5d63cd235bed68e6a16b193d81715753534f4a4c5575507eb609358c0ae6",
+    "experiments/preference_audit/protocol.json": "2436714a12c1b60283ea49bac6eae1b58ebcd2d6b2dda2abd14a1f95861bca90",
+    "experiments/preference_audit/requirements.txt": "f6c19b6918b82a2ebbaa3b6b8f4e157a5a7f680ef425f893f4f5f52c542adb1d",
+    "experiments/preference_audit/run.py": "12e969c23e97cfa9a88f746d575bcb7f6e6c799ad1fa009a355ab7374d48a020",
+    "experiments/preference_audit/vendor/gw.py": "f5fbcafd8b29098d22904f154e1202c22c94e55fa2ac8274225e7fe3c62216e6",
+    "experiments/preference_audit/vendor/ppo.py": "cc09579c9a0c7326b95728d22d5efc13346ba0a6b36af5f4fea518a5cdd38d4c",
+    "experiments/preference_audit/vendor/provenance.json": "d6703664ef8db31ba630f1ea51f494ab4734b90ee6e3edbd15e47eaccb723747",
+    "experiments/preference_audit/vendor/revpref.py": "e730052422c2bf2d66b4686e2c09d9bcd6e9a6686990475759290e0f1a76f20c"
+  },
+  "files": {
+    "training.json": "b78614e11bc5c29d62406cb7624a180078e00b835e3e2580d1d222e2b59a0c17",
+    "models/entropy_0.01.npz": "bda4b92c21ae1ab1c456ad9d498bbb881a4d953b5c5d4793f1fa269dd8db5199",
+    "training-entropy_0.01.json": "8e78b5584bfd07470eaf36946bf6d0f0206a19a1393ef0093ae62b24001417b2",
+    "models/entropy_0.05.npz": "a786492e070d87a1a1f3c16dd73cea77009ac21ca92f96bc6b45cffb88d07080",
+    "training-entropy_0.05.json": "74bac6b0637c155b02d67d5ba64a127210aab85adbc995a574630e65e45aa6e3"
+  }
+}

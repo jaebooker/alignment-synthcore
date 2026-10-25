@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-10-24T23:17:32.396259+00:00",
+  "selection_sha256": "8bff1435f4f586281fc5d2627e688dbaa7ff05ae749c794a052aac68ced8eaed",
+  "source_hashes": {
+    "experiments/oversight_coverage/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "experiments/oversight_coverage/environment.py": "5fdee7bd58195015aeb812ab285fb1172af044bb8fa335f351c0bd477d82026c",
+    "experiments/oversight_coverage/protocol.json": "a77dd294976e52ebb3e10e9980076238baa190333c8679a2b00e49a5018d3aa5",
+    "experiments/oversight_coverage/run.py": "5ae71543d92d0e53db8283fd52194ca69d3e90c4b2572628b13a9a00bf993b64",
+    "harness/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "harness/runner.py": "ea49347a7f9207e47d6d46861131fdb5382f695feb5446a23789990c28a28a48",
+    "harness/sandbox_exec.py": "337fd319499cefefc89374dca2d843d7c6253d5070937af8de8187561a7ec744",
+    "harness/stats.py": "7ccce97f5f4f72b380b646a084a05d261c527ef7267ff3c97311ef9c8642e05f",
+    "harness/testbed.py": "7528967c4cb969c425c379f5a0f99b1297a7ecc4a4671a1b8d90f128d2a88b39",
+    "harness/verdict.py": "28ac78667119842625bddfbd8bb33f26cdb87d8dbff5f16e953fcd476e992486",
+    "ideas/decoupled-approval/method.py": "3da3af6f6f27cd7cf833535fa435d03e5216aab82c1d4f739bba2389e2017c6f",
+    "ideas/mona/method.py": "237e186a825247edbac3a12cee3fd21234a2f1e8537060fa4d239bb2b42929d4",
+    "testbeds/interactive_gridworld/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "testbeds/interactive_gridworld/baseline_approval_rl.py": "4f012aff40ad7a7fc8c0ced22ea0607efb75a6a733fced1b96e9c54ad2f5a795",
+    "testbeds/interactive_gridworld/generate.py": "4a25e92060ae35155cbe7e6a540f70483c3ee442eb9b22ee24cf1c8113adbf10",
+    "testbeds/interactive_gridworld/public.py": "c927955aa6e3686060336c870791e9874569605bdd3f937358cc02d8d1b9f415",
+    "testbeds/interactive_gridworld/testbed.py": "3641f40806419c79e6712ff138a6683f688f742906f4e35f80a44e7d25382c11"
+  }
+}

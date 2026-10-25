@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-10-24T04:10:01.887997+00:00",
+  "source_hashes": {
+    "experiments/tuning_audit/__init__.py": "87e19fd26e04d2f1c9411059cd4a0a614f9c1cb6455b92b5ec41b225f782d883",
+    "experiments/tuning_audit/protocol.json": "0d8d8ed5425d46cfaf2d6eb8719f9843d318b8a95ea4fd95f2e6f42ee0fbd4f1",
+    "experiments/tuning_audit/run.py": "bc5c62fef632fdf1fad68fd88c7d24b4961149f71713f1f72da5b31a73fee4eb",
+    "harness/runner.py": "ea49347a7f9207e47d6d46861131fdb5382f695feb5446a23789990c28a28a48",
+    "harness/sandbox_exec.py": "337fd319499cefefc89374dca2d843d7c6253d5070937af8de8187561a7ec744",
+    "ideas/accel-levels/idea.json": "7f0717e8871ab4cdd1126c146c8bc3eb4fad1903ef64fa91b31a4e586e50b101",
+    "ideas/accel-levels/method.py": "d533adbebd267d43c98de0300e136bcfbff11979a55216f067c3ae3a86a0eb4a",
+    "ideas/causal-confusion-interventions/idea.json": "db2293ad8bf664a40a96e4b41ec47ae8c3dbc37ca86f207750aeacdeb0b6b196",
+    "ideas/causal-confusion-interventions/method.py": "e4794dbbecd00502e931f8d9e8e4851b8ebbd29f1aac13dc8691b9f77d73e7e1",
+    "ideas/minimax-regret-levels/idea.json": "9da4267165b565d9da0afbdb4d0ee04d760a2ad8b081686bc22ecfb0b94128e0",
+    "ideas/minimax-regret-levels/method.py": "0fa20ce4c4a7645752e62ffd780de144a3b4c3e0154c368573795dc1673d5dc6",
+    "testbeds/confounded_imitation/baseline_bc.py": "f6cf7a41d1b17e206d9b35c2fad03cad0387258c281d6ce777a6bf22ffe159b1",
+    "testbeds/confounded_imitation/generate.py": "9d32970f7e2f54a388f2c48fc400050b741c0ab649738f4d4503805e4afe799b",
+    "testbeds/confounded_imitation/public.py": "9d319c8c6d17afb97baab62a39e144fc88060685a41440ba4aeccf4beb5aa846",
+    "testbeds/confounded_imitation/testbed.py": "c2f9f6ab6acc97611d7137d4607517958df800fee4f10749e785465616d6cc8f",
+    "testbeds/ued_gridworld/baseline_dr.py": "8b990a4ecb3845877828240bb1b116360b33bc46cb29b500a803ae1a98e95cc4",
+    "testbeds/ued_gridworld/generate.py": "5ebda102bd26136bef1dbe871126d269fc5651fca2ad7c71f5eba291d332f5a8",
+    "testbeds/ued_gridworld/public.py": "37eaf2e5e44f7b010999bb7273b36d92f2d0016ccfb06c636746de7d5be78447",
+    "testbeds/ued_gridworld/testbed.py": "beea9ff5b43682659721f744bff8839f1c93716e2d5efe12c89989e79a761e9a"
+  },
+  "protocol_sha256": "0d8d8ed5425d46cfaf2d6eb8719f9843d318b8a95ea4fd95f2e6f42ee0fbd4f1",
+  "python": "3.11.4 (main, Jul  5 2023, 08:54:11) [Clang 14.0.6 ]",
+  "torch": "2.0.1",
+  "numpy": "1.26.4",
+  "scipy": "1.10.1",
+  "platform": "macOS-14.2.1-arm64-arm-64bit",
+  "git_base": "3987c8dbbf14bf45aa63829cd78c151eef8d6dc5"
+}

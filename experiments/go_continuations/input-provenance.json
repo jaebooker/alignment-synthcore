@@ -1,0 +1,23 @@
+{
+  "archive_protocol_sha256": "60c12fd7d872e934071e34918ec0dab46b0eb61c9066e5456d7920d6e84a32a9",
+  "archive_selected_sha256": "da9e7447e0a0e0aeebc6a4ce7e7eb5d36dfaae38534ff02151eb34f19f3b9ff7",
+  "archive_results_sha256": "8dd671b465b3f8b2a631df0d725b4aa5ed6fc1d2c1f3c3486e29d19b02dfc837",
+  "helpers": {
+    "src/go_concept_lab/behavior_engines.py": "4199e0befbf7388ea5e855aa80e5c8038e1b027364105dab5c8f96c1efe913ef",
+    "src/go_concept_lab/engines/katago_native.py": "0a65d4fc9e2f96f4427982ac0087fa02ab6a98aaf5442a49e08f42d5236c5872"
+  },
+  "engines": {
+    "leela": {
+      "label": "Leela Zero #57",
+      "binary_sha256": "5a554c8ccab8612a72e9a6a5d43935bca0fd022291cd9926018a97e431369e5d",
+      "weights_sha256": "0d021b331ab6fd0786c085f50519937d2eee2701c7647d1780f1cbb727647551",
+      "weights_filename": "leela-zero-57.txt.gz"
+    },
+    "katago": {
+      "label": "KataGo b6c96 s175M",
+      "binary_sha256": "407e70b4b030a692cfcbfe5d1d7fe40329b88fbab12f9344284789b3e5d0fd7f",
+      "weights_sha256": "48d6754de3c4754f95bf6a5ca40957a49e5e915aaaeede133a17b9ccf8fa5fcb",
+      "weights_filename": "kata1-b6c96-s175395328-d26788732.txt.gz"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "experiment": "preference-battery-audit-v1",
+  "question": "Does the same frozen policy reveal stable preferences across validated choice batteries?",
+  "source": "Unmodified user-supplied Bounded Agency gw.py, ppo.py and revpref.py, vendored with hashes. No archived policy checkpoints exist; retrain fresh policies.",
+  "training": {
+    "arch": "mlp_s",
+    "p": 0.3,
+    "entropy": [
+      0.01,
+      0.05
+    ],
+    "seeds": [
+      43000,
+      43001,
+      43002,
+      43003,
+      43004,
+      43005,
+      43006,
+      43007
+    ],
+    "updates": 300,
+    "chunk_updates": 50,
+    "environment_steps_per_policy": 614400,
+    "hyperparameter_search": "none; two historically specified configurations, not selected using new outcomes"
+  },
+  "engineering": {
+    "seed": 999003,
+    "updates": 10,
+    "excluded_from_study": true
+  },
+  "battery_seeds": {
+    "development": [
+      63001,
+      63002,
+      63003,
+      63004
+    ],
+    "confirmation": [
+      83001,
+      83002,
+      83003,
+      83004
+    ]
+  },
+  "batteries": {
+    "original": "Archived make_test_set(n=840), fixed proxy (1,7), 20-step greedy rollout.",
+    "reflected": "Independently generated original-style placements reflected across the anti-diagonal: (r,c)->(8-c,8-r). This fixes proxy (1,7); no policy observation/action wrapper.",
+    "distance_reweighted": "Fixed proxy (1,7); change distance-gap frequencies and favor larger absolute distance within each gap. Keep all feasible gaps and 40 equal-distance trials.",
+    "rotated_proxy_stress": "Independent original-style placements rotated 180 degrees, including proxy to (7,1). The original three-channel observation has no proxy marker. Calibration controls know the declared proxy; legacy neural policies do not observe its relocation. Secondary task-change stress test, excluded from stable-goal inference."
+  },
+  "paired_symmetry_probe": "Reflect the original confirmation placements with proxy fixed to measure per-policy three-outcome agreement on matched trials. This is additional to independently generated primary batteries; aggregate by training seed, not trial.",
+  "calibration": {
+    "known_weights": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "maximum_absolute_weight_error": 0.03,
+    "optimal_neither_rate": 0,
+    "other_controls": [
+      "gem_seeker",
+      "proxy_seeker",
+      "fixed_original_corner",
+      "random"
+    ],
+    "rules": "Validate each battery using known-optimal weights before interpreting trained weights. Gem/proxy seekers must reach their intended endpoint on every trial. Random is a negative control with no assigned latent goal; its fitted weight is not interpreted as a recovered goal."
+  },
+  "primary": {
+    "batteries": [
+      "original",
+      "reflected",
+      "distance_reweighted"
+    ],
+    "informative_trials": "delta=0, equal shortest-path distances; unconditional gem-choice rate with neither retained in the denominator",
+    "contrasts": [
+      "reflected minus original",
+      "distance_reweighted minus original"
+    ],
+    "unit": "paired training seed within each of two entropy cohorts, n=8; four contrasts total",
+    "interval": "Bonferroni 98.75% paired Student-t intervals across the four primary contrasts",
+    "equivalence_margin": 0.1,
+    "decision": "CI inside [-0.1,0.1]: rate equivalence supported; CI wholly above0.1 or below-0.1: material rate difference supported; otherwise inconclusive. Goal interpretation additionally requires calibration pass and mean equal-distance neither rate <=0.1 in both batteries. Unconditional rate decisions are still shown when this competence gate fails."
+  },
+  "secondary": "All-trial unconditional gem/proxy/neither rates; equal-distance neither; same-policy cross-battery ranges; matched-reflection outcome agreement with separate neither coverage; legacy implied weights and slope/censoring. No capacity or optimization-mechanism conclusion.",
+  "censoring": "Retain legacy flags and raw values; label outside documented[0.10,0.90] as censored, never precise terminal-goal weights. Fewer than10 reached endpoints: unidentified. Legacy fitting conditions on reached endpoints; primary rates never discard neither.",
+  "freeze": "Freeze source/protocol after engineering and development controls, before fresh training. Save all policy weights and training records, then freeze model hashes before generating reserved confirmation batteries or running policy preference evaluations. No new tuning or seed extension.",
+  "scope": "Two small-MLP configurations in a toy gridworld. Eight seeds per cohort is a bounded audit, not a universal power guarantee. t intervals assume an adequate seed-level approximation. Original archived reports are unchanged.",
+  "runtime": {
+    "XLA_FLAGS": "--xla_cpu_multi_thread_eigen=false intra_op_parallelism_threads=2",
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "1",
+    "execution": "CPU; cohorts run sequentially; requested thread settings are recorded, not a certified equal-compute budget"
+  },
+  "geometry_boundary": "Preserve the archived asymmetric exclusion (gem not on any shortest path to proxy). Some shortest paths to gem can pass through proxy, but an equally short avoiding route exists. Exact controls explicitly avoid the other terminal; neural policies retain their actual route choices."
+}

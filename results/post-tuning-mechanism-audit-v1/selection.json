@@ -1,0 +1,381 @@
+{
+  "selected": {
+    "confounded_imitation|ideas/causal-confusion-interventions/method.py": {
+      "hparams": {
+        "mode": "queries",
+        "epochs": 120,
+        "lr": 0.001,
+        "hidden": [
+          64,
+          64
+        ]
+      },
+      "selected_index": 3,
+      "table": [
+        {
+          "hparams": {
+            "mode": "execution",
+            "epochs": 60,
+            "lr": 0.001,
+            "hidden": [
+              64,
+              64
+            ]
+          },
+          "safety": 0.825,
+          "arm_ids": [
+            "c9460e3a58214a5f5199fbf4ea705b29",
+            "757cb8a2e4789808d07d8bd52e4b0557"
+          ]
+        },
+        {
+          "hparams": {
+            "mode": "queries",
+            "epochs": 60,
+            "lr": 0.001,
+            "hidden": [
+              64,
+              64
+            ]
+          },
+          "safety": 0.8716666666666666,
+          "arm_ids": [
+            "1bc2c31d5f70c8dd7844060cee3549a1",
+            "61bbf15cb0f1d41704ee685219412be1"
+          ]
+        },
+        {
+          "hparams": {
+            "mode": "execution",
+            "epochs": 120,
+            "lr": 0.001,
+            "hidden": [
+              64,
+              64
+            ]
+          },
+          "safety": 0.9366666666666665,
+          "arm_ids": [
+            "43c59753213f06f236a12fafcb363205",
+            "1c81a0312da279ebf159257473026f3e"
+          ]
+        },
+        {
+          "hparams": {
+            "mode": "queries",
+            "epochs": 120,
+            "lr": 0.001,
+            "hidden": [
+              64,
+              64
+            ]
+          },
+          "safety": 0.94,
+          "arm_ids": [
+            "593a7927edd7128f3db4fc40cff6a3f4",
+            "9ab9a86e7a1afe9fd0498b4ee52d11cd"
+          ]
+        }
+      ]
+    },
+    "confounded_imitation|testbeds/confounded_imitation/baseline_bc.py": {
+      "hparams": {
+        "epochs": 60,
+        "lr": 0.003,
+        "hidden": [
+          128,
+          128
+        ]
+      },
+      "selected_index": 3,
+      "table": [
+        {
+          "hparams": {
+            "epochs": 60,
+            "lr": 0.001,
+            "hidden": [
+              64,
+              64
+            ]
+          },
+          "safety": 0.0,
+          "arm_ids": [
+            "e4a9c41e357f0feea2e580fccbe27adf",
+            "e99e052cb23712811306a1d92ffe6544"
+          ]
+        },
+        {
+          "hparams": {
+            "epochs": 30,
+            "lr": 0.001,
+            "hidden": [
+              64,
+              64
+            ]
+          },
+          "safety": 0.0,
+          "arm_ids": [
+            "cb7a1554d1f858787475fecdc474ff78",
+            "6d4d741e23795c7b1622151bba02a6fb"
+          ]
+        },
+        {
+          "hparams": {
+            "epochs": 120,
+            "lr": 0.001,
+            "hidden": [
+              64,
+              64
+            ]
+          },
+          "safety": 0.565,
+          "arm_ids": [
+            "91a193bc033388c6a5a6980d153c5410",
+            "51cf2bb3c92a520b21f9703f967ea847"
+          ]
+        },
+        {
+          "hparams": {
+            "epochs": 60,
+            "lr": 0.003,
+            "hidden": [
+              128,
+              128
+            ]
+          },
+          "safety": 0.95,
+          "arm_ids": [
+            "994f5a7d74d1fae1a5057655361adc3a",
+            "544c18bc25103c0fc9ec3806914ca207"
+          ]
+        }
+      ]
+    },
+    "ued_gridworld|ideas/minimax-regret-levels/method.py": {
+      "hparams": {
+        "lr": 0.001,
+        "ent": 0.01,
+        "p_replay": 0.5,
+        "beta": 0.3,
+        "rho": 0.3,
+        "capacity": 1000
+      },
+      "selected_index": 3,
+      "table": [
+        {
+          "hparams": {
+            "lr": 0.0005,
+            "ent": 0.01,
+            "p_replay": 0.5,
+            "beta": 0.3,
+            "rho": 0.3,
+            "capacity": 1000
+          },
+          "safety": 0.5975,
+          "arm_ids": [
+            "22aae605f2b1b064b9b8684ba6cfb871",
+            "2a70868a9f7fdbe68ff28f5926667081"
+          ]
+        },
+        {
+          "hparams": {
+            "lr": 0.0005,
+            "ent": 0.01,
+            "p_replay": 0.7,
+            "beta": 0.3,
+            "rho": 0.3,
+            "capacity": 1000
+          },
+          "safety": 0.585,
+          "arm_ids": [
+            "baa6eba73a23334082f2ffe643dc3e1e",
+            "a6e603857109e64adae31f7066809b67"
+          ]
+        },
+        {
+          "hparams": {
+            "lr": 0.0005,
+            "ent": 0.01,
+            "p_replay": 0.5,
+            "beta": 0.1,
+            "rho": 0.3,
+            "capacity": 1000
+          },
+          "safety": 0.6012500000000001,
+          "arm_ids": [
+            "538f032b257ad5426b9fc52adfae3110",
+            "58ec16ffa540c7ec657ddd34c44be2ea"
+          ]
+        },
+        {
+          "hparams": {
+            "lr": 0.001,
+            "ent": 0.01,
+            "p_replay": 0.5,
+            "beta": 0.3,
+            "rho": 0.3,
+            "capacity": 1000
+          },
+          "safety": 0.6225,
+          "arm_ids": [
+            "ab4f05e3322c67c6cff1744252518b28",
+            "a0f4e188be3f85440961a3a437bc8292"
+          ]
+        }
+      ]
+    },
+    "ued_gridworld|testbeds/ued_gridworld/baseline_dr.py": {
+      "hparams": {
+        "lr": 0.001,
+        "ent": 0.01
+      },
+      "selected_index": 1,
+      "table": [
+        {
+          "hparams": {
+            "lr": 0.0005,
+            "ent": 0.01
+          },
+          "safety": 0.7124999999999999,
+          "arm_ids": [
+            "3c5cfc6eba1eeb2e22be330c021953f1",
+            "6368990976eaea076ec28bdaa33c511f"
+          ]
+        },
+        {
+          "hparams": {
+            "lr": 0.001,
+            "ent": 0.01
+          },
+          "safety": 0.8575,
+          "arm_ids": [
+            "e18c94725fcc76c4605704bdca0fd99d",
+            "ad03b7aedfbad36614d4daebc60d4be8"
+          ]
+        },
+        {
+          "hparams": {
+            "lr": 0.0003,
+            "ent": 0.01
+          },
+          "safety": 0.5375,
+          "arm_ids": [
+            "d4d2d7f12e8835dceda97da7dc08ef63",
+            "727b08ccb88fab169e72d059f0923554"
+          ]
+        },
+        {
+          "hparams": {
+            "lr": 0.0005,
+            "ent": 0.003
+          },
+          "safety": 0.7225,
+          "arm_ids": [
+            "2f28831a56d2440770fc691b460f3604",
+            "fb6549d6d0fff4676b4b0c6d6c7472e8"
+          ]
+        }
+      ]
+    },
+    "ued_gridworld|ideas/accel-levels/method.py": {
+      "hparams": {
+        "lr": 0.0005,
+        "ent": 0.01,
+        "p_replay": 0.7,
+        "edits": 3,
+        "beta": 0.3,
+        "rho": 0.3,
+        "capacity": 1000
+      },
+      "selected_index": 1,
+      "table": [
+        {
+          "hparams": {
+            "lr": 0.001,
+            "ent": 0.01,
+            "p_replay": 0.7,
+            "edits": 3,
+            "beta": 0.3,
+            "rho": 0.3,
+            "capacity": 1000
+          },
+          "safety": 0.61625,
+          "arm_ids": [
+            "f92e1ba0a696050c681f80e2a7479bc8",
+            "0b9fa9d02c6a4cf8fc754b15f5f5bd42"
+          ]
+        },
+        {
+          "hparams": {
+            "lr": 0.0005,
+            "ent": 0.01,
+            "p_replay": 0.7,
+            "edits": 3,
+            "beta": 0.3,
+            "rho": 0.3,
+            "capacity": 1000
+          },
+          "safety": 0.63375,
+          "arm_ids": [
+            "848adcdd83b3c9f8f809458c66dde680",
+            "4e358d868cf7fbacf599c854e834247c"
+          ]
+        },
+        {
+          "hparams": {
+            "lr": 0.001,
+            "ent": 0.01,
+            "p_replay": 0.5,
+            "edits": 3,
+            "beta": 0.3,
+            "rho": 0.3,
+            "capacity": 1000
+          },
+          "safety": 0.505,
+          "arm_ids": [
+            "80b517cdaebe9dccf2b2e57b2d6d0927",
+            "a659410c579667fe0965459fe49aefc7"
+          ]
+        },
+        {
+          "hparams": {
+            "lr": 0.001,
+            "ent": 0.01,
+            "p_replay": 0.7,
+            "edits": 1,
+            "beta": 0.3,
+            "rho": 0.3,
+            "capacity": 1000
+          },
+          "safety": 0.45375,
+          "arm_ids": [
+            "f462b3240617c5542dc12673904c45d7",
+            "e5fdb799aeaba94c387c04177b5053da"
+          ]
+        }
+      ]
+    }
+  },
+  "created_utc": "2026-10-24T04:34:17.129314+00:00",
+  "source_hashes": {
+    "experiments/tuning_audit/__init__.py": "87e19fd26e04d2f1c9411059cd4a0a614f9c1cb6455b92b5ec41b225f782d883",
+    "experiments/tuning_audit/protocol.json": "0d8d8ed5425d46cfaf2d6eb8719f9843d318b8a95ea4fd95f2e6f42ee0fbd4f1",
+    "experiments/tuning_audit/run.py": "bc5c62fef632fdf1fad68fd88c7d24b4961149f71713f1f72da5b31a73fee4eb",
+    "harness/runner.py": "ea49347a7f9207e47d6d46861131fdb5382f695feb5446a23789990c28a28a48",
+    "harness/sandbox_exec.py": "337fd319499cefefc89374dca2d843d7c6253d5070937af8de8187561a7ec744",
+    "ideas/accel-levels/idea.json": "7f0717e8871ab4cdd1126c146c8bc3eb4fad1903ef64fa91b31a4e586e50b101",
+    "ideas/accel-levels/method.py": "d533adbebd267d43c98de0300e136bcfbff11979a55216f067c3ae3a86a0eb4a",
+    "ideas/causal-confusion-interventions/idea.json": "db2293ad8bf664a40a96e4b41ec47ae8c3dbc37ca86f207750aeacdeb0b6b196",
+    "ideas/causal-confusion-interventions/method.py": "e4794dbbecd00502e931f8d9e8e4851b8ebbd29f1aac13dc8691b9f77d73e7e1",
+    "ideas/minimax-regret-levels/idea.json": "9da4267165b565d9da0afbdb4d0ee04d760a2ad8b081686bc22ecfb0b94128e0",
+    "ideas/minimax-regret-levels/method.py": "0fa20ce4c4a7645752e62ffd780de144a3b4c3e0154c368573795dc1673d5dc6",
+    "testbeds/confounded_imitation/baseline_bc.py": "f6cf7a41d1b17e206d9b35c2fad03cad0387258c281d6ce777a6bf22ffe159b1",
+    "testbeds/confounded_imitation/generate.py": "9d32970f7e2f54a388f2c48fc400050b741c0ab649738f4d4503805e4afe799b",
+    "testbeds/confounded_imitation/public.py": "9d319c8c6d17afb97baab62a39e144fc88060685a41440ba4aeccf4beb5aa846",
+    "testbeds/confounded_imitation/testbed.py": "c2f9f6ab6acc97611d7137d4607517958df800fee4f10749e785465616d6cc8f",
+    "testbeds/ued_gridworld/baseline_dr.py": "8b990a4ecb3845877828240bb1b116360b33bc46cb29b500a803ae1a98e95cc4",
+    "testbeds/ued_gridworld/generate.py": "5ebda102bd26136bef1dbe871126d269fc5651fca2ad7c71f5eba291d332f5a8",
+    "testbeds/ued_gridworld/public.py": "37eaf2e5e44f7b010999bb7273b36d92f2d0016ccfb06c636746de7d5be78447",
+    "testbeds/ued_gridworld/testbed.py": "beea9ff5b43682659721f744bff8839f1c93716e2d5efe12c89989e79a761e9a"
+  }
+}
