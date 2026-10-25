@@ -168,3 +168,108 @@ def test_report_rejects_partial_and_tampered_selection(tiny, monkeypatch):
     monkeypatch.setattr(R, "signature", lambda: {"x": "y"})
     with pytest.raises(SystemExit, match="source changed"):
         R.report(tiny)
+
+
+# --- Codex review 2: B1 selection binding, B2 provenance, B3 sealed sidecars ------------------------
+
+def _dev_done(tiny):
+    for s in tiny["dev_seeds"]:
+        R.run_seed("dev", s, tiny)
+
+
+def _edit(path, fn):
+    d = json.loads(path.read_text()); fn(d); path.write_text(json.dumps(d))
+
+
+def test_b1_freeze_rejects_edited_or_stale_selection(tiny, monkeypatch):
+    _dev_done(tiny); R.select(tiny)
+    _edit(R.OUT / "selection.json", lambda d: d["rr"].update(lam=999.0))
+    with pytest.raises(SystemExit, match="recomputed"):
+        R.freeze(tiny)
+    R.select(tiny)
+    _edit(R.OUT / "selection.json", lambda d: d["aup"].update(feasible=not d["aup"]["feasible"]))
+    with pytest.raises(SystemExit, match="recomputed"):
+        R.freeze(tiny)
+    R.select(tiny)
+    real = R.signature
+    monkeypatch.setattr(R, "signature", lambda: {**real(), "x": "changed"})
+    with pytest.raises(SystemExit):
+        R.freeze(tiny)  # dev records carry the old source signature
+    monkeypatch.setattr(R, "signature", real)
+    (R.OUT / "confirmation").mkdir(parents=True)
+    (R.OUT / "confirmation" / "seed-3.json").write_text("{}")
+    with pytest.raises(SystemExit, match="selection is closed"):
+        R.select(tiny)
+
+
+def test_b2_provenance_and_schema(tiny):
+    _dev_done(tiny)
+    pub = R.OUT / "dev" / "seed-1.json"
+    original = pub.read_text()
+    for mutate, msg in [
+        (lambda d: d.update(arm_configs=[]), "arm configurations"),
+        (lambda d: d.update(freeze_sha256="bogus"), "freeze digest"),
+        (lambda d: d["rows"][0]["arms"].update(extra=d["rows"][0]["arms"]["base"]), "arm set"),
+        (lambda d: d["rows"][0]["arms"]["base"]["metrics"].update(vase_break=0.5), "metric keys"),
+        (lambda d: d["rows"][0]["arms"]["rr_lam1"]["config"].update(lam=888.0), "row config"),
+        (lambda d: d["rows"][0]["arms"]["base"].pop("config"), "malformed"),
+        (lambda d: d["rows"][0]["arms"]["base"]["metrics"].update(goal_completion=float("nan")), "non-finite"),
+    ]:
+        _edit(pub, mutate)
+        with pytest.raises(SystemExit, match=msg):
+            R.select(tiny)
+        pub.write_text(original)
+    R.select(tiny); R.freeze(tiny)
+    for s in tiny["confirmation_seeds"]:
+        R.run_seed("confirmation", s, tiny)
+    conf = R.OUT / "confirmation" / "seed-3.json"
+    _edit(conf, lambda d: d["rows"][0]["arms"]["rr"]["config"].update(lam=888.0))
+    with pytest.raises(SystemExit, match="row config"):
+        R.report(tiny)
+
+
+def test_b3_sealed_sidecars_bound_and_cache_checked(tiny):
+    _dev_done(tiny)
+    sealed = R.OUT / "dev-sealed" / "seed-1.json"
+    blob = sealed.read_bytes()
+    sealed.unlink()
+    with pytest.raises(RuntimeError, match="commitment"):
+        R.run_seed("dev", 1, tiny)  # cache hit must not silently accept a missing sidecar
+    with pytest.raises(SystemExit, match="sealed sidecar"):
+        R.select(tiny)
+    sealed.write_bytes(blob)
+    _edit(sealed, lambda d: d["rows"][0]["arms"]["base"]["metrics"].update(goal_completion=0.0))
+    with pytest.raises(SystemExit, match="sealed sidecar"):
+        R.select(tiny)
+    sealed.write_bytes(blob)
+    R.select(tiny); R.freeze(tiny)
+    for s in tiny["confirmation_seeds"]:
+        R.run_seed("confirmation", s, tiny)
+    R.report(tiny)
+    _edit(sealed, lambda d: d["rows"][0]["arms"]["base"]["metrics"].update(goal_completion=0.0))
+    with pytest.raises(SystemExit, match="changed after freeze"):
+        R.report(tiny)
+
+
+def test_aux_seed_reproducible_and_separate():
+    assert R.aux_seed(123) == R.aux_seed(123) != R.aux_seed(124)
+    assert R.aux_seed(123) != 123
+
+
+def test_precomputed_penalty_matches_fresh_and_is_validated():
+    env, t = _trace(13)
+    _, _, _, T, term = learned_graph(t["obs"], t["action"], t["next_obs"], t["terminated"])
+    for pen in ("rr", "aup", "move"):
+        table = R.penalty_table(T, term, pen, 5)
+        before = table.copy()
+        for lam in (0, 0.01, 1, 3):
+            a = fit_penalized(*_args(t), 1, 0.0, penalty=pen, lam=lam, penalty_seed=5)
+            b = fit_penalized(*_args(t), 1, 0.0, penalty=pen, lam=lam, P=table)
+            assert a["policy"] == b["policy"]
+        assert np.array_equal(table, before)
+    with pytest.raises(ValueError, match="precomputed"):
+        fit_penalized(*_args(t), 1, 0.0, penalty="rr", lam=1, P=np.full(T.shape, -1.0))
+    with pytest.raises(ValueError, match="precomputed"):
+        fit_penalized(*_args(t), 1, 0.0, penalty="rr", lam=1, P=np.zeros((2, 5)))
+    with pytest.raises(ValueError, match="unknown penalty"):
+        fit_penalized(*_args(t), 1, 0.0, penalty="bogus")

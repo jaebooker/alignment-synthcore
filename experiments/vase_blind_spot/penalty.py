@@ -9,7 +9,7 @@ planner), plus a per-step penalty subtracted from the assigned reward before pla
         deterministic graph reach(x, y) = gamma_r ** dist(x, y) (0 if unreachable);
         pen(s, a) = mean_y max(0, reach(b, y) - reach(n, y)), b = T[s, noop], n = T[s, a].
         Discounting means reversible moves also cost a little (Codex review: 0.025 vs 0.5 on a
-        two-state graph); the `move` control arm separates that from irreversibility.
+        two-state graph); the `move` control arm is a descriptive contrast, not a mechanism test.
   aup   Attainable utility preservation (Turner et al. 2020): k uniform[0,1] per-state auxiliary
         rewards earned on arrival; pen = mean_i |Q_i(s,a) - Q_i(s,noop)| / mean_i Q_i(s,noop).
         VARIANT vs ideas/attainable-utility-preservation: auxiliary value is zero after a terminal
@@ -148,8 +148,14 @@ def fit_penalized(obs, action, next_obs, reward, approval_action, approval, term
     reward_mean = np.bincount(k, weights=reward, minlength=S * A).reshape(S, A) / np.maximum(cnt, 1)
     approval_mean = np.bincount(ka, weights=approval, minlength=S * A).reshape(S, A) / np.maximum(acnt, 1)
     known = (cnt > 0) & (acnt > 0)
+    if penalty not in PENALTIES:
+        raise ValueError(f"unknown penalty {penalty}")
     if P is None:
         P = penalty_table(T, terminal, penalty, penalty_seed)
+    else:  # precomputed table (reused across lambdas): validate before use, never mutate
+        P = np.asarray(P, float)
+        if P.shape != T.shape or not np.isfinite(P).all() or (P < 0).any():
+            raise ValueError("precomputed penalty table has wrong shape or invalid values")
     R = approval_mean + reward_weight * reward_mean - lam * P
     V = np.zeros(S)
     for iterations in range(1, 1001):
