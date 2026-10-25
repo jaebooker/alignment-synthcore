@@ -61,4 +61,4 @@ def test_verdicts():
     assert compute_verdict(_s1(True), _s2(0.01, False, mech=False))["verdict"] == "no_effect"
     v = compute_verdict(_s1(True), _s2(0.05, True, mech=False, cap={"mean_diff": 0.1, "significant": True}))
     assert v["verdict"] == "beats_baseline"
-    assert set(v["flags"]) == {"capability_confounded", "cause_unresolved"}
+    assert set(v["flags"]) == {"capability_confounded", "cause_unresolved", "completion_unmeasured"}
