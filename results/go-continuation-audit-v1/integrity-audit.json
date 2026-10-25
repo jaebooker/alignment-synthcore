@@ -1,0 +1,423 @@
+{
+  "status": "passed",
+  "branches": 64,
+  "verified_continuation_plies": 6912,
+  "original_stone_identities_lost_across_branches": 842,
+  "tactical_checks": [
+    {
+      "case": "leela-humanatk-LZ-4096visits-1-m249",
+      "worst_one_reply_original_loss": {
+        "recorded": 49,
+        "defense": 0
+      }
+    },
+    {
+      "case": "leela-humanatk-LZ-4096visits-1-m251",
+      "worst_one_reply_original_loss": {
+        "recorded": 49,
+        "defense": 0
+      }
+    },
+    {
+      "case": "leela-humanatk-LZ-4096visits-6-m221",
+      "worst_one_reply_original_loss": {
+        "recorded": 34,
+        "defense": 0
+      }
+    },
+    {
+      "case": "katago-humanatk-LZ-4096visits-6-m221",
+      "worst_one_reply_original_loss": {
+        "recorded": 34,
+        "defense": 0
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-recorded-s101",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "14634c5fb12cf3c3db11170cf68b3c47fb3bb8ab153684d7c85f001e47ce5c01"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-defense-s101",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "f1cf2b03c38299be38110f7ec5f7e6769e853f68463c15b311dda0bc66d8e5c7"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-recorded-s102",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "1bca7ccfc3462f4a832c29bd64c203abc24a242eed29231b0c786e636dd5b2c1"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-defense-s102",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "9f5a6d91c45dee26f8750e017d29e4e004bbbe10646dd1b1c6de2899dfbf9423"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-recorded-s103",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "770a66fdd82560d1c383819b8ec89622b3cd72d97b8aa708e49d5225c8234733"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-defense-s103",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "85024ad514bd63533ad0c81c088baca593d9012be685a9a5b92192cb839aee59"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-recorded-s104",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "f2d1dc5c2155d59e2da78a811db96a679a0572564a0c0c382c43ca370362a6e5"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-defense-s104",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "aecd4bcd474dfe7fcdb9de497aa624417bdcfc30efc3905cc2c4e9b708eadc0f"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-recorded-s105",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "e492ae946c6b68cffed86bab82598c82f530499e990d813abf98eb2d37fa4377"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-defense-s105",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "1efb2d57ef2c4befd64a3e9b07f3a532ea4031718d3fae446744ff665123499f"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-recorded-s106",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "2a6c417625c93c2a022a7058bd084a6d4ed10ab22630607e6dc0c477173c3f36"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-defense-s106",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "9abef1425d200f9b066446427b89059b251236265fded678237b9006ef1b1db7"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-recorded-s107",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "5cf3891dac8cb2e4e9519c5bcf7f258fdf294a44fc3fbee287173db43cb52b53"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-defense-s107",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "72c1275cd3de1187aa37d7b6b69395449c3566202e3af5416837bb809648b6b1"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-recorded-s108",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "481c68add40a30af27ab81c81f3eb875472f91d4aa8c5c13662348e2d36ec694"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m249-defense-s108",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "5dd95d7c80dcedf1360188b785d9d2392b6db812fde7647874673929d5ab11ed"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-recorded-s101",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "ede010965f803b38e771892de0c59f2db619e20ddf26b4fe4fde90d9f7e15feb"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-defense-s101",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "8dcdd13d956c332194046d95e41fd71999aec3c1c5506b333d3dad8ffa93978b"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-recorded-s102",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "865935a4329bb235e1dde1dee9e1c5aa9e8c27dd490dade1f38feb4a9595ee4d"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-defense-s102",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "0327c0b6746b9d3844573132aaba07e5978fb0a77ee9f73f6d80ec40db7d757e"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-recorded-s103",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "3cf5e23d89efcc2524491c8f0ffe655557702ed13f1a7da98e581669dba2a604"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-defense-s103",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "6cd959628979598f95feb20b5d8e9b480eb3db79b8f24607a0997601d153b65c"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-recorded-s104",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "d02a227a765e4044f4a035e3608df833e56e2a956265a504f3129d593ee8f174"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-defense-s104",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "aa1c7a9b62e437843738675213f782920b1f87111c2af2cd1bcf3e2408f37c3d"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-recorded-s105",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "8dda2a61ecf1d56feef5b51a2389abe5d7cb283148bf403a973d0a7f35cc34b7"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-defense-s105",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "46de26e67fdb7b643c0a4de83ccdf66e3a25d93d0c806fbf25beb961af72291a"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-recorded-s106",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "c0503a1961f97e0ca58b8497b7faba39641d21e81c9e5a245969f00d227e533a"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-defense-s106",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "4c9af12ac9c94891fe6fa5a7babefc3e3f7c6e49ca653fec3976a441bdef71a9"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-recorded-s107",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "982d9555809a700465f71641c4f4c36f1885dd4d7bcc415e5226544f4047f606"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-defense-s107",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "c0870dc827395eb8e91ea23a8befda70efa4a2440f32639d470233be11853beb"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-recorded-s108",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "e13b6701f9273d665447ec1b9c18ca3d075d8717b29405c3e503e037f2eb0a71"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-1-m251-defense-s108",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "e2f6ea9d0925f89aa9ec16c10283a20ad7eec98b8f89529de13d8c9dd67cb7d6"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-recorded-s101",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "58ddd0045b9255a9e3708c050c7828d32bc830eae0214ce798a6203072989bd5"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-defense-s101",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "653fb817b5cdfd98fb1b014d3eb61f6fd5645f89f1ddbeb18f2a2b513bd001f9"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-recorded-s102",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "1593a17b9ad4e14eaab91c38ebf805f5df762283394ccb3bf2cd4948710dbea1"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-defense-s102",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "ca86c724308cd780c10d5c50d8fd45337aa75f07e6313767910faee4adb37af3"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-recorded-s103",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "133fb8b252c5ea7ae8c0269ebb2ed578122687ef5bb2a009ae74986eb5674481"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-defense-s103",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "ee1609bb22768e7f5caba094bd472bb0db6576692db021ce57e3d13d7a58af5e"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-recorded-s104",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "1805c162715376c1931d95d3999454d072845b92c67f0770039821e1f64d3aa9"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-defense-s104",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "43a70a5e01754db6f60d262410e8e578e1f96cad11b9bdc7e5aef32a8c8dd7ff"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-recorded-s105",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "0857a229aece7fd88b392a5578c2ccf7abd14705c800987be0e1500f57da6391"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-defense-s105",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "be69f63de0de3e31733ecb29df6231b8163eb895b5b4f8b0af5b218a4533cb71"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-recorded-s106",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "914af3ac4ae2e48dfad5bebf8c8adffd5b170e339ec6fef493f94e993f1a27cf"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-defense-s106",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "34caf8dbd3145f8872950b66ccefddf2624e0e754d1e7021dea30c4b39b52405"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-recorded-s107",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "a1715fcd5b1ad921264cb05a211a1c06aa063f1f19479754fe852c0951e20b83"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-defense-s107",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "3eaf3e313591d68fa5e283881aa8e2dd6a4e591a2a214e3deb435248a0b5aa99"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-recorded-s108",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "5c3f86ff2a3a725006259f87dbeb093e39615e9f0e23f822a9fef7ccd9e429fc"
+    },
+    {
+      "id": "leela-humanatk-LZ-4096visits-6-m221-defense-s108",
+      "status": "complete",
+      "plies": 128,
+      "record_sha256": "702a96711de3b108f5935431f94e2b17d9dd05ea52bd3fbe6b1ff100b2407b6b"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-recorded-s101",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "f8398299b1073c3335218c5b17de97cb5e3fd37e3b3cd0c21790c07b1cda712a"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-defense-s101",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "2a5a70ee8ea3ea00cc35f8e54c903b9ba24c7ceccf5b2e3e2e3d68c6311e1e87"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-recorded-s102",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "cbbeac1e7149893bb2787de356149710439048d68f9c25601aec29cad9bb2bb9"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-defense-s102",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "bb55523525500a005d5530ab003905eed366972b446a89ff3809b26a9290b1ee"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-recorded-s103",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "58ab1d985934ae02d84dd79454efd38ed3a0039ac534a92c3788d59d3a49a7dd"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-defense-s103",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "a84bb54cf19b534ad3cd5b9105e488c5b3aa4ecb77c4bcde13aad74e73401d57"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-recorded-s104",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "8da8accb9204c7fbcbb867a87a794dbb03d5a1f58d92e3dd5b8a4633aa638854"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-defense-s104",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "17ba849ad40193883de28018e2b73a19bfcd9ff9d8781d363055034953a1023c"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-recorded-s105",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "f706d411b78e2a38370e8fac53ca2dca51c5b24c2219c599a3ac88bb04f003f5"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-defense-s105",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "47e259cfce7316de02d792558f9f8e1b55ce1ff59f3269093c67191c1258bed1"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-recorded-s106",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "948920e1d0bf0452f3bdb6793174767819853fcb219ffa0df3a595714fbca7ff"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-defense-s106",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "9df02854dba074d0a72a50899e3eee7793281fbb2c4f6afe97d7876b8f28c6cc"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-recorded-s107",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "a56335ee1ab5c5b6064c29a87b7cd8028af83d1da8260443df286c68be3c11f3"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-defense-s107",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "5745597741653e91e737b0342dfcca60f9b324e4ed3774d56b39770d832dc2c6"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-recorded-s108",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "4a59204ee37d949173761a5347877846908b7ee16cf8a40d1da14fe3cdf4fbb8"
+    },
+    {
+      "id": "katago-humanatk-LZ-4096visits-6-m221-defense-s108",
+      "status": "complete",
+      "plies": 48,
+      "record_sha256": "feb969a820ca5387f3f07114c1a4defd89bd87f088cfe166b0ca8c2253744636"
+    }
+  ],
+  "limits": "Independent implementation audit of saved native observations; not independent scientific replication or perfect-play proof."
+}

@@ -29,3 +29,9 @@ results/regret-budget-audit-v1/models/
 results/regret-budget-audit-v1/progress.log
 # Large per-level certificate tables are retained in the complete local evidence.
 results/regret-budget-audit-v1/certificates/
+
+# Test 6 raw native logs remain in the complete local evidence bundle.
+results/go-continuation-audit-v1/logs/
+results/go-continuation-audit-v1/progress/
+results/go-continuation-audit-v1/progress.log
+results/go-continuation-audit-v1/analysis.log
