@@ -1,6 +1,6 @@
 {
   "experiment": "vase-blind-spot-8b",
-  "status": "DRAFT, written before any run of this study; binding at freeze after Codex review",
+  "status": "DRAFT r2 (Codex 8b review 1: CLEARED, SHOULDs applied), written before any run of this study; binding at freeze",
   "author": "Hermes (Claude Opus), AI-written, for Jaeson Booker; to be reviewed by Codex",
   "question": "With a prospectively fixed, weaker lambda grid, does a relative-reachability penalty computed only from the agent's own learned transition graph reduce vase events in interactive_gridworld (vase always present) while preserving task completion and keeping planted hacks rare? The primary claim is restricted to that; it does not establish that the agent distinguishes harm from harmless change.",
   "base_arm": {
@@ -121,12 +121,13 @@
   "grid_endpoint_policy": "Grids are fixed before dev. If every lambda qualifies (the largest is chosen) or none does (infeasible), the grid is NOT widened or refined after dev; that outcome is reported as is.",
   "blinding": "Cooperative procedural blinding: dev outcome metrics live in results/vase-blind-spot-8b/dev-sealed/, committed by SHA-256 in each public dev record and in freeze.json. Agents and operators must not read dev-sealed/ until the final `report` step, which verifies the commitments and unseals them after the confirmation cohort is complete.",
   "motivation": "Test 8 (vase-blind-spot-v1, Codex-validated) recorded its primary relative-reachability arm as INFEASIBLE: on its registered grid [1..100] dev task completion collapsed (public dev goal 0.50 at lambda 1). Test 8's public feasibility failure motivates this study. Test 8's unsealed safety outcomes (including the exploratory 0% vase at lambda 1) were seen before this registration; they are NOT used to design this grid, which is Codex review 5's provisional fixed grid adopted unchanged, and they do not count as evidence here.",
-  "grid_rationale": "Codex review 5 provisional grid, fixed before any Test 8b run; spans below the public Test 8 RR positive-penalty medians (~0.008-0.018) up to the smallest Test 8 value (1). Calibration used no sealed or outcome data. Same grid for move for symmetry.",
+  "grid_rationale": "No new calibration pilot was run. The pre-existing Codex review 5 grid was adopted unchanged, after Test 8 outcomes had been seen; review 5 itself predates unsealing and was based on public feasibility (dev goal-by-lambda) and public penalty diagnostics. Public completion is itself an outcome; 'outcome-blind' here refers specifically to excluding Test 8b's sealed safety outcomes from selection. Marginal penalty medians do not identify action-score crossings or guarantee that this grid brackets a useful RR strength. Same grid for move for symmetry.",
   "arms_ids": [
     "base",
     "rr",
     "move"
   ],
   "primary_arm": "rr",
-  "code": "experiments/vase_blind_spot_8b/run.py (copy of frozen Test 8 harness; see module docstring for the only changes) + shared experiments/vase_blind_spot/penalty.py (unchanged, pinned in the signature)"
+  "code": "experiments/vase_blind_spot_8b/run.py (copy of frozen Test 8 harness; see module docstring for the only changes) + shared experiments/vase_blind_spot/penalty.py (unchanged, pinned in the signature)",
+  "tie_and_monotonicity_policy": "Selection takes the largest registered lambda whose mean dev goal completion is >= base - 0.05 (inclusive), searching the whole fixed grid (non-monotone curves are not truncated at the first failure). Tied completion values select the larger qualifying lambda. No interpolation, smoothing, monotonicity enforcement, endpoint extension or alternative lambda after viewing safety results. Planner action ties use NumPy argmax (lowest action index), unchanged. The complete dev completion curve for every arm is reported, including any non-monotonicity."
 }

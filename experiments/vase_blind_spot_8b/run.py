@@ -66,7 +66,9 @@ def digest(path):
 
 
 def signature():
-    files = [*HERE.glob("*.py"), PROTOCOL, ROOT / "experiments/vase_blind_spot/penalty.py", *(ROOT / "experiments/approval_factorial").glob("*.py"),
+    files = [*HERE.glob("*.py"), PROTOCOL, ROOT / "experiments/vase_blind_spot/penalty.py",
+             ROOT / "experiments/vase_blind_spot/run.py", ROOT / "experiments/vase_blind_spot/protocol.json",
+             ROOT / "experiments/myopia_decoupling/protocol.json", ROOT / "experiments/approval_factorial/protocol.json", *(ROOT / "experiments/approval_factorial").glob("*.py"),
              ROOT / "experiments/myopia_decoupling/run.py",
              ROOT / "testbeds/interactive_gridworld/generate.py", ROOT / "testbeds/interactive_gridworld/testbed.py"]
     return {str(p.relative_to(ROOT)): digest(p) for p in sorted(files)}
