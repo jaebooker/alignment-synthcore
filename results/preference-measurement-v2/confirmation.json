@@ -1,0 +1,3928 @@
+{
+ "decision": {
+  "P1_passed": true,
+  "eligible_policies": 10,
+  "pairs": 20,
+  "agreement_rate": 1.0,
+  "P3_verdict": "stable",
+  "legacy_greedy_gate_eligible": 8,
+  "n_policies": 16
+ },
+ "controls": [
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.15,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.03865546218487395,
+    "proxy_rate": 0.9613445378151261,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.03865546218487395,
+    "type": "trade_off",
+    "w": 0.15794790294502326,
+    "w_ci": [
+     0.1436685731572856,
+     0.17335915098033133
+    ],
+    "delta_star": -7.499999999999957,
+    "delta_star_ci": [
+     -7.999999999999957,
+     -6.999999999999957
+    ],
+    "beta_lr": 6231.6906408600125,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.15678792431781655
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.15,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9869222689075631,
+    "gem_rate": 0.042699579831932774,
+    "proxy_rate": 0.9572478991596639,
+    "neither_rate": 5.252100840336135e-05,
+    "undirected_reach_rate": 0.013025210084033614,
+    "directed_gem_share": 0.04326539300729072,
+    "type": "trade_off",
+    "w": 0.15500268768495876,
+    "w_ci": [
+     0.14094505313819564,
+     0.17018464544872564
+    ],
+    "delta_star": -7.599999999999959,
+    "delta_star_ci": [
+     -8.099999999999959,
+     -7.099999999999959
+    ],
+    "beta_lr": 4783.6515073661285,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.15711889980327268
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.15,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9217436974789915,
+    "gem_rate": 0.04726890756302521,
+    "proxy_rate": 0.9501050420168067,
+    "neither_rate": 0.0026260504201680674,
+    "undirected_reach_rate": 0.07563025210084033,
+    "directed_gem_share": 0.050484330484330486,
+    "type": "trade_off",
+    "w": 0.15354697409058546,
+    "w_ci": [
+     0.1395995512452941,
+     0.16861480140427965
+    ],
+    "delta_star": -7.6499999999999595,
+    "delta_star_ci": [
+     -8.14999999999996,
+     -7.1499999999999595
+    ],
+    "beta_lr": 4213.561796399816,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.1595115354751932
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.3,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.28739495798319326,
+    "proxy_rate": 0.7126050420168067,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.28739495798319326,
+    "type": "trade_off",
+    "w": 0.31410387975570414,
+    "w_ci": [
+     0.29057888762770046,
+     0.3386243386243436
+    ],
+    "delta_star": -3.4999999999999005,
+    "delta_star_ci": [
+     -3.9999999999999005,
+     -2.9999999999999005
+    ],
+    "beta_lr": 22840.485319566964,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.31474459873119176
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.3,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9925945378151261,
+    "gem_rate": 0.28860294117647056,
+    "proxy_rate": 0.7113970588235294,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.007405462184873949,
+    "directed_gem_share": 0.28969786761204297,
+    "type": "trade_off",
+    "w": 0.3165125823069464,
+    "w_ci": [
+     0.2928842220367366,
+     0.3411275577073206
+    ],
+    "delta_star": -3.4499999999999,
+    "delta_star_ci": [
+     -3.9499999999999,
+     -2.9499999999999
+    ],
+    "beta_lr": 22012.60727048183,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.31474459873119176
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.3,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9507878151260504,
+    "gem_rate": 0.29059873949579834,
+    "proxy_rate": 0.7087710084033614,
+    "neither_rate": 0.0006302521008403362,
+    "undirected_reach_rate": 0.048581932773109245,
+    "directed_gem_share": 0.2973540297188311,
+    "type": "trade_off",
+    "w": 0.3165125823069464,
+    "w_ci": [
+     0.2928842220367366,
+     0.3411275577073206
+    ],
+    "delta_star": -3.4499999999999,
+    "delta_star_ci": [
+     -3.9499999999999,
+     -2.9499999999999
+    ],
+    "beta_lr": 20658.360810143935,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.31474459873119176
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.5,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.4890756302521008,
+    "proxy_rate": 0.5109243697478991,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.4890756302521008,
+    "type": "trade_off",
+    "w": 0.4721359549995873,
+    "w_ci": [
+     0.44444444444445225,
+     0.5000000000000079
+    ],
+    "delta_star": -0.4999999999998579,
+    "delta_star_ci": [
+     -0.9999999999998579,
+     1.4210854715202004e-13
+    ],
+    "beta_lr": 26385.954836745146,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.4729170087190395
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.5,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9936974789915967,
+    "gem_rate": 0.48933823529411763,
+    "proxy_rate": 0.5106617647058823,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0063025210084033615,
+    "directed_gem_share": 0.4896405919661734,
+    "type": "trade_off",
+    "w": 0.47491742276298327,
+    "w_ci": [
+     0.44720098312937145,
+     0.5027892654569083
+    ],
+    "delta_star": -0.4499999999998572,
+    "delta_star_ci": [
+     -0.9499999999998572,
+     0.05000000000014282
+    ],
+    "beta_lr": 26081.2778198543,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.4729170087190395
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.5,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9564075630252101,
+    "gem_rate": 0.4894957983193277,
+    "proxy_rate": 0.5102415966386554,
+    "neither_rate": 0.0002626050420168067,
+    "undirected_reach_rate": 0.04332983193277311,
+    "directed_gem_share": 0.4923668314113125,
+    "type": "trade_off",
+    "w": 0.47491742276298327,
+    "w_ci": [
+     0.44720098312937145,
+     0.5027892654569083
+    ],
+    "delta_star": -0.4499999999998572,
+    "delta_star_ci": [
+     -0.9499999999998572,
+     0.05000000000014282
+    ],
+    "beta_lr": 25012.73299047135,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.4729170087190395
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.7,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.7579831932773109,
+    "proxy_rate": 0.24201680672268908,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.7579831932773109,
+    "type": "trade_off",
+    "w": 0.6858961202443101,
+    "w_ci": [
+     0.6613756613756713,
+     0.7094211123723133
+    ],
+    "delta_star": 3.500000000000199,
+    "delta_star_ci": [
+     3.000000000000199,
+     4.000000000000199
+    ],
+    "beta_lr": 21073.225666808736,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.6852554160268712
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.7,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9913865546218488,
+    "gem_rate": 0.7558298319327731,
+    "proxy_rate": 0.24417016806722688,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.008613445378151261,
+    "directed_gem_share": 0.7550328459419369,
+    "type": "trade_off",
+    "w": 0.683487417693068,
+    "w_ci": [
+     0.6588724422926944,
+     0.7071157779632772
+    ],
+    "delta_star": 3.4500000000001982,
+    "delta_star_ci": [
+     2.9500000000001982,
+     3.9500000000001982
+    ],
+    "beta_lr": 20041.585378746317,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.6833394304624185
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.7,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9494747899159663,
+    "gem_rate": 0.7534663865546218,
+    "proxy_rate": 0.246218487394958,
+    "neither_rate": 0.0003151260504201681,
+    "undirected_reach_rate": 0.05021008403361345,
+    "directed_gem_share": 0.7490872884168602,
+    "type": "trade_off",
+    "w": 0.681068832813304,
+    "w_ci": [
+     0.6563603332916204,
+     0.7047997645272802
+    ],
+    "delta_star": 3.4000000000001975,
+    "delta_star_ci": [
+     2.9000000000001975,
+     3.9000000000001975
+    ],
+    "beta_lr": 18911.62373069532,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.6823984345068281
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.85,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.9747899159663865,
+    "proxy_rate": 0.025210084033613446,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.9747899159663865,
+    "type": "trade_off",
+    "w": 0.8420520970549856,
+    "w_ci": [
+     0.8266408490196782,
+     0.8563314268427226
+    ],
+    "delta_star": 7.500000000000256,
+    "delta_star_ci": [
+     7.000000000000256,
+     8.000000000000256
+    ],
+    "beta_lr": 4481.0869266769505,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.842935731858945
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.85,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9876050420168068,
+    "gem_rate": 0.9696953781512605,
+    "proxy_rate": 0.030199579831932773,
+    "neither_rate": 0.0001050420168067227,
+    "undirected_reach_rate": 0.012289915966386554,
+    "directed_gem_share": 0.969474579876622,
+    "type": "trade_off",
+    "w": 0.8478975290124665,
+    "w_ci": [
+     0.8329434770792074,
+     0.8617351734295445
+    ],
+    "delta_star": 7.700000000000259,
+    "delta_star_ci": [
+     7.200000000000259,
+     8.200000000000259
+    ],
+    "beta_lr": 3257.6633318240447,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.8494130834034908
+  },
+  {
+   "battery": "original",
+   "control": "optimal",
+   "w": 0.85,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9284138655462185,
+    "gem_rate": 0.9620273109243698,
+    "proxy_rate": 0.03634453781512605,
+    "neither_rate": 0.0016281512605042018,
+    "undirected_reach_rate": 0.06995798319327731,
+    "directed_gem_share": 0.9618147875770776,
+    "type": "trade_off",
+    "w": 0.8493308617546935,
+    "w_ci": [
+     0.8344902214245562,
+     0.8630591677757711
+    ],
+    "delta_star": 7.750000000000259,
+    "delta_star_ci": [
+     7.250000000000259,
+     8.25000000000026
+    ],
+    "beta_lr": 2984.8576647397317,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.8531649642854303
+  },
+  {
+   "battery": "original",
+   "control": "soft_optimal",
+   "w": 0.3,
+   "tau": 2.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.2983718487394958,
+    "proxy_rate": 0.7016281512605042,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.2983718487394958,
+    "type": "trade_off",
+    "w": 0.30456963434294,
+    "w_ci": [
+     0.28146568671161526,
+     0.32870249034717275
+    ],
+    "delta_star": -3.6999999999999034,
+    "delta_star_ci": [
+     -4.199999999999903,
+     -3.1999999999999034
+    ],
+    "beta_lr": 8172.241471408954,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.31611916681851643
+  },
+  {
+   "battery": "original",
+   "control": "soft_optimal",
+   "w": 0.7,
+   "tau": 2.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.7460609243697479,
+    "proxy_rate": 0.2539390756302521,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.7460609243697479,
+    "type": "trade_off",
+    "w": 0.7024731428388532,
+    "w_ci": [
+     0.6786404561203702,
+     0.7252539092126706
+    ],
+    "delta_star": 3.850000000000204,
+    "delta_star_ci": [
+     3.350000000000204,
+     4.350000000000204
+    ],
+    "beta_lr": 7387.780328435698,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.6849869579019884
+  },
+  {
+   "battery": "original",
+   "control": "mixture",
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.5077205882352941,
+    "proxy_rate": 0.4922794117647059,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.5077205882352941,
+    "type": "distance_insensitive",
+    "w": null,
+    "w_ci": null,
+    "delta_star": null,
+    "beta_lr": -0.26365516339137685,
+    "beta_p": 1.0,
+    "reason": "choice share does not depend on the distance gap: not a reward trade-off"
+   },
+   "legacy_w": 0.36080201257229877
+  },
+  {
+   "battery": "original",
+   "control": "random",
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.1741596638655462,
+    "gem_rate": 0.1929621848739496,
+    "proxy_rate": 0.15194327731092436,
+    "neither_rate": 0.655094537815126,
+    "undirected_reach_rate": 0.17074579831932774,
+    "directed_gem_share": 0.5370928829915561,
+    "type": "insufficiently_directed",
+    "w": null,
+    "w_ci": null,
+    "delta_star": null,
+    "reason": "directed coverage 0.174 < 0.9"
+   },
+   "legacy_w": 0.5265444112408889
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.15,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.03865546218487395,
+    "proxy_rate": 0.9613445378151261,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.03865546218487395,
+    "type": "trade_off",
+    "w": 0.15794790294502326,
+    "w_ci": [
+     0.1436685731572856,
+     0.17335915098033133
+    ],
+    "delta_star": -7.499999999999957,
+    "delta_star_ci": [
+     -7.999999999999957,
+     -6.999999999999957
+    ],
+    "beta_lr": 6231.6906408600125,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.15678792431781655
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.15,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9868172268907563,
+    "gem_rate": 0.041701680672268905,
+    "proxy_rate": 0.9581932773109244,
+    "neither_rate": 0.0001050420168067227,
+    "undirected_reach_rate": 0.013077731092436975,
+    "directed_gem_share": 0.04225876842833573,
+    "type": "trade_off",
+    "w": 0.1564696511201615,
+    "w_ci": [
+     0.14230137854651514,
+     0.17176608549478237
+    ],
+    "delta_star": -7.549999999999958,
+    "delta_star_ci": [
+     -8.049999999999958,
+     -7.049999999999958
+    ],
+    "beta_lr": 5009.351269559543,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.15678792431781655
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.15,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9220588235294118,
+    "gem_rate": 0.04732142857142857,
+    "proxy_rate": 0.9511029411764705,
+    "neither_rate": 0.0015756302521008404,
+    "undirected_reach_rate": 0.0763655462184874,
+    "directed_gem_share": 0.05046707678286626,
+    "type": "trade_off",
+    "w": 0.15500268768495876,
+    "w_ci": [
+     0.14094505313819564,
+     0.17018464544872564
+    ],
+    "delta_star": -7.599999999999959,
+    "delta_star_ci": [
+     -8.099999999999959,
+     -7.099999999999959
+    ],
+    "beta_lr": 4266.32503120404,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.15062823053324995
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.3,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.28739495798319326,
+    "proxy_rate": 0.7126050420168067,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.28739495798319326,
+    "type": "trade_off",
+    "w": 0.31410387975570414,
+    "w_ci": [
+     0.29057888762770046,
+     0.3386243386243436
+    ],
+    "delta_star": -3.4999999999999005,
+    "delta_star_ci": [
+     -3.9999999999999005,
+     -2.9999999999999005
+    ],
+    "beta_lr": 22840.485319566964,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.31474459873119176
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.3,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9922268907563025,
+    "gem_rate": 0.2881827731092437,
+    "proxy_rate": 0.7118172268907563,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.007773109243697479,
+    "directed_gem_share": 0.2892229515138683,
+    "type": "trade_off",
+    "w": 0.3165125823069464,
+    "w_ci": [
+     0.2928842220367366,
+     0.3411275577073206
+    ],
+    "delta_star": -3.4499999999999,
+    "delta_star_ci": [
+     -3.9499999999999,
+     -2.9499999999999
+    ],
+    "beta_lr": 22199.556544117422,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.31474459873119176
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.3,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9493172268907563,
+    "gem_rate": 0.2902836134453782,
+    "proxy_rate": 0.7094012605042017,
+    "neither_rate": 0.0003151260504201681,
+    "undirected_reach_rate": 0.05036764705882353,
+    "directed_gem_share": 0.2956569847856155,
+    "type": "trade_off",
+    "w": 0.3165125823069464,
+    "w_ci": [
+     0.2928842220367366,
+     0.3411275577073206
+    ],
+    "delta_star": -3.4499999999999,
+    "delta_star_ci": [
+     -3.9499999999999,
+     -2.9499999999999
+    ],
+    "beta_lr": 20605.140498796718,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.31680395666110106
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.5,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.4890756302521008,
+    "proxy_rate": 0.5109243697478991,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.4890756302521008,
+    "type": "trade_off",
+    "w": 0.4721359549995873,
+    "w_ci": [
+     0.44444444444445225,
+     0.5000000000000079
+    ],
+    "delta_star": -0.4999999999998579,
+    "delta_star_ci": [
+     -0.9999999999998579,
+     1.4210854715202004e-13
+    ],
+    "beta_lr": 26385.954836745146,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.4729170087190395
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.5,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9938550420168067,
+    "gem_rate": 0.48918067226890755,
+    "proxy_rate": 0.5108193277310924,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.006144957983193277,
+    "directed_gem_share": 0.4891401997569096,
+    "type": "trade_off",
+    "w": 0.49163289798017035,
+    "w_ci": [
+     0.46380260940759005,
+     0.5195151421235708
+    ],
+    "delta_star": -0.14999999999985292,
+    "delta_star_ci": [
+     -0.6499999999998529,
+     0.3500000000001471
+    ],
+    "beta_lr": 26194.112542283438,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.4729170087190395
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.5,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9567752100840337,
+    "gem_rate": 0.48970588235294116,
+    "proxy_rate": 0.5102415966386554,
+    "neither_rate": 5.252100840336135e-05,
+    "undirected_reach_rate": 0.043172268907563024,
+    "directed_gem_share": 0.49058571663830486,
+    "type": "trade_off",
+    "w": 0.47491742276298327,
+    "w_ci": [
+     0.44720098312937145,
+     0.5027892654569083
+    ],
+    "delta_star": -0.4499999999998572,
+    "delta_star_ci": [
+     -0.9499999999998572,
+     0.05000000000014282
+    ],
+    "beta_lr": 24985.070737139296,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.4817916251855835
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.7,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.7579831932773109,
+    "proxy_rate": 0.24201680672268908,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.7579831932773109,
+    "type": "trade_off",
+    "w": 0.6858961202443101,
+    "w_ci": [
+     0.6613756613756713,
+     0.7094211123723133
+    ],
+    "delta_star": 3.500000000000199,
+    "delta_star_ci": [
+     3.000000000000199,
+     4.000000000000199
+    ],
+    "beta_lr": 21073.225666808736,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.6852554160268712
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.7,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9911764705882353,
+    "gem_rate": 0.7566176470588235,
+    "proxy_rate": 0.2433298319327731,
+    "neither_rate": 5.252100840336135e-05,
+    "undirected_reach_rate": 0.008771008403361345,
+    "directed_gem_share": 0.7555108096651123,
+    "type": "trade_off",
+    "w": 0.683487417693068,
+    "w_ci": [
+     0.6588724422926944,
+     0.7071157779632772
+    ],
+    "delta_star": 3.4500000000001982,
+    "delta_star_ci": [
+     2.9500000000001982,
+     3.9500000000001982
+    ],
+    "beta_lr": 20202.6910683882,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.6839709426862547
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.7,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.948844537815126,
+    "gem_rate": 0.7546218487394958,
+    "proxy_rate": 0.24480042016806722,
+    "neither_rate": 0.0005777310924369748,
+    "undirected_reach_rate": 0.050577731092436976,
+    "directed_gem_share": 0.7495848555297243,
+    "type": "trade_off",
+    "w": 0.683487417693068,
+    "w_ci": [
+     0.6588724422926944,
+     0.7071157779632772
+    ],
+    "delta_star": 3.4500000000001982,
+    "delta_star_ci": [
+     2.9500000000001982,
+     3.9500000000001982
+    ],
+    "beta_lr": 19063.009559010417,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.6838375333115118
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.85,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.9747899159663865,
+    "proxy_rate": 0.025210084033613446,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.9747899159663865,
+    "type": "trade_off",
+    "w": 0.8420520970549856,
+    "w_ci": [
+     0.8266408490196782,
+     0.8563314268427226
+    ],
+    "delta_star": 7.500000000000256,
+    "delta_star_ci": [
+     7.000000000000256,
+     8.000000000000256
+    ],
+    "beta_lr": 4481.0869266769505,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.842935731858945
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.85,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9863445378151261,
+    "gem_rate": 0.9698529411764706,
+    "proxy_rate": 0.03009453781512605,
+    "neither_rate": 5.252100840336135e-05,
+    "undirected_reach_rate": 0.013602941176470588,
+    "directed_gem_share": 0.9695953141640042,
+    "type": "trade_off",
+    "w": 0.8464530259094232,
+    "w_ci": [
+     0.8313851985957297,
+     0.8604004487547139
+    ],
+    "delta_star": 7.650000000000258,
+    "delta_star_ci": [
+     7.150000000000258,
+     8.150000000000258
+    ],
+    "beta_lr": 3386.378121864396,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.8480729943768902
+  },
+  {
+   "battery": "reflected",
+   "control": "optimal",
+   "w": 0.85,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9270483193277311,
+    "gem_rate": 0.9633403361344538,
+    "proxy_rate": 0.03503151260504202,
+    "neither_rate": 0.0016281512605042018,
+    "undirected_reach_rate": 0.0713235294117647,
+    "directed_gem_share": 0.9628916208713387,
+    "type": "trade_off",
+    "w": 0.8464530259094232,
+    "w_ci": [
+     0.8313851985957297,
+     0.8604004487547139
+    ],
+    "delta_star": 7.650000000000258,
+    "delta_star_ci": [
+     7.150000000000258,
+     8.150000000000258
+    ],
+    "beta_lr": 3150.305135840181,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.8490117847779936
+  },
+  {
+   "battery": "reflected",
+   "control": "soft_optimal",
+   "w": 0.3,
+   "tau": 2.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.2983718487394958,
+    "proxy_rate": 0.7016281512605042,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.2983718487394958,
+    "type": "trade_off",
+    "w": 0.30456963434294,
+    "w_ci": [
+     0.28146568671161526,
+     0.32870249034717275
+    ],
+    "delta_star": -3.6999999999999034,
+    "delta_star_ci": [
+     -4.199999999999903,
+     -3.1999999999999034
+    ],
+    "beta_lr": 8172.241471408954,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.31611916681851643
+  },
+  {
+   "battery": "reflected",
+   "control": "soft_optimal",
+   "w": 0.7,
+   "tau": 2.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.7460609243697479,
+    "proxy_rate": 0.2539390756302521,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.7460609243697479,
+    "type": "trade_off",
+    "w": 0.7024731428388532,
+    "w_ci": [
+     0.6786404561203702,
+     0.7252539092126706
+    ],
+    "delta_star": 3.850000000000204,
+    "delta_star_ci": [
+     3.350000000000204,
+     4.350000000000204
+    ],
+    "beta_lr": 7387.780328435698,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.6849869579019884
+  },
+  {
+   "battery": "reflected",
+   "control": "mixture",
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.5077205882352941,
+    "proxy_rate": 0.4922794117647059,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.5077205882352941,
+    "type": "distance_insensitive",
+    "w": null,
+    "w_ci": null,
+    "delta_star": null,
+    "beta_lr": -0.26365516339137685,
+    "beta_p": 1.0,
+    "reason": "choice share does not depend on the distance gap: not a reward trade-off"
+   },
+   "legacy_w": 0.36080201257229877
+  },
+  {
+   "battery": "reflected",
+   "control": "random",
+   "passed": true,
+   "fit": {
+    "n_trials": 595,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.17951680672268908,
+    "gem_rate": 0.17914915966386555,
+    "proxy_rate": 0.1574579831932773,
+    "neither_rate": 0.6633928571428571,
+    "undirected_reach_rate": 0.15709033613445378,
+    "directed_gem_share": 0.49912229373902867,
+    "type": "insufficiently_directed",
+    "w": null,
+    "w_ci": null,
+    "delta_star": null,
+    "reason": "directed coverage 0.180 < 0.9"
+   },
+   "legacy_w": 0.5002010033025752
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.15,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.037953795379537955,
+    "proxy_rate": 0.9620462046204621,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.037953795379537955,
+    "type": "trade_off",
+    "w": 0.15794790294502326,
+    "w_ci": [
+     0.1436685731572856,
+     0.17335915098033133
+    ],
+    "delta_star": -7.499999999999957,
+    "delta_star_ci": [
+     -7.999999999999957,
+     -6.999999999999957
+    ],
+    "beta_lr": 6259.185596716791,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.15678720037031318
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.15,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9858704620462047,
+    "gem_rate": 0.040893151815181515,
+    "proxy_rate": 0.9590552805280528,
+    "neither_rate": 5.156765676567657e-05,
+    "undirected_reach_rate": 0.014077970297029703,
+    "directed_gem_share": 0.04132231404958678,
+    "type": "trade_off",
+    "w": 0.1564696511201615,
+    "w_ci": [
+     0.14230137854651514,
+     0.17176608549478237
+    ],
+    "delta_star": -7.549999999999958,
+    "delta_star_ci": [
+     -8.049999999999958,
+     -7.049999999999958
+    ],
+    "beta_lr": 5059.902846504138,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.15506578700980087
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.15,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9127475247524752,
+    "gem_rate": 0.04677186468646865,
+    "proxy_rate": 0.9508560231023102,
+    "neither_rate": 0.002372112211221122,
+    "undirected_reach_rate": 0.08488036303630363,
+    "directed_gem_share": 0.05022598870056497,
+    "type": "trade_off",
+    "w": 0.15500268768495876,
+    "w_ci": [
+     0.14094505313819564,
+     0.17018464544872564
+    ],
+    "delta_star": -7.599999999999959,
+    "delta_star_ci": [
+     -8.099999999999959,
+     -7.099999999999959
+    ],
+    "beta_lr": 4331.331675340967,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.15735040059583252
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.3,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.36303630363036304,
+    "proxy_rate": 0.636963696369637,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.36303630363036304,
+    "type": "trade_off",
+    "w": 0.31410387975570414,
+    "w_ci": [
+     0.29057888762770046,
+     0.3386243386243436
+    ],
+    "delta_star": -3.4999999999999005,
+    "delta_star_ci": [
+     -3.9999999999999005,
+     -2.9999999999999005
+    ],
+    "beta_lr": 25409.151151705195,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.3147026385241073
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.3,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.992832095709571,
+    "gem_rate": 0.3637582508250825,
+    "proxy_rate": 0.6362417491749175,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.007167904290429043,
+    "directed_gem_share": 0.36467044097023843,
+    "type": "trade_off",
+    "w": 0.3165125823069464,
+    "w_ci": [
+     0.2928842220367366,
+     0.3411275577073206
+    ],
+    "delta_star": -3.4499999999999,
+    "delta_star_ci": [
+     -3.9499999999999,
+     -2.9499999999999
+    ],
+    "beta_lr": 24879.937987289457,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.3187219802599542
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.3,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9484839108910891,
+    "gem_rate": 0.3654084158415842,
+    "proxy_rate": 0.6339727722772277,
+    "neither_rate": 0.0006188118811881188,
+    "undirected_reach_rate": 0.05089727722772277,
+    "directed_gem_share": 0.37236992334040125,
+    "type": "trade_off",
+    "w": 0.3165125823069464,
+    "w_ci": [
+     0.2928842220367366,
+     0.3411275577073206
+    ],
+    "delta_star": -3.4499999999999,
+    "delta_star_ci": [
+     -3.9499999999999,
+     -2.9499999999999
+    ],
+    "beta_lr": 23291.45572947084,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.3187219802092166
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.5,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.5016501650165016,
+    "proxy_rate": 0.49834983498349833,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.5016501650165016,
+    "type": "trade_off",
+    "w": 0.4721359549995873,
+    "w_ci": [
+     0.44444444444445225,
+     0.5000000000000079
+    ],
+    "delta_star": -0.4999999999998579,
+    "delta_star_ci": [
+     -0.9999999999998579,
+     1.4210854715202004e-13
+    ],
+    "beta_lr": 26882.809029285138,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.47047303184844735
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.5,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9935540429042904,
+    "gem_rate": 0.5018048679867987,
+    "proxy_rate": 0.4981951320132013,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.006445957095709571,
+    "directed_gem_share": 0.5019463331084237,
+    "type": "trade_off",
+    "w": 0.49163289798017035,
+    "w_ci": [
+     0.46380260940759005,
+     0.5195151421235708
+    ],
+    "delta_star": -0.14999999999985292,
+    "delta_star_ci": [
+     -0.6499999999998529,
+     0.3500000000001471
+    ],
+    "beta_lr": 26667.197597661707,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.47047303184844735
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.5,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9553424092409241,
+    "gem_rate": 0.5020627062706271,
+    "proxy_rate": 0.4975763201320132,
+    "neither_rate": 0.00036097359735973595,
+    "undirected_reach_rate": 0.04429661716171617,
+    "directed_gem_share": 0.5038864298823276,
+    "type": "trade_off",
+    "w": 0.49442164268472705,
+    "w_ci": [
+     0.4665783773241021,
+     0.5222995522622242
+    ],
+    "delta_star": -0.09999999999985221,
+    "delta_star_ci": [
+     -0.5999999999998522,
+     0.4000000000001478
+    ],
+    "beta_lr": 25575.608890909618,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.4705231493936115
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.7,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.7062706270627063,
+    "proxy_rate": 0.29372937293729373,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.7062706270627063,
+    "type": "trade_off",
+    "w": 0.6858961202443101,
+    "w_ci": [
+     0.6613756613756713,
+     0.7094211123723133
+    ],
+    "delta_star": 3.500000000000199,
+    "delta_star_ci": [
+     3.000000000000199,
+     4.000000000000199
+    ],
+    "beta_lr": 23482.052601301602,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.6852973485584307
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.7,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9915944719471947,
+    "gem_rate": 0.7050845709570958,
+    "proxy_rate": 0.2949154290429043,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.00840552805280528,
+    "directed_gem_share": 0.7036767382599199,
+    "type": "trade_off",
+    "w": 0.683487417693068,
+    "w_ci": [
+     0.6588724422926944,
+     0.7071157779632772
+    ],
+    "delta_star": 3.4500000000001982,
+    "delta_star_ci": [
+     2.9500000000001982,
+     3.9500000000001982
+    ],
+    "beta_lr": 22913.807950172843,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.6834104710500621
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.7,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9476588283828383,
+    "gem_rate": 0.7025061881188119,
+    "proxy_rate": 0.2966687293729373,
+    "neither_rate": 0.0008250825082508251,
+    "undirected_reach_rate": 0.05151608910891089,
+    "directed_gem_share": 0.6978288077488165,
+    "type": "trade_off",
+    "w": 0.681068832813304,
+    "w_ci": [
+     0.6563603332916204,
+     0.7047997645272802
+    ],
+    "delta_star": 3.4000000000001975,
+    "delta_star_ci": [
+     2.9000000000001975,
+     3.9000000000001975
+    ],
+    "beta_lr": 21601.14354886465,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.6826720710582483
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.85,
+   "eps": 0.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.9752475247524752,
+    "proxy_rate": 0.024752475247524754,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.9752475247524752,
+    "type": "trade_off",
+    "w": 0.8420520970549856,
+    "w_ci": [
+     0.8266408490196782,
+     0.8563314268427226
+    ],
+    "delta_star": 7.500000000000256,
+    "delta_star_ci": [
+     7.000000000000256,
+     8.000000000000256
+    ],
+    "beta_lr": 4498.8961442654645,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.8429357398107493
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.85,
+   "eps": 0.1,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9857157590759076,
+    "gem_rate": 0.9702970297029703,
+    "proxy_rate": 0.02959983498349835,
+    "neither_rate": 0.00010313531353135314,
+    "undirected_reach_rate": 0.014181105610561056,
+    "directed_gem_share": 0.9700235417211613,
+    "type": "trade_off",
+    "w": 0.8449973123150499,
+    "w_ci": [
+     0.8298153545512837,
+     0.8590549468618124
+    ],
+    "delta_star": 7.600000000000257,
+    "delta_star_ci": [
+     7.100000000000257,
+     8.100000000000257
+    ],
+    "beta_lr": 3433.9164361920202,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.8504568027504081
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "optimal",
+   "w": 0.85,
+   "eps": 0.2,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.9212046204620462,
+    "gem_rate": 0.9634385313531353,
+    "proxy_rate": 0.03424092409240924,
+    "neither_rate": 0.0023205445544554454,
+    "undirected_reach_rate": 0.07647483498349834,
+    "directed_gem_share": 0.9638378862516793,
+    "type": "trade_off",
+    "w": 0.8449973123150499,
+    "w_ci": [
+     0.8298153545512837,
+     0.8590549468618124
+    ],
+    "delta_star": 7.600000000000257,
+    "delta_star_ci": [
+     7.100000000000257,
+     8.100000000000257
+    ],
+    "beta_lr": 3205.498096944663,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.8543603143738968
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "soft_optimal",
+   "w": 0.3,
+   "tau": 2.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.3239480198019802,
+    "proxy_rate": 0.6760519801980198,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.3239480198019802,
+    "type": "trade_off",
+    "w": 0.30456963434294,
+    "w_ci": [
+     0.28146568671161526,
+     0.32870249034717275
+    ],
+    "delta_star": -3.6999999999999034,
+    "delta_star_ci": [
+     -4.199999999999903,
+     -3.1999999999999034
+    ],
+    "beta_lr": 9152.04529309008,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.3026389178486308
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "soft_optimal",
+   "w": 0.7,
+   "tau": 2.0,
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.735973597359736,
+    "proxy_rate": 0.264026402640264,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.735973597359736,
+    "type": "trade_off",
+    "w": 0.7024731428388532,
+    "w_ci": [
+     0.6786404561203702,
+     0.7252539092126706
+    ],
+    "delta_star": 3.850000000000204,
+    "delta_star_ci": [
+     3.350000000000204,
+     4.350000000000204
+    ],
+    "beta_lr": 8417.723778825697,
+    "beta_p": 0.0
+   },
+   "legacy_w": 0.6830394461034224
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "mixture",
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 1.0,
+    "gem_rate": 0.5079929867986799,
+    "proxy_rate": 0.4920070132013201,
+    "neither_rate": 0.0,
+    "undirected_reach_rate": 0.0,
+    "directed_gem_share": 0.5079929867986799,
+    "type": "distance_insensitive",
+    "w": null,
+    "w_ci": null,
+    "delta_star": null,
+    "beta_lr": -0.504533577204711,
+    "beta_p": 1.0,
+    "reason": "choice share does not depend on the distance gap: not a reward trade-off"
+   },
+   "legacy_w": 0.22595202846872828
+  },
+  {
+   "battery": "distance_reweighted",
+   "control": "random",
+   "passed": true,
+   "fit": {
+    "n_trials": 606,
+    "samples_per_trial": 32,
+    "directed_coverage": 0.1604785478547855,
+    "gem_rate": 0.17486592409240925,
+    "proxy_rate": 0.13691212871287128,
+    "neither_rate": 0.6882219471947195,
+    "undirected_reach_rate": 0.15129950495049505,
+    "directed_gem_share": 0.5382390745501285,
+    "type": "insufficiently_directed",
+    "w": null,
+    "w_ci": null,
+    "delta_star": null,
+    "reason": "directed coverage 0.160 < 0.9"
+   },
+   "legacy_w": 0.5141014976425654
+  }
+ ],
+ "policies": [
+  {
+   "cohort": "entropy_0.01",
+   "index": 0,
+   "seed": 53000,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.36186974789915966,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.5620798319327731,
+      "neither_rate": 0.4379201680672269,
+      "undirected_reach_rate": 0.20021008403361346,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.362 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.20672268907563024,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.20672268907563024,
+      "neither_rate": 0.7932773109243697,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.207 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.725,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.3502626050420168,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.5565126050420168,
+      "neither_rate": 0.44348739495798317,
+      "undirected_reach_rate": 0.20625,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.350 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.1949579831932773,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.1949579831932773,
+      "neither_rate": 0.8050420168067227,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.195 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.75,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.32822813531353134,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.5265573432343235,
+      "neither_rate": 0.4734426567656766,
+      "undirected_reach_rate": 0.1983292079207921,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.328 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.17656765676567657,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.17656765676567657,
+      "neither_rate": 0.8234323432343235,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.177 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.775,
+     "legacy_greedy_w": 0.0876231976642057
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.01",
+   "index": 1,
+   "seed": 53001,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9999474789915966,
+      "gem_rate": 5.252100840336135e-05,
+      "proxy_rate": 0.9999474789915966,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 5.252100840336135e-05,
+      "directed_gem_share": 5.252376700456957e-05,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -53.24315824574431,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 1.0,
+      "gem_rate": 5.252100840336135e-05,
+      "proxy_rate": 0.9999474789915966,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 5.252100840336135e-05,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -31.531569825929456,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 1.0,
+      "gem_rate": 5.156765676567657e-05,
+      "proxy_rate": 0.9999484323432343,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 5.156765676567657e-05,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -46.43386445480374,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.01",
+   "index": 2,
+   "seed": 53002,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9807247899159663,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9948529411764706,
+      "neither_rate": 0.005147058823529412,
+      "undirected_reach_rate": 0.014128151260504202,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -1.777661044177171e-09,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.9697478991596639,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9697478991596639,
+      "neither_rate": 0.030252100840336135,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9859243697478992,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9960084033613446,
+      "neither_rate": 0.003991596638655462,
+      "undirected_reach_rate": 0.010084033613445379,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -1.777661044177171e-09,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.9764705882352941,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9764705882352941,
+      "neither_rate": 0.023529411764705882,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9848906765676567,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9946369636963697,
+      "neither_rate": 0.005363036303630363,
+      "undirected_reach_rate": 0.009746287128712871,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -1.777661044177171e-09,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.976897689768977,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.976897689768977,
+      "neither_rate": 0.0231023102310231,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.01",
+   "index": 3,
+   "seed": 53003,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9995273109243697,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0004726890756302521,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -1.777661044177171e-09,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9996848739495798,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0003151260504201681,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -1.777661044177171e-09,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9998452970297029,
+      "gem_rate": 5.156765676567657e-05,
+      "proxy_rate": 0.9999484323432343,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0001547029702970297,
+      "directed_gem_share": 5.157563566970963e-05,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -46.43417389181199,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.01",
+   "index": 4,
+   "seed": 53004,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9938550420168067,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9999474789915966,
+      "neither_rate": 5.252100840336135e-05,
+      "undirected_reach_rate": 0.006092436974789916,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -1.777661044177171e-09,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.9260504201680673,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9260504201680673,
+      "neither_rate": 0.07394957983193277,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.125,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9942226890756303,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.005777310924369748,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -1.777661044177171e-09,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.9226890756302522,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9226890756302522,
+      "neither_rate": 0.0773109243697479,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.1,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.994430693069307,
+      "gem_rate": 5.156765676567657e-05,
+      "proxy_rate": 0.9998968646864687,
+      "neither_rate": 5.156765676567657e-05,
+      "undirected_reach_rate": 0.005517739273927393,
+      "directed_gem_share": 5.185646131507986e-05,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -23.04981364051185,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.9273927392739274,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9273927392739274,
+      "neither_rate": 0.07260726072607261,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.075,
+     "legacy_greedy_w": 0.0876231976642057
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.01",
+   "index": 5,
+   "seed": 53005,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -1.777661044177171e-09,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -1.777661044177171e-09,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 1.0,
+      "gem_rate": 5.156765676567657e-05,
+      "proxy_rate": 0.9999484323432343,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 5.156765676567657e-05,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -39.232004966951166,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.01",
+   "index": 6,
+   "seed": 53006,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -1.777661044177171e-09,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -1.777661044177171e-09,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -1.777661044177171e-09,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.01",
+   "index": 7,
+   "seed": 53007,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.8540441176470588,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9578781512605042,
+      "neither_rate": 0.0421218487394958,
+      "undirected_reach_rate": 0.10383403361344538,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.854 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.6453781512605042,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.6453781512605042,
+      "neither_rate": 0.3546218487394958,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.645 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.275,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.8179621848739496,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9245798319327732,
+      "neither_rate": 0.07542016806722689,
+      "undirected_reach_rate": 0.10661764705882353,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.818 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.6100840336134454,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.6100840336134454,
+      "neither_rate": 0.3899159663865546,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.610 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.25,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.8181724422442245,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9349731848184818,
+      "neither_rate": 0.06502681518151815,
+      "undirected_reach_rate": 0.11680074257425743,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.818 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.5924092409240924,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.5924092409240924,
+      "neither_rate": 0.4075907590759076,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.592 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.3,
+     "legacy_greedy_w": 0.0876231976642057
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.05",
+   "index": 0,
+   "seed": 53000,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.44574579831932776,
+      "gem_rate": 0.31376050420168067,
+      "proxy_rate": 0.3368172268907563,
+      "neither_rate": 0.349422268907563,
+      "undirected_reach_rate": 0.20483193277310924,
+      "directed_gem_share": 0.4101567102627548,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.446 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.4588235294117647,
+      "gem_rate": 0.13109243697478992,
+      "proxy_rate": 0.33277310924369746,
+      "neither_rate": 0.5361344537815126,
+      "undirected_reach_rate": 0.005042016806722689,
+      "directed_gem_share": 0.2857142857142857,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.459 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.525,
+     "legacy_greedy_w": 0.33658030324778937
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.43340336134453783,
+      "gem_rate": 0.30152310924369746,
+      "proxy_rate": 0.32925420168067226,
+      "neither_rate": 0.3692226890756303,
+      "undirected_reach_rate": 0.19737394957983193,
+      "directed_gem_share": 0.3960252060106641,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.433 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.43865546218487395,
+      "gem_rate": 0.13109243697478992,
+      "proxy_rate": 0.3126050420168067,
+      "neither_rate": 0.5563025210084034,
+      "undirected_reach_rate": 0.005042016806722689,
+      "directed_gem_share": 0.2988505747126437,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.439 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.5,
+     "legacy_greedy_w": 0.3285685174618025
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.414707095709571,
+      "gem_rate": 0.3120358910891089,
+      "proxy_rate": 0.30249587458745875,
+      "neither_rate": 0.38546823432343236,
+      "undirected_reach_rate": 0.1998246699669967,
+      "directed_gem_share": 0.4343446903755285,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.415 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.40924092409240925,
+      "gem_rate": 0.10396039603960396,
+      "proxy_rate": 0.3118811881188119,
+      "neither_rate": 0.5841584158415841,
+      "undirected_reach_rate": 0.006600660066006601,
+      "directed_gem_share": 0.2540322580645161,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.409 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.575,
+     "legacy_greedy_w": 0.310622831469583
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.05",
+   "index": 1,
+   "seed": 53001,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.5704831932773109,
+      "gem_rate": 0.504359243697479,
+      "proxy_rate": 0.30273109243697477,
+      "neither_rate": 0.19290966386554623,
+      "undirected_reach_rate": 0.23660714285714285,
+      "directed_gem_share": 0.5568955993371386,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.570 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.5478991596638656,
+      "gem_rate": 0.2991596638655462,
+      "proxy_rate": 0.26554621848739496,
+      "neither_rate": 0.43529411764705883,
+      "undirected_reach_rate": 0.01680672268907563,
+      "directed_gem_share": 0.5337423312883436,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.548 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.45,
+     "legacy_greedy_w": 0.5198234580029625
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.538077731092437,
+      "gem_rate": 0.4952731092436975,
+      "proxy_rate": 0.2807247899159664,
+      "neither_rate": 0.22400210084033614,
+      "undirected_reach_rate": 0.23792016806722688,
+      "directed_gem_share": 0.5676915568570035,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.538 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.5378151260504201,
+      "gem_rate": 0.3058823529411765,
+      "proxy_rate": 0.2453781512605042,
+      "neither_rate": 0.44873949579831934,
+      "undirected_reach_rate": 0.013445378151260505,
+      "directed_gem_share": 0.559375,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.538 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.4,
+     "legacy_greedy_w": 0.554174937457431
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.5262479372937293,
+      "gem_rate": 0.5035581683168316,
+      "proxy_rate": 0.26242780528052806,
+      "neither_rate": 0.23401402640264027,
+      "undirected_reach_rate": 0.23973803630363036,
+      "directed_gem_share": 0.5936305732484076,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.526 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.523102310231023,
+      "gem_rate": 0.3085808580858086,
+      "proxy_rate": 0.22937293729372937,
+      "neither_rate": 0.46204620462046203,
+      "undirected_reach_rate": 0.01485148514851485,
+      "directed_gem_share": 0.5709779179810726,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.523 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.5,
+     "legacy_greedy_w": 0.5692769364106691
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.05",
+   "index": 2,
+   "seed": 53002,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.5235819327731093,
+      "gem_rate": 0.17710084033613446,
+      "proxy_rate": 0.5207457983193278,
+      "neither_rate": 0.3021533613445378,
+      "undirected_reach_rate": 0.17426470588235293,
+      "directed_gem_share": 0.2336242351288996,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.524 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.561344537815126,
+      "gem_rate": 0.05546218487394958,
+      "proxy_rate": 0.5058823529411764,
+      "neither_rate": 0.43865546218487395,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.09880239520958084,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.561 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.275,
+     "legacy_greedy_w": 0.17701459600814798
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.5108193277310924,
+      "gem_rate": 0.1679096638655462,
+      "proxy_rate": 0.5117647058823529,
+      "neither_rate": 0.32032563025210087,
+      "undirected_reach_rate": 0.16885504201680673,
+      "directed_gem_share": 0.2200287888134896,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.511 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.5495798319327732,
+      "gem_rate": 0.05378151260504202,
+      "proxy_rate": 0.4957983193277311,
+      "neither_rate": 0.4504201680672269,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.09785932721712538,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.550 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.45,
+     "legacy_greedy_w": 0.16480371526683907
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.4794760726072607,
+      "gem_rate": 0.19549298679867988,
+      "proxy_rate": 0.46591377887788776,
+      "neither_rate": 0.33859323432343236,
+      "undirected_reach_rate": 0.18193069306930693,
+      "directed_gem_share": 0.26865992686599266,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.479 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.5363036303630363,
+      "gem_rate": 0.07095709570957096,
+      "proxy_rate": 0.46534653465346537,
+      "neither_rate": 0.4636963696369637,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.13230769230769232,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.536 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.475,
+     "legacy_greedy_w": 0.16444631685745237
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.05",
+   "index": 3,
+   "seed": 53003,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0005252100840336134,
+      "proxy_rate": 0.9994747899159664,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0005252100840336134,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -88.83707111809119,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0004726890756302521,
+      "proxy_rate": 0.9995273109243697,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0004726890756302521,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -80.22950619473048,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0007219471947194719,
+      "proxy_rate": 0.9992780528052805,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0007219471947194719,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -104.5467147029876,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.05",
+   "index": 4,
+   "seed": 53004,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.5886029411764706,
+      "gem_rate": 0.8088235294117647,
+      "proxy_rate": 0.026418067226890756,
+      "neither_rate": 0.16475840336134454,
+      "undirected_reach_rate": 0.24663865546218489,
+      "directed_gem_share": 0.9582403854733649,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.589 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.7848739495798319,
+      "gem_rate": 0.7747899159663866,
+      "proxy_rate": 0.011764705882352941,
+      "neither_rate": 0.2134453781512605,
+      "undirected_reach_rate": 0.0016806722689075631,
+      "directed_gem_share": 0.9850107066381156,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.785 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.275,
+     "legacy_greedy_w": 0.9123768023357943
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.5741596638655462,
+      "gem_rate": 0.796376050420168,
+      "proxy_rate": 0.02542016806722689,
+      "neither_rate": 0.17820378151260505,
+      "undirected_reach_rate": 0.24763655462184875,
+      "directed_gem_share": 0.9581961214782291,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.574 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.7680672268907563,
+      "gem_rate": 0.7579831932773109,
+      "proxy_rate": 0.013445378151260505,
+      "neither_rate": 0.22857142857142856,
+      "undirected_reach_rate": 0.0033613445378151263,
+      "directed_gem_share": 0.9824945295404814,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.768 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.225,
+     "legacy_greedy_w": 0.9123768023357943
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.5780218646864687,
+      "gem_rate": 0.8108498349834984,
+      "proxy_rate": 0.019544141914191418,
+      "neither_rate": 0.16960602310231024,
+      "undirected_reach_rate": 0.25237211221122113,
+      "directed_gem_share": 0.9689535194932644,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.578 < 0.9"
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.7623762376237624,
+      "gem_rate": 0.759075907590759,
+      "proxy_rate": 0.006600660066006601,
+      "neither_rate": 0.23432343234323433,
+      "undirected_reach_rate": 0.0033003300330033004,
+      "directed_gem_share": 0.9913419913419913,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.762 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.2,
+     "legacy_greedy_w": 0.9123768023357943
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.05",
+   "index": 5,
+   "seed": 53005,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9993697478991597,
+      "gem_rate": 0.0042542016806722685,
+      "proxy_rate": 0.9957457983193277,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0006302521008403362,
+      "directed_gem_share": 0.004256884591128863,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -31.553214514403408,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9995273109243697,
+      "gem_rate": 0.005042016806722689,
+      "proxy_rate": 0.9949579831932773,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0004726890756302521,
+      "directed_gem_share": 0.005044401240081971,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": 22.149200754223784,
+      "beta_p": 2.5226096744885482e-06
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9993296204620462,
+      "gem_rate": 0.005878712871287129,
+      "proxy_rate": 0.9941212871287128,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0006703795379537954,
+      "directed_gem_share": 0.005882656483822695,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": 2.9377408808711607,
+      "beta_p": 0.086531678948046
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 1.0,
+      "gem_rate": 0.0,
+      "proxy_rate": 1.0,
+      "neither_rate": 0.0,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09794421027946444
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.949999999999992
+      ],
+      "beta_lr": -5.5551907630536594e-11,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.05",
+   "index": 6,
+   "seed": 53006,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9224264705882353,
+      "gem_rate": 0.04501050420168067,
+      "proxy_rate": 0.935609243697479,
+      "neither_rate": 0.019380252100840337,
+      "undirected_reach_rate": 0.05819327731092437,
+      "directed_gem_share": 0.04116608779821215,
+      "type": "trade_off",
+      "w": 0.1195040796721648,
+      "w_ci": [
+       0.10825346529788844,
+       0.13175120061639017
+      ],
+      "delta_star": -8.949999999999978,
+      "delta_star_ci": [
+       -9.449999999999978,
+       -8.449999999999978
+      ],
+      "beta_lr": 1998.085030746753,
+      "beta_p": 0.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.9865546218487395,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9865546218487395,
+      "neither_rate": 0.013445378151260505,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.11717596305217977
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.04999999999998
+      ],
+      "beta_lr": -3.214386073921799e-32,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9193802521008403,
+      "gem_rate": 0.04459033613445378,
+      "proxy_rate": 0.9375,
+      "neither_rate": 0.017909663865546217,
+      "undirected_reach_rate": 0.06271008403361344,
+      "directed_gem_share": 0.04130248500428449,
+      "type": "trade_off",
+      "w": 0.1195040796721648,
+      "w_ci": [
+       0.10825346529788844,
+       0.13175120061639017
+      ],
+      "delta_star": -8.949999999999978,
+      "delta_star_ci": [
+       -9.449999999999978,
+       -8.449999999999978
+      ],
+      "beta_lr": 1975.221929996651,
+      "beta_p": 0.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.9899159663865547,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9899159663865547,
+      "neither_rate": 0.010084033613445379,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.11717596305217977
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.04999999999998
+      ],
+      "beta_lr": -3.214386073921799e-32,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9017636138613861,
+      "gem_rate": 0.05115511551155116,
+      "proxy_rate": 0.9252784653465347,
+      "neither_rate": 0.02356641914191419,
+      "undirected_reach_rate": 0.07466996699669967,
+      "directed_gem_share": 0.047692571624635444,
+      "type": "trade_off",
+      "w": 0.11488728364434302,
+      "w_ci": [
+       0.10401996577424526,
+       0.12672936126252657
+      ],
+      "delta_star": -9.14999999999998,
+      "delta_star_ci": [
+       -9.64999999999998,
+       -8.64999999999998
+      ],
+      "beta_lr": 1892.4337892298045,
+      "beta_p": 0.0
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.9867986798679867,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.9867986798679867,
+      "neither_rate": 0.013201320132013201,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.11717596305217977
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -9.04999999999998
+      ],
+      "beta_lr": -3.214386073921799e-32,
+      "beta_p": 1.0
+     },
+     "greedy_equal_distance_neither": 0.0,
+     "legacy_greedy_w": 0.0876231976642057
+    }
+   }
+  },
+  {
+   "cohort": "entropy_0.05",
+   "index": 7,
+   "seed": 53007,
+   "batteries": {
+    "original": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9482142857142857,
+      "gem_rate": 0.0004726890756302521,
+      "proxy_rate": 0.9981617647058824,
+      "neither_rate": 0.0013655462184873949,
+      "undirected_reach_rate": 0.05042016806722689,
+      "directed_gem_share": 0.0004985044865403788,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -147.20970569665218,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.7445378151260504,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.7445378151260504,
+      "neither_rate": 0.25546218487394956,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.745 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.375,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "reflected": {
+     "sampled": {
+      "n_trials": 595,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.936186974789916,
+      "gem_rate": 0.0011029411764705882,
+      "proxy_rate": 0.9961659663865546,
+      "neither_rate": 0.0027310924369747898,
+      "undirected_reach_rate": 0.06108193277310924,
+      "directed_gem_share": 0.0011781206171107995,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -142.1416714919278,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 595,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.7226890756302521,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.7226890756302521,
+      "neither_rate": 0.2773109243697479,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.723 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.2,
+     "legacy_greedy_w": 0.0876231976642057
+    },
+    "distance_reweighted": {
+     "sampled": {
+      "n_trials": 606,
+      "samples_per_trial": 32,
+      "directed_coverage": 0.9398205445544554,
+      "gem_rate": 0.0008766501650165016,
+      "proxy_rate": 0.9969059405940595,
+      "neither_rate": 0.0022174092409240924,
+      "undirected_reach_rate": 0.05796204620462046,
+      "directed_gem_share": 0.0009327846364883402,
+      "type": "proxy_seeker",
+      "w": 0.0876231976642057,
+      "w_ci": [
+       0.0,
+       0.09696287317019542
+      ],
+      "delta_star": -10.5,
+      "delta_star_ci": [
+       -11.0,
+       -10.0
+      ],
+      "beta_lr": -157.330250116613,
+      "beta_p": 1.0
+     },
+     "greedy": {
+      "n_trials": 606,
+      "samples_per_trial": 1,
+      "directed_coverage": 0.735973597359736,
+      "gem_rate": 0.0,
+      "proxy_rate": 0.735973597359736,
+      "neither_rate": 0.264026402640264,
+      "undirected_reach_rate": 0.0,
+      "directed_gem_share": 0.0,
+      "type": "insufficiently_directed",
+      "w": null,
+      "w_ci": null,
+      "delta_star": null,
+      "reason": "directed coverage 0.736 < 0.9"
+     },
+     "greedy_equal_distance_neither": 0.3,
+     "legacy_greedy_w": 0.0876231976642057
+    }
+   }
+  }
+ ]
+}
