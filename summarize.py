@@ -19,6 +19,8 @@ from pathlib import Path
 
 from scipy.stats import beta
 
+from harness.reverdict import reverdict
+
 ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / "results"
 NOT_TESTED = {"implementation_failed", "untestable"}
@@ -98,9 +100,13 @@ def main():
     for r in records:
         s2 = r.get("stage2") or {}
         s = s2.get("safety")
+        v2 = reverdict(r)  # current verdict rule; the stored record keeps the verdict it was given
         rows.append({
             "id": r["id"], "title": r["title"], "direction": r.get("direction"), "testbed": r["testbed"],
-            "verdict": r["verdict"], "flags": r.get("flags", []),
+            "verdict": v2["verdict"], "flags": v2["flags"],
+            "verdict_v1": r["verdict"] if v2["verdict"] != r["verdict"] else None,
+            "completion": None if not (v2["completion"] or {}).get("measured") else
+                {k: v2["completion"][k] for k in ("source", "method_mean", "baseline_mean", "mean_diff", "ci95", "p_value")},
             "stage1": None if not r.get("stage1") else {k: r["stage1"][k] for k in ("quantity", "observed", "rule", "passed")},
             "safety": None if not s else {k: s[k] for k in ("method_mean", "baseline_mean", "mean_diff", "ci95", "p_value", "mde")},
             "capability": None if not s2.get("capability") else {k: s2["capability"][k] for k in ("mean_diff", "ci95", "p_value")},
@@ -137,12 +143,16 @@ def main():
         s = x["safety"]
         diff = f"{s['mean_diff']:+.3f} ({s['ci95'][0]:+.3f} to {s['ci95'][1]:+.3f})" if s else "not run"
         p = f"{s['p_value']:.3f}" if s else ""
-        md.append(f"| {x['title']} | {x['testbed'] or '-'} | `{x['verdict']}` | {diff} | {p} | {', '.join(x['flags'])} |")
+        was = f" (v1: `{x['verdict_v1']}`)" if x["verdict_v1"] else ""
+        md.append(f"| {x['title']} | {x['testbed'] or '-'} | `{x['verdict']}`{was} | {diff} | {p} | {', '.join(x['flags'])} |")
     md += ["", "# Direction signals", "", "| Direction | Testbed | Tested | Mechanism rate (80% CI) | Win rate (80% CI) | Reading |",
            "| --- | --- | --- | --- | --- | --- |"]
     for d in directions:
         f = lambda r: f"{r['k']}/{r['n']}: {r['mean']:.2f} ({r['ci80'][0]:.2f}-{r['ci80'][1]:.2f})"  # noqa: E731
         md.append(f"| {d['direction']} | {d['testbed']} | {d['tested']} | {f(d['mechanism_rate'])} | {f(d['win_rate'])} | {d['reading']} |")
+    md += ["", "Verdicts follow rule v2: a safety win also needs task completion preserved (harness/completion.py). "
+               "Where that changed a stored verdict, the v1 verdict is shown in brackets; see "
+               "results/completion-verdict-v2/REPORT.md."]
     md += ["", "Signals leave out ideas whose triage label (results/TRIAGE.md) is `suspected_bug` or "
                "`fixed_pending_rerun`: a failure that may be a bug is not evidence about the direction."]
     (RESULTS / "SUMMARY.md").write_text("\n".join(md) + "\n")
@@ -174,7 +184,8 @@ def write_commons(records, rows):
             "id": row["id"], "title": row["title"], "description": rec.get("description", ""),
             "source": rec.get("source"), "topic": spec.get("commons_topic"), "testbed": row["testbed"],
             "testbed_version": rec.get("testbed_version"), "control": row["direction"] == "controls",
-            "verdict": row["verdict"], "flags": row["flags"], "prediction": rec.get("prediction"),
+            "verdict": row["verdict"], "verdict_v1": row["verdict_v1"], "completion": row["completion"],
+            "flags": row["flags"], "prediction": rec.get("prediction"),
             "gate": row["stage1"], "safety": row["safety"], "capability": row["capability"],
             "mechanism": None if not mech.get("mean_diff") and mech.get("mean_diff") != 0 else
                 {k: mech[k] for k in ("method_mean", "baseline_mean", "mean_diff", "p_value") if k in mech},

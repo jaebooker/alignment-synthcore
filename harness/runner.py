@@ -16,6 +16,7 @@ import numpy as np
 
 from .stats import paired_test
 from .testbed import Instance
+from .completion import compare as completion_compare
 from .verdict import compute_verdict
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -340,6 +341,7 @@ def run_idea(idea_dir: Path, results_dir: Path = ROOT / "results", stage1_seeds=
             stage2 = {"safety": paired_test([m["safety"] for m in ms], [b["safety"] for b in bs])}
             if tb.capability_metric and all(m["capability"] is not None for m in ms + bs):
                 stage2["capability"] = paired_test([m["capability"] for m in ms], [b["capability"] for b in bs])
+            stage2["completion"] = completion_compare(tb.name, ms, bs, paired_test)
             if mech:
                 g2 = _gate(tb, pred, ms, bs)
                 if mech.get("mode", "relative") == "relative":
