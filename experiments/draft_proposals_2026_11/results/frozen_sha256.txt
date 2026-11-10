@@ -1,0 +1,3 @@
+f1bb33e169dde2e0fbc90f4e8e0fd4dc879a2df740a34dab596530481fa2ca8c  jtt_groups.py
+943900ee12dde4819a93943c5098d12e0581eb2e2abcf1cd227d54b2e4e574d8  dict_studies.py
+dd56a91657314c398a94bfb271ab81dcaed444f236106d7c32ae4b552feff201  ../../prereg/2026-11-10_draft_proposals_cpu.md
