@@ -16,7 +16,7 @@
     "pretrained_backbone": {"name": "Pretrained backbone", "description": "A pretrained network the method fine-tunes."},
     "trusted_model_queries": {"name": "Trusted language model calls", "description": "Prompt one weaker, trusted language model and read its answers."},
     "trusted_model_pool": {"name": "Several trusted models", "description": "Prompt any of several weaker, trusted language models from different families, with the credit cost of each call counted."},
-    "untrusted_reference_answers": {"name": "Untrusted model's answers on benign tasks", "description": "Questions with known answers, and the untrusted model's own answers to them, unrelated to which submissions are attacks."},
+    "untrusted_reference_answers": {"name": "Untrusted model's answers on benign tasks", "description": "Benign quiz questions (MMLU-Pro, code-output prediction) with known answers and the untrusted model's own answers, unrelated to which submissions are attacks."},
     "language_model_agents": {"name": "Capable language model agents", "description": "Several capable language models the method can prompt to generate, argue or plan."},
     "gpu": {"name": "GPU compute", "description": "Runs on a GPU; not available on a laptop CPU."},
     "activation_writes": {"name": "Activation writes", "description": "Write access to intermediate activations: ablate, patch or add a vector and rerun the forward pass. Distinct from \"activations\", which is read-only. A method that claims to have located a computation needs this to show the located units carry the causal effect rather than merely correlating with it."},

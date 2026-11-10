@@ -1,6 +1,6 @@
 {
   "title": "Most-accurate monitor choice (control)",
-  "description": "Control for least-overlap choice: monitor with whichever trusted model scores highest on the same code-reading quiz. Separates choosing a dissimilar model from simply choosing a stronger one.",
+  "description": "Control for least-overlap choice: monitor with whichever trusted model scores highest on the same MMLU-Pro quiz. Separates choosing a dissimilar model from simply choosing a stronger one.",
   "source": {
     "type": "control",
     "title": "Standard practice: monitor with the strongest available trusted model"

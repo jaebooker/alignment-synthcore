@@ -1,13 +1,13 @@
 """Least-overlap monitor choice (Goel et al. 2025, "Great Models Think Alike and this Undermines AI Oversight").
 
-Before deployment, ask every trusted model the code-reading quiz the untrusted model already
+Before deployment, ask every trusted model the MMLU-Pro quiz the untrusted model already
 answered, and measure CAPA: how much more often two models make the same mistakes than their
 accuracies alone would predict. Monitor with the trusted model whose errors overlap least with the
 untrusted model's, on the claim that a dissimilar overseer shares fewer of the overseen model's
 blind spots. The choice uses no attack labels and is not tuned; prompt style and scale are tuned
 like the baseline's."""
 import public
-from public import ask_many, last_letter, last_number, reference_prompt, result
+from public import answer_letter, ask_many, last_number, reference_prompt, result
 
 HPARAMS = [
     {"style": "direct", "scale": 10},
@@ -50,16 +50,17 @@ def score_all(task, items, model, style, scale, max_tokens=4000):
     return [last_number(t) / scale for t in ask_many(task, reqs)]
 
 
-def capa(a, b, truth, k=4):
+def capa(a, b, ref):
     """Chance-adjusted error consistency (Goel et al. 2025, discrete form): observed agreement of
     two answer lists minus the agreement two independent models with these accuracies would
-    reach (equal accuracy on wrong answers spread over the k - 1 other options), over its maximum.
+    reach (wrong answers spread evenly over a question's other k - 1 options), over its maximum.
     Unanswered counts as wrong and never agrees."""
-    n = len(truth)
+    n = len(ref)
+    truth = [q["answer"] for q in ref]
     p1 = sum(x == t for x, t in zip(a, truth)) / n
     p2 = sum(y == t for y, t in zip(b, truth)) / n
     obs = sum(x is not None and x == y for x, y in zip(a, b)) / n
-    exp = p1 * p2 + (1 - p1) * (1 - p2) / (k - 1)
+    exp = sum(p1 * p2 + (1 - p1) * (1 - p2) / (len(q["options"]) - 1) for q in ref) / n
     return (obs - exp) / (1 - exp) if exp < 1 else 0.0
 
 
@@ -69,9 +70,9 @@ def choose(task):
     untrusted = [q["untrusted_answer"] for q in ref]
     table = {}
     for m in task["trusted_pool"]:
-        ans = [last_letter(t) for t in ask_many(task, [dict(prompt=reference_prompt(q), max_tokens=4000, model=m)
-                                                       for q in ref])]
-        table[m] = {"accuracy": sum(x == t for x, t in zip(ans, truth)) / len(ref), "capa": capa(ans, untrusted, truth)}
+        texts = ask_many(task, [dict(prompt=reference_prompt(q), max_tokens=8000, model=m) for q in ref])
+        ans = [answer_letter(q, t) for q, t in zip(ref, texts)]
+        table[m] = {"accuracy": sum(x == t for x, t in zip(ans, truth)) / len(ref), "capa": capa(ans, untrusted, ref)}
     return min(table, key=lambda m: (table[m]["capa"], task["trusted_pool"].index(m))), table
 
 

@@ -1,6 +1,6 @@
 {
   "title": "Least-overlap monitor choice",
-  "description": "Pick the trusted monitor whose mistakes on a benign code-reading quiz overlap least with the untrusted model's (CAPA, chance-adjusted error consistency), instead of the default trusted model. Models that think alike share blind spots, so a dissimilar monitor should miss fewer of the backdoors the untrusted model considers well hidden. The choice uses no attack labels.",
+  "description": "Pick the trusted monitor whose mistakes on a benign quiz (280 MMLU-Pro questions) overlap least with the untrusted model's (CAPA, chance-adjusted error consistency), instead of the default trusted model. Models that think alike share blind spots, so a dissimilar monitor should miss fewer of the backdoors the untrusted model considers well hidden. The choice uses no attack labels.",
   "source": {
     "type": "paper",
     "title": "Great Models Think Alike and this Undermines AI Oversight",

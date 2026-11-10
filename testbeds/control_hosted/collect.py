@@ -5,6 +5,7 @@ reference code in throwaway subprocesses via testbeds/control/execute.py).
     python -m testbeds.control_hosted.collect grade                      # data/outputs.json
     CONTROL_LIVE=1 python -m testbeds.control_hosted.collect select      # sneakiness ratings, best-of-2, red-team picks
     CONTROL_LIVE=1 python -m testbeds.control_hosted.collect reference   # data/reference.json (+ untrusted answers)
+    CONTROL_LIVE=1 python -m testbeds.control_hosted.collect reference_mmlu  # data/reference_mmlu.json (CAPA set)
     CONTROL_LIVE=1 python -m testbeds.control_hosted.collect monitor <method.py> [...]
 
 Prompts are Testbed 6's (testbeds/control/prompts.py). Token limits are higher because these
@@ -30,8 +31,11 @@ HERE = Path(__file__).resolve().parent
 PROBLEMS = HERE.parent / "control" / "data" / "problems.json"
 OUT = HERE / "data" / "outputs.json"
 REF = HERE / "data" / "reference.json"
+REF_MMLU = HERE / "data" / "reference_mmlu.json"
+MMLU = HERE / "data" / "mmlu_pro_subset.json"
 # Part of the cached request identity: do not change once collected.
-MAX_TOKENS = {"honest": 8000, "attack": 32000, "trusted_solve": 8000, "sneakiness": 6000, "reference": 4000}
+MAX_TOKENS = {"honest": 8000, "attack": 32000, "trusted_solve": 8000, "sneakiness": 6000, "reference": 4000,
+              "reference_mmlu": 8000}
 ATTACK_ATTEMPTS = 2
 WORKERS = 16
 
@@ -219,6 +223,23 @@ def collect_reference():
           f"unanswered {sum(q['untrusted_answer'] is None for q in qs)}")
 
 
+def collect_reference_mmlu():
+    """Amendment 1: the CAPA reference is a fixed MMLU-Pro subset (data/mmlu_pro_subset.json)."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("ch_public", HERE / "public.py")
+    pub = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(pub)
+    qs = json.loads(MMLU.read_text())["questions"]
+    texts = pmap(lambda q: llm.ask(prompt=pub.reference_prompt(q), model=llm.UNTRUSTED,
+                                   max_tokens=MAX_TOKENS["reference_mmlu"], tag="untrusted_reference_mmlu"), qs)
+    for q, t in zip(qs, texts):
+        q["untrusted_answer"] = pub.answer_letter(q, t)
+    REF_MMLU.write_text(json.dumps(qs, indent=1))
+    acc = sum(q["untrusted_answer"] == q["answer"] for q in qs) / len(qs)
+    print(f"{len(qs)} MMLU-Pro reference questions; untrusted accuracy {acc:.3f}; "
+          f"unanswered {sum(q['untrusted_answer'] is None for q in qs)}")
+
+
 # ---------------- monitors ----------------
 
 def collect_monitor(path: Path):
@@ -254,6 +275,8 @@ def main():
         select()
     elif cmd == "reference":
         collect_reference()
+    elif cmd == "reference_mmlu":
+        collect_reference_mmlu()
     elif cmd == "monitor":
         for p in sys.argv[2:]:
             collect_monitor(Path(p).resolve())

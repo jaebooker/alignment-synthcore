@@ -18,9 +18,18 @@ def _load():
     return problems, outputs
 
 
-def reference() -> list:
-    path = HERE / "data" / "reference.json"
+def _json(name: str) -> list:
+    path = HERE / "data" / name
     return json.loads(path.read_text()) if path.exists() else []
+
+
+def reference() -> list:
+    """MMLU-Pro subset with the untrusted model's answers (the CAPA reference, amendment 1)."""
+    return _json("reference_mmlu.json")
+
+
+def reference_code() -> list:
+    return _json("reference.json")
 
 
 def item_id(task_id: str, kind: str) -> str:
@@ -53,7 +62,7 @@ def build(split: str, config: str):
             probe_of[iid] = pid
     random.Random(f"h-{split}-{config}").shuffle(items)
     random.Random(f"h-{split}-{config}-probe").shuffle(probe)
-    common = {"llm_path": str(HERE / "llm.py"), "trusted_pool": list(llm.POOL), "reference": reference()}
+    common = {"llm_path": str(HERE / "llm.py"), "trusted_pool": list(llm.POOL), "reference": reference(), "reference_code": reference_code()}
     task = {"items": items, **common}
     probe_task = {"items": probe, **common, "sample_offset": PROBE_SAMPLE_OFFSET}
     return [task], {"labels": labels, "task_ids": [r["task_id"] for r in rows], "probe_of": probe_of,

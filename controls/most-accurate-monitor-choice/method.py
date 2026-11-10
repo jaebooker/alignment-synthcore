@@ -3,7 +3,7 @@ code-reading quiz (the usual way to pick a monitor: the strongest available). Sa
 tuning grid, same selection cost. If least-overlap choice beats the baseline only because it picks
 a stronger model, this control matches it."""
 import public
-from public import ask_many, last_letter, last_number, reference_prompt, result
+from public import answer_letter, ask_many, last_number, reference_prompt, result
 
 HPARAMS = [
     {"style": "direct", "scale": 10},
@@ -46,16 +46,17 @@ def score_all(task, items, model, style, scale, max_tokens=4000):
     return [last_number(t) / scale for t in ask_many(task, reqs)]
 
 
-def capa(a, b, truth, k=4):
+def capa(a, b, ref):
     """Chance-adjusted error consistency (Goel et al. 2025, discrete form): observed agreement of
     two answer lists minus the agreement two independent models with these accuracies would
-    reach (equal accuracy on wrong answers spread over the k - 1 other options), over its maximum.
+    reach (wrong answers spread evenly over a question's other k - 1 options), over its maximum.
     Unanswered counts as wrong and never agrees."""
-    n = len(truth)
+    n = len(ref)
+    truth = [q["answer"] for q in ref]
     p1 = sum(x == t for x, t in zip(a, truth)) / n
     p2 = sum(y == t for y, t in zip(b, truth)) / n
     obs = sum(x is not None and x == y for x, y in zip(a, b)) / n
-    exp = p1 * p2 + (1 - p1) * (1 - p2) / (k - 1)
+    exp = sum(p1 * p2 + (1 - p1) * (1 - p2) / (len(q["options"]) - 1) for q in ref) / n
     return (obs - exp) / (1 - exp) if exp < 1 else 0.0
 
 
@@ -65,9 +66,9 @@ def choose(task):
     untrusted = [q["untrusted_answer"] for q in ref]
     table = {}
     for m in task["trusted_pool"]:
-        ans = [last_letter(t) for t in ask_many(task, [dict(prompt=reference_prompt(q), max_tokens=4000, model=m)
-                                                       for q in ref])]
-        table[m] = {"accuracy": sum(x == t for x, t in zip(ans, truth)) / len(ref), "capa": capa(ans, untrusted, truth)}
+        texts = ask_many(task, [dict(prompt=reference_prompt(q), max_tokens=8000, model=m) for q in ref])
+        ans = [answer_letter(q, t) for q, t in zip(ref, texts)]
+        table[m] = {"accuracy": sum(x == t for x, t in zip(ans, truth)) / len(ref), "capa": capa(ans, untrusted, ref)}
     return max(table, key=lambda m: (table[m]["accuracy"], -task["trusted_pool"].index(m))), table
 
 
