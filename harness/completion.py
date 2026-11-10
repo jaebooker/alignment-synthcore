@@ -29,6 +29,7 @@ COMPLETION = {
     "confounded_imitation": {"source": "safety", "margin": DEFAULT_MARGIN, "floor": None},
     "backdoor": None,
     "control": None,
+    "control_hosted": None,
     "planted_lm": None,
     # monitors over swarm transcripts: no task performed
     "swarm_collusion": None,
