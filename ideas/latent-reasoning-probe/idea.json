@@ -1,0 +1,22 @@
+{
+  "title": "Probe latent reasoning states for misaligned planning",
+  "description": "When a model reasons in vector space instead of tokens, train a linear probe on its per-step latent states using a dual-trigger design that arms misaligned reasoning while outputs stay benign, so misalignment is labelled behaviourally rather than by interpreting the vectors. Reported accuracy concentrates in the earliest reasoning steps and decays along the chain.",
+  "source": {
+    "type": "paper",
+    "title": "Ulterior Motives: Detecting Misaligned Reasoning in Continuous Thought Models",
+    "authors": "Ramjee",
+    "year": 2026,
+    "venue": "arXiv 2604.23460",
+    "url": "https://arxiv.org/abs/2604.23460"
+  },
+  "direction": "ai-control/monitoring/latent-reasoning",
+  "commons_topic": "protocols",
+  "testbed": null,
+  "nearest_testbed": "control",
+  "untestable_reason": "Needs a model that reasons without emitting tokens, and its latent states indexed by reasoning step. The control testbed supplies calls to one weaker trusted language model and reads its answers, which is the monitoring surface this idea is specifically about losing. No testbed exposes per-step latent states, so the decay the paper reports along the reasoning chain cannot be reproduced or extended. A testbed wrapping a recurrent-depth or continuous-thought model and returning its latent states per step would fit.",
+  "needs": [
+    "latent_reasoning_states",
+    "gpu"
+  ],
+  "prediction": null
+}

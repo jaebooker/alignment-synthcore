@@ -1,0 +1,24 @@
+{
+  "title": "State steering in recurrent models",
+  "description": "Compute a steering vector from differences in a recurrent model's compressed state rather than its residual stream, and add it to the state during generation. The technique has no transformer analogue, so it tests whether an adaptation can recover function a naive port loses.",
+  "source": {
+    "type": "paper",
+    "title": "Does Transformer Interpretability Transfer to RNNs?",
+    "authors": "Paulo, Marshall, Belrose",
+    "year": 2024,
+    "venue": "arXiv 2404.05971",
+    "url": "https://arxiv.org/abs/2404.05971"
+  },
+  "direction": "interpretability/representation-engineering/activation-steering",
+  "commons_topic": "sae",
+  "testbed": null,
+  "nearest_testbed": "planted_lm",
+  "untestable_reason": "Needs a non-transformer model with a compressed recurrent state, and write access to that state. The planted language-model testbed supplies transformer activations read-only, so there is no state to steer and no way to inject a vector mid-generation. It also needs a capability-matched transformer to compare against: the published comparison reports a smaller steering response on RNNs than transformers, which is uninterpretable unless the two models are matched on held-out performance rather than parameter count. A testbed carrying one rung of the architecture ladder plus activation writes would fit.",
+  "needs": [
+    "activation_writes",
+    "architecture_ladder",
+    "matched_capability_models",
+    "gpu"
+  ],
+  "prediction": null
+}
