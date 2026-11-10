@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "about": "What a method can get from a testbed. Testbeds list what they provide; untestable ideas list what they need (idea.json \"needs\"). An idea is untestable only while no single testbed provides every need. Add a capability here, reviewed, before tagging anything with it. Alignment Commons reads this file through its pinned catalogue.",
   "capabilities": {
     "activations": {"name": "Model activations", "description": "Hidden activations of a model on data, for feature finding or probing."},
@@ -17,6 +17,11 @@
     "trusted_model_queries": {"name": "Trusted language model calls", "description": "Prompt one weaker, trusted language model and read its answers."},
     "language_model_agents": {"name": "Capable language model agents", "description": "Several capable language models the method can prompt to generate, argue or plan."},
     "gpu": {"name": "GPU compute", "description": "Runs on a GPU; not available on a laptop CPU."},
+    "activation_writes": {"name": "Activation writes", "description": "Write access to intermediate activations: ablate, patch or add a vector and rerun the forward pass. Distinct from \"activations\", which is read-only. A method that claims to have located a computation needs this to show the located units carry the causal effect rather than merely correlating with it."},
+    "matched_capability_models": {"name": "Capability-matched models", "description": "Two or more models of different architectures matched on held-out benchmark performance rather than parameter count. Needed so a cross-architecture comparison measures architecture and not competence; matching on parameters confounds the two."},
+    "architecture_ladder": {"name": "Architecture ladder", "description": "A family of capability-matched models spanning an ordered sequence of architectures where each rung removes one interface a method might depend on: attention variant, mixture of experts, hybrid attention-SSM, pure SSM, recurrent depth, diffusion language model. The ordering is a partial order, not a line."},
+    "latent_reasoning_states": {"name": "Latent reasoning states", "description": "The per-step latent states of a model that reasons without emitting tokens, indexed by reasoning step. What a chain-of-thought monitor would read if the chain were not hidden."},
+    "adapter_fit_corpus": {"name": "Adapter fitting corpus", "description": "Unlabelled data in the input format of two or more models, for fitting a map between their activation spaces. Paired by input, not by label, so a monitor trained on one model can be ported to another without new labels."},
     "other": {"name": "Something not listed", "description": "A need no capability describes yet. The untestable reason must say what it is, so a reviewer can add a capability."}
   },
   "provides": {

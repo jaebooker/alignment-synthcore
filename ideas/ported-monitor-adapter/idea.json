@@ -1,0 +1,24 @@
+{
+  "title": "Port a monitor to a new model through a fitted activation adapter",
+  "description": "Train a safety probe once on one model, then reach a second model by fitting a linear adapter between their activation spaces on unlabelled text, so the monitor transfers without new labels. The open question is not whether the port works but how fast it fails under pressure, since the adapter is low-rank and information can move into its null space.",
+  "source": {
+    "type": "paper",
+    "title": "One Adapter Pair per Model: A Universal Activation Interface for Language Models",
+    "authors": "Kim, Mun, Han",
+    "year": 2026,
+    "venue": "arXiv 2608.09521",
+    "url": "https://arxiv.org/abs/2608.09521"
+  },
+  "direction": "ai-control/monitoring/cross-model-transfer",
+  "commons_topic": "protocols",
+  "testbed": null,
+  "nearest_testbed": "planted_lm",
+  "untestable_reason": "Needs two capability-matched models plus unlabelled data in both input formats to fit the adapter on. The planted language-model testbed supplies activations from a single model, so there is no second space to map into and no way to separate the adapter's contribution from the compatibility screen's. The published result admits only models passing a linear-compatibility filter whose pass rate is unreported, and reports no shuffled-pair null, so a reproduction needs both controls. A testbed holding two matched models and a paired unlabelled corpus would fit.",
+  "needs": [
+    "adapter_fit_corpus",
+    "matched_capability_models",
+    "activations",
+    "gpu"
+  ],
+  "prediction": null
+}

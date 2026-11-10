@@ -1,0 +1,22 @@
+{
+  "title": "Causally check a probe's localisation before relying on it",
+  "description": "Take the units a probe says carry a computation, then ablate them and rerun. Report the localisation only if suppressing those units moves the loss as much as the probe's confidence implies, and search for a second, near-disjoint unit set with an equal effect.",
+  "source": {
+    "type": "paper",
+    "title": "A Circuit, Not The Circuit: Non-Unique Causal Localisation of the Mamba-2 State Sink",
+    "authors": "Jiang, Zhang",
+    "year": 2026,
+    "venue": "arXiv 2606.00930",
+    "url": "https://arxiv.org/abs/2606.00930"
+  },
+  "direction": "interpretability/mechanistic-interpretability/causal-localization",
+  "commons_topic": "sae",
+  "testbed": null,
+  "nearest_testbed": "planted_interp",
+  "untestable_reason": "Needs to write to activations, not only read them. The planted interpretability testbed hands a method activations and scores the features it recovers, so a claimed localisation is never re-run with those units suppressed. In Mamba-2 the gap this leaves is large: perturbing the gate signal a probe reads moved loss by at most 0.16 nats while suppressing the same heads' outputs moved it 1.5 to 7.3 nats, and two head sets sharing 13 of 254 heads each produced comparable ablation effects. A read-only testbed cannot tell a correct localisation from a decoy. Adding ablate-and-rerun to planted_interp would fit, and would also let every other recovery claim in the catalogue be checked the same way.",
+  "needs": [
+    "activations",
+    "activation_writes"
+  ],
+  "prediction": null
+}
