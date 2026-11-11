@@ -36,8 +36,12 @@ TRUSTED = "gemma-4-31b-it"
 # first: with Testbed 6's attack prompt it reasoned past 32k tokens on 5 of 6 attempts.)
 POOL = ("gemma-4-31b-it", "gemma-4-26b-a4b-it", "qwen3.8-27b", "deepseek-v4-flash", "glm-53-flash")
 
-STATS = {"live": 0, "truncated": 0}
+STATS = {"live": 0, "truncated": 0, "rate_limited": 0}
 _lock = threading.Lock()
+# The gateway rate-limits per user and answers 429 for every call once the limit is hit, for
+# minutes. Few calls in flight, and a shared pause on any 429, keep a long collection moving.
+_slots = threading.BoundedSemaphore(int(os.environ.get("CONTROL_CONCURRENCY", "4")))
+_pause = {"until": 0.0}
 _cache: dict | None = None
 _client = None
 
@@ -137,18 +141,36 @@ def ask_full(prompt: str, model: str, system: str = "", max_tokens: int = 4000, 
     with _lock:
         if spent() >= CAP:
             raise BudgetExceeded(f"credit cap {CAP} reached (spent {spent():.3f})")
-    err = None
-    for attempt in range(6):
+    err, attempt, limited = None, 0, 0
+    while True:
+        wait = _pause["until"] - time.time()
+        if wait > 0:
+            time.sleep(wait)
         try:
-            text, usage, status = _call(model, system, prompt, max_tokens, temperature)
+            with _slots:
+                text, usage, status = _call(model, system, prompt, max_tokens, temperature)
             if not text.strip() and status != "incomplete" and attempt < 2:
-                err = "empty output"
+                err, attempt = "empty output", attempt + 1
                 time.sleep(2)
                 continue
             err = None
             break
         except Exception as e:  # rate limits, gateway errors
             err = repr(e)[:300]
+            if "429" in err or "rate limit" in err.lower():
+                limited += 1
+                STATS["rate_limited"] += 1
+                with _lock:
+                    if _pause["until"] < time.time():
+                        print(f"  rate limited at {time.strftime('%H:%M:%S')} ({STATS['live']} live calls so far); "
+                              "pausing 75s", flush=True)
+                    _pause["until"] = max(_pause["until"], time.time() + 75)
+                if limited < 60:
+                    continue
+                break
+            attempt += 1
+            if attempt >= 6:
+                break
             time.sleep(min(60, 3 * 2 ** attempt))
     if err:
         raise RuntimeError(f"{tag}: {err}")
