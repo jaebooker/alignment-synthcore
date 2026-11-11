@@ -34,6 +34,7 @@
     "goal_misgen": ["offline_demonstrations"],
     "weak_to_strong": ["weak_labels", "pretrained_backbone"],
     "control": ["trusted_model_queries"],
+    "control_open": ["trusted_model_queries"],
     "control_hosted": ["trusted_model_queries", "trusted_model_pool", "untrusted_reference_answers"],
     "interactive_gridworld": ["online_interaction", "approval_queries"],
     "ued_gridworld": ["online_interaction", "level_generation"],
