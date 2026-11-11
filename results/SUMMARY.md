@@ -14,6 +14,7 @@
 | Debate to improve weak supervision | - | `untestable` | not run |  |  |
 | Decoupled approval against tampering | interactive_gridworld | `beats_baseline` | +1.020 (+0.956 to +1.085) | 0.008 |  |
 | Exploit-hunting trusted monitor | control | `beats_baseline` | +0.153 (+0.019 to +0.288) | 0.023 | completion_not_applicable |
+| Exploit-hunting trusted monitor (open models, independent shards) | control_open | `beats_baseline` | +0.084 (+0.015 to +0.153) | 0.023 | completion_not_applicable |
 | Future-task auxiliary reward with an inaction baseline | reward_hacking | `safe_but_incomplete` (v1: `beats_baseline`) | +0.254 (+0.250 to +0.258) | 0.008 | completion_significantly_worse, capability_confounded |
 | Generalized cross-entropy as a noise-robust weak-to-strong loss | weak_to_strong | `mechanism_failed` | not run |  |  |
 | Inference-time decomposition of activations (ITDA) | planted_interp | `mechanism_failed` | not run |  |  |
@@ -29,6 +30,7 @@
 | Control: ACCEL's edits without regret | ued_gridworld | `no_effect` | -0.041 (-0.108 to +0.027) | 0.195 |  |
 | Relative reachability penalty | reward_hacking | `beats_baseline` | +0.504 (+0.499 to +0.509) | 0.008 |  |
 | Resampled trusted monitor | control | `no_effect` | +0.041 (-0.067 to +0.150) | 0.414 |  |
+| Resampled trusted monitor (open models, independent shards) | control_open | `mechanism_failed` | not run |  |  |
 | Semi-NMF dictionary of activations | planted_interp | `no_effect` | +0.009 (-0.000 to +0.018) | 0.062 |  |
 | Spectral decoupling against gradient starvation | goal_misgen | `mechanism_failed` | not run |  |  |
 | Spherical k-means as a feature dictionary | planted_interp | `no_effect` | +0.006 (-0.001 to +0.013) | 0.070 |  |
@@ -63,6 +65,7 @@
 | ai-control/monitoring/formal-verification | swarm_collusion | 1 | 1/1: 0.67 (0.32-0.95) | 0/1: 0.33 (0.05-0.68) | real, not yet useful (tentative: n<5) |
 | ai-control/monitoring/formal-verification | swarm_collusion_para | 1 | 1/1: 0.67 (0.32-0.95) | 0/1: 0.33 (0.05-0.68) | real, not yet useful (tentative: n<5) |
 | ai-control/monitoring/trusted-monitoring | control | 2 | 2/2: 0.75 (0.46-0.97) | 1/2: 0.50 (0.20-0.80) | pursue (tentative: n<5) |
+| ai-control/monitoring/trusted-monitoring | control_open | 2 | 1/2: 0.50 (0.20-0.80) | 1/2: 0.50 (0.20-0.80) | pursue (tentative: n<5) |
 | ai-control/monitoring/trusted-monitoring | swarm_collusion | 1 | 1/1: 0.67 (0.32-0.95) | 1/1: 0.67 (0.32-0.95) | pursue (tentative: n<5) |
 | ai-control/monitoring/trusted-monitoring | swarm_collusion_para | 1 | 1/1: 0.67 (0.32-0.95) | 1/1: 0.67 (0.32-0.95) | pursue (tentative: n<5) |
 | interpretability/mechanistic-interpretability/sparse-dictionary-learning | planted_interp | 7 | 2/7: 0.33 (0.15-0.54) | 0/7: 0.11 (0.01-0.25) | deprioritize |
