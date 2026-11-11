@@ -30,6 +30,7 @@ COMPLETION = {
     "backdoor": None,
     "control": None,
     "control_open": None,
+    "control_hosted": None,
     "planted_lm": None,
     # monitors over swarm transcripts: no task performed
     "swarm_collusion": None,
