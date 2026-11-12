@@ -74,6 +74,9 @@ def get_testbed(name: str):
     if name == "control_open":
         from testbeds.control_open.testbed import TrustedMonitoringOpen
         return TrustedMonitoringOpen()
+    if name == "debate_code":
+        from testbeds.debate_code.testbed import DebateCode
+        return DebateCode()
     if name == "control_hosted":
         from testbeds.control_hosted.testbed import HostedTrustedMonitoring
         return HostedTrustedMonitoring()

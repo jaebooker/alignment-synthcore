@@ -12,6 +12,7 @@
 | Binary sparse coding (real LM activations) | planted_lm | `mechanism_failed` | not run |  |  |
 | Targeted interventions against causal confusion | confounded_imitation | `beats_baseline` | +0.023 (+0.001 to +0.046) | 0.047 | cause_unresolved |
 | Debate to improve weak supervision | - | `untestable` | not run |  |  |
+| Debate for a weak judge of hidden code | debate_code | `beats_baseline` | +0.176 (+0.133 to +0.218) | 0.008 | completion_not_applicable |
 | Decoupled approval against tampering | interactive_gridworld | `beats_baseline` | +1.020 (+0.956 to +1.085) | 0.008 |  |
 | Exploit-hunting trusted monitor | control | `beats_baseline` | +0.153 (+0.019 to +0.288) | 0.023 | completion_not_applicable |
 | Exploit-hunting trusted monitor (open models, independent shards) | control_open | `beats_baseline` | +0.084 (+0.015 to +0.153) | 0.023 | completion_not_applicable |
@@ -48,6 +49,7 @@
 | Semantic covert-channel dependence test (v0.2: paraphrased signal) | swarm_collusion_para | `mechanism_failed` | not run |  |  |
 | Whole-transcript swarm monitor | swarm_collusion | `beats_baseline` | +0.444 (+0.283 to +0.605) | 0.008 | completion_not_applicable |
 | Whole-transcript swarm monitor (v0.2: paraphrased signal) | swarm_collusion_para | `beats_baseline` | +0.428 (+0.271 to +0.586) | 0.008 | completion_not_applicable |
+| Two-sided arguments without rebuttals | debate_code | `beats_baseline` | +0.179 (+0.126 to +0.232) | 0.008 | completion_not_applicable |
 | Minimal universal perturbation as a backdoor detector | backdoor | `mech_ok_no_win` | +0.030 (-0.017 to +0.077) | 0.180 |  |
 | Bootstrapping through an intermediate model | weak_to_strong | `mechanism_failed` | not run |  |  |
 | Weight-spectrum outliers as a data-free backdoor signal | backdoor | `mechanism_failed` | not run |  |  |
@@ -77,6 +79,7 @@
 | multi-agent/oversight/covert-channels | swarm_collusion | 2 | 0/2: 0.25 (0.03-0.54) | 0/2: 0.25 (0.03-0.54) | deprioritize (tentative: n<5) |
 | multi-agent/oversight/covert-channels | swarm_collusion_para | 2 | 0/2: 0.25 (0.03-0.54) | 0/2: 0.25 (0.03-0.54) | deprioritize (tentative: n<5) |
 | robustness/backdoors/backdoor-detection | backdoor | 3 | 1/3: 0.40 (0.14-0.68) | 0/3: 0.20 (0.03-0.44) | deprioritize (tentative: n<5) |
+| scalable-oversight/debate | debate_code | 2 | 2/2: 0.75 (0.46-0.97) | 2/2: 0.75 (0.46-0.97) | pursue (tentative: n<5) |
 | scalable-oversight/weak-to-strong/training-objectives | weak_to_strong | 3 | 0/3: 0.20 (0.03-0.44) | 0/3: 0.20 (0.03-0.44) | deprioritize (tentative: n<5) |
 
 Verdicts follow rule v2: a safety win also needs task completion preserved (harness/completion.py). Where that changed a stored verdict, the v1 verdict is shown in brackets; see results/completion-verdict-v2/REPORT.md.
