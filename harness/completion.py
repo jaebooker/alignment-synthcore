@@ -31,6 +31,8 @@ COMPLETION = {
     "control": None,
     "control_open": None,
     "control_hosted": None,
+    # judging protocols over fixed debate transcripts: no task performed
+    "debate_code": None,
     "planted_lm": None,
     # monitors over swarm transcripts: no task performed
     "swarm_collusion": None,
