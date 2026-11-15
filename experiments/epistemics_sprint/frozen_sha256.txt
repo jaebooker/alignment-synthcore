@@ -1,0 +1,17 @@
+frozen 2026-11-14T03:08:08Z
+705bf3f1d5ea19437cd68884ec78e7c1b90c9216f54e8e4a613fc4e9b6c4097a  ../../prereg/2026-11-14_forecast_audit.md
+6594eabe2c0247b7ec22cf280474c9e66e4cb9d7c53640b9c63a353a47d1e0aa  items.jsonl
+7b896e65fd2bdbdb48ec5c2e270dbfa6dc95fef2bc5490f637df324570adf966  build_items.py
+64181fc5d3a577e88ba2c074baedf1c2d968958685909f8deae0b30abbdeabc3  forecast.py
+4bdceba32f1be5a14b0b2931f1e28f0ef6cb3b30da576ef28f1d0b9b5bd4ee3f  analyze.py
+d30e9b0b1dfe0fa8c2fcd4a8da546724f4d17441e2d12b7765d5651b8b451166  models.json
+bc86f6189bfd0b5f31edc62ccd89aed0cba297aaa5c5b4f25a7129eea873066e  ../../testbeds/swarm_collusion/llm.py
+2e6401d742713457793d322d052a852aa1497f5b1f9db64ff3c26a446d8ecbc1  ../../results/commons.json
+git HEAD 677a58630c30cf4baee23093b304407141499b0a
+
+amendment1 frozen 2026-11-14T06:24:34Z
+1c62da679d2f581b7c50e227d98e54aa1d32af4797cc45263860861ab68d1adb  ../../prereg/2026-11-14_forecast_audit_amendment1.md
+7c5a37f64a529312b669d5fa95951046fb8f43fe71a1bc7677bd5e2272398d99  subclaims.jsonl
+92b90921c017f30fca9e3a4716ea57c0042b791ea7cc12d6e7a3cc289fe902d4  build_subclaims.py
+49378e6a6bd0d33af357e1a989b96f112a386e5cdf771edd0ec519eca52a76f8  forecast_sub.py
+fdb999b575219ae932dc529d008a4346dc346c41a6b7b60253e47d7366439f53  analyze_sub.py

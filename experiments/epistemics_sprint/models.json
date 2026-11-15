@@ -1,0 +1,14 @@
+{
+ "_note": "Adaption hosted chat models, from client.models.list() on 2026-11-14.",
+ "models": [
+  "glm-5.2",
+  "glm-5.3-flash",
+  "qwen3.5-397b",
+  "qwen3.8-27b",
+  "deepseek-v4-flash",
+  "gemma-4-31b-it",
+  "gemma-4-26b-a4b-it"
+ ],
+ "max_tokens": 16000,
+ "workers": 24
+}
