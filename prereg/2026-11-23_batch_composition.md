@@ -1,6 +1,6 @@
 # Pre-registration: batch-composition intervention for BatchTopK, CPU only
 
-Written 2026-11-23 (about 04:45 UTC), after one calibration seed and before any confirmation
+Written 2026-11-23 (about 04:20 UTC; the first commit of this file said 04:45 in error), after one calibration seed and before any confirmation
 seed was generated. This file, the study code and the analysis script are pushed to
 `claude/batch-composition-study` on GitHub before the confirmation run, with their SHA-256
 hashes in `experiments/batch_composition_2026_11/frozen_sha256.txt`, so the commit timestamp
