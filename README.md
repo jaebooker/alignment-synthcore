@@ -149,6 +149,16 @@ Known limits: on the backdoor testbed the population is fixed, so seeds vary met
 - LLM extraction from papers. Needs an API key; `idea.json` is the target format.
 - Coding agent that writes `method.py`. Example methods here were written by hand. Alignment Commons' paper pipeline now has agents propose adapters; run them jailed.
 
+## Website
+
+`site/` is a static site: a home page with every verdict by testbed, and a live view (`/live`) that draws each idea around the harness and shows the latest runs next to agent activity from Alignment Commons. It only reads `site/data.json`, which `scripts/build_site.py` writes from `results/`:
+
+```
+python summarize.py && python scripts/build_site.py
+```
+
+Rebuild and commit `site/data.json` after new results; the site never changes a verdict. `vercel.json` serves `site/` as is. `site/theme.css` and `site/fleet.js` are shared with Alignment Commons: edit one copy and copy it to the other repo. A new testbed has to be added to `AREAS` in `scripts/build_site.py`, which stops otherwise.
+
 ## Alignment Commons
 
 `python summarize.py` also writes `results/commons.json`: every idea placed on an Alignment Commons topic (`commons_topic` in `idea.json`), what each testbed plants and measures, and direction signals per topic. The Commons site pulls it with `pipeline/fetch_tests.py` and shows results on topic pages and a Tested ideas page. New ideas need a `commons_topic` that exists in the Commons taxonomy.
