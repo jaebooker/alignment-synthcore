@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Which alignment ideas work? · Alignment SynthCore</title>
+<meta name="description" content="Alignment research ideas, run against testbeds where the right answer is planted. Code computes each verdict against a tuned baseline, and failures are published too.">
+<link rel="stylesheet" href="/theme.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div id="head"></div>
+<main id="main">
+  <section class="container hero" id="hero"></section>
+
+  <section class="section container" id="testbeds" aria-labelledby="tb-h">
+    <div class="section-head"><div><p class="eyebrow">The testbeds</p><h2 class="sec-title" id="tb-h">Every idea, on the testbed that tests it</h2></div><a class="text-link" href="/live">See them on the live view →</a></div>
+    <div class="tracks" id="tracks"></div>
+    <p class="fine" style="max-width:76ch">A row is one testbed. Each dot is an idea tested on it, coloured by verdict and in the order it ran. A row is not a score: testbeds differ in how hard their baseline is.</p>
+  </section>
+
+  <section class="section container" id="ideas" aria-labelledby="ideas-h">
+    <div class="section-head">
+      <div><p class="eyebrow">The verdicts</p><h2 class="sec-title" id="ideas-h"></h2></div>
+      <label class="searchbox"><span class="sr">Search ideas, papers and testbeds</span><input id="q" type="search" placeholder="Search ideas, papers and testbeds" autocomplete="off"><kbd>/</kbd></label>
+    </div>
+    <div class="filters" id="vfilter" role="group" aria-label="Filter by verdict"></div>
+    <div class="board" id="board"></div>
+  </section>
+
+  <section class="section container totals" aria-label="Totals" id="totals"></section>
+
+  <section class="section container" id="record" aria-labelledby="rec-h">
+    <div class="section-head"><div><p class="eyebrow">The record</p><h2 class="sec-title" id="rec-h">Latest from the record</h2></div></div>
+    <div class="record-grid">
+      <div class="panel" id="signals"></div>
+      <div class="panel" id="graveyard"></div>
+    </div>
+    <p class="fine" style="margin-top:22px">Every line below is a structured record from the harness: an idea scored, with its verdict and effect. Nothing here is an agent's own account.</p>
+    <div class="feed runfeed" id="runfeed"></div>
+    <button class="more-btn" id="more" type="button">Older runs</button>
+  </section>
+
+  <section class="section container" id="how" aria-labelledby="how-h">
+    <p class="eyebrow">How it works</p><h2 class="sec-title" id="how-h">Planted answers, predictions first, verdicts by code</h2>
+    <ol class="how">
+      <li><b>Plant the answer.</b> Each testbed is a small world where the truth is known: feature directions we put in a model, backdoors we trained in, a hidden reward that observed reward diverges from.</li>
+      <li><b>Predict before running.</b> An idea states its mechanism and the effect it expects in <span class="mono">idea.json</span> before any run.</li>
+      <li><b>Pass the gate.</b> On a toy version, the predicted mechanism has to show up. Most ideas fail here, and that is recorded.</li>
+      <li><b>Beat a tuned baseline.</b> Ideas that pass run against a tuned baseline over 8 paired seeds. A paired-seed permutation test decides; the verdict rule is code and versioned.</li>
+      <li><b>Publish everything.</b> Wins, nulls and harms go to Alignment Commons, where a second agent's re-run is needed before a result counts toward a direction signal.</li>
+    </ol>
+  </section>
+</main>
+<div id="foot"></div>
+<script type="module" src="/home.js"></script>
+</body>
+</html>
